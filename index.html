@@ -112,6 +112,7 @@
     <button class="tab" data-view="feed">信号流</button>
     <button class="tab on" data-view="reserves">储备</button>
     <button class="tab" data-view="record">战绩盘</button>
+    <button class="tab" data-view="backtest">回放</button>
     <button class="tab" data-view="ops">运营</button>
     <button class="tab" id="snap" style="margin-left:auto" title="把当前视图存成图片，分享给朋友">存图分享</button>
   </div>
@@ -119,6 +120,7 @@
   <section id="feed" class="hidden"></section>
   <section id="reserves"></section>
   <section id="record" class="hidden"></section>
+  <section id="backtest" class="hidden"></section>
   <section id="ops" class="hidden"></section>
 </div>
 
@@ -133,6 +135,7 @@ let SIGNALS = [];   // real signals: published + 待发布
 let ALERTS = [];    // 链上异动 alerts (观测，非交易建议) — a SEPARATE lane
 let TRACK = null;   // real track record from settled signals
 let BASELINE = {};  // net-flow baseline progress (honest empty-state context)
+let BACKTEST = null; // labelled HISTORICAL replay — NOT a live track record (iron-clad disclaimer)
 const MANIFESTO = "吹 90% 胜率的，都在骗你。该看的是跟着我做赚没赚到，不是我对的次数。";
 
 function el(html){const t=document.createElement('template');t.innerHTML=html.trim();return t.content.firstChild;}
@@ -425,6 +428,7 @@ document.querySelectorAll('.tab').forEach(b=>b.addEventListener('click',()=>{
   document.getElementById('feed').classList.toggle('hidden',v!=='feed');
   document.getElementById('reserves').classList.toggle('hidden',v!=='reserves');
   document.getElementById('record').classList.toggle('hidden',v!=='record');
+  document.getElementById('backtest').classList.toggle('hidden',v!=='backtest');
   document.getElementById('ops').classList.toggle('hidden',v!=='ops');
 }));
 
@@ -445,19 +449,47 @@ document.getElementById('snap').addEventListener('click', async ()=>{
   setTimeout(()=>{ btn.textContent=old; },2600);
 });
 
+function renderBacktest(){
+  const root=document.getElementById('backtest'); root.innerHTML='';
+  const b=BACKTEST;
+  root.appendChild(el(`<div class="res-head">探测器回放 · 历史验证</div>`));
+  // IRON-CLAD disclaimer — this is NOT a track record, no P&L claimed, separate from live 战绩.
+  root.appendChild(el(`<div class="res-bound" style="border-color:#5a4326;background:#1c160c">
+    <b>⚠ 这不是战绩,是回放。</b> ${esc((b&&b.disclaimer)||'过去的真实链上储备异动,经真引擎+真声线产出;【不是】我们实时做出的调用,【不认领任何盈亏】。实时战绩在「战绩盘」,从 0 向前生长。')}</div>`));
+  if(!b || !b.events || !b.events.length){
+    root.appendChild(el(`<div class="card"><p style="color:var(--muted);font-size:14px">暂无回放数据。</p></div>`));
+    return;
+  }
+  b.events.forEach(e=>{
+    const dir = e.flow_direction==='outflow'?'净流出':'净流入';
+    const amt = Math.abs(e.net_flow_btc||0).toLocaleString();
+    root.appendChild(el(`<div class="card">
+      <div class="res-sub" style="margin-bottom:6px">${esc((e.date||'').slice(0,10))} · 历史回放 · ${esc(e.exchange||'')}</div>
+      <p class="hook">${esc(e.hook||'')}</p>
+      <p style="color:var(--muted);font-size:14px;line-height:1.75;margin:8px 0">${esc(e.narrative||'')}</p>
+      <div class="res-sub">${dir} <b>${amt} BTC</b>${e.pct_reserves!=null?` · 占追踪储备 ${e.pct_reserves}%`:''} · <a href="${esc(e.explorer_url||'#')}" target="_blank" rel="noopener">链上核验 ↗</a></div>
+      <div class="res-meta" style="font-size:11px;margin-top:6px;word-break:break-all">${esc(e.content_hash||'')}</div>
+    </div>`));
+  });
+}
+
 async function boot(){
-  // single fetch of the REAL operational status; all three tabs render from it.
+  // fetch the REAL operational status (all live tabs) + the labelled historical replay.
   try{
     const r = await fetch('data/status.json', {cache:'no-store'});
     if(r.ok){ STATUS = await r.json(); }
   }catch(e){ /* file:// or no server → STATUS null → honest empty / hint */ }
+  try{
+    const rb = await fetch('data/backtest.json', {cache:'no-store'});
+    if(rb.ok){ BACKTEST = await rb.json(); }
+  }catch(e){ /* no backtest file → renderBacktest shows the disclaimer + empty */ }
   if(STATUS){
     SIGNALS = Array.isArray(STATUS.signals)?STATUS.signals:[];
     ALERTS = Array.isArray(STATUS.alerts)?STATUS.alerts:[];
     TRACK = STATUS.track||null;
     BASELINE = STATUS.baseline||{};
   }
-  renderFeed(); renderReserves(); renderRecord(); renderOps();
+  renderFeed(); renderReserves(); renderRecord(); renderBacktest(); renderOps();
 }
 boot();
 </script>

@@ -1,0 +1,68 @@
+{
+  "generated_at": "2026-06-20T14:27:06Z",
+  "span_days": 90,
+  "threshold_btc": 3000.0,
+  "disclaimer": "历史回放·探测器验证。这些是过去 90 天真实链上储备异动,经真引擎+真声线产出。【不是】我们实时做出的调用,【不认领任何盈亏】。实时战绩另算,从 0 向前生长。",
+  "events": [
+    {
+      "date": "2026-04-24T14:12:49Z",
+      "exchange": "Robinhood",
+      "address": "bc1ql49ydapnjafl5t2cp9zqpjwe6pdgmxy98859v2",
+      "explorer_url": "https://blockstream.info/address/bc1ql49ydapnjafl5t2cp9zqpjwe6pdgmxy98859v2",
+      "net_flow_btc": -28188.03,
+      "wallet_net_btc": -28188.03,
+      "flow_direction": "outflow",
+      "pct_reserves": 3.6,
+      "total_reserves_btc": 788417.0,
+      "hook": "链上观测：Robinhood 已验证冷钱包 bc1ql49ydapnjafl5t2cp9zqpjwe6pdgmxy98859v2，48h 净流出 28188 BTC——不是喊单，是读数。",
+      "narrative": "这个已验证的 Robinhood 冷钱包在过去 48 小时净流出 -28188.03 BTC，占我追踪的 24 个已验证冷储备地址合计 788416.64 BTC 的 3.6%，覆盖度 100%，单笔主导不成立，是分散性转移。币离开这类冷钱包通常意味着流向自托管或场外，而非直接涌入卖单——定性倾向偏多，但我只看到这一个钱包，Robinhood 其他钱包我看不见，别把这条读成「整家交易所在扫货」。",
+      "voice_status": "ok",
+      "content_hash": "sha256:54d2f5ca82e95c02c3f8831caaa48004ecf3f112a6ea9bdcce34f94fa491da17"
+    },
+    {
+      "date": "2026-05-01T14:03:48Z",
+      "exchange": "Robinhood",
+      "address": "bc1ql49ydapnjafl5t2cp9zqpjwe6pdgmxy98859v2",
+      "explorer_url": "https://blockstream.info/address/bc1ql49ydapnjafl5t2cp9zqpjwe6pdgmxy98859v2",
+      "net_flow_btc": -25527.0,
+      "wallet_net_btc": -25527.0,
+      "flow_direction": "outflow",
+      "pct_reserves": 3.2,
+      "total_reserves_btc": 788417.0,
+      "hook": "链上观测：Robinhood 已验证冷钱包 bc1ql49ydapnjafl5t2cp9zqpjwe6pdgmxy98859v2，48h 净流出约 25527 BTC。这是观测，不是喊单。",
+      "narrative": "这个已验证的 Robinhood 冷钱包在过去 48 小时净流出约 25527 BTC，占我追踪的 24 个已验证冷储备地址合计约 788416 BTC 的 3.2%；覆盖度 100%，数字没有噪音。币在离开这个钱包，去向未知——自托管、内部调仓、还是别的，我看不见后半段。仅就「币从这个可见的卖场冷库流出」这一事实而言，倾向偏多，但我只盯这一个钱包，不代表 Robinhood 整家储备，更不代表全市场。",
+      "voice_status": "ok",
+      "content_hash": "sha256:53816fe1ab3e95ac497fb1fe9d272d8697a2e5576f9e893d7326db476869abc8"
+    },
+    {
+      "date": "2026-05-05T15:02:43Z",
+      "exchange": "Robinhood",
+      "address": "bc1ql49ydapnjafl5t2cp9zqpjwe6pdgmxy98859v2",
+      "explorer_url": "https://blockstream.info/address/bc1ql49ydapnjafl5t2cp9zqpjwe6pdgmxy98859v2",
+      "net_flow_btc": -16079.5,
+      "wallet_net_btc": -16079.5,
+      "flow_direction": "outflow",
+      "pct_reserves": 2.0,
+      "total_reserves_btc": 788417.0,
+      "hook": "链上观测：Robinhood 已验证冷钱包 bc1ql49ydapnjafl5t2cp9zqpjwe6pdgmxy98859v2，48h 净流出约 16079 BTC——这是观测，不是喊单。",
+      "narrative": "过去 48 小时，这个「已验证的 Robinhood 冷钱包」单独净流出 16079.5 BTC，占我追踪的 24 个已验证冷储备地址合计约 788416 BTC 的 2.0%；覆盖度 100%，数字没有盲区。币从这个钱包流出交易所体系，通常读作潜在抛压在减少——但我只看得见这一个钱包，看不穿 Robinhood 其他地址，别把「这个钱包搬了多少」放大成「整家平台储备变了多少」。定性倾向：偏多，理由仅限于此次链上流向，不构成任何交易建议。",
+      "voice_status": "ok",
+      "content_hash": "sha256:2b9f7a2b36131ce460113005e446536d9660ab7c50b7458e53dcb395ee9fe98e"
+    },
+    {
+      "date": "2026-03-26T23:02:21Z",
+      "exchange": "Binance",
+      "address": "3M219KR5vEneNb47ewrPfWyb5jQ2DjxRP6",
+      "explorer_url": "https://blockstream.info/address/3M219KR5vEneNb47ewrPfWyb5jQ2DjxRP6",
+      "net_flow_btc": -4767.2,
+      "wallet_net_btc": -4767.2,
+      "flow_direction": "outflow",
+      "pct_reserves": 0.6,
+      "total_reserves_btc": 788417.0,
+      "hook": "链上观测：Binance 已验证冷钱包 3M219KR5vEneNb47ewrPfWyb5jQ2DjxRP6，48h 净流出 4767 BTC——非喊单，只是读数。",
+      "narrative": "这个已验证的 Binance 冷钱包在过去 48 小时净流出 -4767.202 BTC，占我追踪的 24 个已验证冷储备地址合计约 0.6%，覆盖度 100%，且本次异动由这单一钱包主导。币离开已验证冷储备地址、流向链上自托管，经典的「撤出卖场」读法，倾向偏多——但我只盯这一个钱包，看不见该交易所其余地址，请勿解读为整家交易所储备变化。",
+      "voice_status": "ok",
+      "content_hash": "sha256:86781d1273f2fdfd6581175385879f35ac37281f0528c0d39fd71eb4773b15c1"
+    }
+  ]
+}
