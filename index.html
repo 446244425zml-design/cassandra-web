@@ -1,0 +1,465 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cassandra · Oracle Terminal</title>
+<style>
+  :root{
+    --bg:#0a0a0b; --surface:#121214; --surface2:#17171a; --line:#26262b;
+    --text:#e7e7e4; --muted:#9a9a92; --faint:#6b6b64;
+    --short:#e0653f; --long:#1d9e75; --loss:#e0653f; --win:#1d9e75; --active:#c9a227;
+    --serif:"Iowan Old Style","Palatino Linotype",Georgia,serif;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"PingFang SC","Microsoft Yahei",sans-serif;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.6;
+       -webkit-font-smoothing:antialiased}
+  .wrap{max-width:760px;margin:0 auto;padding:0 18px 80px}
+  header{padding:34px 0 18px;border-bottom:1px solid var(--line)}
+  .brand{font-family:var(--serif);font-size:26px;letter-spacing:.5px}
+  .slogan{color:var(--muted);font-style:italic;font-size:14px;margin-top:4px}
+  .banner{display:flex;gap:9px;align-items:flex-start;margin:18px 0;padding:11px 14px;
+          background:#1c160c;border:1px solid #3a2e12;border-radius:8px;color:#d8b75a;font-size:13px}
+  .tabs{display:flex;gap:6px;margin:22px 0 16px}
+  .tab{padding:6px 14px;border:1px solid var(--line);border-radius:7px;color:var(--muted);
+       font-size:13px;cursor:pointer;background:none}
+  .tab.on{color:var(--text);background:var(--surface);border-color:#3a3a42}
+  h2{font-size:13px;font-weight:500;color:var(--faint);text-transform:uppercase;letter-spacing:1.5px;margin:26px 0 12px}
+  /* signal card */
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px 20px;margin-bottom:16px}
+  .card.active{border-color:#5a4a1a;box-shadow:0 0 0 1px #5a4a1a}
+  .row{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+  .pill{font-size:12px;padding:3px 10px;border-radius:6px;font-weight:500}
+  .pill.active{background:#2a2310;color:var(--active)}
+  .pill.loss{background:#2a1611;color:var(--loss)}
+  .pill.win{background:#0e2b20;color:var(--win)}
+  .asset{font-weight:500}
+  .conf{margin-left:auto;color:var(--muted);font-size:13px}
+  .hook{font-family:var(--serif);font-size:17px;line-height:1.6;margin:10px 0 14px}
+  .core{display:flex;flex-wrap:wrap;gap:12px 26px;background:var(--surface2);border-radius:8px;padding:12px 14px;margin-bottom:14px}
+  .kv .k{font-size:12px;color:var(--faint)}
+  .kv .v{font-size:14px}
+  .v.short{color:var(--short)} .v.long{color:var(--long)}
+  .chain>div{margin-bottom:8px}
+  .lab{font-size:12px;font-weight:500;color:var(--muted);margin-right:6px}
+  .invalid{font-size:13px;color:var(--muted);padding:10px 0 2px;border-top:1px solid var(--line);margin-top:6px}
+  .disc{font-size:12px;color:var(--faint);font-style:italic;margin-top:10px}
+  .conf-note{font-size:12px;color:var(--faint);margin-top:8px}
+  /* 链上异动 alert — VISUALLY distinct from trade signals: observation, not a trade */
+  .alert-lane{margin-bottom:10px}
+  .alert{background:#10131a;border:1px solid #243; border-left:3px solid #3a6ea5;border-radius:10px;padding:15px 18px;margin-bottom:13px}
+  .alert .row{margin-bottom:6px}
+  .alert .obs{font-size:11px;letter-spacing:1px;color:#6fa8dc;text-transform:uppercase}
+  .pill.obs{background:#16263a;color:#6fa8dc;font-size:11px}
+  .pill.inflow{background:#2a1611;color:var(--short)}
+  .pill.outflow{background:#0e2b20;color:var(--win)}
+  .alert .mag{font-family:var(--serif);font-size:16px;margin:8px 0}
+  .alert .facts{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:12.5px;color:var(--muted);margin:8px 0}
+  .alert .facts b{color:var(--text);font-weight:500}
+  .alert .read{font-size:14px;line-height:1.7;color:var(--text);margin:8px 0}
+  .alert .nb{font-size:12px;color:#c08a4a;font-style:italic;margin-top:8px}
+  /* track record */
+  .hero{font-size:13px;color:var(--muted)}
+  .hero .big{font-size:34px;font-weight:500;color:var(--win)}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px;margin:18px 0}
+  .stat{background:var(--surface2);border-radius:8px;padding:13px 15px}
+  .stat .k{font-size:12px;color:var(--muted)} .stat .n{font-size:22px;font-weight:500;margin-top:2px}
+  .stat .sub{font-size:11px;color:var(--faint);margin-top:2px}
+  blockquote{font-family:var(--serif);font-size:16px;border-left:2px solid #3a3a42;margin:18px 0;padding-left:14px;color:var(--text)}
+  .footnote{display:flex;flex-wrap:wrap;gap:8px 18px;color:var(--muted);font-size:13px;margin-top:14px}
+  .hidden{display:none}
+  svg{display:block}
+  /* 储备透明 tab — 可核验展示。克制、暗色、衬线，与全站一致 */
+  .res-head{font-family:var(--serif);font-size:20px;line-height:1.5;margin:6px 0 4px}
+  .res-sub{color:var(--muted);font-size:13px;margin-bottom:4px}
+  .res-meta{color:var(--faint);font-size:12px;margin-bottom:10px}
+  .res-read{display:flex;flex-wrap:wrap;gap:10px 14px;margin:14px 0}
+  .res-read .stat{flex:1 1 130px}
+  .res-table{width:100%;border-collapse:collapse;font-size:13px;margin:6px 0 4px}
+  .res-table th{text-align:left;color:var(--faint);font-weight:500;font-size:11px;
+                text-transform:uppercase;letter-spacing:.8px;padding:8px 10px;border-bottom:1px solid var(--line)}
+  .res-table td{padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+  .res-table td.num,.res-table th.num{text-align:right;font-variant-numeric:tabular-nums}
+  .res-table tr:last-child td{border-bottom:none}
+  .res-bar{height:4px;border-radius:2px;background:#2a2310;margin-top:5px}
+  .res-bar>span{display:block;height:100%;border-radius:2px;background:var(--active)}
+  .wallet{display:flex;flex-direction:column;gap:2px}
+  .wallet .addr{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;color:var(--muted);cursor:pointer}
+  .wallet .addr:hover{color:var(--text)}
+  .wallet .verify{font-size:12px}
+  .wallet .verify a{color:#6fa8dc;text-decoration:none}
+  .wallet .verify a:hover{text-decoration:underline}
+  .res-stale{color:var(--faint);font-style:italic}
+  .res-bound{font-size:12.5px;color:var(--muted);line-height:1.7;background:var(--surface);
+             border:1px solid var(--line);border-radius:10px;padding:13px 16px;margin-top:18px}
+  .res-bound b{color:var(--text);font-weight:500}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand">Cassandra</div>
+    <div class="slogan">Cursed to speak the truth. Trained to read the chain.</div>
+  </header>
+
+  <div class="banner">
+    <span>⚗</span>
+    <span>实验中 · 信号验证期 · 会有亏损 · 非投资建议 · 帮我测产品，别测信号</span>
+  </div>
+
+  <div class="tabs">
+    <button class="tab" data-view="feed">信号流</button>
+    <button class="tab on" data-view="reserves">储备</button>
+    <button class="tab" data-view="record">战绩盘</button>
+    <button class="tab" data-view="ops">运营</button>
+    <button class="tab" id="snap" style="margin-left:auto" title="把当前视图存成图片，分享给朋友">存图分享</button>
+  </div>
+
+  <section id="feed" class="hidden"></section>
+  <section id="reserves"></section>
+  <section id="record" class="hidden"></section>
+  <section id="ops" class="hidden"></section>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script>
+// html2canvas (above) powers the "存图分享" button.
+// v0 前端第一增量：内嵌样例信号（直接打开即可看）。真实版将从 ledger 的 signal JSON 加载。
+// REAL DATA ONLY. Filled from status.json (web/data/status.json) at boot. Empty until the
+// engine actually fires / settles a signal — no placeholders, no 注水.
+let STATUS = null;
+let SIGNALS = [];   // real signals: published + 待发布
+let ALERTS = [];    // 链上异动 alerts (观测，非交易建议) — a SEPARATE lane
+let TRACK = null;   // real track record from settled signals
+let BASELINE = {};  // net-flow baseline progress (honest empty-state context)
+const MANIFESTO = "吹 90% 胜率的，都在骗你。该看的是跟着我做赚没赚到，不是我对的次数。";
+
+function el(html){const t=document.createElement('template');t.innerHTML=html.trim();return t.content.firstChild;}
+function esc(s){return (s||'').replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));}
+
+function activeCard(s){
+  const dir = s.direction==='short' ? 'short':'long';
+  const dirCN = s.direction==='short' ? '做空':'做多';
+  return `
+  <div class="card active">
+    <div class="row">
+      <span class="pill active">${s.stage==='pending'?'待发布':'活跃'}</span><span class="asset">${esc(s.asset)}</span>
+      <span class="conf">把握 ${s.confidence}/5</span>
+    </div>
+    <p class="hook">${esc(s.hook)}</p>
+    <div class="core">
+      <div class="kv"><div class="k">方向</div><div class="v ${dir}">${dirCN}</div></div>
+      <div class="kv"><div class="k">入场区</div><div class="v">${esc(s.entry)}</div></div>
+      <div class="kv"><div class="k">目标</div><div class="v">${esc(s.target)}</div></div>
+      <div class="kv"><div class="k">失效线</div><div class="v">${esc(s.invalidation)}</div></div>
+      <div class="kv"><div class="k">有效期</div><div class="v">${esc(s.validity)}</div></div>
+    </div>
+    ${s.narrative
+      ? `<div class="chain"><div style="line-height:1.7">${esc(s.narrative)}</div></div>`
+      : `<div class="chain">
+      <div><span class="lab">扳机</span>${esc(s.chain.trigger)}</div>
+      <div><span class="lab">链上真相</span>${esc(s.chain.onchain)}</div>
+      <div><span class="lab">判定</span>${esc(s.chain.verdict)}</div>
+    </div>`}
+    <div class="invalid">什么证明她错：${esc(s.invalid || (s.invalidation ? '价格站上 ' + s.invalidation : ''))}</div>
+    ${s.coverage ? `<div class="conf-note">${esc(s.coverage)}</div>` : ''}
+    <p class="disc">以上非投资建议。我被诅咒的是说真话，不是替你担责。</p>
+    ${s.content_hash ? `<div style="font-size:11px;color:var(--faint);margin-top:8px;word-break:break-all"><i class="ti ti-lock" aria-hidden="true" style="font-size:13px;vertical-align:-2px;margin-right:4px"></i>${esc(s.content_hash)} · 可独立核验</div>` : ''}
+  </div>`;
+}
+
+function settledCard(s){
+  const isWin = s.status==='win';
+  const label = isWin?'盈利':(s.status==='void'?'作废':'亏损');
+  const cls = isWin?'win':(s.status==='void'?'':'loss');
+  return `
+  <div class="card">
+    <div class="row">
+      <span class="pill ${cls}">${label}</span>
+      <span class="conf" style="margin-left:0;color:var(--muted)">${esc(s.asset)} ${s.direction==='short'?'做空':'做多'}${s.settle?(' · '+esc(s.settle)):''}</span>
+    </div>
+    ${s.postmortem?`<p class="hook">${esc(s.postmortem)}</p>`:''}
+  </div>`;
+}
+
+function alertCard(a){
+  // 链上异动观测卡 — 刻意与交易信号卡区分：没有入场/目标/止损，只有"我读到什么 + 倾向(定性)"。
+  const dirCN = a.flow_direction==='inflow' ? '净流入交易所' : '净流出交易所';
+  const dirCls = a.flow_direction==='inflow' ? 'inflow' : 'outflow';
+  const leanCN = a.lean==='bearish' ? '偏空读法' : (a.lean==='bullish' ? '偏多读法' : '中性');
+  const mag = Math.round(a.net_flow_abs!=null?a.net_flow_abs:Math.abs(a.net_flow_btc||0));
+  const win = a.window_hours||48;
+  const scope = a.scope || (a.matched_addresses!=null? (a.matched_addresses+' 个追踪地址'):'追踪的冷储备');
+
+  // WHICH verified wallet moved — the sharp 读链 payload. RED LINE: this names a WALLET
+  // ("已验证的 X 冷钱包 …"), NEVER the exchange's total reserves (we watch ≤2 wallets/exchange).
+  const tw = a.top_wallet;
+  const walkerLine = tw
+    ? `已验证的 ${esc(tw.exchange)} 冷钱包 <b>${esc(tw.address_short||tw.address)}</b>，`
+      + `${win}h 自己${tw.flow_direction==='inflow'?'净流入':'净流出'} `
+      + `<b>${Math.round(tw.net_flow_abs).toLocaleString()} BTC</b>`
+    : null;
+  // movers beyond the top one (multi-wallet shift) — still WALLET-level, fully listed.
+  const others = (a.movers||[]).filter(m=>!tw||m.address!==tw.address);
+  const defaultMag = tw
+    ? `我读到${walkerLine}。`
+    : `我追踪的${esc(scope)}，${win}h 合计${dirCN} ${mag.toLocaleString()} BTC。`;
+
+  return `
+  <div class="alert">
+    <div class="row">
+      <span class="pill obs">${a.stage==='pending'?'待发布·观测':'链上观测'}</span>
+      <span class="pill ${dirCls}">${dirCN}</span>
+      <span class="conf" style="color:var(--muted)">${esc(a.asset)} · ${win}h 窗口</span>
+    </div>
+    ${a.hook?`<p class="mag">${esc(a.hook)}</p>`:`<p class="mag">${defaultMag}</p>`}
+    ${tw?`<div class="read" style="font-size:13px;color:var(--muted)">点名钱包：${walkerLine}
+      ${tw.wallet_balance_btc!=null?`（该钱包余额约 ${Math.round(tw.wallet_balance_btc).toLocaleString()} BTC）`:''}
+      <span style="color:var(--faint);word-break:break-all">· 地址 ${esc(tw.address)} 可独立核验</span></div>`:''}
+    ${others.length?`<div class="read" style="font-size:12.5px;color:var(--faint)">同期其它已验证钱包：${
+      others.map(m=>`${esc(m.exchange)} ${esc(m.address_short||m.address)} ${m.flow_direction==='inflow'?'净流入':'净流出'} ${Math.round(m.net_flow_abs).toLocaleString()} BTC`).join('；')
+    }</div>`:''}
+    <div class="facts">
+      <span>合计净流量 <b>${(a.flow_direction==='inflow'?'+':'-')+mag.toLocaleString()} BTC</b></span>
+      ${a.pct_reserves!=null?`<span>占追踪储备 <b>${a.pct_reserves}%</b></span>`:''}
+      ${a.coverage_pct!=null?`<span>覆盖度 <b>${a.coverage_pct}%</b></span>`:''}
+      <span>倾向 <b>${leanCN}</b></span>
+      ${a.single_tx_dominated?`<span style="color:var(--active)">⚠ 单笔主导</span>`:''}
+    </div>
+    ${a.narrative?`<div class="read">${esc(a.narrative)}</div>`:''}
+    <div class="nb">${tw
+      ? '已验证钱包观测，非交易建议 · 只代表被点名的这个/这些已验证冷钱包，不代表该交易所整家储备、不代表全市场。'
+      : '观测，非交易建议 · 范围限于我追踪的'+esc(scope)+'，不代表全市场。'}</div>
+    ${a.content_hash?`<div style="font-size:11px;color:var(--faint);margin-top:8px;word-break:break-all">🔒 ${esc(a.content_hash)} · 可独立核验</div>`:''}
+  </div>`;
+}
+
+function renderFeed(){
+  const root=document.getElementById('feed'); root.innerHTML='';
+  // --- 链上异动 lane (SEPARATE from trade signals) ---
+  if(ALERTS.length){
+    root.appendChild(el('<h2>链上异动 · 观测</h2>'));
+    const lane=el('<div class="alert-lane"></div>');
+    ALERTS.forEach(a=>lane.appendChild(el(alertCard(a))));
+    root.appendChild(lane);
+  }
+  root.appendChild(el('<h2>交易信号</h2>'));
+  if(!SIGNALS.length){
+    root.appendChild(el(`<div class="card"><p class="hook">还没有真信号。</p>
+      <p style="color:var(--muted);font-size:14px;line-height:1.7">引擎在诚实站住——储备净流量是事件驱动的：绝大多数窗口冷储备根本没动，只有真出现大额搬仓（单方向移动超过绝对量或占总储备的阈值）才开口。遇不到真极值就沉默。第一条真信号会出现在这里（经你人工 review 后发布）。<br><span style="color:var(--faint)">沉默是特性，不是 bug。运行日志与净流量样本去「运营」标签。</span></p></div>`));
+    return;
+  }
+  SIGNALS.forEach(s=>{
+    root.appendChild(el(s.status==='active'?activeCard(s):settledCard(s)));
+  });
+}
+
+function sparkline(data){
+  const w=700,h=120,pad=4;
+  const min=Math.min(...data,0),max=Math.max(...data);
+  const sx=i=>pad+i*(w-2*pad)/(data.length-1);
+  const sy=v=>h-pad-(v-min)*(h-2*pad)/(max-min||1);
+  const pts=data.map((v,i)=>`${sx(i).toFixed(1)},${sy(v).toFixed(1)}`).join(' ');
+  const zeroY=sy(0).toFixed(1);
+  const area=`${pad},${zeroY} ${pts} ${(w-pad)},${zeroY}`;
+  return `<svg viewBox="0 0 ${w} ${h}" width="100%" preserveAspectRatio="none" aria-label="净流量/收益曲线">
+    <polygon points="${area}" fill="rgba(29,158,117,0.10)"/>
+    <line x1="${pad}" y1="${zeroY}" x2="${w-pad}" y2="${zeroY}" stroke="#33333a" stroke-width="1" stroke-dasharray="3 4"/>
+    <polyline points="${pts}" fill="none" stroke="#1d9e75" stroke-width="2" stroke-linejoin="round"/>
+  </svg>`;
+}
+
+function renderRecord(){
+  const root=document.getElementById('record'); root.innerHTML='';
+  const t=TRACK;
+  if(!t || !t.settled){
+    root.appendChild(el(`<div><h2>战绩盘</h2>
+      <div class="card"><p class="hook">暂无战绩——还没有信号结算。</p>
+      <p style="color:var(--muted);font-size:14px;line-height:1.7">一条都还没有，所以这里是真实的空。等第一条真信号发布、到期结算，战绩才长出来：累计收益曲线、胜率、盈亏比，全是核过的真数。</p>
+      <blockquote>"${esc(MANIFESTO)}"</blockquote></div></div>`));
+    return;
+  }
+  const sign = t.cumulative_r>=0?'+':'';
+  const wr = t.settled?Math.round(t.win/t.settled*100):0;
+  root.appendChild(el(`
+  <div>
+    <h2>战绩盘</h2>
+    <div class="hero">累计收益（R）· 每条信号固定冒险 1 单位</div>
+    <div><span class="big">${sign}${t.cumulative_r}R</span></div>
+    <div style="margin:14px 0">${sparkline(t.curve)}</div>
+    <div class="grid">
+      <div class="stat"><div class="k">已结算</div><div class="n">${t.settled}</div></div>
+      <div class="stat"><div class="k">win / loss</div><div class="n">${t.win} / ${t.loss}</div><div class="sub">void ${t.void}</div></div>
+      <div class="stat"><div class="k">胜率</div><div class="n">${wr}%</div><div class="sub">@ 2:1 即在赚钱</div></div>
+    </div>
+    <blockquote>"${esc(MANIFESTO)}"</blockquote>
+    <div class="footnote"><span>全账可查</span><span>亏损永不删</span><span>可逐条导出 · 独立核验</span></div>
+  </div>`));
+}
+
+function renderOps(){
+  const root=document.getElementById('ops');
+  const st=STATUS;
+  if(!st){ root.innerHTML='<h2>运营 · 历史数据</h2><p style="color:var(--muted)">需通过本地服务打开才能读真实数据（cd web &amp;&amp; python3 -m http.server 8000）。</p>'; return; }
+  const b=st.baseline||{};
+  const hist=(b.history||[]).map(h=>h.net_flow_btc).filter(x=>typeof x==='number');
+  const bar='█'.repeat(b.points||0)+'·'.repeat(Math.max(0,(b.min_samples||10)-(b.points||0)));
+  const runs=(st.runs||[]).slice(-14).reverse();
+  root.innerHTML=`
+    <h2>运营 · 历史数据</h2>
+    <div class="hero">更新于 ${esc(st.generated_at||'')}</div>
+    <div class="stat" style="background:var(--surface2);margin:14px 0">
+      <div class="k">净流量样本累积（诊断/历史参考 · 不再是出手前提）</div>
+      <div class="n">${b.points||0} / ${b.min_samples||10}</div>
+      <div class="sub">B 层极值判定已改为事件驱动（绝对量 或 占总储备百分比），<b>不等基线成熟即可出手</b>。${b.mature?('诊断 z 基线已成熟 · mean '+Math.round(b.mean||0)+' / std '+Math.round(b.std||0)+' BTC'):'诊断 z 基线累积中（仅作参考，不影响是否出手）'}</div>
+      <div style="color:var(--active);margin-top:8px;letter-spacing:3px">${bar}</div>
+    </div>
+    ${hist.length?`<h2>净流量样本历史</h2><div style="margin:8px 0">${sparkline(hist)}</div>`:''}
+    <h2>运行日志（最近）</h2>
+    <div style="font-size:13px">
+      ${runs.length?runs.map(r=>`<div style="display:flex;gap:10px;padding:7px 0;border-bottom:1px solid var(--line)">
+        <span style="color:var(--faint);min-width:148px">${esc(r.ts||r.run_id||'')}</span>
+        <span style="color:${r.result==='FIRED'?'var(--active)':'var(--muted)'};min-width:64px">${r.result==='FIRED'?'⚡ FIRED':'· 站住'}</span>
+        <span style="color:var(--faint)">${r.net_flow_btc!=null?'净流 '+Math.round(r.net_flow_btc):''} ${r.reason?'· '+esc(r.reason):''}</span>
+      </div>`).join(''):'<p style="color:var(--muted)">（暂无运行记录）</p>'}
+    </div>
+    <div class="footnote" style="margin-top:16px">
+      <span>信号待发（等审）: ${(st.pending||[]).length} 条</span>
+      <span>信号台账: ${(st.ledger||[]).length} 条</span>
+      <span>异动待发: ${(st.pending_alerts||[]).length} 条</span>
+      <span>异动台账: ${(st.alert_ledger||[]).length} 条</span>
+    </div>`;
+}
+
+function fmtBtc(x){ return (x==null)?'—':Math.round(x).toLocaleString(); }
+function fmtUsd(x){
+  if(x==null) return null;
+  if(x>=1e9) return '$'+(x/1e9).toFixed(2)+'B';
+  if(x>=1e6) return '$'+(x/1e6).toFixed(1)+'M';
+  return '$'+Math.round(x).toLocaleString();
+}
+
+function renderReserves(){
+  const root=document.getElementById('reserves'); root.innerHTML='';
+  const r=(STATUS&&STATUS.reserves)||null;
+  if(!r || !r.wallets || !r.wallets.length){
+    root.appendChild(el(`<div><h2>储备透明</h2>
+      <div class="card"><p class="hook">储备数据将在下一次采集后出现。</p>
+      <p style="color:var(--muted);font-size:14px;line-height:1.7">这一页展示我们能验证背书的交易所冷储备——每个已验证冷钱包都附可点的链上核验链接，任何人可自行核对我们没撒谎。需通过本地服务打开并跑过一次采集才会有真数。</p></div></div>`));
+    return;
+  }
+  const usd = fmtUsd(r.total_usd);
+  const ecount = r.exchange_count, wcount = r.wallet_count;
+  // 标题区 — 数字全部来自数据
+  root.appendChild(el(`<div>
+    <h2>储备透明 · 可核验</h2>
+    <div class="res-head">透明追踪 ${ecount} 家交易所 · ${wcount} 个已验证冷钱包 · ${fmtBtc(r.total_btc)} BTC${usd?`<span style="color:var(--muted);font-size:15px"> · 约 ${usd}</span>`:''}</div>
+    <div class="res-sub">数据每 2h 自动刷新 · 最后更新 ${esc(r.generated_at||'')}</div>
+    <div class="res-meta">每个钱包都可点「链上核验」自行核对 · 余额来自本次采集 · 地址簿版本 ${esc(r.address_book_version||'—')}</div>
+  </div>`));
+
+  // 实时读数
+  const nf=r.net_flow_btc, win=r.window_hours||48;
+  const nfTxt = (nf==null)?'本次未取到':((nf>=0?'+':'')+Math.round(nf).toLocaleString()+' BTC');
+  root.appendChild(el(`<div class="res-read">
+    <div class="stat"><div class="k">${win}h 储备合计净流量</div><div class="n" style="font-size:20px">${nfTxt}</div><div class="sub">${nf==null?'':(nf>=0?'净流入':'净流出')}（已验证 + 追踪冷储备）</div></div>
+    <div class="stat"><div class="k">本次覆盖度</div><div class="n" style="font-size:20px">${r.coverage}%</div><div class="sub">${r.refreshed_count}/${wcount} 个钱包本次刷新到余额</div></div>
+  </div>`));
+
+  // 按交易所汇总
+  root.appendChild(el('<h2>按交易所</h2>'));
+  const tbl1=el(`<table class="res-table"><thead><tr>
+    <th>交易所</th><th class="num">已验证冷钱包</th><th class="num">持有 BTC</th><th class="num">占追踪总量</th>
+  </tr></thead><tbody></tbody></table>`);
+  const tb1=tbl1.querySelector('tbody');
+  (r.per_exchange||[]).forEach(e=>{
+    tb1.appendChild(el(`<tr>
+      <td>${esc(e.exchange)}</td>
+      <td class="num">${e.count}</td>
+      <td class="num">${fmtBtc(e.btc)}</td>
+      <td class="num">${e.pct}%<div class="res-bar"><span style="width:${Math.min(100,e.pct)}%"></span></div></td>
+    </tr>`));
+  });
+  root.appendChild(tbl1);
+
+  // 逐钱包清单（核心证据）— 每个都有可点的链上核验链接
+  root.appendChild(el('<h2>逐钱包清单 · 链上核验</h2>'));
+  const tbl2=el(`<table class="res-table"><thead><tr>
+    <th>交易所</th><th>地址</th><th class="num">当前余额 BTC</th><th>核验</th>
+  </tr></thead><tbody></tbody></table>`);
+  const tb2=tbl2.querySelector('tbody');
+  r.wallets.forEach(w=>{
+    const bal = w.refreshed ? fmtBtc(w.balance_btc) : '<span class="res-stale">本次未刷新</span>';
+    tb2.appendChild(el(`<tr>
+      <td>${esc(w.exchange)}<div style="color:var(--faint);font-size:11px">${esc(w.label_type||'')}</div></td>
+      <td><div class="wallet">
+        <span class="addr" title="点击复制完整地址" data-addr="${esc(w.address)}">${esc(w.address_short||w.address)}</span>
+      </div></td>
+      <td class="num">${bal}</td>
+      <td class="verify"><a href="${esc(w.explorer_url)}" target="_blank" rel="noopener">链上核验 ↗</a></td>
+    </tr>`));
+  });
+  root.appendChild(tbl2);
+  // click-to-copy full address
+  root.querySelectorAll('.addr[data-addr]').forEach(s=>s.addEventListener('click',()=>{
+    const full=s.getAttribute('data-addr'); const prev=s.textContent;
+    if(navigator.clipboard){ navigator.clipboard.writeText(full).then(()=>{
+      s.textContent=full; setTimeout(()=>{s.textContent=prev;},2200);
+    }).catch(()=>{ s.textContent=full; }); }
+    else { s.textContent=full; }
+  }));
+
+  // 诚实边界（必须有，显著）
+  root.appendChild(el(`<div class="res-bound">
+    <b>诚实边界。</b> 这些是我们能验证背书的冷储备（交易所官方自披露 / 官方 GitHub / Arkham 多源 + 链上 shape 核验），<b>不代表该所全部储备</b>；覆盖度公开（见上）。Coinbase / Kraken 暂未覆盖。
+    当某个已验证冷钱包发生<b>大额单向储备移动</b>时，触发链上异动提醒（去「信号流」看观测）。
+    余额取自本次采集，覆盖不到的钱包如实标「本次未刷新」，绝不显示 0 或编造。<b>非投资建议。</b>
+  </div>`));
+}
+
+document.querySelectorAll('.tab').forEach(b=>b.addEventListener('click',()=>{
+  document.querySelectorAll('.tab').forEach(x=>x.classList.remove('on'));
+  b.classList.add('on');
+  const v=b.dataset.view;
+  document.getElementById('feed').classList.toggle('hidden',v!=='feed');
+  document.getElementById('reserves').classList.toggle('hidden',v!=='reserves');
+  document.getElementById('record').classList.toggle('hidden',v!=='record');
+  document.getElementById('ops').classList.toggle('hidden',v!=='ops');
+}));
+
+document.getElementById('snap').addEventListener('click', async ()=>{
+  const btn=document.getElementById('snap'); const old=btn.textContent;
+  if(typeof html2canvas==='undefined'){ btn.textContent='图片库加载中…'; setTimeout(()=>btn.textContent=old,1500); return; }
+  btn.textContent='生成中…'; btn.style.visibility='hidden';
+  try{
+    const bg=getComputedStyle(document.body).backgroundColor||'#0a0a0b';
+    const canvas=await html2canvas(document.querySelector('.wrap'),{backgroundColor:bg,scale:2,useCORS:true,logging:false});
+    btn.style.visibility='';
+    const blob=await new Promise(res=>canvas.toBlob(res,'image/png'));
+    let copied=false;
+    try{ if(navigator.clipboard&&window.ClipboardItem){ await navigator.clipboard.write([new ClipboardItem({'image/png':blob})]); copied=true; } }catch(e){}
+    if(copied){ btn.textContent='✓ 已复制，去粘贴'; }
+    else{ const a=document.createElement('a'); a.href=URL.createObjectURL(blob); const v=document.querySelector('.tab.on'); a.download='cassandra-'+((v&&v.dataset.view)||'view')+'.png'; a.click(); btn.textContent='✓ 已下载'; }
+  }catch(e){ btn.style.visibility=''; btn.textContent='失败，重试'; }
+  setTimeout(()=>{ btn.textContent=old; },2600);
+});
+
+async function boot(){
+  // single fetch of the REAL operational status; all three tabs render from it.
+  try{
+    const r = await fetch('data/status.json', {cache:'no-store'});
+    if(r.ok){ STATUS = await r.json(); }
+  }catch(e){ /* file:// or no server → STATUS null → honest empty / hint */ }
+  if(STATUS){
+    SIGNALS = Array.isArray(STATUS.signals)?STATUS.signals:[];
+    ALERTS = Array.isArray(STATUS.alerts)?STATUS.alerts:[];
+    TRACK = STATUS.track||null;
+    BASELINE = STATUS.baseline||{};
+  }
+  renderFeed(); renderReserves(); renderRecord(); renderOps();
+}
+boot();
+</script>
+</body>
+</html>
