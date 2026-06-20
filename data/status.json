@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-20T13:37:45Z",
+  "generated_at": "2026-06-20T14:04:33Z",
   "netflow_gate": {
     "mode": "event_driven",
     "waits_for_baseline": false
@@ -396,6 +396,26 @@
       "net_flow_btc": 9.52e-06,
       "coverage": 1.0,
       "baseline_mean": -3.69857182
+    },
+    {
+      "ts": "2026-06-20T14:00:01Z",
+      "run_id": "20260620T1400Z-btc",
+      "result": "NoSignal",
+      "reason": "no_trigger",
+      "detail": "fired_signals=[] below require_n_signals",
+      "net_flow_btc": 9.52e-06,
+      "coverage": 1.0,
+      "baseline_mean": -3.69857182
+    },
+    {
+      "ts": "2026-06-20T14:04:18Z",
+      "run_id": "20260620T1404Z-btc",
+      "result": "NoSignal",
+      "reason": "no_trigger",
+      "detail": "fired_signals=[] below require_n_signals",
+      "net_flow_btc": 9.52e-06,
+      "coverage": 1.0,
+      "baseline_mean": -3.69857182
     }
   ],
   "signals": [],
@@ -413,13 +433,13 @@
   "ledger": [],
   "alert_ledger": [],
   "reserves": {
-    "generated_at": "2026-06-20T13:37:45Z",
+    "generated_at": "2026-06-20T14:04:33Z",
     "total_btc": 788416.64,
     "wallet_count": 24,
     "refreshed_count": 24,
     "exchange_count": 4,
-    "btc_price": 63432.76,
-    "total_usd": 50011443619.0,
+    "btc_price": 63361.0,
+    "total_usd": 49954866841.0,
     "per_exchange": [
       {
         "exchange": "Binance",
