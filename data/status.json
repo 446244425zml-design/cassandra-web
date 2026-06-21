@@ -1,17 +1,17 @@
 {
-  "generated_at": "2026-06-20T14:04:33Z",
+  "generated_at": "2026-06-21T13:32:25Z",
   "netflow_gate": {
     "mode": "event_driven",
     "waits_for_baseline": false
   },
   "baseline": {
-    "points": 5,
+    "points": 6,
     "min_samples": 5,
     "robust_samples": 15,
     "mature": true,
     "robust": false,
-    "mean": -3.69857182,
-    "std": 3.3763230392121955,
+    "mean": -3.0821415966666668,
+    "std": 3.376323908265432,
     "diagnostic_only": true,
     "history": [
       {
@@ -32,6 +32,10 @@
       },
       {
         "ts": "2026-06-20T10:00:20Z",
+        "net_flow_btc": 9.52e-06
+      },
+      {
+        "ts": "2026-06-21T13:03:51Z",
         "net_flow_btc": 9.52e-06
       }
     ]
@@ -416,6 +420,74 @@
       "net_flow_btc": 9.52e-06,
       "coverage": 1.0,
       "baseline_mean": -3.69857182
+    },
+    {
+      "ts": "2026-06-21T13:03:35Z",
+      "run_id": "20260621T1303Z-btc",
+      "result": "NoSignal",
+      "reason": "no_trigger",
+      "detail": "fired_signals=[] below require_n_signals",
+      "net_flow_btc": 9.52e-06,
+      "coverage": 1.0,
+      "baseline_mean": -3.0821415966666668,
+      "observation": {
+        "a": {
+          "fired": false,
+          "fired_signals": [],
+          "direction_bias": null,
+          "funding_zscore": 0.2918,
+          "fng_value": 23,
+          "fng_classification": "Extreme Fear",
+          "taker_buy_dominance": false,
+          "taker_sell_dominance": false
+        },
+        "b": {
+          "extreme": false,
+          "direction": "unclear",
+          "unclear_reason": "net_flow_not_extreme",
+          "net_flow_btc": 0.0,
+          "net_flow_pct_reserves": 0.0,
+          "total_reserves_btc": 787789.6,
+          "extreme_basis": null,
+          "coverage": 1.0,
+          "single_tx_dominated": true
+        },
+        "near_miss": "a_quiet"
+      }
+    },
+    {
+      "ts": "2026-06-21T13:32:10Z",
+      "run_id": "20260621T1332Z-btc",
+      "result": "NoSignal",
+      "reason": "no_trigger",
+      "detail": "fired_signals=[] below require_n_signals",
+      "net_flow_btc": 9.52e-06,
+      "coverage": 1.0,
+      "baseline_mean": -3.0821415966666668,
+      "observation": {
+        "a": {
+          "fired": false,
+          "fired_signals": [],
+          "direction_bias": null,
+          "funding_zscore": 0.2657,
+          "fng_value": 23,
+          "fng_classification": "Extreme Fear",
+          "taker_buy_dominance": false,
+          "taker_sell_dominance": false
+        },
+        "b": {
+          "extreme": false,
+          "direction": "unclear",
+          "unclear_reason": "net_flow_not_extreme",
+          "net_flow_btc": 0.0,
+          "net_flow_pct_reserves": 0.0,
+          "total_reserves_btc": 787789.6,
+          "extreme_basis": null,
+          "coverage": 1.0,
+          "single_tx_dominated": false
+        },
+        "near_miss": "a_quiet"
+      }
     }
   ],
   "signals": [],
@@ -433,37 +505,37 @@
   "ledger": [],
   "alert_ledger": [],
   "reserves": {
-    "generated_at": "2026-06-20T14:04:33Z",
-    "total_btc": 788416.64,
+    "generated_at": "2026-06-21T13:32:25Z",
+    "total_btc": 776551.46,
     "wallet_count": 24,
     "refreshed_count": 24,
     "exchange_count": 4,
-    "btc_price": 63361.0,
-    "total_usd": 49954866841.0,
+    "btc_price": 64095.43,
+    "total_usd": 49773399595.0,
     "per_exchange": [
       {
         "exchange": "Binance",
         "count": 2,
         "btc": 423531.8847,
-        "pct": 53.7
+        "pct": 54.5
       },
       {
         "exchange": "Robinhood",
         "count": 1,
         "btc": 140849.9854,
-        "pct": 17.9
+        "pct": 18.1
       },
       {
         "exchange": "Bitfinex",
         "count": 2,
-        "btc": 139933.7741,
-        "pct": 17.7
+        "btc": 140068.5899,
+        "pct": 18.0
       },
       {
         "exchange": "OKX",
         "count": 19,
-        "btc": 84100.9976,
-        "pct": 10.7
+        "btc": 72100.9976,
+        "pct": 9.3
       }
     ],
     "wallets": [
@@ -504,6 +576,15 @@
         "explorer_url": "https://blockstream.info/address/bc1qgdjqv0av3q56jvd82tkdjpy7gdp9ut8tlqmgrpmv24sq90ecnvqqjwvw97"
       },
       {
+        "exchange": "Bitfinex",
+        "address": "3JZq4atUahhuA9rLhXLMhhTo133J9rF97j",
+        "address_short": "3JZq4atU…F97j",
+        "label_type": "cold",
+        "balance_btc": 10058.5109,
+        "refreshed": true,
+        "explorer_url": "https://blockstream.info/address/3JZq4atUahhuA9rLhXLMhhTo133J9rF97j"
+      },
+      {
         "exchange": "OKX",
         "address": "1CY7fykRLWXeSbKB885Kr4KjQxmDdvW923",
         "address_short": "1CY7fykR…W923",
@@ -511,15 +592,6 @@
         "balance_btc": 10000.0004,
         "refreshed": true,
         "explorer_url": "https://blockstream.info/address/1CY7fykRLWXeSbKB885Kr4KjQxmDdvW923"
-      },
-      {
-        "exchange": "Bitfinex",
-        "address": "3JZq4atUahhuA9rLhXLMhhTo133J9rF97j",
-        "address_short": "3JZq4atU…F97j",
-        "label_type": "cold",
-        "balance_btc": 9923.6951,
-        "refreshed": true,
-        "explorer_url": "https://blockstream.info/address/3JZq4atUahhuA9rLhXLMhhTo133J9rF97j"
       },
       {
         "exchange": "OKX",
@@ -538,15 +610,6 @@
         "balance_btc": 6000.0002,
         "refreshed": true,
         "explorer_url": "https://blockstream.info/address/1FY6RL8Ju9b6CGsHTK68yYEcnzUasufyCe"
-      },
-      {
-        "exchange": "OKX",
-        "address": "1MbNM3jwxMjRzeA9xyHbMyePN68MY4Jxb",
-        "address_short": "1MbNM3jw…4Jxb",
-        "label_type": "cold",
-        "balance_btc": 6000.0002,
-        "refreshed": true,
-        "explorer_url": "https://blockstream.info/address/1MbNM3jwxMjRzeA9xyHbMyePN68MY4Jxb"
       },
       {
         "exchange": "OKX",
@@ -592,15 +655,6 @@
         "balance_btc": 3000.0005,
         "refreshed": true,
         "explorer_url": "https://blockstream.info/address/18QUDxjDZAqAJorr4jkSEWHUDGLBF9uRCc"
-      },
-      {
-        "exchange": "OKX",
-        "address": "13rCGm4Z3PDeYwo5a7GTT4jFYnRFBZbKr1",
-        "address_short": "13rCGm4Z…bKr1",
-        "label_type": "cold",
-        "balance_btc": 3000.0004,
-        "refreshed": true,
-        "explorer_url": "https://blockstream.info/address/13rCGm4Z3PDeYwo5a7GTT4jFYnRFBZbKr1"
       },
       {
         "exchange": "OKX",
@@ -658,15 +712,6 @@
       },
       {
         "exchange": "OKX",
-        "address": "1FTgXfXZRxMQcKSNeuFvWYVPsNgurTJ7BZ",
-        "address_short": "1FTgXfXZ…J7BZ",
-        "label_type": "cold",
-        "balance_btc": 3000.0001,
-        "refreshed": true,
-        "explorer_url": "https://blockstream.info/address/1FTgXfXZRxMQcKSNeuFvWYVPsNgurTJ7BZ"
-      },
-      {
-        "exchange": "OKX",
         "address": "1FfgXrQUjX5nQ4zsiLBWjvFwW61jQHCqn",
         "address_short": "1FfgXrQU…HCqn",
         "label_type": "cold",
@@ -682,6 +727,33 @@
         "balance_btc": 3000.0001,
         "refreshed": true,
         "explorer_url": "https://blockstream.info/address/1M6E6vPaYsuCb34mDNS2aepu2aJyL6xBG4"
+      },
+      {
+        "exchange": "OKX",
+        "address": "13rCGm4Z3PDeYwo5a7GTT4jFYnRFBZbKr1",
+        "address_short": "13rCGm4Z…bKr1",
+        "label_type": "cold",
+        "balance_btc": 0.0004,
+        "refreshed": true,
+        "explorer_url": "https://blockstream.info/address/13rCGm4Z3PDeYwo5a7GTT4jFYnRFBZbKr1"
+      },
+      {
+        "exchange": "OKX",
+        "address": "1MbNM3jwxMjRzeA9xyHbMyePN68MY4Jxb",
+        "address_short": "1MbNM3jw…4Jxb",
+        "label_type": "cold",
+        "balance_btc": 0.0002,
+        "refreshed": true,
+        "explorer_url": "https://blockstream.info/address/1MbNM3jwxMjRzeA9xyHbMyePN68MY4Jxb"
+      },
+      {
+        "exchange": "OKX",
+        "address": "1FTgXfXZRxMQcKSNeuFvWYVPsNgurTJ7BZ",
+        "address_short": "1FTgXfXZ…J7BZ",
+        "label_type": "cold",
+        "balance_btc": 0.0001,
+        "refreshed": true,
+        "explorer_url": "https://blockstream.info/address/1FTgXfXZRxMQcKSNeuFvWYVPsNgurTJ7BZ"
       }
     ],
     "coverage": 100.0,

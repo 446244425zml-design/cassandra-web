@@ -46,6 +46,37 @@
   .invalid{font-size:13px;color:var(--muted);padding:10px 0 2px;border-top:1px solid var(--line);margin-top:6px}
   .disc{font-size:12px;color:var(--faint);font-style:italic;margin-top:10px}
   .conf-note{font-size:12px;color:var(--faint);margin-top:8px}
+  /* 信号分档徽章 — 招牌档(A×B×C) vs 逆势档(A+C，链上未确认) */
+  .tier{font-size:11px;padding:2px 9px;border-radius:5px;font-weight:500}
+  .tier.flagship{background:#16263a;color:#6fa8dc}
+  .tier.crowd{background:#2a2016;color:#c08a4a}
+  .nochain{font-size:12px;color:#c08a4a;font-style:italic;margin-top:8px}
+  /* 今日读盘 — 每日心跳：没信号的日子也有诚实内容 */
+  .read-panel{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px 18px 14px;margin-bottom:10px}
+  .read-top{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+  .read-pill{font-size:12px;padding:3px 11px;border-radius:6px;font-weight:500}
+  .read-pill.quiet{background:#1a1a1f;color:var(--muted);border:1px solid var(--line)}
+  .read-pill.near{background:#2a2310;color:var(--active)}
+  .read-pill.live{background:#2a1611;color:var(--short)}
+  .read-time{color:var(--faint);font-size:12px}
+  .read-head{font-family:var(--serif);font-size:18px;line-height:1.55;margin:4px 0 14px}
+  .read-chips{display:flex;flex-wrap:wrap;gap:10px}
+  .read-chips .chip{flex:1 1 120px;background:var(--surface2);border-radius:8px;padding:10px 12px}
+  .chip .ck{font-size:11px;color:var(--faint)}
+  .chip .cv{font-size:18px;font-weight:500;margin-top:2px;font-variant-numeric:tabular-nums}
+  .chip .cd{font-size:11px;color:var(--muted);margin-top:1px}
+  .read-wait{font-size:13px;color:var(--muted);line-height:1.7;background:var(--surface2);border-radius:8px;padding:11px 13px;margin-top:12px}
+  .read-wait .lab{display:inline-block;color:var(--faint);font-weight:500;margin-right:6px}
+  .read-wait b{color:var(--text);font-weight:500}
+  /* 近触发记录 */
+  .nm-empty{font-size:13px;color:var(--muted);line-height:1.7;padding:2px 2px 8px}
+  .nm-row{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--line);font-size:13px}
+  .nm-row:last-child{border-bottom:none}
+  .nm-t{color:var(--faint);min-width:118px;font-variant-numeric:tabular-nums}
+  .nm-tag{font-size:11px;padding:2px 8px;border-radius:5px;white-space:nowrap}
+  .nm-tag.near{background:#2a2310;color:var(--active)}
+  .nm-tag.live{background:#2a1611;color:var(--short)}
+  .nm-d{color:var(--muted)}
   /* 链上异动 alert — VISUALLY distinct from trade signals: observation, not a trade */
   .alert-lane{margin-bottom:10px}
   .alert{background:#10131a;border:1px solid #243; border-left:3px solid #3a6ea5;border-radius:10px;padding:15px 18px;margin-bottom:13px}
@@ -109,16 +140,16 @@
   </div>
 
   <div class="tabs">
-    <button class="tab" data-view="feed">信号流</button>
-    <button class="tab on" data-view="reserves">储备</button>
+    <button class="tab on" data-view="feed">信号流</button>
+    <button class="tab" data-view="reserves">储备</button>
     <button class="tab" data-view="record">战绩盘</button>
     <button class="tab" data-view="backtest">回放</button>
     <button class="tab" data-view="ops">运营</button>
     <button class="tab" id="snap" style="margin-left:auto" title="把当前视图存成图片，分享给朋友">存图分享</button>
   </div>
 
-  <section id="feed" class="hidden"></section>
-  <section id="reserves"></section>
+  <section id="feed"></section>
+  <section id="reserves" class="hidden"></section>
   <section id="record" class="hidden"></section>
   <section id="backtest" class="hidden"></section>
   <section id="ops" class="hidden"></section>
@@ -144,13 +175,19 @@ function esc(s){return (s||'').replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':
 function activeCard(s){
   const dir = s.direction==='short' ? 'short':'long';
   const dirCN = s.direction==='short' ? '做空':'做多';
+  const crowdOnly = s.tier==='crowd_only';
+  const tierBadge = crowdOnly
+    ? `<span class="tier crowd" title="纯人群极端逆势，链上未确认方向，置信封顶 3/5">逆势档</span>`
+    : `<span class="tier flagship" title="人群极端 × 链上背离确认，最高确信">招牌档</span>`;
   return `
   <div class="card active">
     <div class="row">
       <span class="pill active">${s.stage==='pending'?'待发布':'活跃'}</span><span class="asset">${esc(s.asset)}</span>
+      ${tierBadge}
       <span class="conf">把握 ${s.confidence}/5</span>
     </div>
     <p class="hook">${esc(s.hook)}</p>
+    ${crowdOnly?`<div class="nochain">纯人群极端逆势 · 链上未确认方向 —— 这是低档信号，本就该有更高失败率，仓位放轻。</div>`:''}
     <div class="core">
       <div class="kv"><div class="k">方向</div><div class="v ${dir}">${dirCN}</div></div>
       <div class="kv"><div class="k">入场区</div><div class="v">${esc(s.entry)}</div></div>
@@ -238,8 +275,92 @@ function alertCard(a){
   </div>`;
 }
 
+// --- 今日读盘 helpers：把每次 run 的 observation 渲染成 Cassandra 的盯盘内容 ---
+const FNG_CN={'Extreme Fear':'极度恐惧','Fear':'恐惧','Neutral':'中性','Greed':'贪婪','Extreme Greed':'极度贪婪'};
+function fngCN(c){return FNG_CN[c]||c||'—';}
+function fundingDesc(z){
+  if(z==null) return {v:'—',d:'未取到'};
+  const a=Math.abs(z), s=(z>=0?'+':'')+z.toFixed(2)+'σ';
+  let d= a>=2?'已达极端': a>=1?'明显偏离': a>=0.5?'温和偏离':'接近中性';
+  return {v:s,d};
+}
+function takerDesc(o){
+  if(o.taker_buy_dominance) return {v:'买盘主导',d:'主动买 > 卖'};
+  if(o.taker_sell_dominance) return {v:'卖盘主导',d:'主动卖 > 买'};
+  return {v:'均衡',d:'无明显失衡'};
+}
+function latestObsRun(){
+  const runs=(STATUS&&STATUS.runs)||[];
+  for(let i=runs.length-1;i>=0;i--){ if(runs[i].observation) return runs[i]; }
+  return null;
+}
+function dailyRead(){
+  const run=latestObsRun(); if(!run) return '';
+  const o=run.observation, a=o.a||{}, b=o.b||{}, nm=o.near_miss;
+  const fd=fundingDesc(a.funding_zscore), tk=takerDesc(a);
+  const nf=b.net_flow_btc;
+  const nfTxt=(nf==null)?'未取到':((Math.abs(nf)<1?'≈0':((nf>=0?'+':'')+Math.round(nf).toLocaleString()))+' BTC');
+  const cov=b.coverage!=null?Math.round(b.coverage*100)+'%':'—';
+  let pillCls,pillTxt,head,wait;
+  if(nm==='both_lit'){
+    pillCls='live'; pillTxt='信号区';
+    head='人群极端 + 链上异动同时出现 —— 看下方信号。';
+    wait='两条线都亮了，这是招牌级时刻。下方是经人工 review 后发布的信号。';
+  } else if(nm==='a_lit_b_quiet'){
+    pillCls='near'; pillTxt='近触发';
+    const sig=(a.fired_signals||[]).join(' / ')||'人群指标';
+    const lean=a.direction_bias==='bullish_crowd'?'人群在上头（偏多）':(a.direction_bias==='bearish_crowd'?'人群在恐慌（偏空）':'人群已触及极端');
+    head=lean+'，但链上还没确认。';
+    wait='人群已经打到极端（'+esc(sig)+'）。等链上出现大额背离，就是<b>招牌级背离信号</b>；链上不动，我也可以走<b>纯人群逆势的低档</b>——把握封顶 3/5、盈亏比仍≥2，链上未确认会写在卡面上。';
+  } else {
+    pillCls='quiet'; pillTxt='盯盘中';
+    head='人群还没到我出手的极端区。我在盯，不出手。';
+    wait='等两件事之一：人群情绪打到<b>真极端</b>（极贪或极恐破我的线，比恐惧贪婪表更严），或储备出现<b>大额单向搬仓</b>。没到，就沉默——这是特性。';
+  }
+  return `
+  <div class="read-panel">
+    <div class="read-top">
+      <span class="read-pill ${pillCls}">${pillTxt}</span>
+      <span class="read-time">读盘 · ${esc((run.ts||'').replace('T',' ').replace('Z',' UTC'))}</span>
+    </div>
+    <p class="read-head">${head}</p>
+    <div class="read-chips">
+      <div class="chip"><div class="ck">人群温度</div><div class="cv">${a.fng_value!=null?a.fng_value:'—'}</div><div class="cd">恐惧贪婪 · ${esc(fngCN(a.fng_classification))}</div></div>
+      <div class="chip"><div class="ck">资金费率</div><div class="cv">${fd.v}</div><div class="cd">${fd.d}</div></div>
+      <div class="chip"><div class="ck">主动成交</div><div class="cv">${tk.v}</div><div class="cd">${tk.d}</div></div>
+      <div class="chip"><div class="ck">储备净流</div><div class="cv">${nfTxt}</div><div class="cd">覆盖 ${cov}</div></div>
+    </div>
+    <div class="read-wait"><span class="lab">我在等什么</span>${wait}</div>
+  </div>`;
+}
+function nearMissStrip(){
+  const runs=((STATUS&&STATUS.runs)||[]).filter(r=>r.observation&&(r.observation.near_miss==='a_lit_b_quiet'||r.observation.near_miss==='both_lit'));
+  const recent=runs.slice(-6).reverse();
+  if(!recent.length){
+    return `<div class="nm-empty">近期没有近触发——每一次扫描，人群都没打到极端。空着是真的空，不是机器没在跑（运行日志去「运营」看）。<br><span style="color:var(--faint)">一旦人群打到极端，这里会留下记录——哪怕我最后没出手，也告诉你我看到了什么、为什么按住。</span></div>`;
+  }
+  const rows=recent.map(r=>{
+    const o=r.observation,a=o.a||{},live=o.near_miss==='both_lit';
+    const sig=(a.fired_signals||[]).join(' / ');
+    return `<div class="nm-row">
+      <span class="nm-t">${esc((r.ts||'').slice(0,16).replace('T',' '))}</span>
+      <span class="nm-tag ${live?'live':'near'}">${live?'信号区':'近触发'}</span>
+      <span class="nm-d">${esc(sig||'人群极端')}${a.fng_value!=null?' · 恐惧贪婪 '+a.fng_value:''}</span>
+    </div>`;
+  }).join('');
+  return `<div>${rows}</div>`;
+}
+
 function renderFeed(){
   const root=document.getElementById('feed'); root.innerHTML='';
+  // --- 今日读盘 (每日心跳：没信号的日子也有诚实内容，活跃不靠放水) ---
+  const dr=dailyRead();
+  if(dr){
+    root.appendChild(el('<h2>今日读盘</h2>'));
+    root.appendChild(el(dr));
+    root.appendChild(el('<h2>近触发记录</h2>'));
+    root.appendChild(el(nearMissStrip()));
+  }
   // --- 链上异动 lane (SEPARATE from trade signals) ---
   if(ALERTS.length){
     root.appendChild(el('<h2>链上异动 · 观测</h2>'));
@@ -250,7 +371,7 @@ function renderFeed(){
   root.appendChild(el('<h2>交易信号</h2>'));
   if(!SIGNALS.length){
     root.appendChild(el(`<div class="card"><p class="hook">还没有真信号。</p>
-      <p style="color:var(--muted);font-size:14px;line-height:1.7">引擎在诚实站住——储备净流量是事件驱动的：绝大多数窗口冷储备根本没动，只有真出现大额搬仓（单方向移动超过绝对量或占总储备的阈值）才开口。遇不到真极值就沉默。第一条真信号会出现在这里（经你人工 review 后发布）。<br><span style="color:var(--faint)">沉默是特性，不是 bug。运行日志与净流量样本去「运营」标签。</span></p></div>`));
+      <p style="color:var(--muted);font-size:14px;line-height:1.7">引擎在诚实站住——人群没打到极端时我不出手。一旦人群极端，我可能走纯人群逆势的低档（链上未确认），或等链上大额背离出招牌信号。遇不到就沉默。第一条真信号会出现在这里（经你人工 review 后发布）。<br><span style="color:var(--faint)">沉默是特性，不是 bug。运行日志与净流量样本去「运营」标签。</span></p></div>`));
     return;
   }
   SIGNALS.forEach(s=>{
