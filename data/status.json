@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-21T13:32:25Z",
+  "generated_at": "2026-06-21T16:00:20Z",
   "netflow_gate": {
     "mode": "event_driven",
     "waits_for_baseline": false
@@ -488,6 +488,74 @@
         },
         "near_miss": "a_quiet"
       }
+    },
+    {
+      "ts": "2026-06-21T14:00:02Z",
+      "run_id": "20260621T1400Z-btc",
+      "result": "NoSignal",
+      "reason": "no_trigger",
+      "detail": "fired_signals=[] below require_n_signals",
+      "net_flow_btc": 9.52e-06,
+      "coverage": 1.0,
+      "baseline_mean": -3.0821415966666668,
+      "observation": {
+        "a": {
+          "fired": false,
+          "fired_signals": [],
+          "direction_bias": null,
+          "funding_zscore": 0.3635,
+          "fng_value": 23,
+          "fng_classification": "Extreme Fear",
+          "taker_buy_dominance": false,
+          "taker_sell_dominance": false
+        },
+        "b": {
+          "extreme": false,
+          "direction": "unclear",
+          "unclear_reason": "net_flow_not_extreme",
+          "net_flow_btc": 0.0,
+          "net_flow_pct_reserves": 0.0,
+          "total_reserves_btc": 787789.6,
+          "extreme_basis": null,
+          "coverage": 1.0,
+          "single_tx_dominated": false
+        },
+        "near_miss": "a_quiet"
+      }
+    },
+    {
+      "ts": "2026-06-21T16:00:01Z",
+      "run_id": "20260621T1600Z-btc",
+      "result": "NoSignal",
+      "reason": "no_trigger",
+      "detail": "fired_signals=[] below require_n_signals",
+      "net_flow_btc": 9.52e-06,
+      "coverage": 1.0,
+      "baseline_mean": -3.0821415966666668,
+      "observation": {
+        "a": {
+          "fired": false,
+          "fired_signals": [],
+          "direction_bias": null,
+          "funding_zscore": 0.2948,
+          "fng_value": 23,
+          "fng_classification": "Extreme Fear",
+          "taker_buy_dominance": false,
+          "taker_sell_dominance": false
+        },
+        "b": {
+          "extreme": false,
+          "direction": "unclear",
+          "unclear_reason": "net_flow_not_extreme",
+          "net_flow_btc": 0.0,
+          "net_flow_pct_reserves": 0.0,
+          "total_reserves_btc": 787789.6,
+          "extreme_basis": null,
+          "coverage": 1.0,
+          "single_tx_dominated": false
+        },
+        "near_miss": "a_quiet"
+      }
     }
   ],
   "signals": [],
@@ -505,13 +573,13 @@
   "ledger": [],
   "alert_ledger": [],
   "reserves": {
-    "generated_at": "2026-06-21T13:32:25Z",
+    "generated_at": "2026-06-21T16:00:20Z",
     "total_btc": 776551.46,
     "wallet_count": 24,
     "refreshed_count": 24,
     "exchange_count": 4,
-    "btc_price": 64095.43,
-    "total_usd": 49773399595.0,
+    "btc_price": 64222.01,
+    "total_usd": 49871695479.0,
     "per_exchange": [
       {
         "exchange": "Binance",
