@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-22T20:00:29Z",
+  "generated_at": "2026-06-22T22:00:24Z",
   "netflow_gate": {
     "mode": "event_driven",
     "waits_for_baseline": false
@@ -1180,6 +1180,43 @@
         "near_miss": "a_lit_b_quiet"
       },
       "signal_id": "CAS-20260622-btc"
+    },
+    {
+      "ts": "2026-06-22T22:00:01Z",
+      "run_id": "20260622T2200Z-btc",
+      "result": "FIRED",
+      "reason": null,
+      "detail": null,
+      "net_flow_btc": 9.52e-06,
+      "coverage": 1.0,
+      "baseline_mean": -2.6418342942857143,
+      "observation": {
+        "a": {
+          "fired": true,
+          "fired_signals": [
+            "fng_extreme_fear"
+          ],
+          "direction_bias": "bearish_crowd",
+          "funding_zscore": 0.6495,
+          "fng_value": 20,
+          "fng_classification": "Extreme Fear",
+          "taker_buy_dominance": false,
+          "taker_sell_dominance": false
+        },
+        "b": {
+          "extreme": false,
+          "direction": "unclear",
+          "unclear_reason": "net_flow_not_extreme",
+          "net_flow_btc": 0.0,
+          "net_flow_pct_reserves": 0.0,
+          "total_reserves_btc": 787816.47,
+          "extreme_basis": null,
+          "coverage": 1.0,
+          "single_tx_dominated": false
+        },
+        "near_miss": "a_lit_b_quiet"
+      },
+      "signal_id": "CAS-20260622-btc"
     }
   ],
   "signals": [
@@ -1192,16 +1229,16 @@
       "confidence": 3,
       "tier": "crowd_only",
       "chain_confirmed": false,
-      "entry": "64,289–64,676",
-      "target": "70,293",
-      "invalidation": "62,061",
+      "entry": "64,128–64,514",
+      "target": "70,131",
+      "invalidation": "61,899",
       "validity": "10 天",
-      "hook": "极度恐惧信号亮灯，但链上没人真的跑路——3/5 置信度的孤证多头。",
-      "narrative": "【扳机】恐惧贪婪指数跌至 20，落入「极度恐惧」区间；资金费率 z-score 尚属温和，主动买卖双方均无压倒性主导，唯一触发信号来自情绪面极值。【链上真相】交易所净流量 z-score 不足以构成异常，储备规模稳定，没有巨鲸出逃或集中砸盘的链上指纹——情绪的哭声，账本没有回响。【判定】「群体极度恐惧、链上无极端流动」的组合，历史上偶尔是逆向买点，但仅凭情绪孤证驱动，置信度被硬封顶在 3/5。这是一张值得盯着的票，不是一张值得押身家的票。",
+      "hook": "极恐指数20，人群踩踏，链上没人跑路——这是恐慌，不是崩盘。",
+      "narrative": "扳机：恐惧贪婪指数跌入「极度恐惧」区间，资金费率 σ 仅0.65，市场情绪单边倒但衍生品并未极端超卖，触发唯一信号「情绪极端」。\n链上真相：交易所净流量为零，流向 σ 温和，无大规模集中出逃迹象——链上没有任何机构级别抛售的指纹，储备总量稳定。\n判定：情绪崩了，筹码没动，典型的「人群极恐、聪明钱旁观」格局。置信度仅3/5——链上沉默既可能是底部蓄力，也可能只是大户还没开始动，单凭情绪信号定多头，逻辑成立但底气不足，请自行评估风险承受能力。",
       "postmortem": null,
       "settle": null,
       "coverage": "链上覆盖度 100%（启发式归属）",
-      "content_hash": "sha256:7d336277919b1043f87291927151b7d531e1afcd66f6d199065ed1a494404993",
+      "content_hash": "sha256:bfa5c50195685e1e40b3878e26d1564a9904382278ff90c102f49e44dafc2093",
       "voice_status": "ok"
     }
   ],
@@ -1221,13 +1258,13 @@
   "ledger": [],
   "alert_ledger": [],
   "reserves": {
-    "generated_at": "2026-06-22T20:00:29Z",
+    "generated_at": "2026-06-22T22:00:24Z",
     "total_btc": 776551.46,
     "wallet_count": 24,
     "refreshed_count": 24,
     "exchange_count": 4,
-    "btc_price": 64482.23,
-    "total_usd": 50073769699.0,
+    "btc_price": 64320.58,
+    "total_usd": 49948240156.0,
     "per_exchange": [
       {
         "exchange": "Binance",
