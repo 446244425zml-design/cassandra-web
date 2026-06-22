@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-21T22:00:17Z",
+  "generated_at": "2026-06-22T00:00:28Z",
   "netflow_gate": {
     "mode": "event_driven",
     "waits_for_baseline": false
@@ -658,9 +658,68 @@
         },
         "near_miss": "a_quiet"
       }
+    },
+    {
+      "ts": "2026-06-22T00:00:01Z",
+      "run_id": "20260622T0000Z-btc",
+      "result": "FIRED",
+      "reason": null,
+      "detail": null,
+      "net_flow_btc": 9.52e-06,
+      "coverage": 1.0,
+      "baseline_mean": -3.0821415966666668,
+      "observation": {
+        "a": {
+          "fired": true,
+          "fired_signals": [
+            "fng_extreme_fear"
+          ],
+          "direction_bias": "bearish_crowd",
+          "funding_zscore": 0.8816,
+          "fng_value": 20,
+          "fng_classification": "Extreme Fear",
+          "taker_buy_dominance": false,
+          "taker_sell_dominance": false
+        },
+        "b": {
+          "extreme": false,
+          "direction": "unclear",
+          "unclear_reason": "net_flow_not_extreme",
+          "net_flow_btc": 0.0,
+          "net_flow_pct_reserves": 0.0,
+          "total_reserves_btc": 787789.6,
+          "extreme_basis": null,
+          "coverage": 1.0,
+          "single_tx_dominated": false
+        },
+        "near_miss": "a_lit_b_quiet"
+      },
+      "signal_id": "CAS-20260622-btc"
     }
   ],
-  "signals": [],
+  "signals": [
+    {
+      "id": "CAS-20260622-btc",
+      "stage": "pending",
+      "status": "active",
+      "asset": "BTC",
+      "direction": "long",
+      "confidence": 3,
+      "tier": "crowd_only",
+      "chain_confirmed": false,
+      "entry": "63,146–63,526",
+      "target": "68,657",
+      "invalidation": "61,119",
+      "validity": "10 天",
+      "hook": "极度恐惧信号亮了，但链上没人真的在逃——人群在哭，聪明钱在睡觉。",
+      "narrative": "【扳机】恐惧贪婪指数跌至20，落入「极度恐惧」区间，这是本次唯一触发信号；资金费率z-score温和偏正，说明空头情绪并未极端化到逼爆多头的程度。【链上真相】交易所净流量几乎为零，z-score不足1，储备规模稳定，既无恐慌性出逃，也无鲸鱼大规模吸筹——链上沉默，没有任何极端行为在配合这份「恐惧」叙事。【判定】情绪与链上之间存在裂缝：人群在喊疼，但脚没有动。方向判定做多，但置信度仅3/5——这是「人群极度悲观而链上不配合」的弱信号，缺乏链上确认的情绪反转，随时可能只是一个哭泣的假底。",
+      "postmortem": null,
+      "settle": null,
+      "coverage": "链上覆盖度 100%（启发式归属）",
+      "content_hash": "sha256:2ac641ad1aac708d35af709e11fa85e6380694007634ec3d009f7c6b39f284af",
+      "voice_status": "ok"
+    }
+  ],
   "alerts": [],
   "track": {
     "settled": 0,
@@ -670,18 +729,20 @@
     "void": 0,
     "cumulative_r": 0.0
   },
-  "pending": [],
+  "pending": [
+    "CAS-20260622-btc"
+  ],
   "pending_alerts": [],
   "ledger": [],
   "alert_ledger": [],
   "reserves": {
-    "generated_at": "2026-06-21T22:00:17Z",
+    "generated_at": "2026-06-22T00:00:28Z",
     "total_btc": 776551.46,
     "wallet_count": 24,
     "refreshed_count": 24,
     "exchange_count": 4,
-    "btc_price": 63685.32,
-    "total_usd": 49454928077.0,
+    "btc_price": 63335.99,
+    "total_usd": 49183655356.0,
     "per_exchange": [
       {
         "exchange": "Binance",
