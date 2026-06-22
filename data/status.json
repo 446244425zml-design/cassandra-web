@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-22T12:00:32Z",
+  "generated_at": "2026-06-22T14:00:31Z",
   "netflow_gate": {
     "mode": "event_driven",
     "waits_for_baseline": false
@@ -995,6 +995,80 @@
         "near_miss": "a_lit_b_quiet"
       },
       "signal_id": "CAS-20260622-btc"
+    },
+    {
+      "ts": "2026-06-22T13:32:23Z",
+      "run_id": "20260622T1332Z-btc",
+      "result": "FIRED",
+      "reason": null,
+      "detail": null,
+      "net_flow_btc": 9.52e-06,
+      "coverage": 1.0,
+      "baseline_mean": -2.6418342942857143,
+      "observation": {
+        "a": {
+          "fired": true,
+          "fired_signals": [
+            "fng_extreme_fear"
+          ],
+          "direction_bias": "bearish_crowd",
+          "funding_zscore": 1.0273,
+          "fng_value": 20,
+          "fng_classification": "Extreme Fear",
+          "taker_buy_dominance": false,
+          "taker_sell_dominance": false
+        },
+        "b": {
+          "extreme": false,
+          "direction": "unclear",
+          "unclear_reason": "net_flow_not_extreme",
+          "net_flow_btc": 0.0,
+          "net_flow_pct_reserves": 0.0,
+          "total_reserves_btc": 787816.47,
+          "extreme_basis": null,
+          "coverage": 1.0,
+          "single_tx_dominated": false
+        },
+        "near_miss": "a_lit_b_quiet"
+      },
+      "signal_id": "CAS-20260622-btc"
+    },
+    {
+      "ts": "2026-06-22T14:00:01Z",
+      "run_id": "20260622T1400Z-btc",
+      "result": "FIRED",
+      "reason": null,
+      "detail": null,
+      "net_flow_btc": 9.52e-06,
+      "coverage": 1.0,
+      "baseline_mean": -2.6418342942857143,
+      "observation": {
+        "a": {
+          "fired": true,
+          "fired_signals": [
+            "fng_extreme_fear"
+          ],
+          "direction_bias": "bearish_crowd",
+          "funding_zscore": 0.9106,
+          "fng_value": 20,
+          "fng_classification": "Extreme Fear",
+          "taker_buy_dominance": false,
+          "taker_sell_dominance": false
+        },
+        "b": {
+          "extreme": false,
+          "direction": "unclear",
+          "unclear_reason": "net_flow_not_extreme",
+          "net_flow_btc": 0.0,
+          "net_flow_pct_reserves": 0.0,
+          "total_reserves_btc": 787816.47,
+          "extreme_basis": null,
+          "coverage": 1.0,
+          "single_tx_dominated": false
+        },
+        "near_miss": "a_lit_b_quiet"
+      },
+      "signal_id": "CAS-20260622-btc"
     }
   ],
   "signals": [
@@ -1007,16 +1081,16 @@
       "confidence": 3,
       "tier": "crowd_only",
       "chain_confirmed": false,
-      "entry": "64,499–64,887",
-      "target": "70,332",
-      "invalidation": "62,343",
+      "entry": "65,410–65,803",
+      "target": "71,416",
+      "invalidation": "63,186",
       "validity": "10 天",
-      "hook": "极恐指数20，群众在割肉——但链上没人跑路，这种背离值得冷眼盯着。",
-      "narrative": "【扳机】恐惧贪婪指数跌入「极度恐惧」区间，资金费率Z分位不算极端，多空吃单均无明显主导——唯一点火的信号是情绪本身。【链上真相】交易所净流量Z分位温和，储备规模稳定，没有大规模出逃或集中砸盘的链上证据；情绪与资金行为之间存在明显裂缝。【判定】这是「群体恐慌、链上沉默」的经典背离结构，历史上偶尔是反转前兆，但仅凭情绪信号置信度只有3/5——链上不配合，就是不配合，苦笑着等确认。",
+      "hook": "极度恐惧不等于底部，但它是少数几个值得认真看一眼的时刻。",
+      "narrative": "【扳机】恐惧贪婪指数跌至20，落在「极度恐惧」区间；资金费率 z-score 约0.91，偏高但尚未到极端——情绪已经够惨，衍生品还没完全投降。信号只有一根：群体恐慌。\n\n【链上真相】交易所净流量接近零，z-score 不到0.81，没有异常大额出入金；储备总量稳定，没有机构级别的砸盘或囤币动作。链上沉默——既不确认逃跑，也不确认抄底。\n\n【判定】判定为「群体极端、链上无佐证」，置信度3/5，硬封顶于此。情绪面给了一个反向信号，但没有资金流动来背书，这笔交易靠的是概率而非确定性——清醒入场，别把希望当论据。",
       "postmortem": null,
       "settle": null,
       "coverage": "链上覆盖度 100%（启发式归属）",
-      "content_hash": "sha256:34173fe79a2f6b0d4bbc9c8af9a7816df41b7542bb3096812e79c5a775309937",
+      "content_hash": "sha256:a9ec0f21fdf71bbecf29b6555488acd157a83c7e238b126f5a017cd4e72cb3cd",
       "voice_status": "ok"
     }
   ],
@@ -1036,13 +1110,13 @@
   "ledger": [],
   "alert_ledger": [],
   "reserves": {
-    "generated_at": "2026-06-22T12:00:33Z",
+    "generated_at": "2026-06-22T14:00:31Z",
     "total_btc": 776551.46,
     "wallet_count": 24,
     "refreshed_count": 24,
     "exchange_count": 4,
-    "btc_price": 64693.07,
-    "total_usd": 50237497808.0,
+    "btc_price": 65606.5,
+    "total_usd": 50946823206.0,
     "per_exchange": [
       {
         "exchange": "Binance",
