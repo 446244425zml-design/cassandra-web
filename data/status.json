@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-23T02:00:16Z",
+  "generated_at": "2026-06-23T04:00:27Z",
   "netflow_gate": {
     "mode": "event_driven",
     "waits_for_baseline": false
@@ -1319,9 +1319,67 @@
         },
         "near_miss": "a_quiet"
       }
+    },
+    {
+      "ts": "2026-06-23T04:00:01Z",
+      "run_id": "20260623T0400Z-btc",
+      "result": "FIRED",
+      "reason": null,
+      "detail": null,
+      "net_flow_btc": 9.52e-06,
+      "coverage": 1.0,
+      "baseline_mean": -2.6418342942857143,
+      "observation": {
+        "a": {
+          "fired": true,
+          "fired_signals": [
+            "taker_sell_dominance"
+          ],
+          "direction_bias": "bearish_crowd",
+          "funding_zscore": -0.2422,
+          "fng_value": 23,
+          "fng_classification": "Extreme Fear",
+          "taker_buy_dominance": false,
+          "taker_sell_dominance": true
+        },
+        "b": {
+          "extreme": false,
+          "direction": "unclear",
+          "unclear_reason": "net_flow_not_extreme",
+          "net_flow_btc": 0.0,
+          "net_flow_pct_reserves": 0.0,
+          "total_reserves_btc": 787816.47,
+          "extreme_basis": null,
+          "coverage": 1.0,
+          "single_tx_dominated": false
+        },
+        "near_miss": "a_lit_b_quiet"
+      },
+      "signal_id": "CAS-20260623-btc"
     }
   ],
   "signals": [
+    {
+      "id": "CAS-20260623-btc",
+      "stage": "pending",
+      "status": "active",
+      "asset": "BTC",
+      "direction": "long",
+      "confidence": 3,
+      "tier": "crowd_only",
+      "chain_confirmed": false,
+      "entry": "63,884–64,268",
+      "target": "69,394",
+      "invalidation": "61,860",
+      "validity": "10 天",
+      "hook": "极度恐惧值23，市场在哭——但链上没人跑路，这哭声可能是入场信号。",
+      "narrative": "【扳机】恐惧贪婪指数跌至23，落入「极度恐惧」区间；资金费率Z分仅-0.24，空头情绪有余但未到极端压缩；卖方吃单占主导，散户在割。情绪侧已满足逆向触发条件，置信度3/5。【链上真相】交易所净流量Z分0.80，既无大规模提币也无恐慌性涌入——链上没有任何「聪明钱出逃」或「机构砸盘」的痕迹，保持中性沉默。【判定】情绪极端、链上平静——这是「群众在叫，但没人真的在动」的经典结构。逆向做多的逻辑成立，但仅靠情绪面撑起的信号，缺乏链上确认背书，置信度上限被锁死在3/5。不是强买，是可以考虑的非对称赌注。",
+      "postmortem": null,
+      "settle": null,
+      "coverage": "链上覆盖度 100%（启发式归属）",
+      "content_hash": "sha256:009beebae3ba9c41b9d9e5f36112bb6933de3a04ee9921154c2ed163a262b696",
+      "voice_status": "ok"
+    },
     {
       "id": "CAS-20260622-btc",
       "stage": "pending",
@@ -1354,19 +1412,20 @@
     "cumulative_r": 0.0
   },
   "pending": [
-    "CAS-20260622-btc"
+    "CAS-20260622-btc",
+    "CAS-20260623-btc"
   ],
   "pending_alerts": [],
   "ledger": [],
   "alert_ledger": [],
   "reserves": {
-    "generated_at": "2026-06-23T02:00:16Z",
+    "generated_at": "2026-06-23T04:00:27Z",
     "total_btc": 776551.46,
     "wallet_count": 24,
     "refreshed_count": 24,
     "exchange_count": 4,
-    "btc_price": 64155.06,
-    "total_usd": 49819705359.0,
+    "btc_price": 64076.0,
+    "total_usd": 49758311200.0,
     "per_exchange": [
       {
         "exchange": "Binance",
