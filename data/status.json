@@ -1,17 +1,17 @@
 {
-  "generated_at": "2026-06-23T04:00:27Z",
+  "generated_at": "2026-06-23T06:00:37Z",
   "netflow_gate": {
     "mode": "event_driven",
     "waits_for_baseline": false
   },
   "baseline": {
-    "points": 7,
+    "points": 8,
     "min_samples": 5,
     "robust_samples": 15,
     "mature": true,
     "robust": false,
-    "mean": -2.6418342942857143,
-    "std": 3.294955172428588,
+    "mean": -2.3116038175,
+    "std": 3.190326873682341,
     "diagnostic_only": true,
     "history": [
       {
@@ -40,6 +40,10 @@
       },
       {
         "ts": "2026-06-22T09:32:34Z",
+        "net_flow_btc": 9.52e-06
+      },
+      {
+        "ts": "2026-06-23T05:32:42Z",
         "net_flow_btc": 9.52e-06
       }
     ]
@@ -1356,6 +1360,80 @@
         "near_miss": "a_lit_b_quiet"
       },
       "signal_id": "CAS-20260623-btc"
+    },
+    {
+      "ts": "2026-06-23T05:32:28Z",
+      "run_id": "20260623T0532Z-btc",
+      "result": "FIRED",
+      "reason": null,
+      "detail": null,
+      "net_flow_btc": 9.52e-06,
+      "coverage": 1.0,
+      "baseline_mean": -2.3116038175,
+      "observation": {
+        "a": {
+          "fired": true,
+          "fired_signals": [
+            "taker_sell_dominance"
+          ],
+          "direction_bias": "bearish_crowd",
+          "funding_zscore": -0.1056,
+          "fng_value": 23,
+          "fng_classification": "Extreme Fear",
+          "taker_buy_dominance": false,
+          "taker_sell_dominance": true
+        },
+        "b": {
+          "extreme": false,
+          "direction": "unclear",
+          "unclear_reason": "net_flow_not_extreme",
+          "net_flow_btc": 0.0,
+          "net_flow_pct_reserves": 0.0,
+          "total_reserves_btc": 787885.76,
+          "extreme_basis": null,
+          "coverage": 1.0,
+          "single_tx_dominated": true
+        },
+        "near_miss": "a_lit_b_quiet"
+      },
+      "signal_id": "CAS-20260623-btc"
+    },
+    {
+      "ts": "2026-06-23T06:00:00Z",
+      "run_id": "20260623T0600Z-btc",
+      "result": "FIRED",
+      "reason": null,
+      "detail": null,
+      "net_flow_btc": 9.52e-06,
+      "coverage": 1.0,
+      "baseline_mean": -2.3116038175,
+      "observation": {
+        "a": {
+          "fired": true,
+          "fired_signals": [
+            "taker_sell_dominance"
+          ],
+          "direction_bias": "bearish_crowd",
+          "funding_zscore": -0.1194,
+          "fng_value": 23,
+          "fng_classification": "Extreme Fear",
+          "taker_buy_dominance": false,
+          "taker_sell_dominance": true
+        },
+        "b": {
+          "extreme": false,
+          "direction": "unclear",
+          "unclear_reason": "net_flow_not_extreme",
+          "net_flow_btc": 0.0,
+          "net_flow_pct_reserves": 0.0,
+          "total_reserves_btc": 787885.76,
+          "extreme_basis": null,
+          "coverage": 1.0,
+          "single_tx_dominated": false
+        },
+        "near_miss": "a_lit_b_quiet"
+      },
+      "signal_id": "CAS-20260623-btc"
     }
   ],
   "signals": [
@@ -1368,16 +1446,16 @@
       "confidence": 3,
       "tier": "crowd_only",
       "chain_confirmed": false,
-      "entry": "63,884–64,268",
-      "target": "69,394",
-      "invalidation": "61,860",
+      "entry": "63,200–63,580",
+      "target": "68,812",
+      "invalidation": "61,131",
       "validity": "10 天",
-      "hook": "极度恐惧值23，市场在哭——但链上没人跑路，这哭声可能是入场信号。",
-      "narrative": "【扳机】恐惧贪婪指数跌至23，落入「极度恐惧」区间；资金费率Z分仅-0.24，空头情绪有余但未到极端压缩；卖方吃单占主导，散户在割。情绪侧已满足逆向触发条件，置信度3/5。【链上真相】交易所净流量Z分0.80，既无大规模提币也无恐慌性涌入——链上没有任何「聪明钱出逃」或「机构砸盘」的痕迹，保持中性沉默。【判定】情绪极端、链上平静——这是「群众在叫，但没人真的在动」的经典结构。逆向做多的逻辑成立，但仅靠情绪面撑起的信号，缺乏链上确认背书，置信度上限被锁死在3/5。不是强买，是可以考虑的非对称赌注。",
+      "hook": "极度恐惧，链上却无人逃跑——群众在尖叫，聪明钱在打哈欠。",
+      "narrative": "【扳机】恐惧贪婪指数跌至23，落在「极度恐惧」区间；资金费率Z分仅-0.12，空头情绪偏斜但未到极端；唯一触发信号是「taker卖方主导」，情绪面单腿站立，置信度上限已被压制至3/5。【链上真相】交易所净流量Z分0.72，净流入量接近于零，储备规模无异动；没有巨鲸出逃，没有单笔交易主导，链上世界一片沉默——恐慌是散户的，不是钱包的。【判定】情绪极端而链上无确认，引擎将此归类为「群众喊崩、链上不配合」——逆向做多的逻辑成立，但证据只有一条腿，这是投机，不是信念；仓位请按3/5的置信度定价风险，别把苦涩当甜蜜。",
       "postmortem": null,
       "settle": null,
       "coverage": "链上覆盖度 100%（启发式归属）",
-      "content_hash": "sha256:009beebae3ba9c41b9d9e5f36112bb6933de3a04ee9921154c2ed163a262b696",
+      "content_hash": "sha256:6c510378cf3e669e8e3f264bf6f2942587a9e0d7ac2c584d5a899520a36e26fd",
       "voice_status": "ok"
     },
     {
@@ -1419,13 +1497,13 @@
   "ledger": [],
   "alert_ledger": [],
   "reserves": {
-    "generated_at": "2026-06-23T04:00:27Z",
+    "generated_at": "2026-06-23T06:00:37Z",
     "total_btc": 776551.46,
     "wallet_count": 24,
     "refreshed_count": 24,
     "exchange_count": 4,
-    "btc_price": 64076.0,
-    "total_usd": 49758311200.0,
+    "btc_price": 63390.0,
+    "total_usd": 49225596901.0,
     "per_exchange": [
       {
         "exchange": "Binance",
