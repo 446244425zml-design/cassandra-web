@@ -1538,50 +1538,7 @@
       }
     }
   ],
-  "signals": [
-    {
-      "id": "CAS-20260623-btc",
-      "stage": "pending",
-      "status": "active",
-      "asset": "BTC",
-      "direction": "long",
-      "confidence": 3,
-      "tier": "crowd_only",
-      "chain_confirmed": false,
-      "entry": "63,200–63,580",
-      "target": "68,812",
-      "invalidation": "61,131",
-      "validity": "10 天",
-      "hook": "极度恐惧，链上却无人逃跑——群众在尖叫，聪明钱在打哈欠。",
-      "narrative": "【扳机】恐惧贪婪指数跌至23，落在「极度恐惧」区间；资金费率Z分仅-0.12，空头情绪偏斜但未到极端；唯一触发信号是「taker卖方主导」，情绪面单腿站立，置信度上限已被压制至3/5。【链上真相】交易所净流量Z分0.72，净流入量接近于零，储备规模无异动；没有巨鲸出逃，没有单笔交易主导，链上世界一片沉默——恐慌是散户的，不是钱包的。【判定】情绪极端而链上无确认，引擎将此归类为「群众喊崩、链上不配合」——逆向做多的逻辑成立，但证据只有一条腿，这是投机，不是信念；仓位请按3/5的置信度定价风险，别把苦涩当甜蜜。",
-      "postmortem": null,
-      "settle": null,
-      "coverage": "链上覆盖度 100%（启发式归属）",
-      "content_hash": "sha256:6c510378cf3e669e8e3f264bf6f2942587a9e0d7ac2c584d5a899520a36e26fd",
-      "voice_status": "ok"
-    },
-    {
-      "id": "CAS-20260622-btc",
-      "stage": "pending",
-      "status": "active",
-      "asset": "BTC",
-      "direction": "long",
-      "confidence": 3,
-      "tier": "crowd_only",
-      "chain_confirmed": false,
-      "entry": "64,128–64,514",
-      "target": "70,131",
-      "invalidation": "61,899",
-      "validity": "10 天",
-      "hook": "极恐指数20，人群踩踏，链上没人跑路——这是恐慌，不是崩盘。",
-      "narrative": "扳机：恐惧贪婪指数跌入「极度恐惧」区间，资金费率 σ 仅0.65，市场情绪单边倒但衍生品并未极端超卖，触发唯一信号「情绪极端」。\n链上真相：交易所净流量为零，流向 σ 温和，无大规模集中出逃迹象——链上没有任何机构级别抛售的指纹，储备总量稳定。\n判定：情绪崩了，筹码没动，典型的「人群极恐、聪明钱旁观」格局。置信度仅3/5——链上沉默既可能是底部蓄力，也可能只是大户还没开始动，单凭情绪信号定多头，逻辑成立但底气不足，请自行评估风险承受能力。",
-      "postmortem": null,
-      "settle": null,
-      "coverage": "链上覆盖度 100%（启发式归属）",
-      "content_hash": "sha256:bfa5c50195685e1e40b3878e26d1564a9904382278ff90c102f49e44dafc2093",
-      "voice_status": "ok"
-    }
-  ],
+  "signals": [],
   "alerts": [],
   "track": {
     "settled": 0,
@@ -1591,10 +1548,7 @@
     "void": 0,
     "cumulative_r": 0.0
   },
-  "pending": [
-    "CAS-20260622-btc",
-    "CAS-20260623-btc"
-  ],
+  "pending": [],
   "pending_alerts": [],
   "ledger": [],
   "alert_ledger": [],
