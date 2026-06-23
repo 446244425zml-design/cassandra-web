@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-22T22:00:24Z",
+  "generated_at": "2026-06-23T00:00:16Z",
   "netflow_gate": {
     "mode": "event_driven",
     "waits_for_baseline": false
@@ -1217,6 +1217,40 @@
         "near_miss": "a_lit_b_quiet"
       },
       "signal_id": "CAS-20260622-btc"
+    },
+    {
+      "ts": "2026-06-23T00:00:01Z",
+      "run_id": "20260623T0000Z-btc",
+      "result": "NoSignal",
+      "reason": "no_trigger",
+      "detail": "fired_signals=[] below require_n_signals",
+      "net_flow_btc": 9.52e-06,
+      "coverage": 1.0,
+      "baseline_mean": -2.6418342942857143,
+      "observation": {
+        "a": {
+          "fired": false,
+          "fired_signals": [],
+          "direction_bias": null,
+          "funding_zscore": 0.2505,
+          "fng_value": 23,
+          "fng_classification": "Extreme Fear",
+          "taker_buy_dominance": false,
+          "taker_sell_dominance": false
+        },
+        "b": {
+          "extreme": false,
+          "direction": "unclear",
+          "unclear_reason": "net_flow_not_extreme",
+          "net_flow_btc": 0.0,
+          "net_flow_pct_reserves": 0.0,
+          "total_reserves_btc": 787816.47,
+          "extreme_basis": null,
+          "coverage": 1.0,
+          "single_tx_dominated": false
+        },
+        "near_miss": "a_quiet"
+      }
     }
   ],
   "signals": [
@@ -1258,13 +1292,13 @@
   "ledger": [],
   "alert_ledger": [],
   "reserves": {
-    "generated_at": "2026-06-22T22:00:24Z",
+    "generated_at": "2026-06-23T00:00:16Z",
     "total_btc": 776551.46,
     "wallet_count": 24,
     "refreshed_count": 24,
     "exchange_count": 4,
-    "btc_price": 64320.58,
-    "total_usd": 49948240156.0,
+    "btc_price": 64005.99,
+    "total_usd": 49703944833.0,
     "per_exchange": [
       {
         "exchange": "Binance",
