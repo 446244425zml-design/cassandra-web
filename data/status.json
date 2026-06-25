@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-25T04:00:38Z",
+  "generated_at": "2026-06-25T06:00:40Z",
   "netflow_gate": {
     "mode": "event_driven",
     "waits_for_baseline": false
@@ -2112,6 +2112,43 @@
         "near_miss": "a_lit_b_quiet"
       },
       "signal_id": "CAS-20260625-btc"
+    },
+    {
+      "ts": "2026-06-25T06:00:03Z",
+      "run_id": "20260625T0600Z-btc",
+      "result": "FIRED",
+      "reason": null,
+      "detail": null,
+      "net_flow_btc": -6.18380737,
+      "coverage": 1.0,
+      "baseline_mean": -3.086045073,
+      "observation": {
+        "a": {
+          "fired": true,
+          "fired_signals": [
+            "fng_extreme_fear"
+          ],
+          "direction_bias": "bearish_crowd",
+          "funding_zscore": -0.8021,
+          "fng_value": 12,
+          "fng_classification": "Extreme Fear",
+          "taker_buy_dominance": false,
+          "taker_sell_dominance": false
+        },
+        "b": {
+          "extreme": false,
+          "direction": "unclear",
+          "unclear_reason": "net_flow_not_extreme",
+          "net_flow_btc": -6.18,
+          "net_flow_pct_reserves": 8e-06,
+          "total_reserves_btc": 788684.73,
+          "extreme_basis": null,
+          "coverage": 1.0,
+          "single_tx_dominated": true
+        },
+        "near_miss": "a_lit_b_quiet"
+      },
+      "signal_id": "CAS-20260625-btc"
     }
   ],
   "signals": [],
@@ -2134,13 +2171,13 @@
   "ledger": [],
   "alert_ledger": [],
   "reserves": {
-    "generated_at": "2026-06-25T04:00:38Z",
-    "total_btc": 777068.9,
+    "generated_at": "2026-06-25T06:00:40Z",
+    "total_btc": 777283.58,
     "wallet_count": 24,
     "refreshed_count": 24,
     "exchange_count": 4,
-    "btc_price": 60893.21,
-    "total_usd": 47318219516.0,
+    "btc_price": 61625.99,
+    "total_usd": 47900870240.0,
     "per_exchange": [
       {
         "exchange": "Binance",
@@ -2157,7 +2194,7 @@
       {
         "exchange": "Bitfinex",
         "count": 2,
-        "btc": 140586.0291,
+        "btc": 140800.7141,
         "pct": 18.1
       },
       {
@@ -2209,7 +2246,7 @@
         "address": "3JZq4atUahhuA9rLhXLMhhTo133J9rF97j",
         "address_short": "3JZq4atU…F97j",
         "label_type": "cold",
-        "balance_btc": 10575.9501,
+        "balance_btc": 10790.6351,
         "refreshed": true,
         "explorer_url": "https://blockstream.info/address/3JZq4atUahhuA9rLhXLMhhTo133J9rF97j"
       },
@@ -2392,11 +2429,11 @@
   },
   "daily": {
     "take": {
-      "headline": "恐慌指数跌到12，但链上还没人真的逃跑",
-      "body": "恐惧贪婪指数从23砸到12，人群情绪已经在尖叫「极端恐惧」——但交易所储备净流出仅-6.18 BTC，链上并没有出现与情绪匹配的大规模抛售确认。资金费率处于-0.45σ，偏空但还没到历史极端，说明空头在加仓却尚未彻底失控。我现在盯的是：储备净流量会不会从「毛细血管渗血」升级成「大动脉出血」——如果流出开始加速放量，那才是情绪与链上共振的信号；反过来，若储备继续按住不动而情绪开始回暖，这波恐慌就可能只是纸老虎。现在的状态是「人群已经崩了，但钱还没真的动」，这个裂缝本身就值得盯紧。"
+      "headline": "恐慌计到12，但链上还没喊疼",
+      "body": "恐惧贪婪指数从23滑到12，人群已经在「极端恐惧」区间尖叫，资金费率也压到-0.80σ，空头情绪不是在演戏。但交易所储备净流出仅-6.18 BTC，总量近79万枚纹丝不动——链上没有配合这场恐慌，筹码还没真正松手。我读到的是：情绪跑在了行为前面，这种背离可以是底部前奏，也可以是市场还没「真疼」的证据。我在盯储备是否开始加速流出、或者净流量翻正——如果链上开始跟着情绪走，这个恐慌的含金量才算被确认；否则，12这个数字只是群聊在刷屏，不是市场在认输。"
     },
     "voice_status": "ok",
     "near_miss": "a_lit_b_quiet",
-    "generated_at": "2026-06-25T04:00:38Z"
+    "generated_at": "2026-06-25T06:00:40Z"
   }
 }
