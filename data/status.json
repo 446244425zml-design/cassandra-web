@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-25T10:00:42Z",
+  "generated_at": "2026-06-25T12:20:49Z",
   "netflow_gate": {
     "mode": "event_driven",
     "waits_for_baseline": false
@@ -2260,6 +2260,43 @@
         "near_miss": "a_lit_b_quiet"
       },
       "signal_id": "CAS-20260625-btc"
+    },
+    {
+      "ts": "2026-06-25T12:00:01Z",
+      "run_id": "20260625T1200Z-btc",
+      "result": "FIRED",
+      "reason": null,
+      "detail": null,
+      "net_flow_btc": 0.0,
+      "coverage": 0.18,
+      "baseline_mean": -3.086045073,
+      "observation": {
+        "a": {
+          "fired": true,
+          "fired_signals": [
+            "fng_extreme_fear"
+          ],
+          "direction_bias": "bearish_crowd",
+          "funding_zscore": 0.4955,
+          "fng_value": 12,
+          "fng_classification": "Extreme Fear",
+          "taker_buy_dominance": false,
+          "taker_sell_dominance": false
+        },
+        "b": {
+          "extreme": false,
+          "direction": "unclear",
+          "unclear_reason": "coverage_below_floor",
+          "net_flow_btc": 0.0,
+          "net_flow_pct_reserves": null,
+          "total_reserves_btc": null,
+          "extreme_basis": null,
+          "coverage": 0.18,
+          "single_tx_dominated": false
+        },
+        "near_miss": "a_lit_b_quiet"
+      },
+      "signal_id": "CAS-20260625-btc"
     }
   ],
   "signals": [],
@@ -2282,173 +2319,65 @@
   "ledger": [],
   "alert_ledger": [],
   "reserves": {
-    "generated_at": "2026-06-25T10:00:42Z",
-    "total_btc": 777283.58,
+    "generated_at": "2026-06-25T12:20:49Z",
+    "total_btc": 0.0,
     "wallet_count": 24,
-    "refreshed_count": 24,
+    "refreshed_count": 0,
     "exchange_count": 4,
-    "btc_price": 61734.1,
-    "total_usd": 47984902368.0,
+    "btc_price": 61342.33,
+    "total_usd": 0.0,
     "per_exchange": [
       {
         "exchange": "Binance",
         "count": 2,
-        "btc": 423531.8847,
-        "pct": 54.5
-      },
-      {
-        "exchange": "Robinhood",
-        "count": 1,
-        "btc": 140849.9854,
-        "pct": 18.1
+        "btc": 0.0,
+        "pct": 0.0
       },
       {
         "exchange": "Bitfinex",
         "count": 2,
-        "btc": 140800.7141,
-        "pct": 18.1
+        "btc": 0.0,
+        "pct": 0.0
       },
       {
         "exchange": "OKX",
         "count": 19,
-        "btc": 72100.9976,
-        "pct": 9.3
-      }
-    ],
-    "wallets": [
-      {
-        "exchange": "Binance",
-        "address": "34xp4vRoCGJym3xR7yCVPFHoCNxv4Twseo",
-        "address_short": "34xp4vRo…wseo",
-        "label_type": "cold",
-        "balance_btc": 248597.5906,
-        "refreshed": true,
-        "explorer_url": "https://blockstream.info/address/34xp4vRoCGJym3xR7yCVPFHoCNxv4Twseo"
-      },
-      {
-        "exchange": "Binance",
-        "address": "3M219KR5vEneNb47ewrPfWyb5jQ2DjxRP6",
-        "address_short": "3M219KR5…xRP6",
-        "label_type": "cold",
-        "balance_btc": 174934.2942,
-        "refreshed": true,
-        "explorer_url": "https://blockstream.info/address/3M219KR5vEneNb47ewrPfWyb5jQ2DjxRP6"
+        "btc": 0.0,
+        "pct": 0.0
       },
       {
         "exchange": "Robinhood",
-        "address": "bc1ql49ydapnjafl5t2cp9zqpjwe6pdgmxy98859v2",
-        "address_short": "bc1ql49y…59v2",
-        "label_type": "cold",
-        "balance_btc": 140849.9854,
-        "refreshed": true,
-        "explorer_url": "https://blockstream.info/address/bc1ql49ydapnjafl5t2cp9zqpjwe6pdgmxy98859v2"
-      },
-      {
-        "exchange": "Bitfinex",
-        "address": "bc1qgdjqv0av3q56jvd82tkdjpy7gdp9ut8tlqmgrpmv24sq90ecnvqqjwvw97",
-        "address_short": "bc1qgdjq…vw97",
-        "label_type": "cold",
-        "balance_btc": 130010.079,
-        "refreshed": true,
-        "explorer_url": "https://blockstream.info/address/bc1qgdjqv0av3q56jvd82tkdjpy7gdp9ut8tlqmgrpmv24sq90ecnvqqjwvw97"
-      },
-      {
-        "exchange": "Bitfinex",
-        "address": "3JZq4atUahhuA9rLhXLMhhTo133J9rF97j",
-        "address_short": "3JZq4atU…F97j",
-        "label_type": "cold",
-        "balance_btc": 10790.6351,
-        "refreshed": true,
-        "explorer_url": "https://blockstream.info/address/3JZq4atUahhuA9rLhXLMhhTo133J9rF97j"
-      },
-      {
-        "exchange": "OKX",
-        "address": "1CY7fykRLWXeSbKB885Kr4KjQxmDdvW923",
-        "address_short": "1CY7fykR…W923",
-        "label_type": "cold",
-        "balance_btc": 10000.0004,
-        "refreshed": true,
-        "explorer_url": "https://blockstream.info/address/1CY7fykRLWXeSbKB885Kr4KjQxmDdvW923"
-      },
-      {
-        "exchange": "OKX",
-        "address": "16rF2zwSJ9goQ9fZfYoti5LsUqqegb5RnA",
-        "address_short": "16rF2zwS…5RnA",
-        "label_type": "cold",
-        "balance_btc": 6100.9935,
-        "refreshed": true,
-        "explorer_url": "https://blockstream.info/address/16rF2zwSJ9goQ9fZfYoti5LsUqqegb5RnA"
-      },
-      {
-        "exchange": "OKX",
-        "address": "1FY6RL8Ju9b6CGsHTK68yYEcnzUasufyCe",
-        "address_short": "1FY6RL8J…fyCe",
-        "label_type": "cold",
-        "balance_btc": 6000.0002,
-        "refreshed": true,
-        "explorer_url": "https://blockstream.info/address/1FY6RL8Ju9b6CGsHTK68yYEcnzUasufyCe"
-      },
-      {
-        "exchange": "OKX",
-        "address": "178E8tYZ5WJ6PpADdpmmZd67Se7uPhJCLX",
-        "address_short": "178E8tYZ…JCLX",
-        "label_type": "cold",
-        "balance_btc": 6000.0001,
-        "refreshed": true,
-        "explorer_url": "https://blockstream.info/address/178E8tYZ5WJ6PpADdpmmZd67Se7uPhJCLX"
-      },
-      {
-        "exchange": "OKX",
-        "address": "1BsdDaJtgFZrLfzEXvh6cD4VhtHHSHhMea",
-        "address_short": "1BsdDaJt…hMea",
-        "label_type": "cold",
-        "balance_btc": 6000.0001,
-        "refreshed": true,
-        "explorer_url": "https://blockstream.info/address/1BsdDaJtgFZrLfzEXvh6cD4VhtHHSHhMea"
-      },
-      {
-        "exchange": "OKX",
-        "address": "1Lj2mCPJYbbC2X6oYwV6sXnE8CZ4heK5UD",
-        "address_short": "1Lj2mCPJ…K5UD",
-        "label_type": "cold",
-        "balance_btc": 6000.0001,
-        "refreshed": true,
-        "explorer_url": "https://blockstream.info/address/1Lj2mCPJYbbC2X6oYwV6sXnE8CZ4heK5UD"
-      },
-      {
-        "exchange": "OKX",
-        "address": "1LnoZawVFFQihU8d8ntxLMpYheZUfyeVAK",
-        "address_short": "1LnoZawV…eVAK",
-        "label_type": "cold",
-        "balance_btc": 5000.0013,
-        "refreshed": true,
-        "explorer_url": "https://blockstream.info/address/1LnoZawVFFQihU8d8ntxLMpYheZUfyeVAK"
-      },
-      {
-        "exchange": "OKX",
-        "address": "18QUDxjDZAqAJorr4jkSEWHUDGLBF9uRCc",
-        "address_short": "18QUDxjD…uRCc",
-        "label_type": "cold",
-        "balance_btc": 3000.0005,
-        "refreshed": true,
-        "explorer_url": "https://blockstream.info/address/18QUDxjDZAqAJorr4jkSEWHUDGLBF9uRCc"
-      },
+        "count": 1,
+        "btc": 0.0,
+        "pct": 0.0
+      }
+    ],
+    "wallets": [
       {
         "exchange": "OKX",
         "address": "13jTtHxBPFwZkaCdm6BwJMMJkqvTpBZccw",
         "address_short": "13jTtHxB…Zccw",
         "label_type": "cold",
-        "balance_btc": 3000.0001,
-        "refreshed": true,
+        "balance_btc": null,
+        "refreshed": false,
         "explorer_url": "https://blockstream.info/address/13jTtHxBPFwZkaCdm6BwJMMJkqvTpBZccw"
+      },
+      {
+        "exchange": "OKX",
+        "address": "13rCGm4Z3PDeYwo5a7GTT4jFYnRFBZbKr1",
+        "address_short": "13rCGm4Z…bKr1",
+        "label_type": "cold",
+        "balance_btc": null,
+        "refreshed": false,
+        "explorer_url": "https://blockstream.info/address/13rCGm4Z3PDeYwo5a7GTT4jFYnRFBZbKr1"
       },
       {
         "exchange": "OKX",
         "address": "14kHu26yWkVD8qAnBfcFXHXxgquNoSpKum",
         "address_short": "14kHu26y…pKum",
         "label_type": "cold",
-        "balance_btc": 3000.0001,
-        "refreshed": true,
+        "balance_btc": null,
+        "refreshed": false,
         "explorer_url": "https://blockstream.info/address/14kHu26yWkVD8qAnBfcFXHXxgquNoSpKum"
       },
       {
@@ -2456,26 +2385,71 @@
         "address": "15Exz1BAVan4Eweagy1rcPJnfyc6KJ4GvL",
         "address_short": "15Exz1BA…4GvL",
         "label_type": "cold",
-        "balance_btc": 3000.0001,
-        "refreshed": true,
+        "balance_btc": null,
+        "refreshed": false,
         "explorer_url": "https://blockstream.info/address/15Exz1BAVan4Eweagy1rcPJnfyc6KJ4GvL"
+      },
+      {
+        "exchange": "OKX",
+        "address": "16rF2zwSJ9goQ9fZfYoti5LsUqqegb5RnA",
+        "address_short": "16rF2zwS…5RnA",
+        "label_type": "cold",
+        "balance_btc": null,
+        "refreshed": false,
+        "explorer_url": "https://blockstream.info/address/16rF2zwSJ9goQ9fZfYoti5LsUqqegb5RnA"
+      },
+      {
+        "exchange": "OKX",
+        "address": "178E8tYZ5WJ6PpADdpmmZd67Se7uPhJCLX",
+        "address_short": "178E8tYZ…JCLX",
+        "label_type": "cold",
+        "balance_btc": null,
+        "refreshed": false,
+        "explorer_url": "https://blockstream.info/address/178E8tYZ5WJ6PpADdpmmZd67Se7uPhJCLX"
+      },
+      {
+        "exchange": "OKX",
+        "address": "18QUDxjDZAqAJorr4jkSEWHUDGLBF9uRCc",
+        "address_short": "18QUDxjD…uRCc",
+        "label_type": "cold",
+        "balance_btc": null,
+        "refreshed": false,
+        "explorer_url": "https://blockstream.info/address/18QUDxjDZAqAJorr4jkSEWHUDGLBF9uRCc"
+      },
+      {
+        "exchange": "OKX",
+        "address": "1BsdDaJtgFZrLfzEXvh6cD4VhtHHSHhMea",
+        "address_short": "1BsdDaJt…hMea",
+        "label_type": "cold",
+        "balance_btc": null,
+        "refreshed": false,
+        "explorer_url": "https://blockstream.info/address/1BsdDaJtgFZrLfzEXvh6cD4VhtHHSHhMea"
       },
       {
         "exchange": "OKX",
         "address": "1CE8chGD6Nu8qjcDF2uR1wMKyoWb8Kyxwz",
         "address_short": "1CE8chGD…yxwz",
         "label_type": "cold",
-        "balance_btc": 3000.0001,
-        "refreshed": true,
+        "balance_btc": null,
+        "refreshed": false,
         "explorer_url": "https://blockstream.info/address/1CE8chGD6Nu8qjcDF2uR1wMKyoWb8Kyxwz"
+      },
+      {
+        "exchange": "OKX",
+        "address": "1CY7fykRLWXeSbKB885Kr4KjQxmDdvW923",
+        "address_short": "1CY7fykR…W923",
+        "label_type": "cold",
+        "balance_btc": null,
+        "refreshed": false,
+        "explorer_url": "https://blockstream.info/address/1CY7fykRLWXeSbKB885Kr4KjQxmDdvW923"
       },
       {
         "exchange": "OKX",
         "address": "1DVTB9YKi4KNjyEbAHPp17T8R1Pp17nSmA",
         "address_short": "1DVTB9YK…nSmA",
         "label_type": "cold",
-        "balance_btc": 3000.0001,
-        "refreshed": true,
+        "balance_btc": null,
+        "refreshed": false,
         "explorer_url": "https://blockstream.info/address/1DVTB9YKi4KNjyEbAHPp17T8R1Pp17nSmA"
       },
       {
@@ -2483,68 +2457,131 @@
         "address": "1DnHx95d2t5URq2SYvVk6kxGryvTEbTnTs",
         "address_short": "1DnHx95d…TnTs",
         "label_type": "cold",
-        "balance_btc": 3000.0001,
-        "refreshed": true,
+        "balance_btc": null,
+        "refreshed": false,
         "explorer_url": "https://blockstream.info/address/1DnHx95d2t5URq2SYvVk6kxGryvTEbTnTs"
-      },
-      {
-        "exchange": "OKX",
-        "address": "1FfgXrQUjX5nQ4zsiLBWjvFwW61jQHCqn",
-        "address_short": "1FfgXrQU…HCqn",
-        "label_type": "cold",
-        "balance_btc": 3000.0001,
-        "refreshed": true,
-        "explorer_url": "https://blockstream.info/address/1FfgXrQUjX5nQ4zsiLBWjvFwW61jQHCqn"
-      },
-      {
-        "exchange": "OKX",
-        "address": "1M6E6vPaYsuCb34mDNS2aepu2aJyL6xBG4",
-        "address_short": "1M6E6vPa…xBG4",
-        "label_type": "cold",
-        "balance_btc": 3000.0001,
-        "refreshed": true,
-        "explorer_url": "https://blockstream.info/address/1M6E6vPaYsuCb34mDNS2aepu2aJyL6xBG4"
-      },
-      {
-        "exchange": "OKX",
-        "address": "13rCGm4Z3PDeYwo5a7GTT4jFYnRFBZbKr1",
-        "address_short": "13rCGm4Z…bKr1",
-        "label_type": "cold",
-        "balance_btc": 0.0004,
-        "refreshed": true,
-        "explorer_url": "https://blockstream.info/address/13rCGm4Z3PDeYwo5a7GTT4jFYnRFBZbKr1"
-      },
-      {
-        "exchange": "OKX",
-        "address": "1MbNM3jwxMjRzeA9xyHbMyePN68MY4Jxb",
-        "address_short": "1MbNM3jw…4Jxb",
-        "label_type": "cold",
-        "balance_btc": 0.0002,
-        "refreshed": true,
-        "explorer_url": "https://blockstream.info/address/1MbNM3jwxMjRzeA9xyHbMyePN68MY4Jxb"
       },
       {
         "exchange": "OKX",
         "address": "1FTgXfXZRxMQcKSNeuFvWYVPsNgurTJ7BZ",
         "address_short": "1FTgXfXZ…J7BZ",
         "label_type": "cold",
-        "balance_btc": 0.0001,
-        "refreshed": true,
+        "balance_btc": null,
+        "refreshed": false,
         "explorer_url": "https://blockstream.info/address/1FTgXfXZRxMQcKSNeuFvWYVPsNgurTJ7BZ"
+      },
+      {
+        "exchange": "OKX",
+        "address": "1FY6RL8Ju9b6CGsHTK68yYEcnzUasufyCe",
+        "address_short": "1FY6RL8J…fyCe",
+        "label_type": "cold",
+        "balance_btc": null,
+        "refreshed": false,
+        "explorer_url": "https://blockstream.info/address/1FY6RL8Ju9b6CGsHTK68yYEcnzUasufyCe"
+      },
+      {
+        "exchange": "OKX",
+        "address": "1FfgXrQUjX5nQ4zsiLBWjvFwW61jQHCqn",
+        "address_short": "1FfgXrQU…HCqn",
+        "label_type": "cold",
+        "balance_btc": null,
+        "refreshed": false,
+        "explorer_url": "https://blockstream.info/address/1FfgXrQUjX5nQ4zsiLBWjvFwW61jQHCqn"
+      },
+      {
+        "exchange": "OKX",
+        "address": "1Lj2mCPJYbbC2X6oYwV6sXnE8CZ4heK5UD",
+        "address_short": "1Lj2mCPJ…K5UD",
+        "label_type": "cold",
+        "balance_btc": null,
+        "refreshed": false,
+        "explorer_url": "https://blockstream.info/address/1Lj2mCPJYbbC2X6oYwV6sXnE8CZ4heK5UD"
+      },
+      {
+        "exchange": "OKX",
+        "address": "1LnoZawVFFQihU8d8ntxLMpYheZUfyeVAK",
+        "address_short": "1LnoZawV…eVAK",
+        "label_type": "cold",
+        "balance_btc": null,
+        "refreshed": false,
+        "explorer_url": "https://blockstream.info/address/1LnoZawVFFQihU8d8ntxLMpYheZUfyeVAK"
+      },
+      {
+        "exchange": "OKX",
+        "address": "1M6E6vPaYsuCb34mDNS2aepu2aJyL6xBG4",
+        "address_short": "1M6E6vPa…xBG4",
+        "label_type": "cold",
+        "balance_btc": null,
+        "refreshed": false,
+        "explorer_url": "https://blockstream.info/address/1M6E6vPaYsuCb34mDNS2aepu2aJyL6xBG4"
+      },
+      {
+        "exchange": "OKX",
+        "address": "1MbNM3jwxMjRzeA9xyHbMyePN68MY4Jxb",
+        "address_short": "1MbNM3jw…4Jxb",
+        "label_type": "cold",
+        "balance_btc": null,
+        "refreshed": false,
+        "explorer_url": "https://blockstream.info/address/1MbNM3jwxMjRzeA9xyHbMyePN68MY4Jxb"
+      },
+      {
+        "exchange": "Binance",
+        "address": "34xp4vRoCGJym3xR7yCVPFHoCNxv4Twseo",
+        "address_short": "34xp4vRo…wseo",
+        "label_type": "cold",
+        "balance_btc": null,
+        "refreshed": false,
+        "explorer_url": "https://blockstream.info/address/34xp4vRoCGJym3xR7yCVPFHoCNxv4Twseo"
+      },
+      {
+        "exchange": "Bitfinex",
+        "address": "3JZq4atUahhuA9rLhXLMhhTo133J9rF97j",
+        "address_short": "3JZq4atU…F97j",
+        "label_type": "cold",
+        "balance_btc": null,
+        "refreshed": false,
+        "explorer_url": "https://blockstream.info/address/3JZq4atUahhuA9rLhXLMhhTo133J9rF97j"
+      },
+      {
+        "exchange": "Binance",
+        "address": "3M219KR5vEneNb47ewrPfWyb5jQ2DjxRP6",
+        "address_short": "3M219KR5…xRP6",
+        "label_type": "cold",
+        "balance_btc": null,
+        "refreshed": false,
+        "explorer_url": "https://blockstream.info/address/3M219KR5vEneNb47ewrPfWyb5jQ2DjxRP6"
+      },
+      {
+        "exchange": "Bitfinex",
+        "address": "bc1qgdjqv0av3q56jvd82tkdjpy7gdp9ut8tlqmgrpmv24sq90ecnvqqjwvw97",
+        "address_short": "bc1qgdjq…vw97",
+        "label_type": "cold",
+        "balance_btc": null,
+        "refreshed": false,
+        "explorer_url": "https://blockstream.info/address/bc1qgdjqv0av3q56jvd82tkdjpy7gdp9ut8tlqmgrpmv24sq90ecnvqqjwvw97"
+      },
+      {
+        "exchange": "Robinhood",
+        "address": "bc1ql49ydapnjafl5t2cp9zqpjwe6pdgmxy98859v2",
+        "address_short": "bc1ql49y…59v2",
+        "label_type": "cold",
+        "balance_btc": null,
+        "refreshed": false,
+        "explorer_url": "https://blockstream.info/address/bc1ql49ydapnjafl5t2cp9zqpjwe6pdgmxy98859v2"
       }
     ],
-    "coverage": 100.0,
-    "net_flow_btc": -6.18,
+    "coverage": 0.0,
+    "net_flow_btc": 0.0,
     "window_hours": 48,
     "address_book_version": "2026-06-17"
   },
   "daily": {
     "take": {
-      "headline": "人群已在尖叫，链上还在打哈欠",
-      "body": "恐惧贪婪指数从17滑到12，极端恐慌还在加深，61734附近的现价不是在底部「盘整」，是在人群集体踩踏时被按住不动。资金费率-0.17σ，轻微偏空但没有爆仓式尖刺，说明空头还没押注到歇斯底里的程度——恐慌情绪领先，筹码动作还没跟上。交易所储备净流出-6.18 BTC，链上行为近乎静止，这是我盯的核心矛盾：人群喊崩，但没人真的大量提币或砸盘离场。什么会让我改变判断？储备净流量翻成大幅净流入（真实抛压出现），或资金费率σ继续向负极端跌穿，那才是我会重新评估「人群只是在叫」这个读法的时候。"
+      "headline": "恐惧指数跌到12，人群在尖叫，链上还没动",
+      "body": "恐惧贪婪指数从20滑到12，人群已经在极端恐慌区间尖叫，但交易所储备净流量挂着0.0——链上大户既没跑也没抄，按住不动。资金费率在+0.50σ，方向均衡，多空都没有在押注这场恐慌会去哪里。我读到的是：情绪已经坏透了，但「被迫卖」的实质动作还没出现，这两件事同时成立，让我对任何方向的确定性都打折扣。我在盯的是储备净流量会不会转负——如果链上开始出现实质性的大额流入或流出，那才是让我重新定性当前状态的信号；在那之前，这只是一场还没落地的恐慌。"
     },
     "voice_status": "ok",
     "near_miss": "a_lit_b_quiet",
-    "generated_at": "2026-06-25T10:00:42Z"
+    "generated_at": "2026-06-25T12:20:49Z"
   }
 }
