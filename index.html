@@ -68,6 +68,9 @@
   .read-wait{font-size:13px;color:var(--muted);line-height:1.7;background:var(--surface2);border-radius:8px;padding:11px 13px;margin-top:12px}
   .read-wait .lab{display:inline-block;color:var(--faint);font-weight:500;margin-right:6px}
   .read-wait b{color:var(--text);font-weight:500}
+  /* 每日观点（Cassandra 生成）——金色左框标记"她在说话" */
+  .read-voice{font-size:11px;color:var(--active);letter-spacing:.5px;border:1px solid #5a4a1a;border-radius:5px;padding:2px 8px}
+  .read-take{font-size:14.5px;line-height:1.85;color:var(--text);margin-top:13px;border-left:2px solid #5a4a1a;padding:2px 0 2px 14px}
   /* 近触发记录 */
   .nm-empty{font-size:13px;color:var(--muted);line-height:1.7;padding:2px 2px 8px}
   .nm-row{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--line);font-size:13px}
@@ -301,26 +304,37 @@ function dailyRead(){
   const nf=b.net_flow_btc;
   const nfTxt=(nf==null)?'未取到':((Math.abs(nf)<1?'≈0':((nf>=0?'+':'')+Math.round(nf).toLocaleString()))+' BTC');
   const cov=b.coverage!=null?Math.round(b.coverage*100)+'%':'—';
-  let pillCls,pillTxt,head,wait;
-  if(nm==='both_lit'){
-    pillCls='live'; pillTxt='信号区';
-    head='人群极端 + 链上异动同时出现 —— 看下方信号。';
-    wait='两条线都亮了，这是招牌级时刻。下方是经人工 review 后发布的信号。';
-  } else if(nm==='a_lit_b_quiet'){
-    pillCls='near'; pillTxt='近触发';
-    const sig=(a.fired_signals||[]).join(' / ')||'人群指标';
-    const lean=a.direction_bias==='bullish_crowd'?'人群在上头（偏多）':(a.direction_bias==='bearish_crowd'?'人群在恐慌（偏空）':'人群已触及极端');
-    head=lean+'，但链上还没确认。';
-    wait='人群已经打到极端（'+esc(sig)+'）。等链上出现大额背离，就是<b>招牌级背离信号</b>；链上不动，我也可以走<b>纯人群逆势的低档</b>——把握封顶 3/5、盈亏比仍≥2，链上未确认会写在卡面上。';
+  // 状态灯（来自 near_miss）
+  const pill = nm==='both_lit'?{c:'live',t:'信号区'} : nm==='a_lit_b_quiet'?{c:'near',t:'近触发'} : {c:'quiet',t:'盯盘中'};
+
+  // headline + body：优先用 Cassandra 生成的【每日观点】；LLM 不在/失败时回退到模板。
+  const take=(STATUS&&STATUS.daily&&STATUS.daily.take)||null;
+  let head, bodyHtml, voiceTag='';
+  if(take && take.headline && take.body){
+    head=esc(take.headline);
+    bodyHtml=`<div class="read-take">${esc(take.body)}</div>`;
+    voiceTag='<span class="read-voice">每日观点</span>';
   } else {
-    pillCls='quiet'; pillTxt='盯盘中';
-    head='人群还没到我出手的极端区。我在盯，不出手。';
-    wait='等两件事之一：人群情绪打到<b>真极端</b>（极贪或极恐破我的线，比恐惧贪婪表更严），或储备出现<b>大额单向搬仓</b>。没到，就沉默——这是特性。';
+    let wait;
+    if(nm==='both_lit'){
+      head='人群极端 + 链上异动同时出现 —— 看下方信号。';
+      wait='两条线都亮了，这是招牌级时刻。下方是经人工 review 后发布的信号。';
+    } else if(nm==='a_lit_b_quiet'){
+      const sig=(a.fired_signals||[]).join(' / ')||'人群指标';
+      const lean=a.direction_bias==='bullish_crowd'?'人群在上头（偏多）':(a.direction_bias==='bearish_crowd'?'人群在恐慌（偏空）':'人群已触及极端');
+      head=lean+'，但链上还没确认。';
+      wait='人群已经打到极端（'+esc(sig)+'）。等链上出现大额背离，就是<b>招牌级背离信号</b>；链上不动，我也可以走<b>纯人群逆势的低档</b>——把握封顶 3/5、盈亏比仍≥2，链上未确认会写在卡面上。';
+    } else {
+      head='人群还没到我出手的极端区。我在盯，不出手。';
+      wait='等两件事之一：人群情绪打到<b>真极端</b>（极贪或极恐破我的线，比恐惧贪婪表更严），或储备出现<b>大额单向搬仓</b>。没到，就沉默——这是特性。';
+    }
+    bodyHtml=`<div class="read-wait"><span class="lab">我在等什么</span>${wait}</div>`;
   }
   return `
   <div class="read-panel">
     <div class="read-top">
-      <span class="read-pill ${pillCls}">${pillTxt}</span>
+      <span class="read-pill ${pill.c}">${pill.t}</span>
+      ${voiceTag}
       <span class="read-time">读盘 · ${esc((run.ts||'').replace('T',' ').replace('Z',' UTC'))}</span>
     </div>
     <p class="read-head">${head}</p>
@@ -330,7 +344,7 @@ function dailyRead(){
       <div class="chip"><div class="ck">主动成交</div><div class="cv">${tk.v}</div><div class="cd">${tk.d}</div></div>
       <div class="chip"><div class="ck">储备净流</div><div class="cv">${nfTxt}</div><div class="cd">覆盖 ${cov}</div></div>
     </div>
-    <div class="read-wait"><span class="lab">我在等什么</span>${wait}</div>
+    ${bodyHtml}
   </div>`;
 }
 function nearMissStrip(){
