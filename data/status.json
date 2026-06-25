@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-25T06:00:40Z",
+  "generated_at": "2026-06-25T08:00:41Z",
   "netflow_gate": {
     "mode": "event_driven",
     "waits_for_baseline": false
@@ -2149,6 +2149,43 @@
         "near_miss": "a_lit_b_quiet"
       },
       "signal_id": "CAS-20260625-btc"
+    },
+    {
+      "ts": "2026-06-25T08:00:04Z",
+      "run_id": "20260625T0800Z-btc",
+      "result": "FIRED",
+      "reason": null,
+      "detail": null,
+      "net_flow_btc": -6.18380737,
+      "coverage": 1.0,
+      "baseline_mean": -3.086045073,
+      "observation": {
+        "a": {
+          "fired": true,
+          "fired_signals": [
+            "fng_extreme_fear"
+          ],
+          "direction_bias": "bearish_crowd",
+          "funding_zscore": -1.1345,
+          "fng_value": 12,
+          "fng_classification": "Extreme Fear",
+          "taker_buy_dominance": false,
+          "taker_sell_dominance": false
+        },
+        "b": {
+          "extreme": false,
+          "direction": "unclear",
+          "unclear_reason": "net_flow_not_extreme",
+          "net_flow_btc": -6.18,
+          "net_flow_pct_reserves": 8e-06,
+          "total_reserves_btc": 788684.73,
+          "extreme_basis": null,
+          "coverage": 1.0,
+          "single_tx_dominated": false
+        },
+        "near_miss": "a_lit_b_quiet"
+      },
+      "signal_id": "CAS-20260625-btc"
     }
   ],
   "signals": [],
@@ -2171,13 +2208,13 @@
   "ledger": [],
   "alert_ledger": [],
   "reserves": {
-    "generated_at": "2026-06-25T06:00:40Z",
+    "generated_at": "2026-06-25T08:00:41Z",
     "total_btc": 777283.58,
     "wallet_count": 24,
     "refreshed_count": 24,
     "exchange_count": 4,
-    "btc_price": 61625.99,
-    "total_usd": 47900870240.0,
+    "btc_price": 61908.07,
+    "total_usd": 48120126393.0,
     "per_exchange": [
       {
         "exchange": "Binance",
@@ -2429,11 +2466,11 @@
   },
   "daily": {
     "take": {
-      "headline": "恐慌计到12，但链上还没喊疼",
-      "body": "恐惧贪婪指数从23滑到12，人群已经在「极端恐惧」区间尖叫，资金费率也压到-0.80σ，空头情绪不是在演戏。但交易所储备净流出仅-6.18 BTC，总量近79万枚纹丝不动——链上没有配合这场恐慌，筹码还没真正松手。我读到的是：情绪跑在了行为前面，这种背离可以是底部前奏，也可以是市场还没「真疼」的证据。我在盯储备是否开始加速流出、或者净流量翻正——如果链上开始跟着情绪走，这个恐慌的含金量才算被确认；否则，12这个数字只是群聊在刷屏，不是市场在认输。"
+      "headline": "恐慌指数跌到12，人群在尖叫，链上还没动",
+      "body": "恐惧贪婪从23砸到12，已进「极端恐惧」区，这不是温水，是人群在集体踩踏——但我要泼冷水：情绪极端不等于底部，它只是告诉你现在站在人群里的人大多数在颤抖。资金费率报-1.13σ，空头已在付钱做空，这种程度的负费率通常意味着杠杆空头在堆积，不是在清场；交易所储备净流出-6.18 BTC，量级太小，链上还没出现「大手在接货」的确认信号——人群喊痛，但聪明钱还没亮牌。我在盯的是：储备净流量会不会在接下来几天出现量级跳升的流出（那才是有人在链上真的接），或者费率能否快速收敛回零轴——任何一个触发，我才会考虑修正「这只是恐慌还没到位」的判断；在那之前，这个12只是一个让人不舒服的读数，不是通行证。"
     },
     "voice_status": "ok",
     "near_miss": "a_lit_b_quiet",
-    "generated_at": "2026-06-25T06:00:40Z"
+    "generated_at": "2026-06-25T08:00:41Z"
   }
 }
