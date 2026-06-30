@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-30T08:00:34Z",
+  "generated_at": "2026-06-30T10:00:25Z",
   "netflow_gate": {
     "mode": "event_driven",
     "waits_for_baseline": false
@@ -69,26 +69,6 @@
     ]
   },
   "runs": [
-    {
-      "ts": "2026-06-17T14:00:01Z",
-      "run_id": "20260617T1400Z-btc",
-      "result": "NoSignal",
-      "reason": "no_trigger",
-      "detail": "fired_signals=[] below require_n_signals",
-      "net_flow_btc": -6.16428954,
-      "coverage": 1.0,
-      "baseline_mean": null
-    },
-    {
-      "ts": "2026-06-17T14:09:22Z",
-      "run_id": "20260617T1409Z-btc",
-      "result": "NoSignal",
-      "reason": "no_trigger",
-      "detail": "fired_signals=[] below require_n_signals",
-      "net_flow_btc": -6.16428954,
-      "coverage": 1.0,
-      "baseline_mean": null
-    },
     {
       "ts": "2026-06-17T14:40:51Z",
       "run_id": "20260617T1440Z-btc",
@@ -2741,6 +2721,80 @@
         "near_miss": "a_lit_b_quiet"
       },
       "signal_id": "CAS-20260630-btc"
+    },
+    {
+      "ts": "2026-06-30T09:31:51Z",
+      "run_id": "20260630T0931Z-btc",
+      "result": "NoSignal",
+      "reason": "direction_bias_unclear",
+      "detail": "A fired but crowd lean is undetermined (fired_signals=['funding_extreme', 'fng_extreme_fear']); A+C fade has no side",
+      "net_flow_btc": 1.497e-05,
+      "coverage": 1.0,
+      "baseline_mean": -2.8495560123076924,
+      "observation": {
+        "a": {
+          "fired": true,
+          "fired_signals": [
+            "funding_extreme",
+            "fng_extreme_fear"
+          ],
+          "direction_bias": null,
+          "funding_zscore": 2.076,
+          "fng_value": 15,
+          "fng_classification": "Extreme Fear",
+          "taker_buy_dominance": false,
+          "taker_sell_dominance": false
+        },
+        "b": {
+          "extreme": false,
+          "direction": "unclear",
+          "unclear_reason": "net_flow_not_extreme",
+          "net_flow_btc": 0.0,
+          "net_flow_pct_reserves": 0.0,
+          "total_reserves_btc": 789882.31,
+          "extreme_basis": null,
+          "coverage": 1.0,
+          "single_tx_dominated": false
+        },
+        "near_miss": "a_lit_b_quiet"
+      }
+    },
+    {
+      "ts": "2026-06-30T10:00:00Z",
+      "run_id": "20260630T1000Z-btc",
+      "result": "NoSignal",
+      "reason": "direction_bias_unclear",
+      "detail": "A fired but crowd lean is undetermined (fired_signals=['funding_extreme', 'fng_extreme_fear']); A+C fade has no side",
+      "net_flow_btc": 1.497e-05,
+      "coverage": 1.0,
+      "baseline_mean": -2.8495560123076924,
+      "observation": {
+        "a": {
+          "fired": true,
+          "fired_signals": [
+            "funding_extreme",
+            "fng_extreme_fear"
+          ],
+          "direction_bias": null,
+          "funding_zscore": 2.1753,
+          "fng_value": 15,
+          "fng_classification": "Extreme Fear",
+          "taker_buy_dominance": false,
+          "taker_sell_dominance": false
+        },
+        "b": {
+          "extreme": false,
+          "direction": "unclear",
+          "unclear_reason": "net_flow_not_extreme",
+          "net_flow_btc": 0.0,
+          "net_flow_pct_reserves": 0.0,
+          "total_reserves_btc": 789882.31,
+          "extreme_basis": null,
+          "coverage": 1.0,
+          "single_tx_dominated": false
+        },
+        "near_miss": "a_lit_b_quiet"
+      }
     }
   ],
   "signals": [],
@@ -2766,13 +2820,13 @@
   "ledger": [],
   "alert_ledger": [],
   "reserves": {
-    "generated_at": "2026-06-30T08:00:34Z",
+    "generated_at": "2026-06-30T10:00:25Z",
     "total_btc": 778230.81,
     "wallet_count": 24,
     "refreshed_count": 24,
     "exchange_count": 4,
-    "btc_price": 59524.01,
-    "total_usd": 46323418244.0,
+    "btc_price": 59383.31,
+    "total_usd": 46213921170.0,
     "per_exchange": [
       {
         "exchange": "Binance",
@@ -3024,11 +3078,11 @@
   },
   "daily": {
     "take": {
-      "headline": "恐慌指数15，人群已尖叫，链上却在打哈欠",
-      "body": "恐惧贪婪指数压在15的极端恐惧区，最近几天基本没动——不是在退潮，是卡住了。奇怪的地方在于：资金费率还挂在+1.71σ，多头付费意愿并没有随情绪一起崩掉，这两个信号对着干，市场自己也没想好。交易所储备净流量是0，789882枚BTC按住不动，链上没有给出「恐慌抛售确认」的动作，所以这波恐慌到底是真割还是情绪噪音，我现在没法定论。我在盯的是：储备净流量如果开始明显单向流动，或者资金费率快速回落到均值以下——那才是让我重新评估的信号，现在只是「人群在喊痛，但手还没动」。"
+      "headline": "极恐盖顶，链上无声，市场在装死",
+      "body": "恐惧贪婪指数压在15，「极度恐慌」档位，且这几天几乎纹丝未动——不是在恢复，是在原地发呆。资金费率+2.18σ却显示多头仍在硬撑，情绪和仓位之间这道裂缝让我不安：人群已经在尖叫，但链上储备净流量挂零、总量789882 BTC按兵不动，聪明钱连个动静都没给。我现在盯的是储备净流量会不会突然转负——那才是链上开始「认账」的信号；如果资金费率率先塌下来，我会重新评估这个+2.18σ是在释放压力还是在积累引信。"
     },
     "voice_status": "ok",
     "near_miss": "a_lit_b_quiet",
-    "generated_at": "2026-06-30T08:00:34Z"
+    "generated_at": "2026-06-30T10:00:25Z"
   }
 }
