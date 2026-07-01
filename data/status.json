@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-01T04:00:37Z",
+  "generated_at": "2026-07-01T06:00:41Z",
   "netflow_gate": {
     "mode": "event_driven",
     "waits_for_baseline": false
@@ -73,26 +73,6 @@
     ]
   },
   "runs": [
-    {
-      "ts": "2026-06-19T04:00:01Z",
-      "run_id": "20260619T0400Z-btc",
-      "result": "NoSignal",
-      "reason": "direction_unclear",
-      "detail": "net_flow_not_extreme",
-      "net_flow_btc": -6.16428954,
-      "coverage": 1.0,
-      "baseline_mean": null
-    },
-    {
-      "ts": "2026-06-19T08:00:01Z",
-      "run_id": "20260619T0800Z-btc",
-      "result": "NoSignal",
-      "reason": "direction_unclear",
-      "detail": "net_flow_not_extreme",
-      "net_flow_btc": 0.0,
-      "coverage": 1.0,
-      "baseline_mean": null
-    },
     {
       "ts": "2026-06-19T09:31:48Z",
       "run_id": "20260619T0931Z-btc",
@@ -3098,6 +3078,80 @@
         "near_miss": "a_lit_b_quiet"
       },
       "signal_id": "CAS-20260701-btc"
+    },
+    {
+      "ts": "2026-07-01T05:31:52Z",
+      "run_id": "20260701T0531Z-btc",
+      "result": "FIRED",
+      "reason": null,
+      "detail": null,
+      "net_flow_btc": 1.497e-05,
+      "coverage": 1.0,
+      "baseline_mean": -2.646015227857143,
+      "observation": {
+        "a": {
+          "fired": true,
+          "fired_signals": [
+            "fng_extreme_fear"
+          ],
+          "direction_bias": "bearish_crowd",
+          "funding_zscore": 0.4207,
+          "fng_value": 11,
+          "fng_classification": "Extreme Fear",
+          "taker_buy_dominance": false,
+          "taker_sell_dominance": false
+        },
+        "b": {
+          "extreme": false,
+          "direction": "unclear",
+          "unclear_reason": "net_flow_not_extreme",
+          "net_flow_btc": 0.0,
+          "net_flow_pct_reserves": 0.0,
+          "total_reserves_btc": 789882.31,
+          "extreme_basis": null,
+          "coverage": 1.0,
+          "single_tx_dominated": false
+        },
+        "near_miss": "a_lit_b_quiet"
+      },
+      "signal_id": "CAS-20260701-btc"
+    },
+    {
+      "ts": "2026-07-01T06:00:00Z",
+      "run_id": "20260701T0600Z-btc",
+      "result": "FIRED",
+      "reason": null,
+      "detail": null,
+      "net_flow_btc": 1.497e-05,
+      "coverage": 1.0,
+      "baseline_mean": -2.646015227857143,
+      "observation": {
+        "a": {
+          "fired": true,
+          "fired_signals": [
+            "fng_extreme_fear"
+          ],
+          "direction_bias": "bearish_crowd",
+          "funding_zscore": 0.4289,
+          "fng_value": 11,
+          "fng_classification": "Extreme Fear",
+          "taker_buy_dominance": false,
+          "taker_sell_dominance": false
+        },
+        "b": {
+          "extreme": false,
+          "direction": "unclear",
+          "unclear_reason": "net_flow_not_extreme",
+          "net_flow_btc": 0.0,
+          "net_flow_pct_reserves": 0.0,
+          "total_reserves_btc": 789882.31,
+          "extreme_basis": null,
+          "coverage": 1.0,
+          "single_tx_dominated": false
+        },
+        "near_miss": "a_lit_b_quiet"
+      },
+      "signal_id": "CAS-20260701-btc"
     }
   ],
   "signals": [],
@@ -3124,13 +3178,13 @@
   "ledger": [],
   "alert_ledger": [],
   "reserves": {
-    "generated_at": "2026-07-01T04:00:37Z",
+    "generated_at": "2026-07-01T06:00:41Z",
     "total_btc": 778230.81,
     "wallet_count": 24,
     "refreshed_count": 24,
     "exchange_count": 4,
-    "btc_price": 59176.01,
-    "total_usd": 46052593924.0,
+    "btc_price": 59154.33,
+    "total_usd": 46035721880.0,
     "per_exchange": [
       {
         "exchange": "Binance",
@@ -3382,11 +3436,11 @@
   },
   "daily": {
     "take": {
-      "headline": "人群已在尖叫，链上还在打哈欠",
-      "body": "恐惧贪婪指数从15滑到11，极端恐慌还在加深，59176附近的价格本身倒不是最刺眼的，刺眼的是情绪跌得比价格还快。资金费率+0.49σ、taker均衡——多空都没在豪赌，这和人群的恐慌程度明显对不上，市场在说「我怕」，但还没有人真的在砸单。储备净流量0.0，链上没有大规模确认性抛售，「极端恐慌但链上按住不动」这个组合最近已出现过，它不是买入信号，它只是说故事还没写完。我在盯的是：储备净流量是否开始转负（那才是真恐慌落地），或者恐惧指数能否在这个区间止跌——任何一个方向走实了，我才会重新定性当前局面。"
+      "headline": "恐慌计到11，链上却连打个哈欠都懒得",
+      "body": "恐惧贪婪指数从15滑到11，人群情绪已经在「极端恐惧」里越陷越深，但交易所储备净流量挂着0.0——链上没有任何确认性的大规模出逃或接盘动作，两边信号在对着说谎。资金费率+0.43σ，taker方向均衡，市场不是在尖叫着做空，更像是集体缩在角落里屏住呼吸。我读到的是：情绪已经烂透，但「人跑了」这件事链上还没发生，所以这是真正的投降还是只是账面恐慌，我不知道。我在盯储备净流量是否出现方向性变化——如果链上开始大量流出或流入，才是情绪与行为终于对齐的信号；在那之前，这个11只是一个数字，不是底。"
     },
     "voice_status": "ok",
     "near_miss": "a_lit_b_quiet",
-    "generated_at": "2026-07-01T04:00:37Z"
+    "generated_at": "2026-07-01T06:00:41Z"
   }
 }
