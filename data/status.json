@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-01T22:00:35Z",
+  "generated_at": "2026-07-02T00:00:35Z",
   "netflow_gate": {
     "mode": "event_driven",
     "waits_for_baseline": false
@@ -77,40 +77,6 @@
     ]
   },
   "runs": [
-    {
-      "ts": "2026-06-21T16:00:01Z",
-      "run_id": "20260621T1600Z-btc",
-      "result": "NoSignal",
-      "reason": "no_trigger",
-      "detail": "fired_signals=[] below require_n_signals",
-      "net_flow_btc": 9.52e-06,
-      "coverage": 1.0,
-      "baseline_mean": -3.0821415966666668,
-      "observation": {
-        "a": {
-          "fired": false,
-          "fired_signals": [],
-          "direction_bias": null,
-          "funding_zscore": 0.2948,
-          "fng_value": 23,
-          "fng_classification": "Extreme Fear",
-          "taker_buy_dominance": false,
-          "taker_sell_dominance": false
-        },
-        "b": {
-          "extreme": false,
-          "direction": "unclear",
-          "unclear_reason": "net_flow_not_extreme",
-          "net_flow_btc": 0.0,
-          "net_flow_pct_reserves": 0.0,
-          "total_reserves_btc": 787789.6,
-          "extreme_basis": null,
-          "coverage": 1.0,
-          "single_tx_dominated": false
-        },
-        "near_miss": "a_quiet"
-      }
-    },
     {
       "ts": "2026-06-21T18:00:01Z",
       "run_id": "20260621T1800Z-btc",
@@ -3354,6 +3320,43 @@
         "near_miss": "a_lit_b_quiet"
       },
       "signal_id": "CAS-20260701-btc"
+    },
+    {
+      "ts": "2026-07-02T00:00:00Z",
+      "run_id": "20260702T0000Z-btc",
+      "result": "FIRED",
+      "reason": null,
+      "detail": null,
+      "net_flow_btc": -7.17148128,
+      "coverage": 1.0,
+      "baseline_mean": -2.9477129646666667,
+      "observation": {
+        "a": {
+          "fired": true,
+          "fired_signals": [
+            "fng_extreme_fear"
+          ],
+          "direction_bias": "bearish_crowd",
+          "funding_zscore": 1.7085,
+          "fng_value": 19,
+          "fng_classification": "Extreme Fear",
+          "taker_buy_dominance": false,
+          "taker_sell_dominance": false
+        },
+        "b": {
+          "extreme": false,
+          "direction": "unclear",
+          "unclear_reason": "net_flow_not_extreme",
+          "net_flow_btc": -7.17,
+          "net_flow_pct_reserves": 9e-06,
+          "total_reserves_btc": 789865.31,
+          "extreme_basis": null,
+          "coverage": 1.0,
+          "single_tx_dominated": false
+        },
+        "near_miss": "a_lit_b_quiet"
+      },
+      "signal_id": "CAS-20260702-btc"
     }
   ],
   "signals": [],
@@ -3374,19 +3377,20 @@
     "CAS-20260626-btc",
     "CAS-20260629-btc",
     "CAS-20260630-btc",
-    "CAS-20260701-btc"
+    "CAS-20260701-btc",
+    "CAS-20260702-btc"
   ],
   "pending_alerts": [],
   "ledger": [],
   "alert_ledger": [],
   "reserves": {
-    "generated_at": "2026-07-01T22:00:35Z",
+    "generated_at": "2026-07-02T00:00:35Z",
     "total_btc": 778230.81,
     "wallet_count": 24,
     "refreshed_count": 24,
     "exchange_count": 4,
-    "btc_price": 60819.99,
-    "total_usd": 47331989803.0,
+    "btc_price": 60023.02,
+    "total_usd": 46711763198.0,
     "per_exchange": [
       {
         "exchange": "Binance",
@@ -3638,11 +3642,11 @@
   },
   "daily": {
     "take": {
-      "headline": "恐慌指数钉在11，人群在尖叫，链上在打哈欠",
-      "body": "恐惧贪婪指数11，Extreme Fear，而且这几天基本没动——不是情绪在退潮，是退无可退之后的麻木。资金费率+1.88σ，多头还在付溢价，这个组合很别扭：人群口头上跑路，手上仓位还没跑干净。储备净流量-7.17 BTC，方向对，但量级太轻，链上根本没出现我想看到的那种「确认性抛售」。我在盯的是：储备净流出能不能放量加速，以及资金费率σ会不会回落到中性——如果这两个还在这里僵着，我不会认为当前的恐慌是什么「底部信号」，更可能只是人群在半山腰喊疼。"
+      "headline": "恐慌读数19，人群在尖叫，链上还没点头",
+      "body": "恐惧贪婪指数19，极端恐慌区间，但情绪已从更低位悄悄回爬（11→19），说明市场并非铁板一块的绝望——有人在偷偷买。资金费率+1.71σ却还压在这个价位附近，多头加了杠杆却没能推出去，这是我最不喜欢看到的组合：情绪底部叠着过热的合约结构。交易所储备净流出-7.17 BTC，几乎等于零，链上既没有大规模提币自救、也没有恐慌砸盘确认——「人群已极端、链上还没确认」，这句话今天是字面意义。我在盯的是：储备净流量是否转为明显净流出（那才是真实的「不想卖」），以及资金费率σ能否降回中性；如果两者都不动，这次「情绪底」就只是一个还没被链上验证的故事。"
     },
     "voice_status": "ok",
     "near_miss": "a_lit_b_quiet",
-    "generated_at": "2026-07-01T22:00:35Z"
+    "generated_at": "2026-07-02T00:00:35Z"
   }
 }
