@@ -1,17 +1,17 @@
 {
-  "generated_at": "2026-07-02T13:45:07Z",
+  "generated_at": "2026-07-03T10:00:41Z",
   "netflow_gate": {
     "mode": "event_driven",
     "waits_for_baseline": false
   },
   "baseline": {
-    "points": 15,
+    "points": 16,
     "min_samples": 5,
     "robust_samples": 15,
     "mature": true,
     "robust": true,
-    "mean": -2.9477129646666667,
-    "std": 3.271182100552547,
+    "mean": -2.7634796275,
+    "std": 3.245046626221892,
     "diagnostic_only": true,
     "history": [
       {
@@ -73,84 +73,14 @@
       {
         "ts": "2026-07-01T20:00:20Z",
         "net_flow_btc": -7.17148128
+      },
+      {
+        "ts": "2026-07-03T09:32:55Z",
+        "net_flow_btc": 2.043e-05
       }
     ]
   },
   "runs": [
-    {
-      "ts": "2026-06-22T02:00:01Z",
-      "run_id": "20260622T0200Z-btc",
-      "result": "FIRED",
-      "reason": null,
-      "detail": null,
-      "net_flow_btc": 9.52e-06,
-      "coverage": 1.0,
-      "baseline_mean": -3.0821415966666668,
-      "observation": {
-        "a": {
-          "fired": true,
-          "fired_signals": [
-            "fng_extreme_fear"
-          ],
-          "direction_bias": "bearish_crowd",
-          "funding_zscore": 0.685,
-          "fng_value": 20,
-          "fng_classification": "Extreme Fear",
-          "taker_buy_dominance": false,
-          "taker_sell_dominance": false
-        },
-        "b": {
-          "extreme": false,
-          "direction": "unclear",
-          "unclear_reason": "net_flow_not_extreme",
-          "net_flow_btc": 0.0,
-          "net_flow_pct_reserves": 0.0,
-          "total_reserves_btc": 787789.6,
-          "extreme_basis": null,
-          "coverage": 1.0,
-          "single_tx_dominated": false
-        },
-        "near_miss": "a_lit_b_quiet"
-      },
-      "signal_id": "CAS-20260622-btc"
-    },
-    {
-      "ts": "2026-06-22T04:00:01Z",
-      "run_id": "20260622T0400Z-btc",
-      "result": "FIRED",
-      "reason": null,
-      "detail": null,
-      "net_flow_btc": 9.52e-06,
-      "coverage": 1.0,
-      "baseline_mean": -3.0821415966666668,
-      "observation": {
-        "a": {
-          "fired": true,
-          "fired_signals": [
-            "fng_extreme_fear"
-          ],
-          "direction_bias": "bearish_crowd",
-          "funding_zscore": 0.1016,
-          "fng_value": 20,
-          "fng_classification": "Extreme Fear",
-          "taker_buy_dominance": false,
-          "taker_sell_dominance": false
-        },
-        "b": {
-          "extreme": false,
-          "direction": "unclear",
-          "unclear_reason": "net_flow_not_extreme",
-          "net_flow_btc": 0.0,
-          "net_flow_pct_reserves": 0.0,
-          "total_reserves_btc": 787789.6,
-          "extreme_basis": null,
-          "coverage": 1.0,
-          "single_tx_dominated": false
-        },
-        "near_miss": "a_lit_b_quiet"
-      },
-      "signal_id": "CAS-20260622-btc"
-    },
     {
       "ts": "2026-06-22T05:32:20Z",
       "run_id": "20260622T0532Z-btc",
@@ -3362,6 +3292,80 @@
         },
         "near_miss": "a_lit_b_quiet"
       }
+    },
+    {
+      "ts": "2026-07-03T09:32:36Z",
+      "run_id": "20260703T0932Z-btc",
+      "result": "FIRED",
+      "reason": null,
+      "detail": null,
+      "net_flow_btc": 2.043e-05,
+      "coverage": 1.0,
+      "baseline_mean": -2.7634796275,
+      "observation": {
+        "a": {
+          "fired": true,
+          "fired_signals": [
+            "funding_extreme"
+          ],
+          "direction_bias": "bullish_crowd",
+          "funding_zscore": 2.2243,
+          "fng_value": 21,
+          "fng_classification": "Extreme Fear",
+          "taker_buy_dominance": false,
+          "taker_sell_dominance": false
+        },
+        "b": {
+          "extreme": false,
+          "direction": "unclear",
+          "unclear_reason": "net_flow_not_extreme",
+          "net_flow_btc": 0.0,
+          "net_flow_pct_reserves": 0.0,
+          "total_reserves_btc": 790191.31,
+          "extreme_basis": null,
+          "coverage": 1.0,
+          "single_tx_dominated": true
+        },
+        "near_miss": "a_lit_b_quiet"
+      },
+      "signal_id": "CAS-20260703-btc"
+    },
+    {
+      "ts": "2026-07-03T10:00:01Z",
+      "run_id": "20260703T1000Z-btc",
+      "result": "FIRED",
+      "reason": null,
+      "detail": null,
+      "net_flow_btc": 2.043e-05,
+      "coverage": 1.0,
+      "baseline_mean": -2.7634796275,
+      "observation": {
+        "a": {
+          "fired": true,
+          "fired_signals": [
+            "funding_extreme"
+          ],
+          "direction_bias": "bullish_crowd",
+          "funding_zscore": 2.2243,
+          "fng_value": 21,
+          "fng_classification": "Extreme Fear",
+          "taker_buy_dominance": false,
+          "taker_sell_dominance": false
+        },
+        "b": {
+          "extreme": false,
+          "direction": "unclear",
+          "unclear_reason": "net_flow_not_extreme",
+          "net_flow_btc": 0.0,
+          "net_flow_pct_reserves": 0.0,
+          "total_reserves_btc": 790191.31,
+          "extreme_basis": null,
+          "coverage": 1.0,
+          "single_tx_dominated": false
+        },
+        "near_miss": "a_lit_b_quiet"
+      },
+      "signal_id": "CAS-20260703-btc"
     }
   ],
   "signals": [],
@@ -3383,19 +3387,20 @@
     "CAS-20260629-btc",
     "CAS-20260630-btc",
     "CAS-20260701-btc",
-    "CAS-20260702-btc"
+    "CAS-20260702-btc",
+    "CAS-20260703-btc"
   ],
   "pending_alerts": [],
   "ledger": [],
   "alert_ledger": [],
   "reserves": {
-    "generated_at": "2026-07-02T13:45:07Z",
+    "generated_at": "2026-07-03T10:00:41Z",
     "total_btc": 778230.81,
     "wallet_count": 24,
     "refreshed_count": 24,
     "exchange_count": 4,
-    "btc_price": null,
-    "total_usd": null,
+    "btc_price": 61716.44,
+    "total_usd": 48029634809.0,
     "per_exchange": [
       {
         "exchange": "Binance",
@@ -3641,14 +3646,17 @@
       }
     ],
     "coverage": 100.0,
-    "net_flow_btc": -7.17,
+    "net_flow_btc": 0.0,
     "window_hours": 48,
     "address_book_version": "2026-06-17"
   },
   "daily": {
-    "take": null,
-    "voice_status": "voice_failed",
+    "take": {
+      "headline": "极恐还没散，但多头情绪已在悄悄回潮",
+      "body": "恐惧贪婪指数21，「极度恐惧」标签还挂着，但从11爬回21这件事本身就值得警惕——人群的恐慌在退温，而退温的速度往往比入场的理由更值得盯。资金费率+2.22σ，跟「极度恐惧」的大环境放在一起，这组合有点矛盾：情绪上在哭，合约上的多头仓位却在尖叫，人群嘴上说怕，手上还没松。链上储备净流量今天是零，790191枚BTC按住不动，没有明显的大户出逃或抄底信号，链上还没给出任何确认。我在盯的是：情绪继续回暖但链上依然沉默，这个背离会怎么收敛——如果储备出现净流出加速，我会重新评估现在的「人群偏多」是否已经开始解套甩货。"
+    },
+    "voice_status": "ok",
     "near_miss": "a_lit_b_quiet",
-    "generated_at": "2026-07-02T13:45:07Z"
+    "generated_at": "2026-07-03T10:00:41Z"
   }
 }
