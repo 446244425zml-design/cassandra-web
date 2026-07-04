@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-04T20:06:00Z",
+  "generated_at": "2026-07-04T22:06:00Z",
   "netflow_gate": {
     "mode": "event_driven",
     "waits_for_baseline": false
@@ -85,43 +85,6 @@
     ]
   },
   "runs": [
-    {
-      "ts": "2026-06-22T18:00:01Z",
-      "run_id": "20260622T1800Z-btc",
-      "result": "FIRED",
-      "reason": null,
-      "detail": null,
-      "net_flow_btc": 9.52e-06,
-      "coverage": 1.0,
-      "baseline_mean": -2.6418342942857143,
-      "observation": {
-        "a": {
-          "fired": true,
-          "fired_signals": [
-            "fng_extreme_fear"
-          ],
-          "direction_bias": "bearish_crowd",
-          "funding_zscore": 0.5357,
-          "fng_value": 20,
-          "fng_classification": "Extreme Fear",
-          "taker_buy_dominance": false,
-          "taker_sell_dominance": false
-        },
-        "b": {
-          "extreme": false,
-          "direction": "unclear",
-          "unclear_reason": "net_flow_not_extreme",
-          "net_flow_btc": 0.0,
-          "net_flow_pct_reserves": 0.0,
-          "total_reserves_btc": 787816.47,
-          "extreme_basis": null,
-          "coverage": 1.0,
-          "single_tx_dominated": false
-        },
-        "near_miss": "a_lit_b_quiet"
-      },
-      "signal_id": "CAS-20260622-btc"
-    },
     {
       "ts": "2026-06-22T20:00:02Z",
       "run_id": "20260622T2000Z-btc",
@@ -3343,6 +3306,40 @@
         },
         "near_miss": "a_quiet"
       }
+    },
+    {
+      "ts": "2026-07-04T22:00:01Z",
+      "run_id": "20260704T2200Z-btc",
+      "result": "NoSignal",
+      "reason": "no_trigger",
+      "detail": "fired_signals=[] below require_n_signals",
+      "net_flow_btc": 2.184e-05,
+      "coverage": 1.0,
+      "baseline_mean": -2.600920717647059,
+      "observation": {
+        "a": {
+          "fired": false,
+          "fired_signals": [],
+          "direction_bias": null,
+          "funding_zscore": null,
+          "fng_value": 22,
+          "fng_classification": "Extreme Fear",
+          "taker_buy_dominance": null,
+          "taker_sell_dominance": null
+        },
+        "b": {
+          "extreme": false,
+          "direction": "unclear",
+          "unclear_reason": "net_flow_not_extreme",
+          "net_flow_btc": 0.0,
+          "net_flow_pct_reserves": 0.0,
+          "total_reserves_btc": 790350.31,
+          "extreme_basis": null,
+          "coverage": 1.0,
+          "single_tx_dominated": false
+        },
+        "near_miss": "a_quiet"
+      }
     }
   ],
   "signals": [],
@@ -3371,7 +3368,7 @@
   "ledger": [],
   "alert_ledger": [],
   "reserves": {
-    "generated_at": "2026-07-04T20:06:00Z",
+    "generated_at": "2026-07-04T22:06:00Z",
     "total_btc": 778230.81,
     "wallet_count": 24,
     "refreshed_count": 24,
@@ -3631,6 +3628,6 @@
     "take": null,
     "voice_status": "voice_failed",
     "near_miss": "a_quiet",
-    "generated_at": "2026-07-04T20:06:00Z"
+    "generated_at": "2026-07-04T22:06:00Z"
   }
 }
