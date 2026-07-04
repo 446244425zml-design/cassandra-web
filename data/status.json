@@ -1,17 +1,17 @@
 {
-  "generated_at": "2026-07-03T12:00:28Z",
+  "generated_at": "2026-07-04T06:06:06Z",
   "netflow_gate": {
     "mode": "event_driven",
     "waits_for_baseline": false
   },
   "baseline": {
-    "points": 16,
+    "points": 17,
     "min_samples": 5,
     "robust_samples": 15,
     "mature": true,
     "robust": true,
-    "mean": -2.7634796275,
-    "std": 3.245046626221892,
+    "mean": -2.600920717647059,
+    "std": 3.2126957398562905,
     "diagnostic_only": true,
     "history": [
       {
@@ -77,47 +77,14 @@
       {
         "ts": "2026-07-03T09:32:55Z",
         "net_flow_btc": 2.043e-05
+      },
+      {
+        "ts": "2026-07-04T06:05:21Z",
+        "net_flow_btc": 2.184e-05
       }
     ]
   },
   "runs": [
-    {
-      "ts": "2026-06-22T06:00:01Z",
-      "run_id": "20260622T0600Z-btc",
-      "result": "FIRED",
-      "reason": null,
-      "detail": null,
-      "net_flow_btc": 9.52e-06,
-      "coverage": 1.0,
-      "baseline_mean": -3.0821415966666668,
-      "observation": {
-        "a": {
-          "fired": true,
-          "fired_signals": [
-            "fng_extreme_fear"
-          ],
-          "direction_bias": "bearish_crowd",
-          "funding_zscore": -0.3744,
-          "fng_value": 20,
-          "fng_classification": "Extreme Fear",
-          "taker_buy_dominance": false,
-          "taker_sell_dominance": false
-        },
-        "b": {
-          "extreme": false,
-          "direction": "unclear",
-          "unclear_reason": "net_flow_not_extreme",
-          "net_flow_btc": 0.0,
-          "net_flow_pct_reserves": 0.0,
-          "total_reserves_btc": 787816.47,
-          "extreme_basis": null,
-          "coverage": 1.0,
-          "single_tx_dominated": false
-        },
-        "near_miss": "a_lit_b_quiet"
-      },
-      "signal_id": "CAS-20260622-btc"
-    },
     {
       "ts": "2026-06-22T08:00:01Z",
       "run_id": "20260622T0800Z-btc",
@@ -3363,6 +3330,40 @@
         },
         "near_miss": "a_quiet"
       }
+    },
+    {
+      "ts": "2026-07-04T06:00:04Z",
+      "run_id": "20260704T0600Z-btc",
+      "result": "NoSignal",
+      "reason": "no_trigger",
+      "detail": "fired_signals=[] below require_n_signals",
+      "net_flow_btc": 2.184e-05,
+      "coverage": 1.0,
+      "baseline_mean": -2.600920717647059,
+      "observation": {
+        "a": {
+          "fired": false,
+          "fired_signals": [],
+          "direction_bias": null,
+          "funding_zscore": null,
+          "fng_value": 22,
+          "fng_classification": "Extreme Fear",
+          "taker_buy_dominance": null,
+          "taker_sell_dominance": null
+        },
+        "b": {
+          "extreme": false,
+          "direction": "unclear",
+          "unclear_reason": "net_flow_not_extreme",
+          "net_flow_btc": 0.0,
+          "net_flow_pct_reserves": 0.0,
+          "total_reserves_btc": 790350.31,
+          "extreme_basis": null,
+          "coverage": 1.0,
+          "single_tx_dominated": true
+        },
+        "near_miss": "a_quiet"
+      }
     }
   ],
   "signals": [],
@@ -3391,13 +3392,13 @@
   "ledger": [],
   "alert_ledger": [],
   "reserves": {
-    "generated_at": "2026-07-03T12:00:28Z",
+    "generated_at": "2026-07-04T06:06:06Z",
     "total_btc": 778230.81,
     "wallet_count": 24,
     "refreshed_count": 24,
     "exchange_count": 4,
-    "btc_price": 62031.36,
-    "total_usd": 48274715254.0,
+    "btc_price": null,
+    "total_usd": null,
     "per_exchange": [
       {
         "exchange": "Binance",
@@ -3648,12 +3649,9 @@
     "address_book_version": "2026-06-17"
   },
   "daily": {
-    "take": {
-      "headline": "极恐退潮中，链上却纹丝不动",
-      "body": "恐惧贪婪指数从11爬回21，情绪在解冻，但我不会把这叫做「反转信号」——从极恐到不那么恐，中间隔着很多台阶。现价62031附近，资金费率报+1.85σ，多头在偷偷加码，而交易所储备净流量挂着0.0，大资金既没跑也没进，就那么按住不动。我盯的是：储备如果开始净流出，那才是有人真的在做动作；如果资金费率继续往上走而现货没跟，那这个多头加码就是个笑话。现在的市场像个刚退烧的病人——体温正常了，但我不会说他已经可以跑步了。"
-    },
-    "voice_status": "ok",
+    "take": null,
+    "voice_status": "voice_failed",
     "near_miss": "a_quiet",
-    "generated_at": "2026-07-03T12:00:28Z"
+    "generated_at": "2026-07-04T06:06:06Z"
   }
 }
