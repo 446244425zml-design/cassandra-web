@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-08T06:00:37Z",
+  "generated_at": "2026-07-08T08:00:44Z",
   "netflow_gate": {
     "mode": "event_driven",
     "waits_for_baseline": false
@@ -101,43 +101,6 @@
     ]
   },
   "runs": [
-    {
-      "ts": "2026-06-30T10:00:00Z",
-      "run_id": "20260630T1000Z-btc",
-      "result": "NoSignal",
-      "reason": "direction_bias_unclear",
-      "detail": "A fired but crowd lean is undetermined (fired_signals=['funding_extreme', 'fng_extreme_fear']); A+C fade has no side",
-      "net_flow_btc": 1.497e-05,
-      "coverage": 1.0,
-      "baseline_mean": -2.8495560123076924,
-      "observation": {
-        "a": {
-          "fired": true,
-          "fired_signals": [
-            "funding_extreme",
-            "fng_extreme_fear"
-          ],
-          "direction_bias": null,
-          "funding_zscore": 2.1753,
-          "fng_value": 15,
-          "fng_classification": "Extreme Fear",
-          "taker_buy_dominance": false,
-          "taker_sell_dominance": false
-        },
-        "b": {
-          "extreme": false,
-          "direction": "unclear",
-          "unclear_reason": "net_flow_not_extreme",
-          "net_flow_btc": 0.0,
-          "net_flow_pct_reserves": 0.0,
-          "total_reserves_btc": 789882.31,
-          "extreme_basis": null,
-          "coverage": 1.0,
-          "single_tx_dominated": false
-        },
-        "near_miss": "a_lit_b_quiet"
-      }
-    },
     {
       "ts": "2026-06-30T12:00:01Z",
       "run_id": "20260630T1200Z-btc",
@@ -3272,6 +3235,43 @@
         "near_miss": "a_lit_b_quiet"
       },
       "signal_id": "CAS-20260708-btc"
+    },
+    {
+      "ts": "2026-07-08T08:00:02Z",
+      "run_id": "20260708T0800Z-btc",
+      "result": "FIRED",
+      "reason": null,
+      "detail": null,
+      "net_flow_btc": -6.22392343,
+      "coverage": 1.0,
+      "baseline_mean": -2.105501007619048,
+      "observation": {
+        "a": {
+          "fired": true,
+          "fired_signals": [
+            "fng_extreme_fear"
+          ],
+          "direction_bias": "bearish_crowd",
+          "funding_zscore": -0.6384,
+          "fng_value": 20,
+          "fng_classification": "Extreme Fear",
+          "taker_buy_dominance": false,
+          "taker_sell_dominance": false
+        },
+        "b": {
+          "extreme": false,
+          "direction": "unclear",
+          "unclear_reason": "net_flow_not_extreme",
+          "net_flow_btc": -6.22,
+          "net_flow_pct_reserves": 8e-06,
+          "total_reserves_btc": 797039.21,
+          "extreme_basis": null,
+          "coverage": 1.0,
+          "single_tx_dominated": true
+        },
+        "near_miss": "a_lit_b_quiet"
+      },
+      "signal_id": "CAS-20260708-btc"
     }
   ],
   "signals": [],
@@ -3302,13 +3302,13 @@
   "ledger": [],
   "alert_ledger": [],
   "reserves": {
-    "generated_at": "2026-07-08T06:00:37Z",
+    "generated_at": "2026-07-08T08:00:44Z",
     "total_btc": 784617.66,
     "wallet_count": 24,
     "refreshed_count": 24,
     "exchange_count": 4,
-    "btc_price": 62640.0,
-    "total_usd": 49148450188.0,
+    "btc_price": 62858.01,
+    "total_usd": 49319504684.0,
     "per_exchange": [
       {
         "exchange": "Binance",
@@ -3554,17 +3554,17 @@
       }
     ],
     "coverage": 100.0,
-    "net_flow_btc": 0.0,
+    "net_flow_btc": -6.22,
     "window_hours": 48,
     "address_book_version": "2026-06-17"
   },
   "daily": {
     "take": {
-      "headline": "恐慌指数跌至20，人群在尖叫，链上却一动不动",
-      "body": "恐惧贪婪指数从27滑到20，已进「极度恐慌」区，这不是读数飘了一下，是在加深。资金费率-0.84σ，空头付费程度已偏离均值，但Taker力量还在均衡——意思是情绪崩了，但真正的方向性押注还没形成。麻烦的是，交易所储备净流量为零，链上没有大规模提币也没有砸盘，人群在喊「完了」，聪明钱在按兵不动，这种背离让我无法确认底部也无法确认加速下跌。我在盯的：储备净流量如果开始出现持续流出，那是惜售信号，能让我重新评估；反之如果净流入放量，那恐慌就不只是情绪，是真实抛压——那时候再谈「极端情绪反转」还为时过早。"
+      "headline": "人群已在尖叫，链上还在打哈欠",
+      "body": "恐惧贪婪指数从27滑到20，极端恐慌区间，且趋势还在加深——这不是情绪的底部信号，这是情绪还没停下来的信号。资金费率-0.64σ，多头已经被空头按着打，但Taker方向显示均衡，说明真正的市场共识还没形成方向，只是人群先跑了。储备净流量-6.22 BTC，近乎持平，交易所没有出现大规模提币或砸盘——链上行为和人群的恐慌情绪之间存在明显裂缝，这是我今天最在意的矛盾点。我在盯的是：储备净流量是否开始放量加速流出或流入，以及资金费率σ是否继续下探——如果两者都朝同一方向走，我会认真对待这次情绪的「真实性」；如果链上依然无动于衷，这场恐慌就还只是噪声。"
     },
     "voice_status": "ok",
     "near_miss": "a_lit_b_quiet",
-    "generated_at": "2026-07-08T06:00:37Z"
+    "generated_at": "2026-07-08T08:00:44Z"
   }
 }
