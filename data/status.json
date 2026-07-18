@@ -1,17 +1,17 @@
 {
-  "generated_at": "2026-07-18T20:00:27Z",
+  "generated_at": "2026-07-18T22:00:23Z",
   "netflow_gate": {
     "mode": "event_driven",
     "waits_for_baseline": false
   },
   "baseline": {
-    "points": 33,
+    "points": 34,
     "min_samples": 5,
     "robust_samples": 15,
     "mature": true,
     "robust": true,
-    "mean": -2.6661823003030305,
-    "std": 3.158512053374544,
+    "mean": -2.5877611355882353,
+    "std": 3.143721558552689,
     "diagnostic_only": true,
     "history": [
       {
@@ -145,44 +145,14 @@
       {
         "ts": "2026-07-18T02:00:14Z",
         "net_flow_btc": -6.27421047
+      },
+      {
+        "ts": "2026-07-18T22:00:16Z",
+        "net_flow_btc": 0.0001373
       }
     ]
   },
   "runs": [
-    {
-      "ts": "2026-07-13T00:00:01Z",
-      "run_id": "20260713T0000Z-btc",
-      "result": "NoSignal",
-      "reason": "no_trigger",
-      "detail": "fired_signals=[] below require_n_signals",
-      "net_flow_btc": 4.276e-05,
-      "coverage": 1.0,
-      "baseline_mean": -2.3291542596296297,
-      "observation": {
-        "a": {
-          "fired": false,
-          "fired_signals": [],
-          "direction_bias": null,
-          "funding_zscore": -0.6368,
-          "fng_value": 28,
-          "fng_classification": "Fear",
-          "taker_buy_dominance": false,
-          "taker_sell_dominance": false
-        },
-        "b": {
-          "extreme": false,
-          "direction": "unclear",
-          "unclear_reason": "net_flow_not_extreme",
-          "net_flow_btc": 0.0,
-          "net_flow_pct_reserves": 0.0,
-          "total_reserves_btc": 796710.17,
-          "extreme_basis": null,
-          "coverage": 1.0,
-          "single_tx_dominated": false
-        },
-        "near_miss": "a_quiet"
-      }
-    },
     {
       "ts": "2026-07-13T01:32:32Z",
       "run_id": "20260713T0132Z-btc",
@@ -3220,6 +3190,40 @@
         },
         "near_miss": "a_quiet"
       }
+    },
+    {
+      "ts": "2026-07-18T22:00:01Z",
+      "run_id": "20260718T2200Z-btc",
+      "result": "NoSignal",
+      "reason": "no_trigger",
+      "detail": "fired_signals=[] below require_n_signals",
+      "net_flow_btc": 0.0001373,
+      "coverage": 1.0,
+      "baseline_mean": -2.5877611355882353,
+      "observation": {
+        "a": {
+          "fired": false,
+          "fired_signals": [],
+          "direction_bias": null,
+          "funding_zscore": -1.6563,
+          "fng_value": 25,
+          "fng_classification": "Extreme Fear",
+          "taker_buy_dominance": false,
+          "taker_sell_dominance": false
+        },
+        "b": {
+          "extreme": false,
+          "direction": "unclear",
+          "unclear_reason": "net_flow_not_extreme",
+          "net_flow_btc": 0.0,
+          "net_flow_pct_reserves": 0.0,
+          "total_reserves_btc": 796819.51,
+          "extreme_basis": null,
+          "coverage": 1.0,
+          "single_tx_dominated": false
+        },
+        "near_miss": "a_quiet"
+      }
     }
   ],
   "signals": [],
@@ -3257,13 +3261,13 @@
   "ledger": [],
   "alert_ledger": [],
   "reserves": {
-    "generated_at": "2026-07-18T20:00:27Z",
+    "generated_at": "2026-07-18T22:00:23Z",
     "total_btc": 784617.66,
     "wallet_count": 24,
     "refreshed_count": 24,
     "exchange_count": 4,
-    "btc_price": 64573.85,
-    "total_usd": 50665783058.0,
+    "btc_price": 64741.99,
+    "total_usd": 50797708671.0,
     "per_exchange": [
       {
         "exchange": "Binance",
@@ -3515,11 +3519,11 @@
   },
   "daily": {
     "take": {
-      "headline": "极恐挂着，链上一动不动，这叫麻木不叫筑底",
-      "body": "恐惧贪婪指数停在25，这几天从27蠕到25，连崩溃都懒得加速——不是在消化，是在发呆。资金费率-1.12σ，空头持仓压着，但吃单方向均衡，没人急着追杀也没人抢反弹。储备净流量0.0，链上按住不动，机构既没出货也没抄底，就是集体在等对方先动。我在盯的是：净流量会不会突然转正（大户出逃）或转负（有人真的在买）——只要那一面先眨眼，当前这潭死水才算有了下文；在此之前，现价附近的「平静」更像是无人认领的僵局，而不是什么共识。"
+      "headline": "恐惧冻结在25，链上一动未动，这叫麻木不叫底",
+      "body": "恐惧贪婪指数钉在25「极度恐惧」，最近基本没动——不是在好转，也不是在崩，就是麻木地挂在那里。资金费率报-1.66σ，空头在付费，但taker方向均衡，说明市场在互相对视，没人敢先动。储备净流量0.0，链上没有明显的搬币动作，这种「没有信号就是信号」的状态让我很难兴奋。我在盯的是：情绪能不能从25往下再走一截出现真正的恐慌性行为，或者储备净流量突然转负——有任何一个出现，我对「目前只是麻木」的判断才会开始动摇。"
     },
     "voice_status": "ok",
     "near_miss": "a_quiet",
-    "generated_at": "2026-07-18T20:00:27Z"
+    "generated_at": "2026-07-18T22:00:23Z"
   }
 }
