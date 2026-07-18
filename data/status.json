@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-18T16:00:26Z",
+  "generated_at": "2026-07-18T18:00:32Z",
   "netflow_gate": {
     "mode": "event_driven",
     "waits_for_baseline": false
@@ -149,40 +149,6 @@
     ]
   },
   "runs": [
-    {
-      "ts": "2026-07-12T20:00:01Z",
-      "run_id": "20260712T2000Z-btc",
-      "result": "NoSignal",
-      "reason": "no_trigger",
-      "detail": "fired_signals=[] below require_n_signals",
-      "net_flow_btc": 4.276e-05,
-      "coverage": 1.0,
-      "baseline_mean": -2.4187387603846155,
-      "observation": {
-        "a": {
-          "fired": false,
-          "fired_signals": [],
-          "direction_bias": null,
-          "funding_zscore": 0.4071,
-          "fng_value": 26,
-          "fng_classification": "Fear",
-          "taker_buy_dominance": false,
-          "taker_sell_dominance": false
-        },
-        "b": {
-          "extreme": false,
-          "direction": "unclear",
-          "unclear_reason": "net_flow_not_extreme",
-          "net_flow_btc": 0.0,
-          "net_flow_pct_reserves": 0.0,
-          "total_reserves_btc": 796953.94,
-          "extreme_basis": null,
-          "coverage": 1.0,
-          "single_tx_dominated": false
-        },
-        "near_miss": "a_quiet"
-      }
-    },
     {
       "ts": "2026-07-12T22:00:01Z",
       "run_id": "20260712T2200Z-btc",
@@ -3220,6 +3186,43 @@
         },
         "near_miss": "a_quiet"
       }
+    },
+    {
+      "ts": "2026-07-18T18:00:01Z",
+      "run_id": "20260718T1800Z-btc",
+      "result": "FIRED",
+      "reason": null,
+      "detail": null,
+      "net_flow_btc": 0.0001373,
+      "coverage": 1.0,
+      "baseline_mean": -2.6661823003030305,
+      "observation": {
+        "a": {
+          "fired": true,
+          "fired_signals": [
+            "taker_buy_dominance"
+          ],
+          "direction_bias": "bullish_crowd",
+          "funding_zscore": -0.6691,
+          "fng_value": 25,
+          "fng_classification": "Extreme Fear",
+          "taker_buy_dominance": true,
+          "taker_sell_dominance": false
+        },
+        "b": {
+          "extreme": false,
+          "direction": "unclear",
+          "unclear_reason": "net_flow_not_extreme",
+          "net_flow_btc": 0.0,
+          "net_flow_pct_reserves": 0.0,
+          "total_reserves_btc": 796819.51,
+          "extreme_basis": null,
+          "coverage": 1.0,
+          "single_tx_dominated": false
+        },
+        "near_miss": "a_lit_b_quiet"
+      },
+      "signal_id": "CAS-20260718-btc"
     }
   ],
   "signals": [],
@@ -3250,19 +3253,20 @@
     "CAS-20260712-btc",
     "CAS-20260713-btc",
     "CAS-20260715-btc",
-    "CAS-20260717-btc"
+    "CAS-20260717-btc",
+    "CAS-20260718-btc"
   ],
   "pending_alerts": [],
   "ledger": [],
   "alert_ledger": [],
   "reserves": {
-    "generated_at": "2026-07-18T16:00:26Z",
+    "generated_at": "2026-07-18T18:00:32Z",
     "total_btc": 784617.66,
     "wallet_count": 24,
     "refreshed_count": 24,
     "exchange_count": 4,
-    "btc_price": 64123.12,
-    "total_usd": 50312132340.0,
+    "btc_price": 64480.28,
+    "total_usd": 50592366383.0,
     "per_exchange": [
       {
         "exchange": "Binance",
@@ -3514,11 +3518,11 @@
   },
   "daily": {
     "take": {
-      "headline": "恐惧挂在墙上，链上却一动不动",
-      "body": "恐惧贪婪指数27跌到25，在「极度恐惧」区打了个小盹——情绪没有崩塌加速，只是在原地腐烂。资金费率报-0.65σ，空头有点用力，但Taker方向均衡，说明这不是恐慌性砸盘，更像是没人想接。储备净流量归零，796819枚BTC按兵不动，链上既没出逃也没抄底——沉默本身就是一种信息，我把它读作「等」。我在盯的是：情绪会不会从「麻木恐惧」滑向「真正割肉」；如果储备开始明显净流出、资金费率继续向负端漂移，我会认为市场进入了更难看的阶段；反过来，若净流入转正且情绪不再下沉，这段腐烂才有可能画句号。现在什么都没发生，这本身就是答案。"
+      "headline": "极度恐慌冻在原地，链上一片死寂",
+      "body": "恐惧贪婪指数25，「极度恐慌」档，但这几天读数基本没动——从27挪到25，人群在尖叫却没在逃跑，这种钉在原地的恐慌比加速下行更让我警惕。资金费率-0.67σ，偏空但还没到极端爆仓区，配合买盘主导的taker结构，说明有人在恐慌里偷偷吃货，还是说空头在控场——我没法确定哪个。储备净流量0.0，链上确认缺席，这是我目前最不安的一点：人群情绪已触极端两次，但大资金还没用脚投票表态。我在盯储备净流量是否出现方向性变化——一旦出现明显流出或流入，我才会认为这轮情绪极端开始兑现；在那之前，现价附近的一切都可能只是「假摔还是真跌」的薛定谔状态。"
     },
     "voice_status": "ok",
-    "near_miss": "a_quiet",
-    "generated_at": "2026-07-18T16:00:25Z"
+    "near_miss": "a_lit_b_quiet",
+    "generated_at": "2026-07-18T18:00:32Z"
   }
 }
