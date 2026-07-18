@@ -1,17 +1,17 @@
 {
-  "generated_at": "2026-07-18T00:00:25Z",
+  "generated_at": "2026-07-18T02:00:23Z",
   "netflow_gate": {
     "mode": "event_driven",
     "waits_for_baseline": false
   },
   "baseline": {
-    "points": 32,
+    "points": 33,
     "min_samples": 5,
     "robust_samples": 15,
     "mature": true,
     "robust": true,
-    "mean": -2.55343142,
-    "std": 3.1408529399202427,
+    "mean": -2.6661823003030305,
+    "std": 3.158512053374544,
     "diagnostic_only": true,
     "history": [
       {
@@ -141,44 +141,14 @@
       {
         "ts": "2026-07-17T05:32:30Z",
         "net_flow_btc": -6.27421047
+      },
+      {
+        "ts": "2026-07-18T02:00:14Z",
+        "net_flow_btc": -6.27421047
       }
     ]
   },
   "runs": [
-    {
-      "ts": "2026-07-12T08:00:01Z",
-      "run_id": "20260712T0800Z-btc",
-      "result": "NoSignal",
-      "reason": "no_trigger",
-      "detail": "fired_signals=[] below require_n_signals",
-      "net_flow_btc": 4.276e-05,
-      "coverage": 1.0,
-      "baseline_mean": -2.4187387603846155,
-      "observation": {
-        "a": {
-          "fired": false,
-          "fired_signals": [],
-          "direction_bias": null,
-          "funding_zscore": 0.5864,
-          "fng_value": 26,
-          "fng_classification": "Fear",
-          "taker_buy_dominance": false,
-          "taker_sell_dominance": false
-        },
-        "b": {
-          "extreme": false,
-          "direction": "unclear",
-          "unclear_reason": "net_flow_not_extreme",
-          "net_flow_btc": 0.0,
-          "net_flow_pct_reserves": 0.0,
-          "total_reserves_btc": 796953.94,
-          "extreme_basis": null,
-          "coverage": 1.0,
-          "single_tx_dominated": false
-        },
-        "near_miss": "a_quiet"
-      }
-    },
     {
       "ts": "2026-07-12T09:32:30Z",
       "run_id": "20260712T0932Z-btc",
@@ -3222,6 +3192,40 @@
         },
         "near_miss": "a_quiet"
       }
+    },
+    {
+      "ts": "2026-07-18T02:00:01Z",
+      "run_id": "20260718T0200Z-btc",
+      "result": "NoSignal",
+      "reason": "no_trigger",
+      "detail": "fired_signals=[] below require_n_signals",
+      "net_flow_btc": -6.27421047,
+      "coverage": 1.0,
+      "baseline_mean": -2.6661823003030305,
+      "observation": {
+        "a": {
+          "fired": false,
+          "fired_signals": [],
+          "direction_bias": null,
+          "funding_zscore": 0.3704,
+          "fng_value": 25,
+          "fng_classification": "Extreme Fear",
+          "taker_buy_dominance": false,
+          "taker_sell_dominance": false
+        },
+        "b": {
+          "extreme": false,
+          "direction": "unclear",
+          "unclear_reason": "net_flow_not_extreme",
+          "net_flow_btc": -6.27,
+          "net_flow_pct_reserves": 8e-06,
+          "total_reserves_btc": 796663.51,
+          "extreme_basis": null,
+          "coverage": 1.0,
+          "single_tx_dominated": false
+        },
+        "near_miss": "a_quiet"
+      }
     }
   ],
   "signals": [],
@@ -3258,13 +3262,13 @@
   "ledger": [],
   "alert_ledger": [],
   "reserves": {
-    "generated_at": "2026-07-18T00:00:25Z",
+    "generated_at": "2026-07-18T02:00:23Z",
     "total_btc": 784617.66,
     "wallet_count": 24,
     "refreshed_count": 24,
     "exchange_count": 4,
-    "btc_price": 63933.36,
-    "total_usd": 50163243293.0,
+    "btc_price": 63952.97,
+    "total_usd": 50178629645.0,
     "per_exchange": [
       {
         "exchange": "Binance",
@@ -3516,11 +3520,11 @@
   },
   "daily": {
     "take": {
-      "headline": "恐惧已凝固，但没人真的在跑路",
-      "body": "恐惧贪婪指数挂在25，连续几天基本没动——情绪冻住了，既没有崩溃式踩踏，也没有任何解冻的迹象。资金费率跌到-0.71σ，空头在付钱，但taker方向均衡，说明这不是单边砸盘，更像双方都在发呆。链上储备净流出-6.27 BTC，量极小，交易所库存几乎纹丝不动，没人大规模提币自救，也没人大规模送货上门——「平静」是今天最准确的字，但平静有时候是风暴前的，有时候只是无聊。我在盯的是：资金费率会不会继续压深、以及taker会不会打破均衡出现方向性倾斜——一旦这两个信号同步走偏，这块「凝固的恐惧」才值得重新定性。【非投资建议】"
+      "headline": "恐惧冻在原地，但没人真的在逃",
+      "body": "恐惧贪婪指数 25，「极度恐惧」——但这几天它基本纹丝不动，从 27 挪到 25，与其说是在崩，不如说是在发呆。资金费率 +0.37σ，多头还没被彻底打趴，taker 方向均衡，市场像一锅温水：没人亢奋，也没人真的夺门而出。链上交易所储备净流出 -6.27 BTC，量小到几乎可以忽略，「大户在撤」的故事现在还讲不圆。我在盯的是：情绪如果继续在这个位置僵着不走，是真底部消化，还是只是还没开始动——一旦 taker 数据开始偏向单边，或者储备流向出现量级变化，我的判断会跟着转。现在什么都没确认，这句话本身就是今天最诚实的结论。"
     },
     "voice_status": "ok",
     "near_miss": "a_quiet",
-    "generated_at": "2026-07-18T00:00:25Z"
+    "generated_at": "2026-07-18T02:00:23Z"
   }
 }
