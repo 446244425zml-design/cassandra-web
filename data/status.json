@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-18T22:00:23Z",
+  "generated_at": "2026-07-19T00:00:24Z",
   "netflow_gate": {
     "mode": "event_driven",
     "waits_for_baseline": false
@@ -153,40 +153,6 @@
     ]
   },
   "runs": [
-    {
-      "ts": "2026-07-13T01:32:32Z",
-      "run_id": "20260713T0132Z-btc",
-      "result": "NoSignal",
-      "reason": "no_trigger",
-      "detail": "fired_signals=[] below require_n_signals",
-      "net_flow_btc": 4.276e-05,
-      "coverage": 1.0,
-      "baseline_mean": -2.3291542596296297,
-      "observation": {
-        "a": {
-          "fired": false,
-          "fired_signals": [],
-          "direction_bias": null,
-          "funding_zscore": -0.1905,
-          "fng_value": 28,
-          "fng_classification": "Fear",
-          "taker_buy_dominance": false,
-          "taker_sell_dominance": false
-        },
-        "b": {
-          "extreme": false,
-          "direction": "unclear",
-          "unclear_reason": "net_flow_not_extreme",
-          "net_flow_btc": 0.0,
-          "net_flow_pct_reserves": 0.0,
-          "total_reserves_btc": 796710.17,
-          "extreme_basis": null,
-          "coverage": 1.0,
-          "single_tx_dominated": false
-        },
-        "near_miss": "a_quiet"
-      }
-    },
     {
       "ts": "2026-07-13T02:00:01Z",
       "run_id": "20260713T0200Z-btc",
@@ -3224,6 +3190,40 @@
         },
         "near_miss": "a_quiet"
       }
+    },
+    {
+      "ts": "2026-07-19T00:00:01Z",
+      "run_id": "20260719T0000Z-btc",
+      "result": "NoSignal",
+      "reason": "no_trigger",
+      "detail": "fired_signals=[] below require_n_signals",
+      "net_flow_btc": 0.0001373,
+      "coverage": 1.0,
+      "baseline_mean": -2.5877611355882353,
+      "observation": {
+        "a": {
+          "fired": false,
+          "fired_signals": [],
+          "direction_bias": null,
+          "funding_zscore": -1.6203,
+          "fng_value": 28,
+          "fng_classification": "Fear",
+          "taker_buy_dominance": false,
+          "taker_sell_dominance": false
+        },
+        "b": {
+          "extreme": false,
+          "direction": "unclear",
+          "unclear_reason": "net_flow_not_extreme",
+          "net_flow_btc": 0.0,
+          "net_flow_pct_reserves": 0.0,
+          "total_reserves_btc": 796819.51,
+          "extreme_basis": null,
+          "coverage": 1.0,
+          "single_tx_dominated": false
+        },
+        "near_miss": "a_quiet"
+      }
     }
   ],
   "signals": [],
@@ -3261,13 +3261,13 @@
   "ledger": [],
   "alert_ledger": [],
   "reserves": {
-    "generated_at": "2026-07-18T22:00:23Z",
+    "generated_at": "2026-07-19T00:00:24Z",
     "total_btc": 784617.66,
     "wallet_count": 24,
     "refreshed_count": 24,
     "exchange_count": 4,
-    "btc_price": 64741.99,
-    "total_usd": 50797708671.0,
+    "btc_price": 64837.51,
+    "total_usd": 50872655350.0,
     "per_exchange": [
       {
         "exchange": "Binance",
@@ -3519,11 +3519,11 @@
   },
   "daily": {
     "take": {
-      "headline": "恐惧冻结在25，链上一动未动，这叫麻木不叫底",
-      "body": "恐惧贪婪指数钉在25「极度恐惧」，最近基本没动——不是在好转，也不是在崩，就是麻木地挂在那里。资金费率报-1.66σ，空头在付费，但taker方向均衡，说明市场在互相对视，没人敢先动。储备净流量0.0，链上没有明显的搬币动作，这种「没有信号就是信号」的状态让我很难兴奋。我在盯的是：情绪能不能从25往下再走一截出现真正的恐慌性行为，或者储备净流量突然转负——有任何一个出现，我对「目前只是麻木」的判断才会开始动摇。"
+      "headline": "恐惧挂在脸上，链上一动不动，谁在等谁？",
+      "body": "恐惧贪婪指数28，在「恐惧」区间里像一块冻住的石头，最近几天从25爬到28，基本没在动。资金费率-1.62σ，空头溢价已经打到统计意义上的偏极端位置，但taker力量均衡——说白了，喊空的人多，真砸的人没跟上。最让我困惑的是储备净流量：0.0，796819枚BTC压在交易所里一枚没进也没出，覆盖度1.0，市场像被按住了呼吸。我在盯的是：这个「按住不动」的状态什么时候被打破——如果链上开始出现方向性流动，才是我重新评估当前情绪读数含金量的时候；在那之前，所有「恐惧即机会」的叙事对我来说都只是噪音。非投资建议。"
     },
     "voice_status": "ok",
     "near_miss": "a_quiet",
-    "generated_at": "2026-07-18T22:00:23Z"
+    "generated_at": "2026-07-19T00:00:24Z"
   }
 }
