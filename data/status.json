@@ -1,17 +1,17 @@
 {
-  "generated_at": "2026-07-19T16:00:26Z",
+  "generated_at": "2026-07-19T18:00:25Z",
   "netflow_gate": {
     "mode": "event_driven",
     "waits_for_baseline": false
   },
   "baseline": {
-    "points": 34,
+    "points": 35,
     "min_samples": 5,
     "robust_samples": 15,
     "mature": true,
     "robust": true,
-    "mean": -2.5877611355882353,
-    "std": 3.143721558552689,
+    "mean": -2.5138211802857144,
+    "std": 3.1278839965639076,
     "diagnostic_only": true,
     "history": [
       {
@@ -149,44 +149,14 @@
       {
         "ts": "2026-07-18T22:00:16Z",
         "net_flow_btc": 0.0001373
+      },
+      {
+        "ts": "2026-07-19T18:00:18Z",
+        "net_flow_btc": 0.0001373
       }
     ]
   },
   "runs": [
-    {
-      "ts": "2026-07-13T13:32:32Z",
-      "run_id": "20260713T1332Z-btc",
-      "result": "NoSignal",
-      "reason": "no_trigger",
-      "detail": "fired_signals=[] below require_n_signals",
-      "net_flow_btc": 4.276e-05,
-      "coverage": 1.0,
-      "baseline_mean": -2.3291542596296297,
-      "observation": {
-        "a": {
-          "fired": false,
-          "fired_signals": [],
-          "direction_bias": null,
-          "funding_zscore": 1.1837,
-          "fng_value": 28,
-          "fng_classification": "Fear",
-          "taker_buy_dominance": false,
-          "taker_sell_dominance": false
-        },
-        "b": {
-          "extreme": false,
-          "direction": "unclear",
-          "unclear_reason": "net_flow_not_extreme",
-          "net_flow_btc": 0.0,
-          "net_flow_pct_reserves": 0.0,
-          "total_reserves_btc": 796710.17,
-          "extreme_basis": null,
-          "coverage": 1.0,
-          "single_tx_dominated": false
-        },
-        "near_miss": "a_quiet"
-      }
-    },
     {
       "ts": "2026-07-13T14:00:00Z",
       "run_id": "20260713T1400Z-btc",
@@ -3224,6 +3194,40 @@
         },
         "near_miss": "a_quiet"
       }
+    },
+    {
+      "ts": "2026-07-19T18:00:01Z",
+      "run_id": "20260719T1800Z-btc",
+      "result": "NoSignal",
+      "reason": "no_trigger",
+      "detail": "fired_signals=[] below require_n_signals",
+      "net_flow_btc": 0.0001373,
+      "coverage": 1.0,
+      "baseline_mean": -2.5138211802857144,
+      "observation": {
+        "a": {
+          "fired": false,
+          "fired_signals": [],
+          "direction_bias": null,
+          "funding_zscore": -0.4255,
+          "fng_value": 28,
+          "fng_classification": "Fear",
+          "taker_buy_dominance": false,
+          "taker_sell_dominance": false
+        },
+        "b": {
+          "extreme": false,
+          "direction": "unclear",
+          "unclear_reason": "net_flow_not_extreme",
+          "net_flow_btc": 0.0,
+          "net_flow_pct_reserves": 0.0,
+          "total_reserves_btc": 796973.51,
+          "extreme_basis": null,
+          "coverage": 1.0,
+          "single_tx_dominated": false
+        },
+        "near_miss": "a_quiet"
+      }
     }
   ],
   "signals": [],
@@ -3262,13 +3266,13 @@
   "ledger": [],
   "alert_ledger": [],
   "reserves": {
-    "generated_at": "2026-07-19T16:00:26Z",
+    "generated_at": "2026-07-19T18:00:25Z",
     "total_btc": 784617.66,
     "wallet_count": 24,
     "refreshed_count": 24,
     "exchange_count": 4,
-    "btc_price": 64574.0,
-    "total_usd": 50665900750.0,
+    "btc_price": 64547.86,
+    "total_usd": 50645390845.0,
     "per_exchange": [
       {
         "exchange": "Binance",
@@ -3520,11 +3524,11 @@
   },
   "daily": {
     "take": {
-      "headline": "恐惧在原地踏步，链上却连根毫毛都没动",
-      "body": "恐惧贪婪指数28，挂在「恐惧」区间里基本没动，情绪没有在崩，也没有在好转，就是在那里耗着。资金费率-0.04σ，几乎贴着零轴，做空也懒得用力，整个市场像一块受潮的海绵——软，但不烂。交易所储备净流量归零，796973枚BTC坐在那里，没人动它，这种「平静」让我不安，因为它不是信心，更像是集体发呆。我在等储备净流量出现方向性变化，或者资金费率σ开始走偏——任何一边，只要有人先动，这块海绵才算挤出了什么。"
+      "headline": "恐慌挂在脸上，链上一动不动，谁在演戏？",
+      "body": "恐惧贪婪指数28，情绪在「怕」的区间里几乎没动，但这几天的漂移幅度告诉我它只是在原地踏步，没有崩塌也没有反弹迹象。资金费率-0.43σ，轻度偏空但远未到尖叫级别；现货储备净流量0.0，796973枚BTC纹丝未动——情绪在喊「跌」，但没人真的在卖或搬仓，这种分裂让我不安。我在盯的是储备净流量会不会从平静变成方向性流出，以及资金费率是否继续向负极端滑动；如果两者同时动，我会重新评估这份「表面平静」背后压着什么。【非投资建议】"
     },
     "voice_status": "ok",
     "near_miss": "a_quiet",
-    "generated_at": "2026-07-19T16:00:26Z"
+    "generated_at": "2026-07-19T18:00:25Z"
   }
 }
