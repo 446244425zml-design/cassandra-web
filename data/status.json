@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-19T00:00:24Z",
+  "generated_at": "2026-07-19T02:00:38Z",
   "netflow_gate": {
     "mode": "event_driven",
     "waits_for_baseline": false
@@ -153,40 +153,6 @@
     ]
   },
   "runs": [
-    {
-      "ts": "2026-07-13T02:00:01Z",
-      "run_id": "20260713T0200Z-btc",
-      "result": "NoSignal",
-      "reason": "no_trigger",
-      "detail": "fired_signals=[] below require_n_signals",
-      "net_flow_btc": 4.276e-05,
-      "coverage": 1.0,
-      "baseline_mean": -2.3291542596296297,
-      "observation": {
-        "a": {
-          "fired": false,
-          "fired_signals": [],
-          "direction_bias": null,
-          "funding_zscore": -0.0404,
-          "fng_value": 28,
-          "fng_classification": "Fear",
-          "taker_buy_dominance": false,
-          "taker_sell_dominance": false
-        },
-        "b": {
-          "extreme": false,
-          "direction": "unclear",
-          "unclear_reason": "net_flow_not_extreme",
-          "net_flow_btc": 0.0,
-          "net_flow_pct_reserves": 0.0,
-          "total_reserves_btc": 796710.17,
-          "extreme_basis": null,
-          "coverage": 1.0,
-          "single_tx_dominated": false
-        },
-        "near_miss": "a_quiet"
-      }
-    },
     {
       "ts": "2026-07-13T04:00:01Z",
       "run_id": "20260713T0400Z-btc",
@@ -3224,6 +3190,43 @@
         },
         "near_miss": "a_quiet"
       }
+    },
+    {
+      "ts": "2026-07-19T02:00:01Z",
+      "run_id": "20260719T0200Z-btc",
+      "result": "FIRED",
+      "reason": null,
+      "detail": null,
+      "net_flow_btc": 0.0001373,
+      "coverage": 1.0,
+      "baseline_mean": -2.5877611355882353,
+      "observation": {
+        "a": {
+          "fired": true,
+          "fired_signals": [
+            "taker_sell_dominance"
+          ],
+          "direction_bias": "bearish_crowd",
+          "funding_zscore": -0.3438,
+          "fng_value": 28,
+          "fng_classification": "Fear",
+          "taker_buy_dominance": false,
+          "taker_sell_dominance": true
+        },
+        "b": {
+          "extreme": false,
+          "direction": "unclear",
+          "unclear_reason": "net_flow_not_extreme",
+          "net_flow_btc": 0.0,
+          "net_flow_pct_reserves": 0.0,
+          "total_reserves_btc": 796819.51,
+          "extreme_basis": null,
+          "coverage": 1.0,
+          "single_tx_dominated": false
+        },
+        "near_miss": "a_lit_b_quiet"
+      },
+      "signal_id": "CAS-20260719-btc"
     }
   ],
   "signals": [],
@@ -3255,19 +3258,20 @@
     "CAS-20260713-btc",
     "CAS-20260715-btc",
     "CAS-20260717-btc",
-    "CAS-20260718-btc"
+    "CAS-20260718-btc",
+    "CAS-20260719-btc"
   ],
   "pending_alerts": [],
   "ledger": [],
   "alert_ledger": [],
   "reserves": {
-    "generated_at": "2026-07-19T00:00:24Z",
+    "generated_at": "2026-07-19T02:00:38Z",
     "total_btc": 784617.66,
     "wallet_count": 24,
     "refreshed_count": 24,
     "exchange_count": 4,
-    "btc_price": 64837.51,
-    "total_usd": 50872655350.0,
+    "btc_price": 64765.99,
+    "total_usd": 50816539495.0,
     "per_exchange": [
       {
         "exchange": "Binance",
@@ -3519,11 +3523,11 @@
   },
   "daily": {
     "take": {
-      "headline": "恐惧挂在脸上，链上一动不动，谁在等谁？",
-      "body": "恐惧贪婪指数28，在「恐惧」区间里像一块冻住的石头，最近几天从25爬到28，基本没在动。资金费率-1.62σ，空头溢价已经打到统计意义上的偏极端位置，但taker力量均衡——说白了，喊空的人多，真砸的人没跟上。最让我困惑的是储备净流量：0.0，796819枚BTC压在交易所里一枚没进也没出，覆盖度1.0，市场像被按住了呼吸。我在盯的是：这个「按住不动」的状态什么时候被打破——如果链上开始出现方向性流动，才是我重新评估当前情绪读数含金量的时候；在那之前，所有「恐惧即机会」的叙事对我来说都只是噪音。非投资建议。"
+      "headline": "恐慌已在尖叫，链上还在打哈欠",
+      "body": "恐惧贪婪指数28，连续几天钉在恐慌区几乎没动——人群情绪已极端偏空，但这种「集体发抖」本身就值得警惕，因为市场最喜欢在众人确信要跌时拒绝配合。资金费率-0.34σ、卖盘主导，空头在付费押注下跌，这是情绪的反面：越便宜越没人想接。真正让我迟疑的是链上储备净流量挂零，近80万BTC纹丝不动——大钱既没有撤退，也没有入场，它们在等什么，我不知道，但这种沉默比尖叫更难读。如果储备开始出现持续净流出、或恐惧指数在现价附近开始悄悄回升，我才会考虑这场恐慌是否在消化；反之，若净流入加速，这个「极端情绪」就只是下跌途中的一个路牌。"
     },
     "voice_status": "ok",
-    "near_miss": "a_quiet",
-    "generated_at": "2026-07-19T00:00:24Z"
+    "near_miss": "a_lit_b_quiet",
+    "generated_at": "2026-07-19T02:00:38Z"
   }
 }
