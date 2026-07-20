@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-20T06:00:24Z",
+  "generated_at": "2026-07-20T08:00:33Z",
   "netflow_gate": {
     "mode": "event_driven",
     "waits_for_baseline": false
@@ -157,40 +157,6 @@
     ]
   },
   "runs": [
-    {
-      "ts": "2026-07-14T01:32:38Z",
-      "run_id": "20260714T0132Z-btc",
-      "result": "NoSignal",
-      "reason": "no_trigger",
-      "detail": "fired_signals=[] below require_n_signals",
-      "net_flow_btc": 4.276e-05,
-      "coverage": 1.0,
-      "baseline_mean": -2.2459686517857143,
-      "observation": {
-        "a": {
-          "fired": false,
-          "fired_signals": [],
-          "direction_bias": null,
-          "funding_zscore": 0.4241,
-          "fng_value": 22,
-          "fng_classification": "Extreme Fear",
-          "taker_buy_dominance": false,
-          "taker_sell_dominance": false
-        },
-        "b": {
-          "extreme": false,
-          "direction": "unclear",
-          "unclear_reason": "net_flow_not_extreme",
-          "net_flow_btc": 0.0,
-          "net_flow_pct_reserves": 0.0,
-          "total_reserves_btc": 796455.05,
-          "extreme_basis": null,
-          "coverage": 1.0,
-          "single_tx_dominated": true
-        },
-        "near_miss": "a_quiet"
-      }
-    },
     {
       "ts": "2026-07-14T02:00:02Z",
       "run_id": "20260714T0200Z-btc",
@@ -3228,6 +3194,47 @@
         },
         "near_miss": "a_quiet"
       }
+    },
+    {
+      "ts": "2026-07-20T08:00:01Z",
+      "run_id": "20260720T0800Z-btc",
+      "result": "NoSignal",
+      "reason": "no_trigger",
+      "detail": "fired_signals=[] below require_n_signals",
+      "net_flow_btc": -8092.53409377,
+      "coverage": 1.0,
+      "baseline_mean": -2.5138211802857144,
+      "observation": {
+        "a": {
+          "fired": false,
+          "fired_signals": [],
+          "direction_bias": null,
+          "funding_zscore": -0.0277,
+          "fng_value": 29,
+          "fng_classification": "Fear",
+          "taker_buy_dominance": false,
+          "taker_sell_dominance": false
+        },
+        "b": {
+          "extreme": true,
+          "direction": "outflow",
+          "unclear_reason": null,
+          "net_flow_btc": -8092.53,
+          "net_flow_pct_reserves": 0.010152,
+          "total_reserves_btc": 797127.51,
+          "extreme_basis": "both",
+          "coverage": 1.0,
+          "single_tx_dominated": true
+        },
+        "near_miss": "a_quiet"
+      },
+      "alert_id": "ALERT-20260720-btc",
+      "alert": {
+        "direction": "outflow",
+        "net_flow_btc": -8092.53,
+        "pct_reserves": 0.010152,
+        "basis": "absolute"
+      }
     }
   ],
   "signals": [],
@@ -3262,17 +3269,19 @@
     "CAS-20260718-btc",
     "CAS-20260719-btc"
   ],
-  "pending_alerts": [],
+  "pending_alerts": [
+    "ALERT-20260720-btc"
+  ],
   "ledger": [],
   "alert_ledger": [],
   "reserves": {
-    "generated_at": "2026-07-20T06:00:24Z",
+    "generated_at": "2026-07-20T08:00:33Z",
     "total_btc": 784617.66,
     "wallet_count": 24,
     "refreshed_count": 24,
     "exchange_count": 4,
-    "btc_price": 64130.01,
-    "total_usd": 50317538355.0,
+    "btc_price": 64262.01,
+    "total_usd": 50421107887.0,
     "per_exchange": [
       {
         "exchange": "Binance",
@@ -3518,17 +3527,17 @@
       }
     ],
     "coverage": 100.0,
-    "net_flow_btc": 0.0,
+    "net_flow_btc": -8092.53,
     "window_hours": 48,
     "address_book_version": "2026-06-17"
   },
   "daily": {
     "take": {
-      "headline": "恐惧凝固，但没人真的动手",
-      "body": "恐惧贪婪指数29，这几天基本没动，市场像一块压着不说话的石头——情绪偏恐惧，但既没有在尖叫，也没有任何解脱的迹象。资金费率-0.75σ，偏空但没到极端，说明空头在压价，却还没压到自己也开始害怕的程度。链上储备净流量归零，交易所持仓纹丝不动，「等待」才是今天真正的主角。我在盯的是：情绪如果继续在恐惧区横盘而价格不跟跌，这个背离值得重新打量；反过来，若储备开始净流入，我会收起这句话。"
+      "headline": "恐惧凝固，链上悄悄撤货，市场在等谁先眨眼",
+      "body": "恐惧贪婪29，读数基本没动——不是企稳，是麻木；人群既没有崩溃性抛售，也没有任何反弹冲动，就这么杵在原地。资金费率-0.03σ，几乎贴着零轴，空多双方都懒得押注，现价64262附近像一块没人想搬的石头。但链上有个细节我不想忽略：交易所净流出超过8000枚BTC，储备在缩，这是最近几次极端情绪窗口里少数「有人在悄悄挪货」的信号——不代表必涨，但至少不是纯粹的恐慌性倾倒。让我翻盘判断的条件很简单：如果资金费率开始往两端走、或者净流量方向突然逆转大规模流入交易所，我会重新审视这块「石头」到底压着什么。"
     },
     "voice_status": "ok",
     "near_miss": "a_quiet",
-    "generated_at": "2026-07-20T06:00:24Z"
+    "generated_at": "2026-07-20T08:00:33Z"
   }
 }
