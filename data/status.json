@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-20T22:00:37Z",
+  "generated_at": "2026-07-21T00:00:36Z",
   "netflow_gate": {
     "mode": "event_driven",
     "waits_for_baseline": false
@@ -161,40 +161,6 @@
     ]
   },
   "runs": [
-    {
-      "ts": "2026-07-14T12:00:01Z",
-      "run_id": "20260714T1200Z-btc",
-      "result": "NoSignal",
-      "reason": "no_trigger",
-      "detail": "fired_signals=[] below require_n_signals",
-      "net_flow_btc": 4.276e-05,
-      "coverage": 1.0,
-      "baseline_mean": -2.2459686517857143,
-      "observation": {
-        "a": {
-          "fired": false,
-          "fired_signals": [],
-          "direction_bias": null,
-          "funding_zscore": 0.3455,
-          "fng_value": 22,
-          "fng_classification": "Extreme Fear",
-          "taker_buy_dominance": false,
-          "taker_sell_dominance": false
-        },
-        "b": {
-          "extreme": false,
-          "direction": "unclear",
-          "unclear_reason": "net_flow_not_extreme",
-          "net_flow_btc": 0.0,
-          "net_flow_pct_reserves": 0.0,
-          "total_reserves_btc": 796614.05,
-          "extreme_basis": null,
-          "coverage": 1.0,
-          "single_tx_dominated": false
-        },
-        "near_miss": "a_quiet"
-      }
-    },
     {
       "ts": "2026-07-14T13:31:39Z",
       "run_id": "20260714T1331Z-btc",
@@ -3284,6 +3250,47 @@
         "near_miss": "both_lit"
       },
       "signal_id": "CAS-20260720-btc"
+    },
+    {
+      "ts": "2026-07-21T00:00:02Z",
+      "run_id": "20260721T0000Z-btc",
+      "result": "NoSignal",
+      "reason": "no_trigger",
+      "detail": "fired_signals=[] below require_n_signals",
+      "net_flow_btc": -8092.53409377,
+      "coverage": 1.0,
+      "baseline_mean": -227.23660653000002,
+      "observation": {
+        "a": {
+          "fired": false,
+          "fired_signals": [],
+          "direction_bias": null,
+          "funding_zscore": -0.0239,
+          "fng_value": 25,
+          "fng_classification": "Extreme Fear",
+          "taker_buy_dominance": false,
+          "taker_sell_dominance": false
+        },
+        "b": {
+          "extreme": true,
+          "direction": "outflow",
+          "unclear_reason": null,
+          "net_flow_btc": -8092.53,
+          "net_flow_pct_reserves": 0.010256,
+          "total_reserves_btc": 789034.98,
+          "extreme_basis": "both",
+          "coverage": 1.0,
+          "single_tx_dominated": false
+        },
+        "near_miss": "a_quiet"
+      },
+      "alert_id": "ALERT-20260721-btc",
+      "alert": {
+        "direction": "outflow",
+        "net_flow_btc": -8092.53,
+        "pct_reserves": 0.010256,
+        "basis": "absolute"
+      }
     }
   ],
   "signals": [],
@@ -3320,18 +3327,19 @@
     "CAS-20260720-btc"
   ],
   "pending_alerts": [
-    "ALERT-20260720-btc"
+    "ALERT-20260720-btc",
+    "ALERT-20260721-btc"
   ],
   "ledger": [],
   "alert_ledger": [],
   "reserves": {
-    "generated_at": "2026-07-20T22:00:37Z",
+    "generated_at": "2026-07-21T00:00:36Z",
     "total_btc": 776525.13,
     "wallet_count": 24,
     "refreshed_count": 24,
     "exchange_count": 4,
-    "btc_price": 65278.01,
-    "total_usd": 50690014905.0,
+    "btc_price": 65203.82,
+    "total_usd": 50632404506.0,
     "per_exchange": [
       {
         "exchange": "Binance",
@@ -3583,11 +3591,11 @@
   },
   "daily": {
     "take": {
-      "headline": "恐慌冻结在29，链上却悄悄搬走八千枚",
-      "body": "恐惧贪婪指数在29一动不动，情绪像被钉住了，但这种「稳」本身就可疑——人群已连续多次踩到极端读数，麻木和真正的底部长得很像，我没本事区分。与此同时，交易所储备净流出-8092枚BTC，这个量级不是散户在挪动零钱；买盘主导的taker结构叠上链上大额流出，有人在低恐慌区悄悄接货，也有人在悄悄撤离，方向我不敢拍板。资金费率+0.08σ，多头还没被完全清洗，杠杆端没有投降信号，这让我对「恐慌即底」的叙事保持怀疑。我在盯的是：如果恐惧指数开始松动回升而链上流出持续加速，那是两条腿往同一方向走，值得认真对待；反之若情绪继续冻结而链上流入反转，我会重新评估当前读数的含义。"
+      "headline": "恐惧指数跌到25，但链上没人真的在逃",
+      "body": "恐惧贪婪指数从29滑到25，情绪在加深，但交易所储备净流出超过8000枚BTC——人嘴说怕，手在往外搬币，两件事不是一回事。资金费率在-0.02σ，接近中性，多空都没在尖叫，市场更像是在打哈欠而不是在崩溃。我现在盯的是储备流出能不能持续放量：如果链上持续提币而情绪还在低位，那这个「极度恐惧」更像是洗盘噪音而非真实溃逃。让我改变看法的信号只有一个——资金费率开始大幅负偏、同时储备反向回流，那时才是真正的去杠杆开始。"
     },
     "voice_status": "ok",
-    "near_miss": "both_lit",
-    "generated_at": "2026-07-20T22:00:37Z"
+    "near_miss": "a_quiet",
+    "generated_at": "2026-07-21T00:00:36Z"
   }
 }
