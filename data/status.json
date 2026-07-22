@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-21T22:00:33Z",
+  "generated_at": "2026-07-22T00:00:35Z",
   "netflow_gate": {
     "mode": "event_driven",
     "waits_for_baseline": false
@@ -165,40 +165,6 @@
     ]
   },
   "runs": [
-    {
-      "ts": "2026-07-15T06:00:01Z",
-      "run_id": "20260715T0600Z-btc",
-      "result": "NoSignal",
-      "reason": "no_trigger",
-      "detail": "fired_signals=[] below require_n_signals",
-      "net_flow_btc": 4.276e-05,
-      "coverage": 1.0,
-      "baseline_mean": -2.1685199824137933,
-      "observation": {
-        "a": {
-          "fired": false,
-          "fired_signals": [],
-          "direction_bias": null,
-          "funding_zscore": 1.4559,
-          "fng_value": 25,
-          "fng_classification": "Extreme Fear",
-          "taker_buy_dominance": false,
-          "taker_sell_dominance": false
-        },
-        "b": {
-          "extreme": false,
-          "direction": "unclear",
-          "unclear_reason": "net_flow_not_extreme",
-          "net_flow_btc": 0.0,
-          "net_flow_pct_reserves": 0.0,
-          "total_reserves_btc": 796614.05,
-          "extreme_basis": null,
-          "coverage": 1.0,
-          "single_tx_dominated": false
-        },
-        "near_miss": "a_quiet"
-      }
-    },
     {
       "ts": "2026-07-15T08:00:01Z",
       "run_id": "20260715T0800Z-btc",
@@ -3365,6 +3331,47 @@
         "pct_reserves": 0.010257,
         "basis": "absolute"
       }
+    },
+    {
+      "ts": "2026-07-22T00:00:01Z",
+      "run_id": "20260722T0000Z-btc",
+      "result": "NoSignal",
+      "reason": "no_trigger",
+      "detail": "fired_signals=[] below require_n_signals",
+      "net_flow_btc": -8092.53404295,
+      "coverage": 1.0,
+      "baseline_mean": -439.81221429324324,
+      "observation": {
+        "a": {
+          "fired": false,
+          "fired_signals": [],
+          "direction_bias": null,
+          "funding_zscore": -0.52,
+          "fng_value": 33,
+          "fng_classification": "Fear",
+          "taker_buy_dominance": false,
+          "taker_sell_dominance": false
+        },
+        "b": {
+          "extreme": true,
+          "direction": "outflow",
+          "unclear_reason": null,
+          "net_flow_btc": -8092.53,
+          "net_flow_pct_reserves": 0.010257,
+          "total_reserves_btc": 788973.71,
+          "extreme_basis": "both",
+          "coverage": 1.0,
+          "single_tx_dominated": false
+        },
+        "near_miss": "a_quiet"
+      },
+      "alert_id": "ALERT-20260722-btc",
+      "alert": {
+        "direction": "outflow",
+        "net_flow_btc": -8092.53,
+        "pct_reserves": 0.010257,
+        "basis": "absolute"
+      }
     }
   ],
   "signals": [],
@@ -3403,23 +3410,24 @@
   ],
   "pending_alerts": [
     "ALERT-20260720-btc",
-    "ALERT-20260721-btc"
+    "ALERT-20260721-btc",
+    "ALERT-20260722-btc"
   ],
   "ledger": [],
   "alert_ledger": [],
   "reserves": {
-    "generated_at": "2026-07-21T22:00:33Z",
+    "generated_at": "2026-07-22T00:00:35Z",
     "total_btc": 776525.13,
     "wallet_count": 24,
     "refreshed_count": 24,
     "exchange_count": 4,
-    "btc_price": 66367.47,
-    "total_usd": 51536007968.0,
+    "btc_price": 66567.73,
+    "total_usd": 51691514894.0,
     "per_exchange": [
       {
         "exchange": "Binance",
         "count": 2,
-        "btc": 421826.2047,
+        "btc": 421826.2048,
         "pct": 54.3
       },
       {
@@ -3666,11 +3674,11 @@
   },
   "daily": {
     "take": {
-      "headline": "恐惧冻在原地，链上资金悄悄撤退",
-      "body": "恐惧贪婪指数25，「极度恐慌」已经黏在那里纹丝不动——不是在崩，是在麻木。麻木和底部不是一回事，我不混淆这两个词。资金费率-0.84σ，空头略占优但没到尖叫级别；真正让我皱眉的是储备净流出超过8000 BTC，钱在离场，但场外情绪没有对应的崩溃——这个错位我盯着。如果净流出持续放大同时恐惧指数开始松动向上，我会重新评估这个「平静」的含金量；如果两者都继续横着，那只是一锅温水，谁都没准备好。"
+      "headline": "情绪从坑里爬了两格，链上的人还没信",
+      "body": "恐惧贪婪指数从25回到33，方向对，但33依然是「恐惧」区间——这不叫回暖，这叫从尖叫变成了叹气。资金费率报-0.52σ，空头偏向还在，市场在66567附近按住不动，既没有踩油门的冲动，也没有集体割肉的崩溃。链上储备净流出8092枚，方向上看是筹码在离场，但覆盖度1.0、储备总量接近79万枚，这个量级的流出还谈不上「聪明钱出逃」，更像是有人在慢慢挪仓。我盯的是情绪能不能站稳40以上同时资金费率转正——两者都到位我才会重新审视这个市场的底气；如果其中一个掉头，这次「回暖」就只是反弹前的最后一次深呼吸。"
     },
     "voice_status": "ok",
     "near_miss": "a_quiet",
-    "generated_at": "2026-07-21T22:00:33Z"
+    "generated_at": "2026-07-22T00:00:35Z"
   }
 }
