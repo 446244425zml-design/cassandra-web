@@ -1,17 +1,17 @@
 {
-  "generated_at": "2026-07-26T06:03:35Z",
+  "generated_at": "2026-07-26T08:03:39Z",
   "netflow_gate": {
     "mode": "event_driven",
     "waits_for_baseline": false
   },
   "baseline": {
-    "points": 41,
+    "points": 42,
     "min_samples": 5,
     "robust_samples": 15,
     "mature": true,
     "robust": true,
-    "mean": -791.9700948480488,
-    "std": 2430.759068313096,
+    "mean": -773.1136619202381,
+    "std": 2404.040648197035,
     "diagnostic_only": true,
     "history": [
       {
@@ -177,44 +177,14 @@
       {
         "ts": "2026-07-25T12:00:24Z",
         "net_flow_btc": 8.812e-05
+      },
+      {
+        "ts": "2026-07-26T08:02:54Z",
+        "net_flow_btc": 8.812e-05
       }
     ]
   },
   "runs": [
-    {
-      "ts": "2026-07-17T05:32:16Z",
-      "run_id": "20260717T0532Z-btc",
-      "result": "NoSignal",
-      "reason": "no_trigger",
-      "detail": "fired_signals=[] below require_n_signals",
-      "net_flow_btc": -6.27421047,
-      "coverage": 1.0,
-      "baseline_mean": -2.55343142,
-      "observation": {
-        "a": {
-          "fired": false,
-          "fired_signals": [],
-          "direction_bias": null,
-          "funding_zscore": 0.8194,
-          "fng_value": 27,
-          "fng_classification": "Fear",
-          "taker_buy_dominance": false,
-          "taker_sell_dominance": false
-        },
-        "b": {
-          "extreme": false,
-          "direction": "unclear",
-          "unclear_reason": "net_flow_not_extreme",
-          "net_flow_btc": -6.27,
-          "net_flow_pct_reserves": 8e-06,
-          "total_reserves_btc": 796663.51,
-          "extreme_basis": null,
-          "coverage": 1.0,
-          "single_tx_dominated": true
-        },
-        "near_miss": "a_quiet"
-      }
-    },
     {
       "ts": "2026-07-17T06:00:01Z",
       "run_id": "20260717T0600Z-btc",
@@ -3514,6 +3484,40 @@
         },
         "near_miss": "a_quiet"
       }
+    },
+    {
+      "ts": "2026-07-26T08:00:01Z",
+      "run_id": "20260726T0800Z-btc",
+      "result": "NoSignal",
+      "reason": "no_trigger",
+      "detail": "fired_signals=[] below require_n_signals",
+      "net_flow_btc": 8.812e-05,
+      "coverage": 1.0,
+      "baseline_mean": -773.1136619202381,
+      "observation": {
+        "a": {
+          "fired": false,
+          "fired_signals": [],
+          "direction_bias": null,
+          "funding_zscore": null,
+          "fng_value": 26,
+          "fng_classification": "Fear",
+          "taker_buy_dominance": null,
+          "taker_sell_dominance": null
+        },
+        "b": {
+          "extreme": false,
+          "direction": "unclear",
+          "unclear_reason": "net_flow_not_extreme",
+          "net_flow_btc": 0.0,
+          "net_flow_pct_reserves": 0.0,
+          "total_reserves_btc": 794256.46,
+          "extreme_basis": null,
+          "coverage": 1.0,
+          "single_tx_dominated": false
+        },
+        "near_miss": "a_quiet"
+      }
     }
   ],
   "signals": [],
@@ -3563,7 +3567,7 @@
   "ledger": [],
   "alert_ledger": [],
   "reserves": {
-    "generated_at": "2026-07-26T06:03:35Z",
+    "generated_at": "2026-07-26T08:03:39Z",
     "total_btc": 781639.52,
     "wallet_count": 24,
     "refreshed_count": 24,
@@ -3823,6 +3827,6 @@
     "take": null,
     "voice_status": "voice_failed",
     "near_miss": "a_quiet",
-    "generated_at": "2026-07-26T06:03:35Z"
+    "generated_at": "2026-07-26T08:03:39Z"
   }
 }
