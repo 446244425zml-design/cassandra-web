@@ -1,17 +1,17 @@
 {
-  "generated_at": "2026-07-28T22:00:31Z",
+  "generated_at": "2026-07-29T00:00:39Z",
   "netflow_gate": {
     "mode": "event_driven",
     "waits_for_baseline": false
   },
   "baseline": {
-    "points": 44,
+    "points": 45,
     "min_samples": 5,
     "robust_samples": 15,
     "mature": true,
     "robust": true,
-    "mean": -891.7195377952273,
-    "std": 2518.9327078490796,
+    "mean": -1022.2343470868889,
+    "std": 2639.57423394759,
     "diagnostic_only": true,
     "history": [
       {
@@ -189,44 +189,14 @@
       {
         "ts": "2026-07-28T04:00:16Z",
         "net_flow_btc": -6764.88595046
+      },
+      {
+        "ts": "2026-07-29T00:00:23Z",
+        "net_flow_btc": -6764.88595592
       }
     ]
   },
   "runs": [
-    {
-      "ts": "2026-07-19T06:00:01Z",
-      "run_id": "20260719T0600Z-btc",
-      "result": "NoSignal",
-      "reason": "no_trigger",
-      "detail": "fired_signals=[] below require_n_signals",
-      "net_flow_btc": 0.0001373,
-      "coverage": 1.0,
-      "baseline_mean": -2.5877611355882353,
-      "observation": {
-        "a": {
-          "fired": false,
-          "fired_signals": [],
-          "direction_bias": null,
-          "funding_zscore": 0.267,
-          "fng_value": 28,
-          "fng_classification": "Fear",
-          "taker_buy_dominance": false,
-          "taker_sell_dominance": false
-        },
-        "b": {
-          "extreme": false,
-          "direction": "unclear",
-          "unclear_reason": "net_flow_not_extreme",
-          "net_flow_btc": 0.0,
-          "net_flow_pct_reserves": 0.0,
-          "total_reserves_btc": 796973.51,
-          "extreme_basis": null,
-          "coverage": 1.0,
-          "single_tx_dominated": true
-        },
-        "near_miss": "a_quiet"
-      }
-    },
     {
       "ts": "2026-07-19T08:00:01Z",
       "run_id": "20260719T0800Z-btc",
@@ -3634,6 +3604,47 @@
         "pct_reserves": 0.008541,
         "basis": "absolute"
       }
+    },
+    {
+      "ts": "2026-07-29T00:00:01Z",
+      "run_id": "20260729T0000Z-btc",
+      "result": "NoSignal",
+      "reason": "no_trigger",
+      "detail": "fired_signals=[] below require_n_signals",
+      "net_flow_btc": -6764.88595592,
+      "coverage": 1.0,
+      "baseline_mean": -1022.2343470868889,
+      "observation": {
+        "a": {
+          "fired": false,
+          "fired_signals": [],
+          "direction_bias": null,
+          "funding_zscore": 1.4907,
+          "fng_value": 29,
+          "fng_classification": "Fear",
+          "taker_buy_dominance": false,
+          "taker_sell_dominance": false
+        },
+        "b": {
+          "extreme": true,
+          "direction": "outflow",
+          "unclear_reason": null,
+          "net_flow_btc": -6764.89,
+          "net_flow_pct_reserves": 0.008541,
+          "total_reserves_btc": 792020.89,
+          "extreme_basis": "both",
+          "coverage": 1.0,
+          "single_tx_dominated": false
+        },
+        "near_miss": "a_quiet"
+      },
+      "alert_id": "ALERT-20260729-btc",
+      "alert": {
+        "direction": "outflow",
+        "net_flow_btc": -6764.89,
+        "pct_reserves": 0.008541,
+        "basis": "absolute"
+      }
     }
   ],
   "signals": [],
@@ -3681,18 +3692,19 @@
     "ALERT-20260722-btc",
     "ALERT-20260723-btc",
     "ALERT-20260727-btc",
-    "ALERT-20260728-btc"
+    "ALERT-20260728-btc",
+    "ALERT-20260729-btc"
   ],
   "ledger": [],
   "alert_ledger": [],
   "reserves": {
-    "generated_at": "2026-07-28T22:00:31Z",
+    "generated_at": "2026-07-29T00:00:39Z",
     "total_btc": 779493.37,
     "wallet_count": 24,
     "refreshed_count": 24,
     "exchange_count": 4,
-    "btc_price": 63976.01,
-    "total_usd": 49868875666.0,
+    "btc_price": 63969.68,
+    "total_usd": 49863941473.0,
     "per_exchange": [
       {
         "exchange": "Binance",
@@ -3944,11 +3956,11 @@
   },
   "daily": {
     "take": {
-      "headline": "情绪冻在恐惧、资金费率却在悄悄尖叫",
-      "body": "恐惧贪婪指数29，纹丝不动——人群既没崩溃也没解脱，就这么悬着。但资金费率站在+1.49σ，多头仓位成本在暗中积压，这两个信号不在一个频道上，我不喜欢这种错位。交易所储备净流出6764.89 BTC，链上筹码在离场，但覆盖度1.0，还没到让我拍桌子的程度。我在盯的是：情绪如果继续钉在恐惧区间而资金费率不回落，这个错位迟早要有一侧认输——谁先动摇，我再说话。【非投资建议】"
+      "headline": "情绪冻在恐惧、资金费率却在偷笑，市场在撒谎",
+      "body": "恐惧贪婪指数钉在29，基本没动——情绪既没有崩塌到极端，也没有任何回暖迹象，就这么「挂着」。但资金费率跑到+1.49σ，多头溢价在这个恐惧读数下显得格外违和，说明衍生品市场有一批人在悄悄押注反弹，而情绪面根本没给他们撑腰。与此同时，储备净流量-6764.89 BTC，链上还在往外搬，但总储备还压着79万枚，这个量不算小，随时可以变成供给压力。我在盯的是：资金费率能不能在情绪没有跟上的情况下撑住——如果它开始回落而情绪继续横盘，那这个「多头偷笑」的结构就会悄无声息地瓦解；反过来，若恐惧读数开始回升而链上流出持续，我才会认真考虑这里有「悄悄筑底」的可能。现在两边都没确认，我不站队。"
     },
     "voice_status": "ok",
     "near_miss": "a_quiet",
-    "generated_at": "2026-07-28T22:00:31Z"
+    "generated_at": "2026-07-29T00:00:39Z"
   }
 }
