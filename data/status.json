@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-30T10:00:26Z",
+  "generated_at": "2026-07-30T12:00:33Z",
   "netflow_gate": {
     "mode": "event_driven",
     "waits_for_baseline": false
@@ -201,47 +201,6 @@
     ]
   },
   "runs": [
-    {
-      "ts": "2026-07-21T08:00:01Z",
-      "run_id": "20260721T0800Z-btc",
-      "result": "NoSignal",
-      "reason": "no_trigger",
-      "detail": "fired_signals=[] below require_n_signals",
-      "net_flow_btc": -8092.53409377,
-      "coverage": 1.0,
-      "baseline_mean": -227.23660653000002,
-      "observation": {
-        "a": {
-          "fired": false,
-          "fired_signals": [],
-          "direction_bias": null,
-          "funding_zscore": 1.1458,
-          "fng_value": 25,
-          "fng_classification": "Extreme Fear",
-          "taker_buy_dominance": false,
-          "taker_sell_dominance": false
-        },
-        "b": {
-          "extreme": true,
-          "direction": "outflow",
-          "unclear_reason": null,
-          "net_flow_btc": -8092.53,
-          "net_flow_pct_reserves": 0.010254,
-          "total_reserves_btc": 789186.98,
-          "extreme_basis": "both",
-          "coverage": 1.0,
-          "single_tx_dominated": false
-        },
-        "near_miss": "a_quiet"
-      },
-      "alert_id": "ALERT-20260721-btc",
-      "alert": {
-        "direction": "outflow",
-        "net_flow_btc": -8092.53,
-        "pct_reserves": 0.010254,
-        "basis": "absolute"
-      }
-    },
     {
       "ts": "2026-07-21T10:00:02Z",
       "run_id": "20260721T1000Z-btc",
@@ -3638,6 +3597,43 @@
         },
         "near_miss": "a_quiet"
       }
+    },
+    {
+      "ts": "2026-07-30T12:00:01Z",
+      "run_id": "20260730T1200Z-btc",
+      "result": "FIRED",
+      "reason": null,
+      "detail": null,
+      "net_flow_btc": -6.41832441,
+      "coverage": 1.0,
+      "baseline_mean": -1000.0118604497826,
+      "observation": {
+        "a": {
+          "fired": true,
+          "fired_signals": [
+            "taker_sell_dominance"
+          ],
+          "direction_bias": "bearish_crowd",
+          "funding_zscore": 1.4436,
+          "fng_value": 28,
+          "fng_classification": "Fear",
+          "taker_buy_dominance": false,
+          "taker_sell_dominance": true
+        },
+        "b": {
+          "extreme": false,
+          "direction": "unclear",
+          "unclear_reason": "net_flow_not_extreme",
+          "net_flow_btc": -6.42,
+          "net_flow_pct_reserves": 8e-06,
+          "total_reserves_btc": 792069.68,
+          "extreme_basis": null,
+          "coverage": 1.0,
+          "single_tx_dominated": false
+        },
+        "near_miss": "a_lit_b_quiet"
+      },
+      "signal_id": "CAS-20260730-btc"
     }
   ],
   "signals": [],
@@ -3678,7 +3674,8 @@
     "CAS-20260724-btc",
     "CAS-20260725-btc",
     "CAS-20260728-btc",
-    "CAS-20260729-btc"
+    "CAS-20260729-btc",
+    "CAS-20260730-btc"
   ],
   "pending_alerts": [
     "ALERT-20260720-btc",
@@ -3692,13 +3689,13 @@
   "ledger": [],
   "alert_ledger": [],
   "reserves": {
-    "generated_at": "2026-07-30T10:00:26Z",
+    "generated_at": "2026-07-30T12:00:33Z",
     "total_btc": 779493.37,
     "wallet_count": 24,
     "refreshed_count": 24,
     "exchange_count": 4,
-    "btc_price": 64587.1,
-    "total_usd": 50345216272.0,
+    "btc_price": 64823.51,
+    "total_usd": 50529496299.0,
     "per_exchange": [
       {
         "exchange": "Binance",
@@ -3950,11 +3947,11 @@
   },
   "daily": {
     "take": {
-      "headline": "恐惧挂在脸上，链上却没人真的在逃",
-      "body": "恐惧贪婪指数28，这几天基本纹丝不动——市场情绪冻在「怕」这个档位，但既没继续崩，也没反弹的意思，就是在那儿发呆。有意思的是资金费率还顶着+1.13σ，多头仓位并没有因为恐慌读数就清仓，这两个信号对着干，我暂时不信任任何一边。交易所储备净流出-6.42 BTC，量级太小，说不上是「聪明钱在接」还是只是噪音；792069.68 BTC还压在那里，随时可以砸。我在盯情绪会不会从28继续往下走破、以及资金费率会不会因为多头扛不住而快速翻负——如果两者同向恶化，那这段「平静」就只是下一跌前的麻木，而不是底部的安静。【非投资建议】"
+      "headline": "恐慌凝固在28，但链上还没喊痛",
+      "body": "恐惧贪婪指数在28附近几乎纹丝不动，人群已经切换到「偏空/恐慌」的极端读数——这不是新鲜的恐慌，是已经腌入味的恐慌。麻烦的地方在于：资金费率还挂着+1.44σ，多头头寸没被彻底冲走，卖盘主导的taker流量配上这个费率，说明有人还在硬撑。交易所储备净流出-6.42 BTC，量级太小，链上既没出现明显的「认输式转移」，也没有抄底资金大手进场的信号——我读到的是一个被按住的市场，不是一个正在解脱的市场。如果费率开始向下折、储备出现方向性的大幅净流入，我会重新评估这个「人群极端但链上无动静」的僵局；否则这口气憋着，对多空都不是好事。"
     },
     "voice_status": "ok",
-    "near_miss": "a_quiet",
-    "generated_at": "2026-07-30T10:00:26Z"
+    "near_miss": "a_lit_b_quiet",
+    "generated_at": "2026-07-30T12:00:33Z"
   }
 }
