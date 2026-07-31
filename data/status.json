@@ -1,17 +1,17 @@
 {
-  "generated_at": "2026-07-31T14:03:49Z",
+  "generated_at": "2026-07-31T16:00:30Z",
   "netflow_gate": {
     "mode": "event_driven",
     "waits_for_baseline": false
   },
   "baseline": {
-    "points": 47,
+    "points": 48,
     "min_samples": 5,
     "robust_samples": 15,
     "mature": true,
     "robust": true,
-    "mean": -978.8715724489361,
-    "std": 2589.9133937877277,
+    "mean": -958.6121293785417,
+    "std": 2566.054707516165,
     "diagnostic_only": true,
     "history": [
       {
@@ -201,51 +201,14 @@
       {
         "ts": "2026-07-30T20:00:20Z",
         "net_flow_btc": -6.41832441
+      },
+      {
+        "ts": "2026-07-31T16:00:20Z",
+        "net_flow_btc": -6.41830507
       }
     ]
   },
   "runs": [
-    {
-      "ts": "2026-07-22T22:00:02Z",
-      "run_id": "20260722T2200Z-btc",
-      "result": "NoSignal",
-      "reason": "no_trigger",
-      "detail": "fired_signals=[] below require_n_signals",
-      "net_flow_btc": -8092.53404295,
-      "coverage": 1.0,
-      "baseline_mean": -641.1996308368422,
-      "observation": {
-        "a": {
-          "fired": false,
-          "fired_signals": [],
-          "direction_bias": null,
-          "funding_zscore": -1.4318,
-          "fng_value": 33,
-          "fng_classification": "Fear",
-          "taker_buy_dominance": false,
-          "taker_sell_dominance": false
-        },
-        "b": {
-          "extreme": true,
-          "direction": "outflow",
-          "unclear_reason": null,
-          "net_flow_btc": -8092.53,
-          "net_flow_pct_reserves": 0.010257,
-          "total_reserves_btc": 788941.4,
-          "extreme_basis": "both",
-          "coverage": 1.0,
-          "single_tx_dominated": false
-        },
-        "near_miss": "a_quiet"
-      },
-      "alert_id": "ALERT-20260722-btc",
-      "alert": {
-        "direction": "outflow",
-        "net_flow_btc": -8092.53,
-        "pct_reserves": 0.010257,
-        "basis": "absolute"
-      }
-    },
     {
       "ts": "2026-07-23T00:00:02Z",
       "run_id": "20260723T0000Z-btc",
@@ -3524,6 +3487,40 @@
         },
         "near_miss": "a_quiet"
       }
+    },
+    {
+      "ts": "2026-07-31T16:00:01Z",
+      "run_id": "20260731T1600Z-btc",
+      "result": "NoSignal",
+      "reason": "no_trigger",
+      "detail": "fired_signals=[] below require_n_signals",
+      "net_flow_btc": -6.41830507,
+      "coverage": 1.0,
+      "baseline_mean": -958.6121293785417,
+      "observation": {
+        "a": {
+          "fired": false,
+          "fired_signals": [],
+          "direction_bias": null,
+          "funding_zscore": -0.1679,
+          "fng_value": 25,
+          "fng_classification": "Extreme Fear",
+          "taker_buy_dominance": false,
+          "taker_sell_dominance": false
+        },
+        "b": {
+          "extreme": false,
+          "direction": "unclear",
+          "unclear_reason": "net_flow_not_extreme",
+          "net_flow_btc": -6.42,
+          "net_flow_pct_reserves": 8e-06,
+          "total_reserves_btc": 797163.47,
+          "extreme_basis": null,
+          "coverage": 1.0,
+          "single_tx_dominated": false
+        },
+        "near_miss": "a_quiet"
+      }
     }
   ],
   "signals": [],
@@ -3579,37 +3576,37 @@
   "ledger": [],
   "alert_ledger": [],
   "reserves": {
-    "generated_at": "2026-07-31T14:03:49Z",
-    "total_btc": 772587.16,
+    "generated_at": "2026-07-31T16:00:30Z",
+    "total_btc": 784587.16,
     "wallet_count": 24,
-    "refreshed_count": 20,
+    "refreshed_count": 24,
     "exchange_count": 4,
-    "btc_price": 63281.99,
-    "total_usd": 48890853176.0,
+    "btc_price": 62716.57,
+    "total_usd": 49206615826.0,
     "per_exchange": [
       {
         "exchange": "Binance",
         "count": 2,
         "btc": 429888.2438,
-        "pct": 55.6
+        "pct": 54.8
       },
       {
         "exchange": "Bitfinex",
         "count": 2,
         "btc": 141747.9377,
-        "pct": 18.3
+        "pct": 18.1
       },
       {
         "exchange": "Robinhood",
         "count": 1,
         "btc": 140849.9854,
-        "pct": 18.2
+        "pct": 18.0
       },
       {
         "exchange": "OKX",
         "count": 19,
-        "btc": 60100.997,
-        "pct": 7.8
+        "btc": 72100.9977,
+        "pct": 9.2
       }
     ],
     "wallets": [
@@ -3687,6 +3684,15 @@
       },
       {
         "exchange": "OKX",
+        "address": "178E8tYZ5WJ6PpADdpmmZd67Se7uPhJCLX",
+        "address_short": "178E8tYZ…JCLX",
+        "label_type": "cold",
+        "balance_btc": 6000.0001,
+        "refreshed": true,
+        "explorer_url": "https://blockstream.info/address/178E8tYZ5WJ6PpADdpmmZd67Se7uPhJCLX"
+      },
+      {
+        "exchange": "OKX",
         "address": "1BsdDaJtgFZrLfzEXvh6cD4VhtHHSHhMea",
         "address_short": "1BsdDaJt…hMea",
         "label_type": "cold",
@@ -3720,6 +3726,24 @@
         "balance_btc": 3000.0005,
         "refreshed": true,
         "explorer_url": "https://blockstream.info/address/18QUDxjDZAqAJorr4jkSEWHUDGLBF9uRCc"
+      },
+      {
+        "exchange": "OKX",
+        "address": "13jTtHxBPFwZkaCdm6BwJMMJkqvTpBZccw",
+        "address_short": "13jTtHxB…Zccw",
+        "label_type": "cold",
+        "balance_btc": 3000.0001,
+        "refreshed": true,
+        "explorer_url": "https://blockstream.info/address/13jTtHxBPFwZkaCdm6BwJMMJkqvTpBZccw"
+      },
+      {
+        "exchange": "OKX",
+        "address": "14kHu26yWkVD8qAnBfcFXHXxgquNoSpKum",
+        "address_short": "14kHu26y…pKum",
+        "label_type": "cold",
+        "balance_btc": 3000.0001,
+        "refreshed": true,
+        "explorer_url": "https://blockstream.info/address/14kHu26yWkVD8qAnBfcFXHXxgquNoSpKum"
       },
       {
         "exchange": "OKX",
@@ -3777,6 +3801,15 @@
       },
       {
         "exchange": "OKX",
+        "address": "13rCGm4Z3PDeYwo5a7GTT4jFYnRFBZbKr1",
+        "address_short": "13rCGm4Z…bKr1",
+        "label_type": "cold",
+        "balance_btc": 0.0004,
+        "refreshed": true,
+        "explorer_url": "https://blockstream.info/address/13rCGm4Z3PDeYwo5a7GTT4jFYnRFBZbKr1"
+      },
+      {
+        "exchange": "OKX",
         "address": "1MbNM3jwxMjRzeA9xyHbMyePN68MY4Jxb",
         "address_short": "1MbNM3jw…4Jxb",
         "label_type": "cold",
@@ -3792,56 +3825,20 @@
         "balance_btc": 0.0001,
         "refreshed": true,
         "explorer_url": "https://blockstream.info/address/1FTgXfXZRxMQcKSNeuFvWYVPsNgurTJ7BZ"
-      },
-      {
-        "exchange": "OKX",
-        "address": "13jTtHxBPFwZkaCdm6BwJMMJkqvTpBZccw",
-        "address_short": "13jTtHxB…Zccw",
-        "label_type": "cold",
-        "balance_btc": null,
-        "refreshed": false,
-        "explorer_url": "https://blockstream.info/address/13jTtHxBPFwZkaCdm6BwJMMJkqvTpBZccw"
-      },
-      {
-        "exchange": "OKX",
-        "address": "13rCGm4Z3PDeYwo5a7GTT4jFYnRFBZbKr1",
-        "address_short": "13rCGm4Z…bKr1",
-        "label_type": "cold",
-        "balance_btc": null,
-        "refreshed": false,
-        "explorer_url": "https://blockstream.info/address/13rCGm4Z3PDeYwo5a7GTT4jFYnRFBZbKr1"
-      },
-      {
-        "exchange": "OKX",
-        "address": "14kHu26yWkVD8qAnBfcFXHXxgquNoSpKum",
-        "address_short": "14kHu26y…pKum",
-        "label_type": "cold",
-        "balance_btc": null,
-        "refreshed": false,
-        "explorer_url": "https://blockstream.info/address/14kHu26yWkVD8qAnBfcFXHXxgquNoSpKum"
-      },
-      {
-        "exchange": "OKX",
-        "address": "178E8tYZ5WJ6PpADdpmmZd67Se7uPhJCLX",
-        "address_short": "178E8tYZ…JCLX",
-        "label_type": "cold",
-        "balance_btc": null,
-        "refreshed": false,
-        "explorer_url": "https://blockstream.info/address/178E8tYZ5WJ6PpADdpmmZd67Se7uPhJCLX"
       }
     ],
-    "coverage": 83.3,
+    "coverage": 100.0,
     "net_flow_btc": -6.42,
     "window_hours": 48,
     "address_book_version": "2026-06-17"
   },
   "daily": {
     "take": {
-      "headline": "恐惧凝固在25，市场连颤抖的力气都省了",
-      "body": "恐惧贪婪指数死钉在25，「极度恐惧」没有加深也没有消退——这不是情绪在宣泄，这是情绪在结冰。资金费率跌至-1.27σ，空头在用真金白银表态，但taker端却显示均衡，说明多空都没有冲动到失控的地步。链上储备净流出-6.42 BTC，量级微小，大户既没有趁恐慌扫货、也没有出逃，按住不动居多。我在盯的是：情绪能否从25这个数字上松动——如果恐慌开始加深同时资金费率继续走负，那是一回事；如果情绪悄悄回暖而链上流出突然放量，那又是另一回事；两件事都没发生之前，这只是一锅温吞水。"
+      "headline": "极恐凝固，链上没人动，这是麻木不是底气",
+      "body": "恐惧贪婪指数卡在25，连续几天基本没动——这不是情绪在修复，这是情绪在结冰。资金费率报-0.17σ，轻度偏空但没到尖叫，说明空头也没兴奋到值得被轧的程度。交易所储备净流出6.42枚，流向不算异常，链上既没有明显出逃也没有明显囤积，人群处于「平静」而非「极端」——这种状态我读成：没人想动，也没人敢动。我在盯的是情绪会不会从麻木滑向真正的恐慌性抛售，或者反过来突然有大额净流出打破这种凝滞；如果储备开始加速流出同时情绪仍然冻结，我会重新评估这个「平静」是不是一个虚假的安静。"
     },
     "voice_status": "ok",
     "near_miss": "a_quiet",
-    "generated_at": "2026-07-31T14:03:49Z"
+    "generated_at": "2026-07-31T16:00:30Z"
   }
 }
