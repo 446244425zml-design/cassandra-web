@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-01T02:00:24Z",
+  "generated_at": "2026-08-01T04:00:37Z",
   "netflow_gate": {
     "mode": "event_driven",
     "waits_for_baseline": false
@@ -209,47 +209,6 @@
     ]
   },
   "runs": [
-    {
-      "ts": "2026-07-23T16:00:02Z",
-      "run_id": "20260723T1600Z-btc",
-      "result": "NoSignal",
-      "reason": "no_trigger",
-      "detail": "fired_signals=[] below require_n_signals",
-      "net_flow_btc": -8098.86106808,
-      "coverage": 1.0,
-      "baseline_mean": -832.4217189712821,
-      "observation": {
-        "a": {
-          "fired": false,
-          "fired_signals": [],
-          "direction_bias": null,
-          "funding_zscore": 0.9695,
-          "fng_value": 31,
-          "fng_classification": "Fear",
-          "taker_buy_dominance": false,
-          "taker_sell_dominance": false
-        },
-        "b": {
-          "extreme": true,
-          "direction": "outflow",
-          "unclear_reason": null,
-          "net_flow_btc": -8098.86,
-          "net_flow_pct_reserves": 0.010264,
-          "total_reserves_btc": 789078.4,
-          "extreme_basis": "both",
-          "coverage": 1.0,
-          "single_tx_dominated": false
-        },
-        "near_miss": "a_quiet"
-      },
-      "alert_id": "ALERT-20260723-btc",
-      "alert": {
-        "direction": "outflow",
-        "net_flow_btc": -8098.86,
-        "pct_reserves": 0.010264,
-        "basis": "absolute"
-      }
-    },
     {
       "ts": "2026-07-23T18:00:01Z",
       "run_id": "20260723T1800Z-btc",
@@ -3490,6 +3449,43 @@
         },
         "near_miss": "a_quiet"
       }
+    },
+    {
+      "ts": "2026-08-01T04:00:01Z",
+      "run_id": "20260801T0400Z-btc",
+      "result": "FIRED",
+      "reason": null,
+      "detail": null,
+      "net_flow_btc": -6.41831053,
+      "coverage": 1.0,
+      "baseline_mean": -958.6121293785417,
+      "observation": {
+        "a": {
+          "fired": true,
+          "fired_signals": [
+            "taker_buy_dominance"
+          ],
+          "direction_bias": "bullish_crowd",
+          "funding_zscore": -0.8974,
+          "fng_value": 27,
+          "fng_classification": "Fear",
+          "taker_buy_dominance": true,
+          "taker_sell_dominance": false
+        },
+        "b": {
+          "extreme": false,
+          "direction": "unclear",
+          "unclear_reason": "net_flow_not_extreme",
+          "net_flow_btc": -6.42,
+          "net_flow_pct_reserves": 8e-06,
+          "total_reserves_btc": 801147.74,
+          "extreme_basis": null,
+          "coverage": 1.0,
+          "single_tx_dominated": false
+        },
+        "near_miss": "a_lit_b_quiet"
+      },
+      "signal_id": "CAS-20260801-btc"
     }
   ],
   "signals": [],
@@ -3532,7 +3528,8 @@
     "CAS-20260728-btc",
     "CAS-20260729-btc",
     "CAS-20260730-btc",
-    "CAS-20260731-btc"
+    "CAS-20260731-btc",
+    "CAS-20260801-btc"
   ],
   "pending_alerts": [
     "ALERT-20260720-btc",
@@ -3546,13 +3543,13 @@
   "ledger": [],
   "alert_ledger": [],
   "reserves": {
-    "generated_at": "2026-08-01T02:00:24Z",
+    "generated_at": "2026-08-01T04:00:37Z",
     "total_btc": 788571.43,
     "wallet_count": 24,
     "refreshed_count": 24,
     "exchange_count": 4,
-    "btc_price": 62975.01,
-    "total_usd": 49660293724.0,
+    "btc_price": 63004.48,
+    "total_usd": 49683532924.0,
     "per_exchange": [
       {
         "exchange": "Binance",
@@ -3804,11 +3801,11 @@
   },
   "daily": {
     "take": {
-      "headline": "恐惧值钉在27，链上偷偷流出，没人慌但也没人接",
-      "body": "恐惧贪婪指数27，标着Fear，却基本没动——这不是恐慌，是一种懒散的悲观，人群既没绝望到抛售，也没勇气接盘。资金费率报-0.79σ，偏空但未到极端，空头在场却没有在尖叫。让我有点在意的是储备净流量：-6.42 BTC，方向是流出，不大，但方向本身在说话——有人在悄悄把币挪走。如果恐惧指数继续横着不动、链上流出开始加速，我会重新评估这个「平静」到底是底部酝酿还是下跌前的最后一口气；反过来，若资金费率回正、储备出现明显流入，我才会考虑这个冷场是在装死。"
+      "headline": "人群已经在叫疼，链上还在打哈欠",
+      "body": "恐惧贪婪指数27，在Fear区间里几乎纹丝不动；资金费率跌至-0.90σ，空头情绪被定价得相当充分——但这两件事同时发生，并不自动构成反弹燃料。最近连续触及人群极端读数，且偏多情绪还在「上头」，这个组合让我警惕：人群嘴上说怕，手上未必真减。链上储备净流量-6.42 BTC，几乎可以忽略不计，交易所储备按住不动，没有看到恐慌出逃的实质动作，情绪和行为之间有裂缝。我在盯的是：储备净流量是否开始放量流出（那才是真恐慌），或者资金费率是否从极端负值快速收敛——任何一个出现，我会重新评估这个「嘴硬型恐慌」的含金量。非投资建议。"
     },
     "voice_status": "ok",
-    "near_miss": "a_quiet",
-    "generated_at": "2026-08-01T02:00:24Z"
+    "near_miss": "a_lit_b_quiet",
+    "generated_at": "2026-08-01T04:00:37Z"
   }
 }
