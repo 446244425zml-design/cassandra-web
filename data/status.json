@@ -1,17 +1,17 @@
 {
-  "generated_at": "2026-08-05T16:00:30Z",
+  "generated_at": "2026-08-05T18:00:29Z",
   "netflow_gate": {
     "mode": "event_driven",
     "waits_for_baseline": false
   },
   "baseline": {
-    "points": 53,
+    "points": 54,
     "min_samples": 5,
     "robust_samples": 15,
     "mature": true,
     "robust": true,
-    "mean": -852.6722700932075,
-    "std": 2462.785470201341,
+    "mean": -829.2138012892593,
+    "std": 2445.5241984097247,
     "diagnostic_only": true,
     "history": [
       {
@@ -225,44 +225,14 @@
       {
         "ts": "2026-08-04T22:00:16Z",
         "net_flow_btc": 414.08505078
+      },
+      {
+        "ts": "2026-08-05T18:00:19Z",
+        "net_flow_btc": 414.08504532
       }
     ]
   },
   "runs": [
-    {
-      "ts": "2026-07-31T02:00:01Z",
-      "run_id": "20260731T0200Z-btc",
-      "result": "NoSignal",
-      "reason": "no_trigger",
-      "detail": "fired_signals=[] below require_n_signals",
-      "net_flow_btc": -6.41830507,
-      "coverage": 1.0,
-      "baseline_mean": -978.8715724489361,
-      "observation": {
-        "a": {
-          "fired": false,
-          "fired_signals": [],
-          "direction_bias": null,
-          "funding_zscore": 1.3859,
-          "fng_value": 25,
-          "fng_classification": "Extreme Fear",
-          "taker_buy_dominance": false,
-          "taker_sell_dominance": false
-        },
-        "b": {
-          "extreme": false,
-          "direction": "unclear",
-          "unclear_reason": "net_flow_not_extreme",
-          "net_flow_btc": -6.42,
-          "net_flow_pct_reserves": 8e-06,
-          "total_reserves_btc": 792069.68,
-          "extreme_basis": null,
-          "coverage": 1.0,
-          "single_tx_dominated": false
-        },
-        "near_miss": "a_quiet"
-      }
-    },
     {
       "ts": "2026-07-31T04:00:05Z",
       "run_id": "20260731T0400Z-btc",
@@ -3330,6 +3300,40 @@
         },
         "near_miss": "a_quiet"
       }
+    },
+    {
+      "ts": "2026-08-05T18:00:01Z",
+      "run_id": "20260805T1800Z-btc",
+      "result": "NoSignal",
+      "reason": "no_trigger",
+      "detail": "fired_signals=[] below require_n_signals",
+      "net_flow_btc": 414.08504532,
+      "coverage": 1.0,
+      "baseline_mean": -829.2138012892593,
+      "observation": {
+        "a": {
+          "fired": false,
+          "fired_signals": [],
+          "direction_bias": null,
+          "funding_zscore": -1.2692,
+          "fng_value": 27,
+          "fng_classification": "Fear",
+          "taker_buy_dominance": false,
+          "taker_sell_dominance": false
+        },
+        "b": {
+          "extreme": false,
+          "direction": "unclear",
+          "unclear_reason": "net_flow_not_extreme",
+          "net_flow_btc": 414.09,
+          "net_flow_pct_reserves": 0.000516,
+          "total_reserves_btc": 802336.24,
+          "extreme_basis": null,
+          "coverage": 1.0,
+          "single_tx_dominated": false
+        },
+        "near_miss": "a_quiet"
+      }
     }
   ],
   "signals": [],
@@ -3390,13 +3394,13 @@
   "ledger": [],
   "alert_ledger": [],
   "reserves": {
-    "generated_at": "2026-08-05T16:00:30Z",
+    "generated_at": "2026-08-05T18:00:29Z",
     "total_btc": 789857.8,
     "wallet_count": 24,
     "refreshed_count": 24,
     "exchange_count": 4,
-    "btc_price": 64389.99,
-    "total_usd": 50858935591.0,
+    "btc_price": 64768.01,
+    "total_usd": 51157517635.0,
     "per_exchange": [
       {
         "exchange": "Binance",
@@ -3648,11 +3652,11 @@
   },
   "daily": {
     "take": {
-      "headline": "恐惧冻住了，但没人真的跑路",
-      "body": "恐惧贪婪指数钉在27，基本没动——这种「静止的恐惧」比崩跌更难读，市场既没绝望到砸盘，也没勇气反弹，就这么耗着。资金费率报-1.06σ，空头溢价明显，但Taker方向均衡，说明空头更多是防守姿态而非主动猎杀。让我警惕的是交易所储备今天净流入414枚BTC，筹码在小幅回流链下而非大举出逃，链上还没到「不惜一切离场」的程度。我在盯的是：若恐惧指数继续趴着但净流入开始加速放大，那才是真正的压力信号；反之，若资金费率收敛回中性，这波「冷冻盘」的解冻方向才值得重新判断。【非投资建议】"
+      "headline": "恐惧冻结在原地，资金费率在地板打滚",
+      "body": "恐惧贪婪指数27，这几天基本没动——不是情绪在消化，是情绪被按住了，既不崩，也不反弹，像一潭死水。资金费率-1.27σ，空头溢价已经到了统计上的偏极端区间，但偏极端不等于见底，它可以继续在地板上待着。今天链上出现了414枚BTC净流入交易所，储备覆盖度1.0，不是恐慌性抛售，但也不是有人在悄悄吸筹——方向暧昧，我没有解读它的义务。我在盯的是：如果资金费率继续深入负值同时现价不跌，那才有点意思；反过来，情绪指数一旦开始动，哪怕只是从27滑向20，这个「平静」的壳就会碎。"
     },
     "voice_status": "ok",
     "near_miss": "a_quiet",
-    "generated_at": "2026-08-05T16:00:30Z"
+    "generated_at": "2026-08-05T18:00:29Z"
   }
 }
