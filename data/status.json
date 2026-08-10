@@ -1,17 +1,17 @@
 {
-  "generated_at": "2026-08-10T02:00:26Z",
+  "generated_at": "2026-08-10T04:00:28Z",
   "netflow_gate": {
     "mode": "event_driven",
     "waits_for_baseline": false
   },
   "baseline": {
-    "points": 58,
+    "points": 59,
     "min_samples": 5,
     "robust_samples": 15,
     "mature": true,
     "robust": true,
-    "mean": -765.2323984632759,
-    "std": 2370.5197867728693,
+    "mean": -752.2623545647458,
+    "std": 2352.106199246604,
     "diagnostic_only": true,
     "history": [
       {
@@ -245,44 +245,14 @@
       {
         "ts": "2026-08-09T06:00:18Z",
         "net_flow_btc": 9.155e-05
+      },
+      {
+        "ts": "2026-08-10T04:00:20Z",
+        "net_flow_btc": 0.00019155
       }
     ]
   },
   "runs": [
-    {
-      "ts": "2026-08-04T04:00:01Z",
-      "run_id": "20260804T0400Z-btc",
-      "result": "NoSignal",
-      "reason": "no_trigger",
-      "detail": "fired_signals=[] below require_n_signals",
-      "net_flow_btc": 414.08505078,
-      "coverage": 1.0,
-      "baseline_mean": -877.0329878023077,
-      "observation": {
-        "a": {
-          "fired": false,
-          "fired_signals": [],
-          "direction_bias": null,
-          "funding_zscore": -0.1313,
-          "fng_value": 25,
-          "fng_classification": "Extreme Fear",
-          "taker_buy_dominance": false,
-          "taker_sell_dominance": false
-        },
-        "b": {
-          "extreme": false,
-          "direction": "unclear",
-          "unclear_reason": "net_flow_not_extreme",
-          "net_flow_btc": 414.09,
-          "net_flow_pct_reserves": 0.000516,
-          "total_reserves_btc": 802021.88,
-          "extreme_basis": null,
-          "coverage": 1.0,
-          "single_tx_dominated": false
-        },
-        "near_miss": "a_quiet"
-      }
-    },
     {
       "ts": "2026-08-04T05:31:43Z",
       "run_id": "20260804T0531Z-btc",
@@ -3323,6 +3293,40 @@
         },
         "near_miss": "a_quiet"
       }
+    },
+    {
+      "ts": "2026-08-10T04:00:01Z",
+      "run_id": "20260810T0400Z-btc",
+      "result": "NoSignal",
+      "reason": "no_trigger",
+      "detail": "fired_signals=[] below require_n_signals",
+      "net_flow_btc": 0.00019155,
+      "coverage": 1.0,
+      "baseline_mean": -752.2623545647458,
+      "observation": {
+        "a": {
+          "fired": false,
+          "fired_signals": [],
+          "direction_bias": null,
+          "funding_zscore": 0.307,
+          "fng_value": 30,
+          "fng_classification": "Fear",
+          "taker_buy_dominance": false,
+          "taker_sell_dominance": false
+        },
+        "b": {
+          "extreme": false,
+          "direction": "unclear",
+          "unclear_reason": "net_flow_not_extreme",
+          "net_flow_btc": 0.0,
+          "net_flow_pct_reserves": 0.0,
+          "total_reserves_btc": 802901.08,
+          "extreme_basis": null,
+          "coverage": 1.0,
+          "single_tx_dominated": false
+        },
+        "near_miss": "a_quiet"
+      }
     }
   ],
   "signals": [],
@@ -3384,13 +3388,13 @@
   "ledger": [],
   "alert_ledger": [],
   "reserves": {
-    "generated_at": "2026-08-10T02:00:26Z",
+    "generated_at": "2026-08-10T04:00:28Z",
     "total_btc": 790669.53,
     "wallet_count": 24,
     "refreshed_count": 24,
     "exchange_count": 4,
-    "btc_price": 65205.84,
-    "total_usd": 51556271013.0,
+    "btc_price": 64972.27,
+    "total_usd": 51371594331.0,
     "per_exchange": [
       {
         "exchange": "Binance",
@@ -3642,11 +3646,11 @@
   },
   "daily": {
     "take": {
-      "headline": "情绪冻在恐惧档，但链上一片死寂",
-      "body": "恐惧贪婪指数30，在「恐惧」区间打了个哈欠就停在原地（31→30），连崩溃的力气都没有。资金费率+0.82σ，轻微偏多，说明杠杆还没被彻底清洗——情绪在怕，但手还没完全缩回去，这种分裂状态本身就值得警惕。交易所储备净流量0.0，802901枚BTC纹丝不动，大户既没有跑路也没有进场，市场处于一种「谁都在等谁先动」的僵局。如果储备开始明显净流出、或资金费率被压到负值，我会重新评估当前的冷场是蓄力还是只是麻木。"
+      "headline": "恐惧冻在30，链上一动不动，这叫平静还是麻木？",
+      "body": "恐惧贪婪指数挂在30，趋势几乎没动（31→30），人群不算极端恐慌，但也绝对谈不上冷静——更像是集体屏住呼吸。资金费率+0.31σ，taker方向均衡，多空都没人敢真下注，市场在打哈欠。交易所储备净流量归零、总量802901 BTC按住不动，没有明显的筹码进出信号，链上沉默得有点诡异。我在盯的是：恐惧读数能不能突破这种「低烧不退」的状态——如果情绪继续僵在这里而资金费率开始往两端漂移，那才是真正需要重新评估的信号；否则今天不过是一场等待谁先眨眼的对峙。【非投资建议】"
     },
     "voice_status": "ok",
     "near_miss": "a_quiet",
-    "generated_at": "2026-08-10T02:00:26Z"
+    "generated_at": "2026-08-10T04:00:28Z"
   }
 }
