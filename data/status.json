@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-12T14:00:29Z",
+  "generated_at": "2026-08-12T16:00:35Z",
   "netflow_gate": {
     "mode": "event_driven",
     "waits_for_baseline": false
@@ -257,40 +257,6 @@
     ]
   },
   "runs": [
-    {
-      "ts": "2026-08-06T13:31:48Z",
-      "run_id": "20260806T1331Z-btc",
-      "result": "NoSignal",
-      "reason": "no_trigger",
-      "detail": "fired_signals=[] below require_n_signals",
-      "net_flow_btc": 407.41124784,
-      "coverage": 1.0,
-      "baseline_mean": -829.2138012892593,
-      "observation": {
-        "a": {
-          "fired": false,
-          "fired_signals": [],
-          "direction_bias": null,
-          "funding_zscore": -1.2164,
-          "fng_value": 25,
-          "fng_classification": "Extreme Fear",
-          "taker_buy_dominance": false,
-          "taker_sell_dominance": false
-        },
-        "b": {
-          "extreme": false,
-          "direction": "unclear",
-          "unclear_reason": "net_flow_not_extreme",
-          "net_flow_btc": 407.41,
-          "net_flow_pct_reserves": 0.000508,
-          "total_reserves_btc": 802170.26,
-          "extreme_basis": null,
-          "coverage": 1.0,
-          "single_tx_dominated": false
-        },
-        "near_miss": "a_quiet"
-      }
-    },
     {
       "ts": "2026-08-06T14:00:02Z",
       "run_id": "20260806T1400Z-btc",
@@ -3340,6 +3306,40 @@
         },
         "near_miss": "a_quiet"
       }
+    },
+    {
+      "ts": "2026-08-12T16:00:01Z",
+      "run_id": "20260812T1600Z-btc",
+      "result": "NoSignal",
+      "reason": "no_trigger",
+      "detail": "fired_signals=[] below require_n_signals",
+      "net_flow_btc": 2000.06991413,
+      "coverage": 1.0,
+      "baseline_mean": -673.0556471903334,
+      "observation": {
+        "a": {
+          "fired": false,
+          "fired_signals": [],
+          "direction_bias": null,
+          "funding_zscore": 0.4211,
+          "fng_value": 27,
+          "fng_classification": "Fear",
+          "taker_buy_dominance": false,
+          "taker_sell_dominance": false
+        },
+        "b": {
+          "extreme": true,
+          "direction": "inflow",
+          "unclear_reason": null,
+          "net_flow_btc": 2000.07,
+          "net_flow_pct_reserves": 0.002472,
+          "total_reserves_btc": 809028.34,
+          "extreme_basis": "absolute",
+          "coverage": 1.0,
+          "single_tx_dominated": false
+        },
+        "near_miss": "a_quiet"
+      }
     }
   ],
   "signals": [],
@@ -3404,18 +3404,18 @@
   "ledger": [],
   "alert_ledger": [],
   "reserves": {
-    "generated_at": "2026-08-12T14:00:29Z",
+    "generated_at": "2026-08-12T16:00:35Z",
     "total_btc": 796927.75,
     "wallet_count": 24,
     "refreshed_count": 24,
     "exchange_count": 4,
-    "btc_price": 63816.22,
-    "total_usd": 50856916308.0,
+    "btc_price": 63436.32,
+    "total_usd": 50554163471.0,
     "per_exchange": [
       {
         "exchange": "Binance",
         "count": 2,
-        "btc": 440130.724,
+        "btc": 440130.7243,
         "pct": 55.2
       },
       {
@@ -3443,7 +3443,7 @@
         "address": "34xp4vRoCGJym3xR7yCVPFHoCNxv4Twseo",
         "address_short": "34xp4vRo…wseo",
         "label_type": "cold",
-        "balance_btc": 248597.592,
+        "balance_btc": 248597.5922,
         "refreshed": true,
         "explorer_url": "https://blockstream.info/address/34xp4vRoCGJym3xR7yCVPFHoCNxv4Twseo"
       },
@@ -3662,11 +3662,11 @@
   },
   "daily": {
     "take": {
-      "headline": "恐惧挂在脸上，链上却在悄悄补货",
-      "body": "恐惧贪婪指数 27，在「恐惧」区里几乎纹丝不动——情绪没有崩，只是在那儿僵着。资金费率 +0.20σ，既没尖叫也没躺平，多空都没把底牌掀开；Taker 均衡印证了这一点，场内没人真的在急。让我警惕的是储备净流量：+2000 BTC 流入交易所，覆盖度 1.0——有人在把筹码搬上台面，是「准备卖」还是「搬进来再看看」，现在还分不清楚。我在盯的是：若净流量持续扩大同时情绪继续压着不动，那个组合对我来说比单纯的恐惧读数更值得皱眉；反过来，若流量转负而情绪还没修复，我会重新评估这段「假平静」的性质。"
+      "headline": "恐惧挂在脸上，链上却没人跑路",
+      "body": "恐惧贪婪指数27，几天前就在这儿，基本没动——这种「冻结式恐惧」比暴跌更让我警惕，情绪烂掉了但人没走。资金费率+0.42σ，不算尖叫，多头还在轻仓撑场，没到被迫平仓的味道。麻烦的是储备净流入2000枚BTC，筹码在悄悄往交易所挪，这和「情绪平静、没人极端」的表面读数对不上——有人在等卖，只是还没按。我在盯净流量方向：如果流入持续放大，那这片「平静」就是暴风眼；如果流量掉头，才会让我重新考虑当前价位附近的支撑成色。"
     },
     "voice_status": "ok",
     "near_miss": "a_quiet",
-    "generated_at": "2026-08-12T14:00:29Z"
+    "generated_at": "2026-08-12T16:00:35Z"
   }
 }
