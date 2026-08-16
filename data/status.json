@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-16T00:00:26Z",
+  "generated_at": "2026-08-16T02:00:24Z",
   "netflow_gate": {
     "mode": "event_driven",
     "waits_for_baseline": false
@@ -257,74 +257,6 @@
     ]
   },
   "runs": [
-    {
-      "ts": "2026-08-10T04:00:01Z",
-      "run_id": "20260810T0400Z-btc",
-      "result": "NoSignal",
-      "reason": "no_trigger",
-      "detail": "fired_signals=[] below require_n_signals",
-      "net_flow_btc": 0.00019155,
-      "coverage": 1.0,
-      "baseline_mean": -752.2623545647458,
-      "observation": {
-        "a": {
-          "fired": false,
-          "fired_signals": [],
-          "direction_bias": null,
-          "funding_zscore": 0.307,
-          "fng_value": 30,
-          "fng_classification": "Fear",
-          "taker_buy_dominance": false,
-          "taker_sell_dominance": false
-        },
-        "b": {
-          "extreme": false,
-          "direction": "unclear",
-          "unclear_reason": "net_flow_not_extreme",
-          "net_flow_btc": 0.0,
-          "net_flow_pct_reserves": 0.0,
-          "total_reserves_btc": 802901.08,
-          "extreme_basis": null,
-          "coverage": 1.0,
-          "single_tx_dominated": false
-        },
-        "near_miss": "a_quiet"
-      }
-    },
-    {
-      "ts": "2026-08-10T05:32:14Z",
-      "run_id": "20260810T0532Z-btc",
-      "result": "NoSignal",
-      "reason": "no_trigger",
-      "detail": "fired_signals=[] below require_n_signals",
-      "net_flow_btc": 0.00019155,
-      "coverage": 1.0,
-      "baseline_mean": -752.2623545647458,
-      "observation": {
-        "a": {
-          "fired": false,
-          "fired_signals": [],
-          "direction_bias": null,
-          "funding_zscore": 0.1939,
-          "fng_value": 30,
-          "fng_classification": "Fear",
-          "taker_buy_dominance": false,
-          "taker_sell_dominance": false
-        },
-        "b": {
-          "extreme": false,
-          "direction": "unclear",
-          "unclear_reason": "net_flow_not_extreme",
-          "net_flow_btc": 0.0,
-          "net_flow_pct_reserves": 0.0,
-          "total_reserves_btc": 802901.08,
-          "extreme_basis": null,
-          "coverage": 1.0,
-          "single_tx_dominated": false
-        },
-        "near_miss": "a_quiet"
-      }
-    },
     {
       "ts": "2026-08-10T06:00:01Z",
       "run_id": "20260810T0600Z-btc",
@@ -3352,6 +3284,74 @@
         },
         "near_miss": "a_quiet"
       }
+    },
+    {
+      "ts": "2026-08-16T01:32:33Z",
+      "run_id": "20260816T0132Z-btc",
+      "result": "NoSignal",
+      "reason": "no_trigger",
+      "detail": "fired_signals=[] below require_n_signals",
+      "net_flow_btc": -6.69690058,
+      "coverage": 1.0,
+      "baseline_mean": -639.636163913,
+      "observation": {
+        "a": {
+          "fired": false,
+          "fired_signals": [],
+          "direction_bias": null,
+          "funding_zscore": -1.9087,
+          "fng_value": 34,
+          "fng_classification": "Fear",
+          "taker_buy_dominance": false,
+          "taker_sell_dominance": false
+        },
+        "b": {
+          "extreme": false,
+          "direction": "unclear",
+          "unclear_reason": "net_flow_not_extreme",
+          "net_flow_btc": -6.7,
+          "net_flow_pct_reserves": 8e-06,
+          "total_reserves_btc": 813876.61,
+          "extreme_basis": null,
+          "coverage": 1.0,
+          "single_tx_dominated": false
+        },
+        "near_miss": "a_quiet"
+      }
+    },
+    {
+      "ts": "2026-08-16T02:00:01Z",
+      "run_id": "20260816T0200Z-btc",
+      "result": "NoSignal",
+      "reason": "no_trigger",
+      "detail": "fired_signals=[] below require_n_signals",
+      "net_flow_btc": -6.69690058,
+      "coverage": 1.0,
+      "baseline_mean": -639.636163913,
+      "observation": {
+        "a": {
+          "fired": false,
+          "fired_signals": [],
+          "direction_bias": null,
+          "funding_zscore": -1.9984,
+          "fng_value": 34,
+          "fng_classification": "Fear",
+          "taker_buy_dominance": false,
+          "taker_sell_dominance": false
+        },
+        "b": {
+          "extreme": false,
+          "direction": "unclear",
+          "unclear_reason": "net_flow_not_extreme",
+          "net_flow_btc": -6.7,
+          "net_flow_pct_reserves": 8e-06,
+          "total_reserves_btc": 813876.61,
+          "extreme_basis": null,
+          "coverage": 1.0,
+          "single_tx_dominated": false
+        },
+        "near_miss": "a_quiet"
+      }
     }
   ],
   "signals": [],
@@ -3418,13 +3418,13 @@
   "ledger": [],
   "alert_ledger": [],
   "reserves": {
-    "generated_at": "2026-08-16T00:00:26Z",
+    "generated_at": "2026-08-16T02:00:24Z",
     "total_btc": 801477.01,
     "wallet_count": 24,
     "refreshed_count": 24,
     "exchange_count": 4,
-    "btc_price": 63086.01,
-    "total_usd": 50561986881.0,
+    "btc_price": 63083.5,
+    "total_usd": 50559975173.0,
     "per_exchange": [
       {
         "exchange": "Binance",
@@ -3676,11 +3676,11 @@
   },
   "daily": {
     "take": {
-      "headline": "情绪冻在恐惧，空头却已超卖——市场在打哈欠",
-      "body": "恐惧贪婪指数34，基本没动，说明这种「怕」不是新鲜事，而是在发霉。资金费率-1.71σ，空头仓位已经拉伸到统计意义上的偏极端区域，但人群情绪并没有踩到真正的恐慌底——这个组合有点奇怪，一边是冷静的怕，一边是过度的空。交易所储备净流出6.7 BTC，幅度很小，链上没有明显的「跑路」或「抄底」信号，覆盖度1.0，格局还算稳。我在盯的是：资金费率会不会继续往极端走，还是开始回归——如果空头开始平仓而现价没有对应上涨，那才是真正值得警惕的结构；反过来，情绪若从34继续下沉并带动链上流出加速，我会重新评估这种「平静」是不是假象。"
+      "headline": "资金费率-2σ在尖叫，但人群还没慌到极端",
+      "body": "恐惧贪婪指数钉在34一动不动，情绪像一潭死水——既没有崩溃性抛售，也没有任何反弹意愿，就是「耗着」。资金费率已压到-2.00σ，空头在这个位置下注的成本不低，这种极端读数历史上有时是短期底部信号，但「有时」不等于「这次」，我不打算帮你补这个空缺。链上储备净流出-6.7 BTC，量级很小，称不上机构在大举吸筹，更像是散户微量挪仓，覆盖度1.0，整体储备格局没有明显异动。我在盯的是：情绪指数会不会从「麻木」滑向「恐慌加速」，以及资金费率能否在近几日收窄——如果两者同时反转，我会重新评估当前这个「按住不动」的状态是否在松动。非投资建议。"
     },
     "voice_status": "ok",
     "near_miss": "a_quiet",
-    "generated_at": "2026-08-16T00:00:26Z"
+    "generated_at": "2026-08-16T02:00:24Z"
   }
 }
