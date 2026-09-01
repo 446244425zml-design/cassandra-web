@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-01T06:00:25Z",
+  "generated_at": "2026-09-01T08:00:31Z",
   "netflow_gate": {
     "mode": "event_driven",
     "waits_for_baseline": false
@@ -257,40 +257,6 @@
     ]
   },
   "runs": [
-    {
-      "ts": "2026-08-23T02:00:00Z",
-      "run_id": "20260823T0200Z-btc",
-      "result": "NoSignal",
-      "reason": "no_trigger",
-      "detail": "fired_signals=[] below require_n_signals",
-      "net_flow_btc": -5.17308579,
-      "coverage": 1.0,
-      "baseline_mean": -639.636419933,
-      "observation": {
-        "a": {
-          "fired": false,
-          "fired_signals": [],
-          "direction_bias": null,
-          "funding_zscore": 1.4799,
-          "fng_value": 66,
-          "fng_classification": "Greed",
-          "taker_buy_dominance": false,
-          "taker_sell_dominance": false
-        },
-        "b": {
-          "extreme": false,
-          "direction": "unclear",
-          "unclear_reason": "net_flow_not_extreme",
-          "net_flow_btc": -5.17,
-          "net_flow_pct_reserves": 6e-06,
-          "total_reserves_btc": 825080.61,
-          "extreme_basis": null,
-          "coverage": 1.0,
-          "single_tx_dominated": false
-        },
-        "near_miss": "a_quiet"
-      }
-    },
     {
       "ts": "2026-08-23T04:00:01Z",
       "run_id": "20260823T0400Z-btc",
@@ -3328,6 +3294,43 @@
         },
         "near_miss": "a_quiet"
       }
+    },
+    {
+      "ts": "2026-09-01T08:00:01Z",
+      "run_id": "20260901T0800Z-btc",
+      "result": "FIRED",
+      "reason": null,
+      "detail": null,
+      "net_flow_btc": -6.31232417,
+      "coverage": 1.0,
+      "baseline_mean": -639.7097915743334,
+      "observation": {
+        "a": {
+          "fired": true,
+          "fired_signals": [
+            "taker_sell_dominance"
+          ],
+          "direction_bias": "bearish_crowd",
+          "funding_zscore": 1.15,
+          "fng_value": 69,
+          "fng_classification": "Greed",
+          "taker_buy_dominance": false,
+          "taker_sell_dominance": true
+        },
+        "b": {
+          "extreme": false,
+          "direction": "unclear",
+          "unclear_reason": "net_flow_not_extreme",
+          "net_flow_btc": -6.31,
+          "net_flow_pct_reserves": 8e-06,
+          "total_reserves_btc": 832512.66,
+          "extreme_basis": null,
+          "coverage": 1.0,
+          "single_tx_dominated": false
+        },
+        "near_miss": "a_lit_b_quiet"
+      },
+      "signal_id": "CAS-20260901-btc"
     }
   ],
   "signals": [],
@@ -3387,7 +3390,8 @@
     "CAS-20260820-btc",
     "CAS-20260823-btc",
     "CAS-20260825-btc",
-    "CAS-20260827-btc"
+    "CAS-20260827-btc",
+    "CAS-20260901-btc"
   ],
   "pending_alerts": [
     "ALERT-20260720-btc",
@@ -3401,13 +3405,13 @@
   "ledger": [],
   "alert_ledger": [],
   "reserves": {
-    "generated_at": "2026-09-01T06:00:25Z",
+    "generated_at": "2026-09-01T08:00:31Z",
     "total_btc": 821279.65,
     "wallet_count": 24,
     "refreshed_count": 24,
     "exchange_count": 4,
-    "btc_price": 79144.28,
-    "total_usd": 64999586466.0,
+    "btc_price": 78639.85,
+    "total_usd": 64585308373.0,
     "per_exchange": [
       {
         "exchange": "Binance",
@@ -3659,11 +3663,11 @@
   },
   "daily": {
     "take": {
-      "headline": "情绪在回血，但链上只是在打哈欠",
-      "body": "恐惧贪婪从62爬到69，人群从「不安」滑入「贪婪」，但交易所储备净流出仅-6.31 BTC，力度像是在散步——既没有大规模提币离场，也没有明显囤货冲动，链上在敷衍这波情绪回暖。资金费率+1.15σ，多头已经在为自己的仓位付费，taker方向却还是均衡，这个组合读起来是「嘴上贪婪、手上犹豫」。我盯的是：如果情绪继续推到75+而链上依然无动于衷，那这次回暖大概率是情绪的独角戏；反过来，若储备出现明显加速净流出，我才会认真对待这股贪婪。现价79144附近没有任何信号让我改变「平静但存在隐患」的基准判断。"
+      "headline": "人群喊恐慌，情绪却在偷偷回温——谁在撒谎？",
+      "body": "恐惧贪婪指数从62爬回69，贴着「贪婪」的门槛，但链上人群读数已触极端偏空——两个信号在互相打脸，这种裂缝本身就是噪音最大的时候。资金费率+1.15σ，多头还没撤，但现货Taker是卖盘主导，说明加杠杆的手和真金白银的手走的不是同一条路。交易所储备净流出-6.31 BTC，方向上看不出砸盘冲动，但覆盖度1.0，链上还没给出「确认」的签字。我在盯的是：情绪继续回暖而链上极端不松动，那这个「贪婪」就是空中楼阁；若储备开始明显净流入，我会重新审视这个「偏空人群已极端」的反转逻辑是否成立。【非投资建议】"
     },
     "voice_status": "ok",
-    "near_miss": "a_quiet",
-    "generated_at": "2026-09-01T06:00:25Z"
+    "near_miss": "a_lit_b_quiet",
+    "generated_at": "2026-09-01T08:00:31Z"
   }
 }
