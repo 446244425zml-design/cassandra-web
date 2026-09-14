@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-14T20:00:19Z",
+  "generated_at": "2026-09-14T22:00:21Z",
   "netflow_gate": {
     "mode": "event_driven",
     "waits_for_baseline": false
@@ -10,14 +10,10 @@
     "robust_samples": 15,
     "mature": true,
     "robust": true,
-    "mean": -639.7356099225,
-    "std": 2406.6031465675887,
+    "mean": -639.762846585,
+    "std": 2406.5958651112014,
     "diagnostic_only": true,
     "history": [
-      {
-        "ts": "2026-07-16T09:32:00Z",
-        "net_flow_btc": -6.27421047
-      },
       {
         "ts": "2026-07-17T05:32:30Z",
         "net_flow_btc": -6.27421047
@@ -253,44 +249,14 @@
       {
         "ts": "2026-09-14T01:20:08Z",
         "net_flow_btc": 2.94e-06
+      },
+      {
+        "ts": "2026-09-14T22:00:20Z",
+        "net_flow_btc": -7.90841022
       }
     ]
   },
   "runs": [
-    {
-      "ts": "2026-08-27T01:31:50Z",
-      "run_id": "20260827T0131Z-btc",
-      "result": "NoSignal",
-      "reason": "no_trigger",
-      "detail": "fired_signals=[] below require_n_signals",
-      "net_flow_btc": 3.576e-05,
-      "coverage": 1.0,
-      "baseline_mean": -639.6031122755,
-      "observation": {
-        "a": {
-          "fired": false,
-          "fired_signals": [],
-          "direction_bias": null,
-          "funding_zscore": -1.1123,
-          "fng_value": 71,
-          "fng_classification": "Greed",
-          "taker_buy_dominance": false,
-          "taker_sell_dominance": false
-        },
-        "b": {
-          "extreme": false,
-          "direction": "unclear",
-          "unclear_reason": "net_flow_not_extreme",
-          "net_flow_btc": 0.0,
-          "net_flow_pct_reserves": 0.0,
-          "total_reserves_btc": 832224.77,
-          "extreme_basis": null,
-          "coverage": 1.0,
-          "single_tx_dominated": false
-        },
-        "near_miss": "a_quiet"
-      }
-    },
     {
       "ts": "2026-08-27T02:00:01Z",
       "run_id": "20260827T0200Z-btc",
@@ -3325,6 +3291,40 @@
         },
         "near_miss": "a_quiet"
       }
+    },
+    {
+      "ts": "2026-09-14T22:00:01Z",
+      "run_id": "20260914T2200Z-btc",
+      "result": "NoSignal",
+      "reason": "no_trigger",
+      "detail": "fired_signals=[] below require_n_signals",
+      "net_flow_btc": -7.90841022,
+      "coverage": 1.0,
+      "baseline_mean": -639.762846585,
+      "observation": {
+        "a": {
+          "fired": false,
+          "fired_signals": [],
+          "direction_bias": null,
+          "funding_zscore": -1.1106,
+          "fng_value": 57,
+          "fng_classification": "Greed",
+          "taker_buy_dominance": false,
+          "taker_sell_dominance": false
+        },
+        "b": {
+          "extreme": false,
+          "direction": "unclear",
+          "unclear_reason": "net_flow_not_extreme",
+          "net_flow_btc": -7.91,
+          "net_flow_pct_reserves": 9e-06,
+          "total_reserves_btc": 837475.55,
+          "extreme_basis": null,
+          "coverage": 1.0,
+          "single_tx_dominated": false
+        },
+        "near_miss": "a_quiet"
+      }
     }
   ],
   "signals": [],
@@ -3400,13 +3400,13 @@
   "ledger": [],
   "alert_ledger": [],
   "reserves": {
-    "generated_at": "2026-09-14T20:00:19Z",
+    "generated_at": "2026-09-14T22:00:21Z",
     "total_btc": 826340.85,
     "wallet_count": 24,
     "refreshed_count": 24,
     "exchange_count": 4,
-    "btc_price": 78997.35,
-    "total_usd": 65278737661.0,
+    "btc_price": 78775.31,
+    "total_usd": 65095256938.0,
     "per_exchange": [
       {
         "exchange": "Binance",
@@ -3660,6 +3660,6 @@
     "take": null,
     "voice_status": "voice_failed",
     "near_miss": "a_quiet",
-    "generated_at": "2026-09-14T20:00:19Z"
+    "generated_at": "2026-09-14T22:00:21Z"
   }
 }
