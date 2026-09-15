@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-15T16:00:26Z",
+  "generated_at": "2026-09-15T18:00:30Z",
   "netflow_gate": {
     "mode": "event_driven",
     "waits_for_baseline": false
@@ -10,14 +10,10 @@
     "robust_samples": 15,
     "mature": true,
     "robust": true,
-    "mean": -639.762846585,
-    "std": 2406.5958651112014,
+    "mean": -639.7900832475,
+    "std": 2406.5885833193065,
     "diagnostic_only": true,
     "history": [
-      {
-        "ts": "2026-07-17T05:32:30Z",
-        "net_flow_btc": -6.27421047
-      },
       {
         "ts": "2026-07-18T02:00:14Z",
         "net_flow_btc": -6.27421047
@@ -253,44 +249,14 @@
       {
         "ts": "2026-09-14T22:00:20Z",
         "net_flow_btc": -7.90841022
+      },
+      {
+        "ts": "2026-09-15T18:00:21Z",
+        "net_flow_btc": -7.90841022
       }
     ]
   },
   "runs": [
-    {
-      "ts": "2026-08-28T09:32:14Z",
-      "run_id": "20260828T0932Z-btc",
-      "result": "NoSignal",
-      "reason": "no_trigger",
-      "detail": "fired_signals=[] below require_n_signals",
-      "net_flow_btc": 3.794e-05,
-      "coverage": 1.0,
-      "baseline_mean": -639.6031121891667,
-      "observation": {
-        "a": {
-          "fired": false,
-          "fired_signals": [],
-          "direction_bias": null,
-          "funding_zscore": 1.2663,
-          "fng_value": 73,
-          "fng_classification": "Greed",
-          "taker_buy_dominance": false,
-          "taker_sell_dominance": false
-        },
-        "b": {
-          "extreme": false,
-          "direction": "unclear",
-          "unclear_reason": "net_flow_not_extreme",
-          "net_flow_btc": 0.0,
-          "net_flow_pct_reserves": 0.0,
-          "total_reserves_btc": 832227.86,
-          "extreme_basis": null,
-          "coverage": 1.0,
-          "single_tx_dominated": false
-        },
-        "near_miss": "a_quiet"
-      }
-    },
     {
       "ts": "2026-08-28T10:00:01Z",
       "run_id": "20260828T1000Z-btc",
@@ -3322,6 +3288,40 @@
         },
         "near_miss": "a_quiet"
       }
+    },
+    {
+      "ts": "2026-09-15T18:00:01Z",
+      "run_id": "20260915T1800Z-btc",
+      "result": "NoSignal",
+      "reason": "no_trigger",
+      "detail": "fired_signals=[] below require_n_signals",
+      "net_flow_btc": -7.90841022,
+      "coverage": 1.0,
+      "baseline_mean": -639.7900832475,
+      "observation": {
+        "a": {
+          "fired": false,
+          "fired_signals": [],
+          "direction_bias": null,
+          "funding_zscore": 0.7327,
+          "fng_value": 69,
+          "fng_classification": "Greed",
+          "taker_buy_dominance": false,
+          "taker_sell_dominance": false
+        },
+        "b": {
+          "extreme": false,
+          "direction": "unclear",
+          "unclear_reason": "net_flow_not_extreme",
+          "net_flow_btc": -7.91,
+          "net_flow_pct_reserves": 9e-06,
+          "total_reserves_btc": 837475.55,
+          "extreme_basis": null,
+          "coverage": 1.0,
+          "single_tx_dominated": false
+        },
+        "near_miss": "a_quiet"
+      }
     }
   ],
   "signals": [],
@@ -3397,13 +3397,13 @@
   "ledger": [],
   "alert_ledger": [],
   "reserves": {
-    "generated_at": "2026-09-15T16:00:26Z",
+    "generated_at": "2026-09-15T18:00:30Z",
     "total_btc": 826340.85,
     "wallet_count": 24,
     "refreshed_count": 24,
     "exchange_count": 4,
-    "btc_price": 76528.01,
-    "total_usd": 63238221137.0,
+    "btc_price": 76944.0,
+    "total_usd": 63581970669.0,
     "per_exchange": [
       {
         "exchange": "Binance",
@@ -3655,11 +3655,11 @@
   },
   "daily": {
     "take": {
-      "headline": "情绪从57爬到69，链上却只漏了不到8枚",
-      "body": "恐惧贪婪指数从57跳到69，人群情绪在加速回暖，但交易所储备净流出仅-7.91 BTC——这点流量连「表态」都算不上，更像是在打哈欠。资金费率+1.13σ，已经有一点点多头拥挤的气息，但taker力量均衡，没人真的在追。我读到的是：情绪先跑了，资金还没跟上，两者之间的裂缝值得警惕。如果储备开始大规模净流出、taker多头明显占优，我会认为这次回暖有腿；如果情绪继续升温而链上依然冷漠，那69分的「贪婪」很可能只是一张没有存款的脸。【非投资建议】"
+      "headline": "情绪从57爬到69，但链上只挤出了不到8枚BTC",
+      "body": "恐惧贪婪指数从57跳到69，市场嘴上说贪婪，但交易所储备净流出仅-7.91 BTC——这不是「机构抢筹」，更像是人群在观望时顺手按了个多单。资金费率+0.73σ，不算尖叫，但也不是打哈欠，多头在温水里泡着，还没到被烫跑的程度。Taker均衡、人群没到极端，这盘面的问题不是「太热」，而是「暖得没有说服力」——情绪回暖和真实筹码流动之间的裂缝，才是我今天盯着的东西。如果储备净流出开始放量加深、或资金费率继续往上走脱离均衡，我会重新审视这个「平静」的定性；反之，情绪继续回暖但链上依然沉默，我倾向于把这次修复当成噪音处理。"
     },
     "voice_status": "ok",
     "near_miss": "a_quiet",
-    "generated_at": "2026-09-15T16:00:26Z"
+    "generated_at": "2026-09-15T18:00:30Z"
   }
 }
