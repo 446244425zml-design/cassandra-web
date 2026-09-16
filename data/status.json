@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-16T10:00:25Z",
+  "generated_at": "2026-09-16T12:00:24Z",
   "netflow_gate": {
     "mode": "event_driven",
     "waits_for_baseline": false
@@ -257,40 +257,6 @@
     ]
   },
   "runs": [
-    {
-      "ts": "2026-08-30T06:08:49Z",
-      "run_id": "20260830T0608Z-btc",
-      "result": "NoSignal",
-      "reason": "no_trigger",
-      "detail": "fired_signals=[] below require_n_signals",
-      "net_flow_btc": -6.31232417,
-      "coverage": 1.0,
-      "baseline_mean": -639.6031121888334,
-      "observation": {
-        "a": {
-          "fired": false,
-          "fired_signals": [],
-          "direction_bias": null,
-          "funding_zscore": null,
-          "fng_value": 69,
-          "fng_classification": "Greed",
-          "taker_buy_dominance": null,
-          "taker_sell_dominance": null
-        },
-        "b": {
-          "extreme": false,
-          "direction": "unclear",
-          "unclear_reason": "net_flow_not_extreme",
-          "net_flow_btc": -6.31,
-          "net_flow_pct_reserves": 8e-06,
-          "total_reserves_btc": 832470.86,
-          "extreme_basis": null,
-          "coverage": 1.0,
-          "single_tx_dominated": true
-        },
-        "near_miss": "a_quiet"
-      }
-    },
     {
       "ts": "2026-08-31T04:00:01Z",
       "run_id": "20260831T0400Z-btc",
@@ -3322,6 +3288,40 @@
         },
         "near_miss": "a_quiet"
       }
+    },
+    {
+      "ts": "2026-09-16T12:00:00Z",
+      "run_id": "20260916T1200Z-btc",
+      "result": "NoSignal",
+      "reason": "no_trigger",
+      "detail": "fired_signals=[] below require_n_signals",
+      "net_flow_btc": -7.90841022,
+      "coverage": 1.0,
+      "baseline_mean": -639.7900832475,
+      "observation": {
+        "a": {
+          "fired": false,
+          "fired_signals": [],
+          "direction_bias": null,
+          "funding_zscore": -0.6512,
+          "fng_value": 51,
+          "fng_classification": "Neutral",
+          "taker_buy_dominance": false,
+          "taker_sell_dominance": false
+        },
+        "b": {
+          "extreme": false,
+          "direction": "unclear",
+          "unclear_reason": "net_flow_not_extreme",
+          "net_flow_btc": -7.91,
+          "net_flow_pct_reserves": 9e-06,
+          "total_reserves_btc": 843250.52,
+          "extreme_basis": null,
+          "coverage": 1.0,
+          "single_tx_dominated": true
+        },
+        "near_miss": "a_quiet"
+      }
     }
   ],
   "signals": [],
@@ -3397,13 +3397,13 @@
   "ledger": [],
   "alert_ledger": [],
   "reserves": {
-    "generated_at": "2026-09-16T10:00:25Z",
-    "total_btc": 831963.99,
+    "generated_at": "2026-09-16T12:00:24Z",
+    "total_btc": 832152.7,
     "wallet_count": 24,
     "refreshed_count": 24,
     "exchange_count": 4,
-    "btc_price": 75993.0,
-    "total_usd": 63223439567.0,
+    "btc_price": 76221.34,
+    "total_usd": 63427794028.0,
     "per_exchange": [
       {
         "exchange": "Binance",
@@ -3414,7 +3414,7 @@
       {
         "exchange": "Bitfinex",
         "count": 2,
-        "btc": 145732.3363,
+        "btc": 145921.0472,
         "pct": 17.5
       },
       {
@@ -3472,7 +3472,7 @@
         "address": "3JZq4atUahhuA9rLhXLMhhTo133J9rF97j",
         "address_short": "3JZq4atU…F97j",
         "label_type": "cold",
-        "balance_btc": 15722.2572,
+        "balance_btc": 15910.9682,
         "refreshed": true,
         "explorer_url": "https://blockstream.info/address/3JZq4atUahhuA9rLhXLMhhTo133J9rF97j"
       },
@@ -3655,11 +3655,11 @@
   },
   "daily": {
     "take": {
-      "headline": "情绪在退潮，但链上还没人真的跑路",
-      "body": "恐惧贪婪指数从69滑到51，「中性」标签下藏的是持续降温的情绪——不是恐慌，是热情在漏气。资金费率打到-1.69σ，空头在出力，但现货储备净流出仅-7.91枚，843061枚还压在交易所里按着不动，链上没看到真正的出逃。我的判断：这是一个「温水降温」的市场，不是雪崩，但也别指望什么催化剂从天而降。我在盯储备净流量的方向——如果开始大规模净流入（砸盘弹药上膛），或者资金费率继续走深，那这个「平静」就得重新定价。"
+      "headline": "情绪在退潮，链上却还没开始逃",
+      "body": "恐惧贪婪指数从69滑到51，「中性」二字掩盖的是一段持续降温的过程，不是稳定。资金费率报-0.65σ，偏空但还没到尖叫的程度，更像是有人在悄悄对冲而非踩踏。交易所储备净流出7.91枚，总量843250枚，链上没出现大规模搬币迹象，人群目前是「沉默」而非「逃跑」。我盯的是：情绪继续下行但链上依然平静——这个背离能维持多久；一旦储备出现明显净流入或资金费率跌破-1σ，我会重新评估这份「平静」的成色。非投资建议。"
     },
     "voice_status": "ok",
     "near_miss": "a_quiet",
-    "generated_at": "2026-09-16T10:00:25Z"
+    "generated_at": "2026-09-16T12:00:24Z"
   }
 }
