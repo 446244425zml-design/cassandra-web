@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-17T08:00:25Z",
+  "generated_at": "2026-09-17T10:00:27Z",
   "netflow_gate": {
     "mode": "event_driven",
     "waits_for_baseline": false
@@ -257,40 +257,6 @@
     ]
   },
   "runs": [
-    {
-      "ts": "2026-09-01T02:00:00Z",
-      "run_id": "20260901T0200Z-btc",
-      "result": "NoSignal",
-      "reason": "no_trigger",
-      "detail": "fired_signals=[] below require_n_signals",
-      "net_flow_btc": -6.31232417,
-      "coverage": 1.0,
-      "baseline_mean": -639.7097915743334,
-      "observation": {
-        "a": {
-          "fired": false,
-          "fired_signals": [],
-          "direction_bias": null,
-          "funding_zscore": 0.191,
-          "fng_value": 69,
-          "fng_classification": "Greed",
-          "taker_buy_dominance": false,
-          "taker_sell_dominance": false
-        },
-        "b": {
-          "extreme": false,
-          "direction": "unclear",
-          "unclear_reason": "net_flow_not_extreme",
-          "net_flow_btc": -6.31,
-          "net_flow_pct_reserves": 8e-06,
-          "total_reserves_btc": 832544.68,
-          "extreme_basis": null,
-          "coverage": 1.0,
-          "single_tx_dominated": false
-        },
-        "near_miss": "a_quiet"
-      }
-    },
     {
       "ts": "2026-09-01T04:00:01Z",
       "run_id": "20260901T0400Z-btc",
@@ -3322,6 +3288,40 @@
         },
         "near_miss": "a_quiet"
       }
+    },
+    {
+      "ts": "2026-09-17T10:00:01Z",
+      "run_id": "20260917T1000Z-btc",
+      "result": "NoSignal",
+      "reason": "no_trigger",
+      "detail": "fired_signals=[] below require_n_signals",
+      "net_flow_btc": -7.90841022,
+      "coverage": 1.0,
+      "baseline_mean": -639.81731991,
+      "observation": {
+        "a": {
+          "fired": false,
+          "fired_signals": [],
+          "direction_bias": null,
+          "funding_zscore": -0.4609,
+          "fng_value": 50,
+          "fng_classification": "Neutral",
+          "taker_buy_dominance": false,
+          "taker_sell_dominance": false
+        },
+        "b": {
+          "extreme": false,
+          "direction": "unclear",
+          "unclear_reason": "net_flow_not_extreme",
+          "net_flow_btc": -7.91,
+          "net_flow_pct_reserves": 9e-06,
+          "total_reserves_btc": 843354.01,
+          "extreme_basis": null,
+          "coverage": 1.0,
+          "single_tx_dominated": true
+        },
+        "near_miss": "a_quiet"
+      }
     }
   ],
   "signals": [],
@@ -3397,13 +3397,13 @@
   "ledger": [],
   "alert_ledger": [],
   "reserves": {
-    "generated_at": "2026-09-17T08:00:25Z",
-    "total_btc": 832152.7,
+    "generated_at": "2026-09-17T10:00:27Z",
+    "total_btc": 832256.19,
     "wallet_count": 24,
     "refreshed_count": 24,
     "exchange_count": 4,
-    "btc_price": 76471.67,
-    "total_usd": 63636106814.0,
+    "btc_price": 76468.05,
+    "total_usd": 63641008036.0,
     "per_exchange": [
       {
         "exchange": "Binance",
@@ -3414,7 +3414,7 @@
       {
         "exchange": "Bitfinex",
         "count": 2,
-        "btc": 145921.0472,
+        "btc": 146024.5364,
         "pct": 17.5
       },
       {
@@ -3472,7 +3472,7 @@
         "address": "3JZq4atUahhuA9rLhXLMhhTo133J9rF97j",
         "address_short": "3JZq4atU…F97j",
         "label_type": "cold",
-        "balance_btc": 15910.9682,
+        "balance_btc": 16014.4574,
         "refreshed": true,
         "explorer_url": "https://blockstream.info/address/3JZq4atUahhuA9rLhXLMhhTo133J9rF97j"
       },
@@ -3655,11 +3655,11 @@
   },
   "daily": {
     "take": {
-      "headline": "情绪冻在中线，资金费率却在小声嘀咕",
-      "body": "恐惧贪婪指数 50，基本纹丝未动——人群既没有在尖叫也没有在庆祝，这种「平静」有时候比恐慌更让我警惕。资金费率跌至 -1.22σ，偏空的衍生品仓位已经开始积累，但现货端储备净流出 -7.91 BTC，体量极小，链上没给出任何方向性的大动作。我现在盯的是：情绪能不能从这个死水中间站破位——贪婪方向的突破需要资金费率回正且储备加速流出，恐惧方向则反之；如果两侧都没动静，这块「中性」的牌子只是在掩盖更大的犹豫。"
+      "headline": "76468，市场在打哈欠，谁都不急",
+      "body": "恐惧贪婪指数50，从51挪到50，基本上是在原地踏步——人群既没吓跑也没亢奋，这种「什么都不表态」的读数本身就是一种信号，只是我还没判断清楚是暴风前的平静还是真的无聊。资金费率-0.46σ，轻微偏空但没到尖叫程度，多头没踩油门，空头也只是在摸方向盘；taker均衡，链上储备净流出7.91枚，量级极小，大资金没在这里表态。我在盯的是：情绪会不会从这个「50」开始分叉——如果储备净流量转为持续大额流出、或资金费率开始快速走偏，那这份平静就该重新估价；如果两者继续钝化，那可能只是一段没有故事的横盘，任何方向的押注都是在跟无聊赌钱。【非投资建议】"
     },
     "voice_status": "ok",
     "near_miss": "a_quiet",
-    "generated_at": "2026-09-17T08:00:25Z"
+    "generated_at": "2026-09-17T10:00:27Z"
   }
 }
