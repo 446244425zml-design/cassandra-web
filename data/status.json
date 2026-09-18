@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-18T14:00:26Z",
+  "generated_at": "2026-09-18T16:00:24Z",
   "netflow_gate": {
     "mode": "event_driven",
     "waits_for_baseline": false
@@ -257,40 +257,6 @@
     ]
   },
   "runs": [
-    {
-      "ts": "2026-09-02T10:00:01Z",
-      "run_id": "20260902T1000Z-btc",
-      "result": "NoSignal",
-      "reason": "no_trigger",
-      "detail": "fired_signals=[] below require_n_signals",
-      "net_flow_btc": -6.31235803,
-      "coverage": 1.0,
-      "baseline_mean": -639.7112649956666,
-      "observation": {
-        "a": {
-          "fired": false,
-          "fired_signals": [],
-          "direction_bias": null,
-          "funding_zscore": 0.1239,
-          "fng_value": 63,
-          "fng_classification": "Greed",
-          "taker_buy_dominance": false,
-          "taker_sell_dominance": false
-        },
-        "b": {
-          "extreme": false,
-          "direction": "unclear",
-          "unclear_reason": "net_flow_not_extreme",
-          "net_flow_btc": -6.31,
-          "net_flow_pct_reserves": 8e-06,
-          "total_reserves_btc": 832512.66,
-          "extreme_basis": null,
-          "coverage": 1.0,
-          "single_tx_dominated": false
-        },
-        "near_miss": "a_quiet"
-      }
-    },
     {
       "ts": "2026-09-02T12:00:01Z",
       "run_id": "20260902T1200Z-btc",
@@ -3322,6 +3288,40 @@
         },
         "near_miss": "a_quiet"
       }
+    },
+    {
+      "ts": "2026-09-18T16:00:01Z",
+      "run_id": "20260918T1600Z-btc",
+      "result": "NoSignal",
+      "reason": "no_trigger",
+      "detail": "fired_signals=[] below require_n_signals",
+      "net_flow_btc": 0.00018562,
+      "coverage": 1.0,
+      "baseline_mean": -639.9491298356667,
+      "observation": {
+        "a": {
+          "fired": false,
+          "fired_signals": [],
+          "direction_bias": null,
+          "funding_zscore": -0.0032,
+          "fng_value": 56,
+          "fng_classification": "Greed",
+          "taker_buy_dominance": false,
+          "taker_sell_dominance": false
+        },
+        "b": {
+          "extreme": false,
+          "direction": "unclear",
+          "unclear_reason": "net_flow_not_extreme",
+          "net_flow_btc": 0.0,
+          "net_flow_pct_reserves": 0.0,
+          "total_reserves_btc": 849727.22,
+          "extreme_basis": null,
+          "coverage": 1.0,
+          "single_tx_dominated": true
+        },
+        "near_miss": "a_quiet"
+      }
     }
   ],
   "signals": [],
@@ -3398,13 +3398,13 @@
   "ledger": [],
   "alert_ledger": [],
   "reserves": {
-    "generated_at": "2026-09-18T14:00:26Z",
-    "total_btc": 837950.16,
+    "generated_at": "2026-09-18T16:00:24Z",
+    "total_btc": 838500.4,
     "wallet_count": 24,
     "refreshed_count": 24,
     "exchange_count": 4,
-    "btc_price": 80165.0,
-    "total_usd": 67174274672.0,
+    "btc_price": 80730.59,
+    "total_usd": 67692631758.0,
     "per_exchange": [
       {
         "exchange": "Binance",
@@ -3415,7 +3415,7 @@
       {
         "exchange": "Bitfinex",
         "count": 2,
-        "btc": 146566.7314,
+        "btc": 147116.967,
         "pct": 17.5
       },
       {
@@ -3473,7 +3473,7 @@
         "address": "3JZq4atUahhuA9rLhXLMhhTo133J9rF97j",
         "address_short": "3JZq4atU…F97j",
         "label_type": "cold",
-        "balance_btc": 16556.6524,
+        "balance_btc": 17106.888,
         "refreshed": true,
         "explorer_url": "https://blockstream.info/address/3JZq4atUahhuA9rLhXLMhhTo133J9rF97j"
       },
@@ -3657,10 +3657,10 @@
   "daily": {
     "take": {
       "headline": "情绪刚解冻，链上却一动不动",
-      "body": "恐惧贪婪指数从50爬到56，从「中性」滑进「贪婪」区，这个方向我注意到了——但它更像是退烧，不是发烧。资金费率报-0.38σ，空头偏向还在，说明杠杆市场对这波回暖持保留态度；人群和合约方向没有对齐，这种分裂让我无法认定趋势已经确立。储备净流量为零，849176枚BTC纹丝未动，交易所既没在吃货也没在出货，市场在打哈欠。我盯的是：如果资金费率转正、储备出现净流出，那情绪回暖才算有腿；反过来若恐惧贪婪再度滑回50以下，这次「贪婪」就只是一次假阳性。"
+      "body": "恐惧贪婪指数从50爬到56，算是从麻木里醒了一口气，但醒来之后没有后续——储备净流量挂着零，849727枚BTC按兵不动，没人急着搬仓。资金费率σ趋近于零，多空双方都在打哈欠，这种「情绪回暖但筹码不动」的组合，我读出来的不是信心，是观望。最近刚有过一次人群极端读数，现在它收回去了，我盯的是：情绪继续升温的同时储备流量会不会跟上——如果链上继续无动于衷，这口「暖意」很可能只是在原地踏步。"
     },
     "voice_status": "ok",
     "near_miss": "a_quiet",
-    "generated_at": "2026-09-18T14:00:26Z"
+    "generated_at": "2026-09-18T16:00:24Z"
   }
 }
