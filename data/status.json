@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-21T20:00:27Z",
+  "generated_at": "2026-09-22T06:00:29Z",
   "netflow_gate": {
     "mode": "event_driven",
     "waits_for_baseline": false
@@ -10,14 +10,10 @@
     "robust_samples": 15,
     "mature": true,
     "robust": true,
-    "mean": -235.32241251366668,
-    "std": 1679.7825378125858,
+    "mean": -100.34138962566666,
+    "std": 1325.1506923426632,
     "diagnostic_only": true,
     "history": [
-      {
-        "ts": "2026-07-23T12:00:17Z",
-        "net_flow_btc": -8098.86106808
-      },
       {
         "ts": "2026-07-24T08:00:19Z",
         "net_flow_btc": -6.32693701
@@ -253,44 +249,14 @@
       {
         "ts": "2026-09-21T04:00:19Z",
         "net_flow_btc": 0.0003052
+      },
+      {
+        "ts": "2026-09-22T06:00:21Z",
+        "net_flow_btc": 0.0003052
       }
     ]
   },
   "runs": [
-    {
-      "ts": "2026-09-14T04:00:01Z",
-      "run_id": "20260914T0400Z-btc",
-      "result": "NoSignal",
-      "reason": "no_trigger",
-      "detail": "fired_signals=[] below require_n_signals",
-      "net_flow_btc": 0.00015275,
-      "coverage": 1.0,
-      "baseline_mean": -639.7356099225,
-      "observation": {
-        "a": {
-          "fired": false,
-          "fired_signals": [],
-          "direction_bias": null,
-          "funding_zscore": 1.1951,
-          "fng_value": 57,
-          "fng_classification": "Greed",
-          "taker_buy_dominance": false,
-          "taker_sell_dominance": false
-        },
-        "b": {
-          "extreme": false,
-          "direction": "unclear",
-          "unclear_reason": "net_flow_not_extreme",
-          "net_flow_btc": 0.0,
-          "net_flow_pct_reserves": 0.0,
-          "total_reserves_btc": 837487.55,
-          "extreme_basis": null,
-          "coverage": 1.0,
-          "single_tx_dominated": false
-        },
-        "near_miss": "a_quiet"
-      }
-    },
     {
       "ts": "2026-09-14T06:00:01Z",
       "run_id": "20260914T0600Z-btc",
@@ -3325,6 +3291,40 @@
         },
         "near_miss": "a_quiet"
       }
+    },
+    {
+      "ts": "2026-09-22T06:00:01Z",
+      "run_id": "20260922T0600Z-btc",
+      "result": "NoSignal",
+      "reason": "no_trigger",
+      "detail": "fired_signals=[] below require_n_signals",
+      "net_flow_btc": 0.0003052,
+      "coverage": 1.0,
+      "baseline_mean": -100.34138962566666,
+      "observation": {
+        "a": {
+          "fired": false,
+          "fired_signals": [],
+          "direction_bias": null,
+          "funding_zscore": 1.1131,
+          "fng_value": 78,
+          "fng_classification": "Extreme Greed",
+          "taker_buy_dominance": false,
+          "taker_sell_dominance": false
+        },
+        "b": {
+          "extreme": false,
+          "direction": "unclear",
+          "unclear_reason": "net_flow_not_extreme",
+          "net_flow_btc": 0.0,
+          "net_flow_pct_reserves": 0.0,
+          "total_reserves_btc": 856889.54,
+          "extreme_basis": null,
+          "coverage": 1.0,
+          "single_tx_dominated": true
+        },
+        "near_miss": "a_quiet"
+      }
     }
   ],
   "signals": [],
@@ -3403,13 +3403,13 @@
   "ledger": [],
   "alert_ledger": [],
   "reserves": {
-    "generated_at": "2026-09-21T20:00:27Z",
+    "generated_at": "2026-09-22T06:00:29Z",
     "total_btc": 845650.74,
     "wallet_count": 24,
     "refreshed_count": 24,
     "exchange_count": 4,
-    "btc_price": 86553.58,
-    "total_usd": 73194098862.0,
+    "btc_price": 85424.01,
+    "total_usd": 72238877157.0,
     "per_exchange": [
       {
         "exchange": "Binance",
@@ -3661,11 +3661,11 @@
   },
   "daily": {
     "take": {
-      "headline": "贪婪停在70，资金费率却在地板上打滚",
-      "body": "情绪读数贪婪70，基本原地踏步——人群「感觉不错」但懒得推高；资金费率跑到-1.06σ，期货端在反方向悄悄押注，两边对不上，这种裂缝值得多看几眼。交易所储备净流量为零，链上没人急着搬币，既没有恐慌出逃也没有集中建仓，现价附近的市场更像是在等人先动手。我在盯的是：如果资金费率持续负偏而情绪不跟着降温，这个背离会怎么收敛——是情绪补跌，还是空头被迫认输；任何一边先崩，我才会调整判断，现在还不到翻牌的时候。"
+      "headline": "情绪在偷跑，链上却一动不动",
+      "body": "恐惧贪婪指数从70爬到78，已进「Extreme Greed」区间，但交易所储备净流量挂着整数零——人在鼓掌，币没移动，这个组合让我皱眉。资金费率+1.11σ，多头溢价明显但还没到尖叫边缘，Taker方向均衡，说明现货跟进意愿并不强，更像是情绪在给期货涂脂抹粉。我在盯的是：储备净流量如果开始转负加速、或资金费率继续抬升越过+2σ，那这波「贪婪」就不只是表情，是真金白银在押注——那时候我会认真评估拥挤程度；反之，情绪若在这里横盘退潮，当前85424附近的价格就只是一张贪婪的脸，没有对应的手脚。"
     },
     "voice_status": "ok",
     "near_miss": "a_quiet",
-    "generated_at": "2026-09-21T20:00:27Z"
+    "generated_at": "2026-09-22T06:00:29Z"
   }
 }
