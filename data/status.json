@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-28T08:00:41Z",
+  "generated_at": "2026-09-28T10:00:27Z",
   "netflow_gate": {
     "mode": "event_driven",
     "waits_for_baseline": false
@@ -10,14 +10,10 @@
     "robust_samples": 15,
     "mature": true,
     "robust": true,
-    "mean": -100.23593558883333,
-    "std": 1325.1585524499576,
+    "mean": -100.23593197083332,
+    "std": 1325.1585527282648,
     "diagnostic_only": true,
     "history": [
-      {
-        "ts": "2026-07-25T12:00:24Z",
-        "net_flow_btc": 8.812e-05
-      },
       {
         "ts": "2026-07-26T08:02:54Z",
         "net_flow_btc": 8.812e-05
@@ -253,44 +249,14 @@
       {
         "ts": "2026-09-27T12:03:08Z",
         "net_flow_btc": 0.0003052
+      },
+      {
+        "ts": "2026-09-28T10:00:19Z",
+        "net_flow_btc": 0.0003052
       }
     ]
   },
   "runs": [
-    {
-      "ts": "2026-09-15T12:00:01Z",
-      "run_id": "20260915T1200Z-btc",
-      "result": "NoSignal",
-      "reason": "no_trigger",
-      "detail": "fired_signals=[] below require_n_signals",
-      "net_flow_btc": -7.90841022,
-      "coverage": 1.0,
-      "baseline_mean": -639.762846585,
-      "observation": {
-        "a": {
-          "fired": false,
-          "fired_signals": [],
-          "direction_bias": null,
-          "funding_zscore": 0.9585,
-          "fng_value": 69,
-          "fng_classification": "Greed",
-          "taker_buy_dominance": false,
-          "taker_sell_dominance": false
-        },
-        "b": {
-          "extreme": false,
-          "direction": "unclear",
-          "unclear_reason": "net_flow_not_extreme",
-          "net_flow_btc": -7.91,
-          "net_flow_pct_reserves": 9e-06,
-          "total_reserves_btc": 837475.55,
-          "extreme_basis": null,
-          "coverage": 1.0,
-          "single_tx_dominated": false
-        },
-        "near_miss": "a_quiet"
-      }
-    },
     {
       "ts": "2026-09-15T14:00:02Z",
       "run_id": "20260915T1400Z-btc",
@@ -3340,6 +3306,40 @@
         "near_miss": "a_lit_b_quiet"
       },
       "signal_id": "CAS-20260928-btc"
+    },
+    {
+      "ts": "2026-09-28T10:00:01Z",
+      "run_id": "20260928T1000Z-btc",
+      "result": "NoSignal",
+      "reason": "no_trigger",
+      "detail": "fired_signals=[] below require_n_signals",
+      "net_flow_btc": 0.0003052,
+      "coverage": 1.0,
+      "baseline_mean": -100.23593197083332,
+      "observation": {
+        "a": {
+          "fired": false,
+          "fired_signals": [],
+          "direction_bias": null,
+          "funding_zscore": -1.6067,
+          "fng_value": 74,
+          "fng_classification": "Greed",
+          "taker_buy_dominance": false,
+          "taker_sell_dominance": false
+        },
+        "b": {
+          "extreme": false,
+          "direction": "unclear",
+          "unclear_reason": "net_flow_not_extreme",
+          "net_flow_btc": 0.0,
+          "net_flow_pct_reserves": 0.0,
+          "total_reserves_btc": 832353.1,
+          "extreme_basis": null,
+          "coverage": 1.0,
+          "single_tx_dominated": false
+        },
+        "near_miss": "a_quiet"
+      }
     }
   ],
   "signals": [],
@@ -3420,13 +3420,13 @@
   "ledger": [],
   "alert_ledger": [],
   "reserves": {
-    "generated_at": "2026-09-28T08:00:41Z",
+    "generated_at": "2026-09-28T10:00:27Z",
     "total_btc": 821324.39,
     "wallet_count": 24,
     "refreshed_count": 24,
     "exchange_count": 4,
-    "btc_price": 82946.0,
-    "total_usd": 68125572840.0,
+    "btc_price": 82700.69,
+    "total_usd": 67924093754.0,
     "per_exchange": [
       {
         "exchange": "Binance",
@@ -3678,11 +3678,11 @@
   },
   "daily": {
     "take": {
-      "headline": "情绪嘴上说贪婪，资金费率已经在哭",
-      "body": "恐惧贪婪指数74，还挂着「贪婪」的牌子，但读数正在悄悄从78往下走——人群的底气没表面看起来那么足。资金费率打到-2.59σ，这不是「谨慎」，这是做空力量在堆积，和指数显示的贪婪气氛形成一个让我皱眉的裂缝。链上储备净流量为零，交易所币没出去也没进来，大钱按住不动，暂时拒绝给任何方向背书。我在盯的是：储备净流量会不会突然转负（聪明钱开始撤）或者情绪指数继续下滑跌穿70——任何一个触发，我对「表面平静」的判断都得重写。"
+      "headline": "情绪在爬坡，但空头资金在顶着——谁在撒谎？",
+      "body": "恐惧贪婪指数从70爬到74，人群还没到极端，但正在往「贪婪」方向倾斜；与此同时资金费率报-1.61σ，明显偏空，多空两端的叙事正在互相打脸。链上储备净流量为零，832353枚BTC按住不动，市场在82700附近像一潭死水——没有明显的筹码位移，就是耗着。我在盯的是：如果情绪继续升温而资金费率不跟着翻正，这种背离能撑多久；一旦资金费率开始向多头靠拢，或者储备出现方向性净流出，我会重新评估当前的「平静」是真平静还是假装的。"
     },
     "voice_status": "ok",
-    "near_miss": "a_lit_b_quiet",
-    "generated_at": "2026-09-28T08:00:41Z"
+    "near_miss": "a_quiet",
+    "generated_at": "2026-09-28T10:00:27Z"
   }
 }
