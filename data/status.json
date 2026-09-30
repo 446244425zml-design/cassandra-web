@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-29T14:00:29Z",
+  "generated_at": "2026-09-30T02:00:28Z",
   "netflow_gate": {
     "mode": "event_driven",
     "waits_for_baseline": false
@@ -257,40 +257,6 @@
     ]
   },
   "runs": [
-    {
-      "ts": "2026-09-16T18:00:01Z",
-      "run_id": "20260916T1800Z-btc",
-      "result": "NoSignal",
-      "reason": "no_trigger",
-      "detail": "fired_signals=[] below require_n_signals",
-      "net_flow_btc": -7.90841022,
-      "coverage": 1.0,
-      "baseline_mean": -639.81731991,
-      "observation": {
-        "a": {
-          "fired": false,
-          "fired_signals": [],
-          "direction_bias": null,
-          "funding_zscore": 0.5116,
-          "fng_value": 51,
-          "fng_classification": "Neutral",
-          "taker_buy_dominance": false,
-          "taker_sell_dominance": false
-        },
-        "b": {
-          "extreme": false,
-          "direction": "unclear",
-          "unclear_reason": "net_flow_not_extreme",
-          "net_flow_btc": -7.91,
-          "net_flow_pct_reserves": 9e-06,
-          "total_reserves_btc": 843250.52,
-          "extreme_basis": null,
-          "coverage": 1.0,
-          "single_tx_dominated": false
-        },
-        "near_miss": "a_quiet"
-      }
-    },
     {
       "ts": "2026-09-16T20:00:02Z",
       "run_id": "20260916T2000Z-btc",
@@ -3340,6 +3306,40 @@
         },
         "near_miss": "a_quiet"
       }
+    },
+    {
+      "ts": "2026-09-30T02:00:01Z",
+      "run_id": "20260930T0200Z-btc",
+      "result": "NoSignal",
+      "reason": "no_trigger",
+      "detail": "fired_signals=[] below require_n_signals",
+      "net_flow_btc": 0.0003052,
+      "coverage": 1.0,
+      "baseline_mean": -100.23592835283333,
+      "observation": {
+        "a": {
+          "fired": false,
+          "fired_signals": [],
+          "direction_bias": null,
+          "funding_zscore": 0.2461,
+          "fng_value": 71,
+          "fng_classification": "Greed",
+          "taker_buy_dominance": false,
+          "taker_sell_dominance": false
+        },
+        "b": {
+          "extreme": false,
+          "direction": "unclear",
+          "unclear_reason": "net_flow_not_extreme",
+          "net_flow_btc": 0.0,
+          "net_flow_pct_reserves": 0.0,
+          "total_reserves_btc": 835101.79,
+          "extreme_basis": null,
+          "coverage": 1.0,
+          "single_tx_dominated": false
+        },
+        "near_miss": "a_quiet"
+      }
     }
   ],
   "signals": [],
@@ -3420,25 +3420,25 @@
   "ledger": [],
   "alert_ledger": [],
   "reserves": {
-    "generated_at": "2026-09-29T14:00:29Z",
-    "total_btc": 822741.0,
+    "generated_at": "2026-09-30T02:00:28Z",
+    "total_btc": 823964.81,
     "wallet_count": 24,
     "refreshed_count": 24,
     "exchange_count": 4,
-    "btc_price": 84210.65,
-    "total_usd": 69283554558.0,
+    "btc_price": 83448.01,
+    "total_usd": 68758223910.0,
     "per_exchange": [
       {
         "exchange": "Binance",
         "count": 2,
         "btc": 458489.0436,
-        "pct": 55.7
+        "pct": 55.6
       },
       {
         "exchange": "Bitfinex",
         "count": 2,
-        "btc": 151300.9751,
-        "pct": 18.4
+        "btc": 152524.7856,
+        "pct": 18.5
       },
       {
         "exchange": "Robinhood",
@@ -3495,7 +3495,7 @@
         "address": "3JZq4atUahhuA9rLhXLMhhTo133J9rF97j",
         "address_short": "3JZq4atU…F97j",
         "label_type": "cold",
-        "balance_btc": 21290.896,
+        "balance_btc": 22514.7065,
         "refreshed": true,
         "explorer_url": "https://blockstream.info/address/3JZq4atUahhuA9rLhXLMhhTo133J9rF97j"
       },
@@ -3678,11 +3678,11 @@
   },
   "daily": {
     "take": {
-      "headline": "贪婪73，资金费率在地板，市场在装睡",
-      "body": "恐惧贪婪指数73，贴着「贪婪」标签却几乎纹丝不动——情绪既没有在加热，也没有在退潮，就是一种无聊的悬停。资金费率报-0.29σ，做多方没有明显溢价，说明这个价位没有人在疯狂加杠杆押上涨，表面贪婪之下藏着一股冷淡。交易所储备净流量归零、总量833877.98 BTC，链上就是一块石头，没人在大规模搬进搬出，市场在「按住不动」。我在盯的是：情绪能否从这种麻木里醒过来——如果资金费率开始往正σ走同时储备出现明显净流出，那才是真正的方向信号；否则这不过是一场装扮成贪婪的打哈欠。"
+      "headline": "贪婪71，资金费率微热，市场在打哈欠",
+      "body": "恐惧贪婪指数74到71，基本没动，人群既没有在尖叫也没有在逃命，这种「不冷不热」的平静有时比极端更难读。资金费率+0.25σ，轻度偏多但谈不上过热，taker方向均衡——多头没有在追，空头也没有在砸，83448附近的现价更像是被按住不动，而不是在蓄力。储备净流量0.0，链上没有明显的进出动作，交易所的筹码量基本原地踏步，这不是「囤币信号」，只是没人急着动。我在盯的是情绪会不会从71继续向下滑、还是反弹回贪婪深区——如果资金费率开始走负、或净流量突然放量流出，我会重新评估这段沉默的含义；现在它只是沉默。"
     },
     "voice_status": "ok",
     "near_miss": "a_quiet",
-    "generated_at": "2026-09-29T14:00:29Z"
+    "generated_at": "2026-09-30T02:00:28Z"
   }
 }
