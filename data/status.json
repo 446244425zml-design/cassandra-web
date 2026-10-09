@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-09T12:00:25Z",
+  "generated_at": "2026-10-09T14:00:29Z",
   "netflow_gate": {
     "mode": "event_driven",
     "waits_for_baseline": false
@@ -257,40 +257,6 @@
     ]
   },
   "runs": [
-    {
-      "ts": "2026-09-18T12:00:01Z",
-      "run_id": "20260918T1200Z-btc",
-      "result": "NoSignal",
-      "reason": "no_trigger",
-      "detail": "fired_signals=[] below require_n_signals",
-      "net_flow_btc": 0.00010209,
-      "coverage": 1.0,
-      "baseline_mean": -639.9491298356667,
-      "observation": {
-        "a": {
-          "fired": false,
-          "fired_signals": [],
-          "direction_bias": null,
-          "funding_zscore": -0.9954,
-          "fng_value": 56,
-          "fng_classification": "Greed",
-          "taker_buy_dominance": false,
-          "taker_sell_dominance": false
-        },
-        "b": {
-          "extreme": false,
-          "direction": "unclear",
-          "unclear_reason": "net_flow_not_extreme",
-          "net_flow_btc": 0.0,
-          "net_flow_pct_reserves": 0.0,
-          "total_reserves_btc": 849176.98,
-          "extreme_basis": null,
-          "coverage": 1.0,
-          "single_tx_dominated": true
-        },
-        "near_miss": "a_quiet"
-      }
-    },
     {
       "ts": "2026-09-18T14:00:01Z",
       "run_id": "20260918T1400Z-btc",
@@ -3340,6 +3306,40 @@
         },
         "near_miss": "a_quiet"
       }
+    },
+    {
+      "ts": "2026-10-09T14:00:01Z",
+      "run_id": "20261009T1400Z-btc",
+      "result": "NoSignal",
+      "reason": "no_trigger",
+      "detail": "fired_signals=[] below require_n_signals",
+      "net_flow_btc": -23.74360622,
+      "coverage": 1.0,
+      "baseline_mean": 124.46882559149999,
+      "observation": {
+        "a": {
+          "fired": false,
+          "fired_signals": [],
+          "direction_bias": null,
+          "funding_zscore": -0.8851,
+          "fng_value": 59,
+          "fng_classification": "Greed",
+          "taker_buy_dominance": false,
+          "taker_sell_dominance": false
+        },
+        "b": {
+          "extreme": false,
+          "direction": "unclear",
+          "unclear_reason": "net_flow_not_extreme",
+          "net_flow_btc": -23.74,
+          "net_flow_pct_reserves": 3e-05,
+          "total_reserves_btc": 800366.03,
+          "extreme_basis": null,
+          "coverage": 1.0,
+          "single_tx_dominated": true
+        },
+        "near_miss": "a_quiet"
+      }
     }
   ],
   "signals": [],
@@ -3421,25 +3421,25 @@
   "ledger": [],
   "alert_ledger": [],
   "reserves": {
-    "generated_at": "2026-10-09T12:00:25Z",
-    "total_btc": 788499.34,
+    "generated_at": "2026-10-09T14:00:29Z",
+    "total_btc": 789072.77,
     "wallet_count": 24,
     "refreshed_count": 24,
     "exchange_count": 4,
-    "btc_price": 83204.18,
-    "total_usd": 65606441318.0,
+    "btc_price": 82616.0,
+    "total_usd": 65190036140.0,
     "per_exchange": [
       {
         "exchange": "Binance",
         "count": 2,
         "btc": 419227.832,
-        "pct": 53.2
+        "pct": 53.1
       },
       {
         "exchange": "Bitfinex",
         "count": 2,
-        "btc": 156320.5284,
-        "pct": 19.8
+        "btc": 156893.9568,
+        "pct": 19.9
       },
       {
         "exchange": "Robinhood",
@@ -3496,7 +3496,7 @@
         "address": "3JZq4atUahhuA9rLhXLMhhTo133J9rF97j",
         "address_short": "3JZq4atU…F97j",
         "label_type": "cold",
-        "balance_btc": 26310.4493,
+        "balance_btc": 26883.8778,
         "refreshed": true,
         "explorer_url": "https://blockstream.info/address/3JZq4atUahhuA9rLhXLMhhTo133J9rF97j"
       },
@@ -3679,11 +3679,11 @@
   },
   "daily": {
     "take": {
-      "headline": "情绪在退潮，但还没人真的慌",
-      "body": "恐惧贪婪指数从64滑到59，还挂着「贪婪」的牌子，但方向是朝恐惧走的——这不是崩塌，是热情在漏气。资金费率报-0.22σ，空头略占上风却没到尖叫的程度，taker双方基本均衡，市场在打哈欠而不是在逃命。交易所储备净流出23.74枚，量不大，方向是链下走货，还不构成「有人在撤退」的信号。我在盯的是：情绪若继续下滑穿过50进入恐惧区，同时资金费率跟着走深，那这个「平静」的外壳才值得认真对待；否则现在不过是一次打哈欠式的消化。"
+      "headline": "情绪在退潮，但还没人真正逃跑",
+      "body": "恐惧贪婪指数从64滑到59，贴着「贪婪」标签却在往「中性」溜，这不是崩塌，是退烧。资金费率跌到-0.89σ，空头在出力，但taker端显示均衡——没人在尖叫，也没人在冲锋，市场像在打哈欠。交易所储备净流出23.74枚，总量80万出头，链上没有大规模弃船迹象，但最近有过一次人群极端读数，这个尾巴我没忘。我在盯的是：资金费率会不会继续向下走出趋势，还是今天只是短暂的情绪抖动——如果贪婪读数继续缩、费率同步走深，我会重新评估这段「平静」是真平静还是假装的。"
     },
     "voice_status": "ok",
     "near_miss": "a_quiet",
-    "generated_at": "2026-10-09T12:00:25Z"
+    "generated_at": "2026-10-09T14:00:29Z"
   }
 }
