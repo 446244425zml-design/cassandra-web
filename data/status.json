@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-16T16:00:26Z",
+  "generated_at": "2026-10-16T18:00:28Z",
   "netflow_gate": {
     "mode": "event_driven",
     "waits_for_baseline": false
@@ -257,40 +257,6 @@
     ]
   },
   "runs": [
-    {
-      "ts": "2026-09-22T14:00:01Z",
-      "run_id": "20260922T1400Z-btc",
-      "result": "NoSignal",
-      "reason": "no_trigger",
-      "detail": "fired_signals=[] below require_n_signals",
-      "net_flow_btc": -23.39112366,
-      "coverage": 1.0,
-      "baseline_mean": -100.34138962566666,
-      "observation": {
-        "a": {
-          "fired": false,
-          "fired_signals": [],
-          "direction_bias": null,
-          "funding_zscore": -0.9657,
-          "fng_value": 78,
-          "fng_classification": "Extreme Greed",
-          "taker_buy_dominance": false,
-          "taker_sell_dominance": false
-        },
-        "b": {
-          "extreme": false,
-          "direction": "unclear",
-          "unclear_reason": "net_flow_not_extreme",
-          "net_flow_btc": -23.39,
-          "net_flow_pct_reserves": 2.7e-05,
-          "total_reserves_btc": 856831.54,
-          "extreme_basis": null,
-          "coverage": 1.0,
-          "single_tx_dominated": false
-        },
-        "near_miss": "a_quiet"
-      }
-    },
     {
       "ts": "2026-09-27T12:00:03Z",
       "run_id": "20260927T1200Z-btc",
@@ -3343,6 +3309,40 @@
         },
         "near_miss": "a_quiet"
       }
+    },
+    {
+      "ts": "2026-10-16T18:00:00Z",
+      "run_id": "20261016T1800Z-btc",
+      "result": "NoSignal",
+      "reason": "no_trigger",
+      "detail": "fired_signals=[] below require_n_signals",
+      "net_flow_btc": -24.46980934,
+      "coverage": 1.0,
+      "baseline_mean": 117.08478935383333,
+      "observation": {
+        "a": {
+          "fired": false,
+          "fired_signals": [],
+          "direction_bias": null,
+          "funding_zscore": 1.2054,
+          "fng_value": 63,
+          "fng_classification": "Greed",
+          "taker_buy_dominance": false,
+          "taker_sell_dominance": false
+        },
+        "b": {
+          "extreme": false,
+          "direction": "unclear",
+          "unclear_reason": "net_flow_not_extreme",
+          "net_flow_btc": -24.47,
+          "net_flow_pct_reserves": 3e-05,
+          "total_reserves_btc": 806920.51,
+          "extreme_basis": null,
+          "coverage": 1.0,
+          "single_tx_dominated": false
+        },
+        "near_miss": "a_quiet"
+      }
     }
   ],
   "signals": [],
@@ -3426,13 +3426,13 @@
   "ledger": [],
   "alert_ledger": [],
   "reserves": {
-    "generated_at": "2026-10-16T16:00:26Z",
+    "generated_at": "2026-10-16T18:00:28Z",
     "total_btc": 795784.04,
     "wallet_count": 24,
     "refreshed_count": 24,
     "exchange_count": 4,
-    "btc_price": 81380.0,
-    "total_usd": 64760905030.0,
+    "btc_price": 81215.12,
+    "total_usd": 64629696159.0,
     "per_exchange": [
       {
         "exchange": "Binance",
@@ -3465,7 +3465,7 @@
         "address": "34xp4vRoCGJym3xR7yCVPFHoCNxv4Twseo",
         "address_short": "34xp4vRo…wseo",
         "label_type": "cold",
-        "balance_btc": 248597.5927,
+        "balance_btc": 248597.5928,
         "refreshed": true,
         "explorer_url": "https://blockstream.info/address/34xp4vRoCGJym3xR7yCVPFHoCNxv4Twseo"
       },
@@ -3684,11 +3684,11 @@
   },
   "daily": {
     "take": {
-      "headline": "情绪从53跳到63，但链上流出才24个币，没人真的动",
-      "body": "恐惧贪婪指数在最近几天从53回暖到63，贪婪区已到，但资金费率只在+0.25σ——多头没有在尖叫，只是在小声嘀咕。交易所储备净流出24.47枚，量级轻得可以忽略，「大户离场」的故事今天还没发生。我盯的是：如果情绪继续升温而资金费率跟着走高，那才是需要警惕的结构；反过来，若情绪回落而链上也没有明显流入，那这波回暖不过是噪音。现在的状态是两边都没给我足够的信号，我只能说：市场在打哈欠，还没决定今天要做什么。【非投资建议】"
+      "headline": "情绪从53跳到63，但链上在悄悄出货",
+      "body": "恐惧贪婪指数从53回暖至63，市场表面上重新飘起「贪婪」的气味，但交易所储备净流出24.47 BTC——规模不大，却是流向而非流入，说明有人在用这波情绪回暖悄悄减仓。资金费率+1.21σ，多头在为持仓付溢价，吃力但还没到尖叫的程度；Taker方向均衡，说明现货市场没有明确的方向性压力，只是两边都在观望。我在盯的是：如果情绪继续升温而储备净流出加速，那这个「平静」只是暴风眼；反过来，若资金费率回落到σ中性附近而价格稳在现价附近，我会认为这次回暖有点真实。现在的读数是「温而不热、动而不明」，我不会在这种状态下押方向。"
     },
     "voice_status": "ok",
     "near_miss": "a_quiet",
-    "generated_at": "2026-10-16T16:00:26Z"
+    "generated_at": "2026-10-16T18:00:28Z"
   }
 }
