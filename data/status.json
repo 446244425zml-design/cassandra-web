@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-17T14:00:30Z",
+  "generated_at": "2026-10-17T16:00:36Z",
   "netflow_gate": {
     "mode": "event_driven",
     "waits_for_baseline": false
@@ -257,43 +257,6 @@
     ]
   },
   "runs": [
-    {
-      "ts": "2026-09-28T08:00:01Z",
-      "run_id": "20260928T0800Z-btc",
-      "result": "FIRED",
-      "reason": null,
-      "detail": null,
-      "net_flow_btc": 0.0003052,
-      "coverage": 1.0,
-      "baseline_mean": -100.23593558883333,
-      "observation": {
-        "a": {
-          "fired": true,
-          "fired_signals": [
-            "funding_extreme"
-          ],
-          "direction_bias": "bearish_crowd",
-          "funding_zscore": -2.5862,
-          "fng_value": 74,
-          "fng_classification": "Greed",
-          "taker_buy_dominance": false,
-          "taker_sell_dominance": false
-        },
-        "b": {
-          "extreme": false,
-          "direction": "unclear",
-          "unclear_reason": "net_flow_not_extreme",
-          "net_flow_btc": 0.0,
-          "net_flow_pct_reserves": 0.0,
-          "total_reserves_btc": 832353.1,
-          "extreme_basis": null,
-          "coverage": 1.0,
-          "single_tx_dominated": false
-        },
-        "near_miss": "a_lit_b_quiet"
-      },
-      "signal_id": "CAS-20260928-btc"
-    },
     {
       "ts": "2026-09-28T10:00:01Z",
       "run_id": "20260928T1000Z-btc",
@@ -3331,6 +3294,43 @@
         },
         "near_miss": "a_quiet"
       }
+    },
+    {
+      "ts": "2026-10-17T16:00:01Z",
+      "run_id": "20261017T1600Z-btc",
+      "result": "FIRED",
+      "reason": null,
+      "detail": null,
+      "net_flow_btc": -24.46980934,
+      "coverage": 1.0,
+      "baseline_mean": 109.77554168516667,
+      "observation": {
+        "a": {
+          "fired": true,
+          "fired_signals": [
+            "taker_buy_dominance"
+          ],
+          "direction_bias": "bullish_crowd",
+          "funding_zscore": 0.0921,
+          "fng_value": 55,
+          "fng_classification": "Greed",
+          "taker_buy_dominance": true,
+          "taker_sell_dominance": false
+        },
+        "b": {
+          "extreme": false,
+          "direction": "unclear",
+          "unclear_reason": "net_flow_not_extreme",
+          "net_flow_btc": -24.47,
+          "net_flow_pct_reserves": 3e-05,
+          "total_reserves_btc": 807042.51,
+          "extreme_basis": null,
+          "coverage": 1.0,
+          "single_tx_dominated": false
+        },
+        "near_miss": "a_lit_b_quiet"
+      },
+      "signal_id": "CAS-20261017-btc"
     }
   ],
   "signals": [],
@@ -3400,7 +3400,8 @@
     "CAS-20260928-btc",
     "CAS-20260930-btc",
     "CAS-20261014-btc",
-    "CAS-20261015-btc"
+    "CAS-20261015-btc",
+    "CAS-20261017-btc"
   ],
   "pending_alerts": [
     "ALERT-20260720-btc",
@@ -3414,13 +3415,13 @@
   "ledger": [],
   "alert_ledger": [],
   "reserves": {
-    "generated_at": "2026-10-17T14:00:30Z",
+    "generated_at": "2026-10-17T16:00:36Z",
     "total_btc": 795784.04,
     "wallet_count": 24,
     "refreshed_count": 24,
     "exchange_count": 4,
-    "btc_price": 81500.01,
-    "total_usd": 64856407074.0,
+    "btc_price": 81351.61,
+    "total_usd": 64738312723.0,
     "per_exchange": [
       {
         "exchange": "Binance",
@@ -3672,11 +3673,11 @@
   },
   "daily": {
     "take": {
-      "headline": "贪婪在退潮，链上却没人慌着跑",
-      "body": "恐惧贪婪指数从63滑到55，还挂着「贪婪」的牌子，但方向是在往门口走的。资金费率+0.16σ，多头付费但没到尖叫，taker方向均衡——市场在打哈欠，不是在冲锋。奇怪的地方在链上：储备净流量-24.47 BTC，流出幅度轻微，没有恐慌性出金的姿态，人群覆盖度1.0，但「未分出明显倾向」，说白了就是谁都没下注。我在盯情绪是否继续下台阶：如果恐惧贪婪跌破50翻入恐惧区、同时资金费率转负，那这个「平静」就值得重新定价；反之若指数回稳而链上流出加速，我会先怀疑有人借平静在出货。"
+      "headline": "情绪在退潮，人群已上头，链上还没松手",
+      "body": "恐惧贪婪指数从63滑到55，还挂着「贪婪」的牌子，但方向在说另一件事——退潮。资金费率+0.09σ，买盘主导，多头仓位堆着，这不是底部的样子，这是高位还没认输的样子。人群极端偏多已触发，但交易所储备净流出仅-24.47 BTC，链上并没有出现配合性的大规模移动，两者还没对齐。我在盯的是：如果储备开始加速流出或资金费率快速翻负，那是市场在自我修正；如果情绪继续下滑而价格在现价附近横着不动，那只是在等一个更响的声音。"
     },
     "voice_status": "ok",
-    "near_miss": "a_quiet",
-    "generated_at": "2026-10-17T14:00:30Z"
+    "near_miss": "a_lit_b_quiet",
+    "generated_at": "2026-10-17T16:00:36Z"
   }
 }
