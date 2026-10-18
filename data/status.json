@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-18T20:05:57Z",
+  "generated_at": "2026-10-18T22:06:02Z",
   "netflow_gate": {
     "mode": "event_driven",
     "waits_for_baseline": false
@@ -257,40 +257,6 @@
     ]
   },
   "runs": [
-    {
-      "ts": "2026-09-29T14:00:03Z",
-      "run_id": "20260929T1400Z-btc",
-      "result": "NoSignal",
-      "reason": "no_trigger",
-      "detail": "fired_signals=[] below require_n_signals",
-      "net_flow_btc": 0.0003052,
-      "coverage": 1.0,
-      "baseline_mean": -100.23592835283333,
-      "observation": {
-        "a": {
-          "fired": false,
-          "fired_signals": [],
-          "direction_bias": null,
-          "funding_zscore": -0.2923,
-          "fng_value": 73,
-          "fng_classification": "Greed",
-          "taker_buy_dominance": false,
-          "taker_sell_dominance": false
-        },
-        "b": {
-          "extreme": false,
-          "direction": "unclear",
-          "unclear_reason": "net_flow_not_extreme",
-          "net_flow_btc": 0.0,
-          "net_flow_pct_reserves": 0.0,
-          "total_reserves_btc": 833877.98,
-          "extreme_basis": null,
-          "coverage": 1.0,
-          "single_tx_dominated": true
-        },
-        "near_miss": "a_quiet"
-      }
-    },
     {
       "ts": "2026-09-30T02:00:01Z",
       "run_id": "20260930T0200Z-btc",
@@ -3340,6 +3306,40 @@
         },
         "near_miss": "a_quiet"
       }
+    },
+    {
+      "ts": "2026-10-18T22:00:01Z",
+      "run_id": "20261018T2200Z-btc",
+      "result": "NoSignal",
+      "reason": "no_trigger",
+      "detail": "fired_signals=[] below require_n_signals",
+      "net_flow_btc": 0.00017281,
+      "coverage": 1.0,
+      "baseline_mean": 95.67610952366667,
+      "observation": {
+        "a": {
+          "fired": false,
+          "fired_signals": [],
+          "direction_bias": null,
+          "funding_zscore": null,
+          "fng_value": 53,
+          "fng_classification": "Neutral",
+          "taker_buy_dominance": null,
+          "taker_sell_dominance": null
+        },
+        "b": {
+          "extreme": false,
+          "direction": "unclear",
+          "unclear_reason": "net_flow_not_extreme",
+          "net_flow_btc": 0.0,
+          "net_flow_pct_reserves": 0.0,
+          "total_reserves_btc": 807164.51,
+          "extreme_basis": null,
+          "coverage": 1.0,
+          "single_tx_dominated": false
+        },
+        "near_miss": "a_quiet"
+      }
     }
   ],
   "signals": [],
@@ -3425,7 +3425,7 @@
   "ledger": [],
   "alert_ledger": [],
   "reserves": {
-    "generated_at": "2026-10-18T20:05:57Z",
+    "generated_at": "2026-10-18T22:06:02Z",
     "total_btc": 795784.04,
     "wallet_count": 24,
     "refreshed_count": 24,
@@ -3685,6 +3685,6 @@
     "take": null,
     "voice_status": "voice_failed",
     "near_miss": "a_quiet",
-    "generated_at": "2026-10-18T20:05:57Z"
+    "generated_at": "2026-10-18T22:06:02Z"
   }
 }
