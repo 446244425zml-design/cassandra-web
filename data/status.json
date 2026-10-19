@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-19T12:00:31Z",
+  "generated_at": "2026-10-19T14:00:36Z",
   "netflow_gate": {
     "mode": "event_driven",
     "waits_for_baseline": false
@@ -257,40 +257,6 @@
     ]
   },
   "runs": [
-    {
-      "ts": "2026-10-08T00:00:02Z",
-      "run_id": "20261008T0000Z-btc",
-      "result": "NoSignal",
-      "reason": "no_trigger",
-      "detail": "fired_signals=[] below require_n_signals",
-      "net_flow_btc": -23.74360622,
-      "coverage": 1.0,
-      "baseline_mean": 124.86455299883333,
-      "observation": {
-        "a": {
-          "fired": false,
-          "fired_signals": [],
-          "direction_bias": null,
-          "funding_zscore": null,
-          "fng_value": 64,
-          "fng_classification": "Greed",
-          "taker_buy_dominance": null,
-          "taker_sell_dominance": null
-        },
-        "b": {
-          "extreme": false,
-          "direction": "unclear",
-          "unclear_reason": "net_flow_not_extreme",
-          "net_flow_btc": -23.74,
-          "net_flow_pct_reserves": 3e-05,
-          "total_reserves_btc": 799757.05,
-          "extreme_basis": null,
-          "coverage": 1.0,
-          "single_tx_dominated": true
-        },
-        "near_miss": "a_quiet"
-      }
-    },
     {
       "ts": "2026-10-08T02:00:01Z",
       "run_id": "20261008T0200Z-btc",
@@ -3337,6 +3303,43 @@
         },
         "near_miss": "a_quiet"
       }
+    },
+    {
+      "ts": "2026-10-19T14:00:01Z",
+      "run_id": "20261019T1400Z-btc",
+      "result": "FIRED",
+      "reason": null,
+      "detail": null,
+      "net_flow_btc": 0.00017281,
+      "coverage": 1.0,
+      "baseline_mean": 95.67610952366667,
+      "observation": {
+        "a": {
+          "fired": true,
+          "fired_signals": [
+            "taker_buy_dominance"
+          ],
+          "direction_bias": "bullish_crowd",
+          "funding_zscore": 1.0212,
+          "fng_value": 59,
+          "fng_classification": "Greed",
+          "taker_buy_dominance": true,
+          "taker_sell_dominance": false
+        },
+        "b": {
+          "extreme": false,
+          "direction": "unclear",
+          "unclear_reason": "net_flow_not_extreme",
+          "net_flow_btc": 0.0,
+          "net_flow_pct_reserves": 0.0,
+          "total_reserves_btc": 807164.51,
+          "extreme_basis": null,
+          "coverage": 1.0,
+          "single_tx_dominated": false
+        },
+        "near_miss": "a_lit_b_quiet"
+      },
+      "signal_id": "CAS-20261019-btc"
     }
   ],
   "signals": [],
@@ -3408,7 +3411,8 @@
     "CAS-20261014-btc",
     "CAS-20261015-btc",
     "CAS-20261017-btc",
-    "CAS-20261018-btc"
+    "CAS-20261018-btc",
+    "CAS-20261019-btc"
   ],
   "pending_alerts": [
     "ALERT-20260720-btc",
@@ -3422,13 +3426,13 @@
   "ledger": [],
   "alert_ledger": [],
   "reserves": {
-    "generated_at": "2026-10-19T12:00:31Z",
+    "generated_at": "2026-10-19T14:00:36Z",
     "total_btc": 795784.04,
     "wallet_count": 24,
     "refreshed_count": 24,
     "exchange_count": 4,
-    "btc_price": 82336.01,
-    "total_usd": 65521682530.0,
+    "btc_price": 82128.0,
+    "total_usd": 65356151492.0,
     "per_exchange": [
       {
         "exchange": "Binance",
@@ -3680,11 +3684,11 @@
   },
   "daily": {
     "take": {
-      "headline": "情绪在回暖，但链上那口气还没真正喘起来",
-      "body": "恐惧贪婪从53爬到59，算是从「将将及格」走向「有点飘」，但还没到让我皱眉的程度。资金费率+1.71σ，多头在加码但没到尖叫，taker方向均衡——这不像一个方向明确的市场，更像是大家都在等别人先动。交易所储备净流量0.0，807164枚BTC按住不动，链上没人急着搬，情绪回暖的热度还没传导到实际行动。我在盯的是：如果资金费率继续往上拱而现货量跟不上，这种「纸面贪婪」会很脆；反过来，若储备开始出现持续净流出，我才会认真对待这轮暖意。非投资建议。"
+      "headline": "情绪回暖到59，人群上头，链上却一声不吭",
+      "body": "恐惧贪婪指数从53爬到59，买盘主导，资金费率已到+1.02σ——人群最近五次触碰极端偏多区，这不是「热情高涨」，这是「连续踩油门却不看路」。链上储备净流量挂着零，807164枚BTC按住不动，大钱还没表态，市场的「共识」全靠散户自嗨撑着。我在盯储备净流量：一旦它开始流出，就是聪明钱落袋的信号，届时这波暖意会变得很脆；反之若净流入放量，我才愿意承认多头有实质支撑。现在的读法是：情绪先行，链上未跟，82128附近的价格是信仰在定价，不是筹码。"
     },
     "voice_status": "ok",
-    "near_miss": "a_quiet",
-    "generated_at": "2026-10-19T12:00:31Z"
+    "near_miss": "a_lit_b_quiet",
+    "generated_at": "2026-10-19T14:00:36Z"
   }
 }
