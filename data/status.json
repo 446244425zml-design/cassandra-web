@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-23T22:00:32Z",
+  "generated_at": "2026-10-24T00:00:39Z",
   "netflow_gate": {
     "mode": "event_driven",
     "waits_for_baseline": false
@@ -257,40 +257,6 @@
     ]
   },
   "runs": [
-    {
-      "ts": "2026-10-16T12:00:04Z",
-      "run_id": "20261016T1200Z-btc",
-      "result": "NoSignal",
-      "reason": "no_trigger",
-      "detail": "fired_signals=[] below require_n_signals",
-      "net_flow_btc": -24.46970763,
-      "coverage": 1.0,
-      "baseline_mean": 117.08478935383333,
-      "observation": {
-        "a": {
-          "fired": false,
-          "fired_signals": [],
-          "direction_bias": null,
-          "funding_zscore": 0.0098,
-          "fng_value": 63,
-          "fng_classification": "Greed",
-          "taker_buy_dominance": false,
-          "taker_sell_dominance": false
-        },
-        "b": {
-          "extreme": false,
-          "direction": "unclear",
-          "unclear_reason": "net_flow_not_extreme",
-          "net_flow_btc": -24.47,
-          "net_flow_pct_reserves": 3e-05,
-          "total_reserves_btc": 806920.51,
-          "extreme_basis": null,
-          "coverage": 1.0,
-          "single_tx_dominated": false
-        },
-        "near_miss": "a_quiet"
-      }
-    },
     {
       "ts": "2026-10-16T14:00:00Z",
       "run_id": "20261016T1400Z-btc",
@@ -3340,6 +3306,43 @@
         },
         "near_miss": "a_quiet"
       }
+    },
+    {
+      "ts": "2026-10-24T00:00:01Z",
+      "run_id": "20261024T0000Z-btc",
+      "result": "FIRED",
+      "reason": null,
+      "detail": null,
+      "net_flow_btc": -24.0858008,
+      "coverage": 1.0,
+      "baseline_mean": 61.76139039783333,
+      "observation": {
+        "a": {
+          "fired": true,
+          "fired_signals": [
+            "taker_sell_dominance"
+          ],
+          "direction_bias": "bearish_crowd",
+          "funding_zscore": 0.2068,
+          "fng_value": 51,
+          "fng_classification": "Neutral",
+          "taker_buy_dominance": false,
+          "taker_sell_dominance": true
+        },
+        "b": {
+          "extreme": false,
+          "direction": "unclear",
+          "unclear_reason": "net_flow_not_extreme",
+          "net_flow_btc": -24.09,
+          "net_flow_pct_reserves": 3e-05,
+          "total_reserves_btc": 807954.1,
+          "extreme_basis": null,
+          "coverage": 1.0,
+          "single_tx_dominated": false
+        },
+        "near_miss": "a_lit_b_quiet"
+      },
+      "signal_id": "CAS-20261024-btc"
     }
   ],
   "signals": [],
@@ -3414,7 +3417,8 @@
     "CAS-20261018-btc",
     "CAS-20261019-btc",
     "CAS-20261020-btc",
-    "CAS-20261023-btc"
+    "CAS-20261023-btc",
+    "CAS-20261024-btc"
   ],
   "pending_alerts": [
     "ALERT-20260720-btc",
@@ -3428,13 +3432,13 @@
   "ledger": [],
   "alert_ledger": [],
   "reserves": {
-    "generated_at": "2026-10-23T22:00:32Z",
+    "generated_at": "2026-10-24T00:00:39Z",
     "total_btc": 796720.11,
     "wallet_count": 24,
     "refreshed_count": 24,
     "exchange_count": 4,
-    "btc_price": 81402.0,
-    "total_usd": 64854610604.0,
+    "btc_price": 81189.43,
+    "total_usd": 64685251809.0,
     "per_exchange": [
       {
         "exchange": "Binance",
@@ -3686,11 +3690,11 @@
   },
   "daily": {
     "take": {
-      "headline": "情绪卡在中线，市场在装死",
-      "body": "恐惧贪婪指数50，标签「中性」，趋势基本没动——这不是平静，这是麻木。资金费率+0.60σ，多头还在付费，但Taker力量均衡，没人真正发力。链上储备净流出-24.09 BTC，量级温吞，既不是机构在扫货，也不是散户在逃命，就是有人在轻轻挪仓。我盯的是：情绪能不能从50这条死线上走出来——如果资金费率继续爬升而价格在81402附近横着不动，那就是多头在白烧钱；如果储备流出突然加速或反转，那才值得重新评估人群的真实意图。"
+      "headline": "人群喊恐慌，链上还没接招",
+      "body": "恐惧贪婪指数挂在51——中性，基本没动，情绪既没在尖叫也没在欢呼，只是呆着。但人群侧的极端偏空信号最近已触发两次，配上卖盘主导的taker结构和资金费率+0.21σ的温吞姿态，市场的「嘴」和「手」在对话却没达成共识。交易所储备净流出-24.09 BTC，方向是离场，但总量807954 BTC还压在那里，链上没给出我想看到的加速确认。我在盯的是：储备流出能不能连续放量、taker方向有没有反转——如果两者都翻，我会重新评估这个「人群极端但链上按兵不动」的读数；如果储备继续温吞流出，这个对峙可能还没结束。"
     },
     "voice_status": "ok",
-    "near_miss": "a_quiet",
-    "generated_at": "2026-10-23T22:00:32Z"
+    "near_miss": "a_lit_b_quiet",
+    "generated_at": "2026-10-24T00:00:39Z"
   }
 }
