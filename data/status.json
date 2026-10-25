@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-25T20:00:28Z",
+  "generated_at": "2026-10-25T22:00:25Z",
   "netflow_gate": {
     "mode": "event_driven",
     "waits_for_baseline": false
@@ -10,14 +10,10 @@
     "robust_samples": 15,
     "mature": true,
     "robust": true,
-    "mean": -5.710468678,
-    "std": 8.783899205684543,
+    "mean": -6.111899851666667,
+    "std": 9.064394770628953,
     "diagnostic_only": true,
     "history": [
-      {
-        "ts": "2026-08-13T16:00:20Z",
-        "net_flow_btc": 3.003e-05
-      },
       {
         "ts": "2026-08-14T13:32:18Z",
         "net_flow_btc": -6.69690604
@@ -253,47 +249,14 @@
       {
         "ts": "2026-10-25T00:00:21Z",
         "net_flow_btc": -24.08579223
+      },
+      {
+        "ts": "2026-10-25T22:00:17Z",
+        "net_flow_btc": -24.08584039
       }
     ]
   },
   "runs": [
-    {
-      "ts": "2026-10-18T10:00:01Z",
-      "run_id": "20261018T1000Z-btc",
-      "result": "FIRED",
-      "reason": null,
-      "detail": null,
-      "net_flow_btc": 0.00017281,
-      "coverage": 1.0,
-      "baseline_mean": 102.4662941075,
-      "observation": {
-        "a": {
-          "fired": true,
-          "fired_signals": [
-            "taker_buy_dominance"
-          ],
-          "direction_bias": "bullish_crowd",
-          "funding_zscore": 1.6452,
-          "fng_value": 53,
-          "fng_classification": "Neutral",
-          "taker_buy_dominance": true,
-          "taker_sell_dominance": false
-        },
-        "b": {
-          "extreme": false,
-          "direction": "unclear",
-          "unclear_reason": "net_flow_not_extreme",
-          "net_flow_btc": 0.0,
-          "net_flow_pct_reserves": 0.0,
-          "total_reserves_btc": 807164.51,
-          "extreme_basis": null,
-          "coverage": 1.0,
-          "single_tx_dominated": false
-        },
-        "near_miss": "a_lit_b_quiet"
-      },
-      "signal_id": "CAS-20261018-btc"
-    },
     {
       "ts": "2026-10-18T12:00:01Z",
       "run_id": "20261018T1200Z-btc",
@@ -3346,6 +3309,40 @@
         },
         "near_miss": "a_quiet"
       }
+    },
+    {
+      "ts": "2026-10-25T22:00:01Z",
+      "run_id": "20261025T2200Z-btc",
+      "result": "NoSignal",
+      "reason": "no_trigger",
+      "detail": "fired_signals=[] below require_n_signals",
+      "net_flow_btc": -24.08584039,
+      "coverage": 1.0,
+      "baseline_mean": -6.111899851666667,
+      "observation": {
+        "a": {
+          "fired": false,
+          "fired_signals": [],
+          "direction_bias": null,
+          "funding_zscore": -0.0551,
+          "fng_value": 54,
+          "fng_classification": "Neutral",
+          "taker_buy_dominance": false,
+          "taker_sell_dominance": false
+        },
+        "b": {
+          "extreme": false,
+          "direction": "unclear",
+          "unclear_reason": "net_flow_not_extreme",
+          "net_flow_btc": -24.09,
+          "net_flow_pct_reserves": 3e-05,
+          "total_reserves_btc": 807954.1,
+          "extreme_basis": null,
+          "coverage": 1.0,
+          "single_tx_dominated": false
+        },
+        "near_miss": "a_quiet"
+      }
     }
   ],
   "signals": [],
@@ -3436,13 +3433,13 @@
   "ledger": [],
   "alert_ledger": [],
   "reserves": {
-    "generated_at": "2026-10-25T20:00:28Z",
+    "generated_at": "2026-10-25T22:00:25Z",
     "total_btc": 796720.11,
     "wallet_count": 24,
     "refreshed_count": 24,
     "exchange_count": 4,
-    "btc_price": 80567.48,
-    "total_usd": 64189731738.0,
+    "btc_price": 80292.0,
+    "total_usd": 63970251282.0,
     "per_exchange": [
       {
         "exchange": "Binance",
@@ -3694,11 +3691,11 @@
   },
   "daily": {
     "take": {
-      "headline": "情绪在打哈欠，链上也懒得动弹",
-      "body": "恐惧贪婪指数54，从51爬了没几格就停在「中性」趴着不动，这不是平静，这是麻木——市场在等一个理由，但暂时没找到。资金费率+0.37σ，多头微微探头，没到尖叫的程度，taker单子均衡，说明没有一方真的在押注方向。让我稍微警觉的是交易所储备净流出24个BTC，总量807954BTC，覆盖度1.0——流出量很小，不足以读成「聪明钱撤离」，但也没人大举搬入。什么会让我改变看法？要么情绪骤然滑向极端（不管哪个方向），要么储备净流量出现明显加速——在那之前，我只是坐在这里，看一群人假装知道接下来会发生什么。"
+      "headline": "情绪冻在54，市场在用无聊消耗你的判断力",
+      "body": "恐惧贪婪指数钉在54，基本没动——这不是稳定，这是麻木。资金费率报-0.06σ，轻微偏空但还没到任何人尖叫的程度，空头也只是在低声嘟囔。储备净流出24枚BTC，几乎可以忽略不计，链上既没有人跑路也没有人抄底，就是一片「懒得动」。我在盯的是情绪会不会从这种横盘麻木里突然跳出来——如果恐惧贪婪开始单边滑动，或者资金费率突破到明显极端，那才是值得重新读盘的信号；现在它只是在打哈欠，而打哈欠的市场最容易让人做出无聊的错误决定。"
     },
     "voice_status": "ok",
     "near_miss": "a_quiet",
-    "generated_at": "2026-10-25T20:00:28Z"
+    "generated_at": "2026-10-25T22:00:25Z"
   }
 }
