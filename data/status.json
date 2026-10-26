@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-26T16:00:30Z",
+  "generated_at": "2026-10-26T18:00:27Z",
   "netflow_gate": {
     "mode": "event_driven",
     "waits_for_baseline": false
@@ -10,14 +10,10 @@
     "robust_samples": 15,
     "mature": true,
     "robust": true,
-    "mean": -6.111899851666667,
-    "std": 9.064394770628953,
+    "mean": -6.401715314166667,
+    "std": 9.35669106163638,
     "diagnostic_only": true,
     "history": [
-      {
-        "ts": "2026-08-14T13:32:18Z",
-        "net_flow_btc": -6.69690604
-      },
       {
         "ts": "2026-08-15T09:32:45Z",
         "net_flow_btc": -6.69690058
@@ -253,44 +249,14 @@
       {
         "ts": "2026-10-25T22:00:17Z",
         "net_flow_btc": -24.08584039
+      },
+      {
+        "ts": "2026-10-26T18:00:19Z",
+        "net_flow_btc": -24.08583379
       }
     ]
   },
   "runs": [
-    {
-      "ts": "2026-10-19T06:00:01Z",
-      "run_id": "20261019T0600Z-btc",
-      "result": "NoSignal",
-      "reason": "no_trigger",
-      "detail": "fired_signals=[] below require_n_signals",
-      "net_flow_btc": 0.00017281,
-      "coverage": 1.0,
-      "baseline_mean": 95.67610952366667,
-      "observation": {
-        "a": {
-          "fired": false,
-          "fired_signals": [],
-          "direction_bias": null,
-          "funding_zscore": 1.8451,
-          "fng_value": 59,
-          "fng_classification": "Greed",
-          "taker_buy_dominance": false,
-          "taker_sell_dominance": false
-        },
-        "b": {
-          "extreme": false,
-          "direction": "unclear",
-          "unclear_reason": "net_flow_not_extreme",
-          "net_flow_btc": 0.0,
-          "net_flow_pct_reserves": 0.0,
-          "total_reserves_btc": 807164.51,
-          "extreme_basis": null,
-          "coverage": 1.0,
-          "single_tx_dominated": false
-        },
-        "near_miss": "a_quiet"
-      }
-    },
     {
       "ts": "2026-10-19T08:00:01Z",
       "run_id": "20261019T0800Z-btc",
@@ -3346,6 +3312,40 @@
         },
         "near_miss": "a_quiet"
       }
+    },
+    {
+      "ts": "2026-10-26T18:00:02Z",
+      "run_id": "20261026T1800Z-btc",
+      "result": "NoSignal",
+      "reason": "no_trigger",
+      "detail": "fired_signals=[] below require_n_signals",
+      "net_flow_btc": -24.08583379,
+      "coverage": 1.0,
+      "baseline_mean": -6.401715314166667,
+      "observation": {
+        "a": {
+          "fired": false,
+          "fired_signals": [],
+          "direction_bias": null,
+          "funding_zscore": 1.7395,
+          "fng_value": 50,
+          "fng_classification": "Neutral",
+          "taker_buy_dominance": false,
+          "taker_sell_dominance": false
+        },
+        "b": {
+          "extreme": false,
+          "direction": "unclear",
+          "unclear_reason": "net_flow_not_extreme",
+          "net_flow_btc": -24.09,
+          "net_flow_pct_reserves": 3e-05,
+          "total_reserves_btc": 815593.88,
+          "extreme_basis": null,
+          "coverage": 1.0,
+          "single_tx_dominated": false
+        },
+        "near_miss": "a_quiet"
+      }
     }
   ],
   "signals": [],
@@ -3437,13 +3437,13 @@
   "ledger": [],
   "alert_ledger": [],
   "reserves": {
-    "generated_at": "2026-10-26T16:00:30Z",
+    "generated_at": "2026-10-26T18:00:27Z",
     "total_btc": 804359.88,
     "wallet_count": 24,
     "refreshed_count": 24,
     "exchange_count": 4,
-    "btc_price": 80434.01,
-    "total_usd": 64697891003.0,
+    "btc_price": 80329.61,
+    "total_usd": 64613915831.0,
     "per_exchange": [
       {
         "exchange": "Binance",
@@ -3695,11 +3695,11 @@
   },
   "daily": {
     "take": {
-      "headline": "情绪在退潮，资金还在叫嚣，两边都在撒谎",
-      "body": "恐惧贪婪指数从54滑到50，「中性」这个标签本身就是一种麻醉剂——它在告诉你没事，但趋势在说情绪正悄悄往恐惧那边漏气。与此同时资金费率还挂在+1.79σ，多头仍在为持仓付溢价，这和退潮的情绪读数对不上，两边有一个在说谎。链上储备净流出24.09枚，量级不大，算不上出逃，更像是例行挪动；815593枚的储备总量趴在那儿没动，交易所还没看到真正的「搬家潮」。我在盯的是资金费率会不会向情绪指数靠拢——如果费率开始快速回落，说明多头在认输，那这个「平静」就会变得很不平静；反之若情绪回升把指数拉回来，这次滑落就只是噪声。现价80434附近，别急着下结论，市场在打哑谜，不是在给答案。"
+      "headline": "情绪在退潮，资金费率却还在尖叫",
+      "body": "恐惧贪婪指数从54滑到50，表面上是「中性」，但方向是向下走的，人群正在悄悄撤温。奇怪的是资金费率报+1.74σ，多头仍在为持仓付出溢价——情绪和衍生品之间出现了裂缝，这种背离值得警惕。链上储备净流出24枚，量不大，还谈不上「出逃」，更像是在打哈欠。我在盯的：如果恐惧贪婪继续向恐惧区域滑落而资金费率仍居高不下，那这个裂缝就会变成故事的主线；反过来，若资金费率快速回落至均值，我会重新评估多空谁在撒谎。"
     },
     "voice_status": "ok",
     "near_miss": "a_quiet",
-    "generated_at": "2026-10-26T16:00:30Z"
+    "generated_at": "2026-10-26T18:00:27Z"
   }
 }
