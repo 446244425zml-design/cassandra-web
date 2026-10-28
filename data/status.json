@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-28T10:00:28Z",
+  "generated_at": "2026-10-28T12:00:33Z",
   "netflow_gate": {
     "mode": "event_driven",
     "waits_for_baseline": false
@@ -10,14 +10,10 @@
     "robust_samples": 15,
     "mature": true,
     "robust": true,
-    "mean": -6.290098945,
-    "std": 9.392984008023804,
+    "mean": -6.178482629333334,
+    "std": 9.427793464938254,
     "diagnostic_only": true,
     "history": [
-      {
-        "ts": "2026-08-16T05:32:47Z",
-        "net_flow_btc": -6.69690277
-      },
       {
         "ts": "2026-08-17T01:32:47Z",
         "net_flow_btc": -6.69690277
@@ -253,44 +249,14 @@
       {
         "ts": "2026-10-27T14:00:25Z",
         "net_flow_btc": 8.157e-05
+      },
+      {
+        "ts": "2026-10-28T12:00:25Z",
+        "net_flow_btc": 7.617e-05
       }
     ]
   },
   "runs": [
-    {
-      "ts": "2026-10-21T00:00:01Z",
-      "run_id": "20261021T0000Z-btc",
-      "result": "NoSignal",
-      "reason": "no_trigger",
-      "detail": "fired_signals=[] below require_n_signals",
-      "net_flow_btc": 0.00461404,
-      "coverage": 1.0,
-      "baseline_mean": 95.89860644316667,
-      "observation": {
-        "a": {
-          "fired": false,
-          "fired_signals": [],
-          "direction_bias": null,
-          "funding_zscore": 0.9393,
-          "fng_value": 63,
-          "fng_classification": "Greed",
-          "taker_buy_dominance": false,
-          "taker_sell_dominance": false
-        },
-        "b": {
-          "extreme": false,
-          "direction": "unclear",
-          "unclear_reason": "net_flow_not_extreme",
-          "net_flow_btc": 0.0,
-          "net_flow_pct_reserves": 0.0,
-          "total_reserves_btc": 807285.51,
-          "extreme_basis": null,
-          "coverage": 1.0,
-          "single_tx_dominated": false
-        },
-        "near_miss": "a_quiet"
-      }
-    },
     {
       "ts": "2026-10-21T02:00:01Z",
       "run_id": "20261021T0200Z-btc",
@@ -3340,6 +3306,40 @@
         },
         "near_miss": "a_quiet"
       }
+    },
+    {
+      "ts": "2026-10-28T12:00:01Z",
+      "run_id": "20261028T1200Z-btc",
+      "result": "NoSignal",
+      "reason": "no_trigger",
+      "detail": "fired_signals=[] below require_n_signals",
+      "net_flow_btc": 7.617e-05,
+      "coverage": 1.0,
+      "baseline_mean": -6.178482629333334,
+      "observation": {
+        "a": {
+          "fired": false,
+          "fired_signals": [],
+          "direction_bias": null,
+          "funding_zscore": 0.9247,
+          "fng_value": 51,
+          "fng_classification": "Neutral",
+          "taker_buy_dominance": false,
+          "taker_sell_dominance": false
+        },
+        "b": {
+          "extreme": false,
+          "direction": "unclear",
+          "unclear_reason": "net_flow_not_extreme",
+          "net_flow_btc": 0.0,
+          "net_flow_pct_reserves": 0.0,
+          "total_reserves_btc": 811402.43,
+          "extreme_basis": null,
+          "coverage": 1.0,
+          "single_tx_dominated": false
+        },
+        "near_miss": "a_quiet"
+      }
     }
   ],
   "signals": [],
@@ -3432,13 +3432,13 @@
   "ledger": [],
   "alert_ledger": [],
   "reserves": {
-    "generated_at": "2026-10-28T10:00:28Z",
+    "generated_at": "2026-10-28T12:00:33Z",
     "total_btc": 800101.74,
     "wallet_count": 24,
     "refreshed_count": 24,
     "exchange_count": 4,
-    "btc_price": 81557.5,
-    "total_usd": 65254297792.0,
+    "btc_price": 81341.96,
+    "total_usd": 65081843862.0,
     "per_exchange": [
       {
         "exchange": "Binance",
@@ -3690,11 +3690,11 @@
   },
   "daily": {
     "take": {
-      "headline": "情绪假装平静，资金费率悄悄站岗",
-      "body": "恐惧贪婪指数从约48爬到51，在「中性」区间基本没动——人群既没贪婪到失控，也没恐慌到割肉，是那种按住不动的僵局。但资金费率已经偏到+1.52σ，多头在悄悄付钱，这和表面平静的情绪读数之间有一条裂缝。交易所储备净流量为零，81557附近的现价没引发任何明显的链上搬运，市场好像在等一个说法。我盯着的是：如果资金费率继续往上漂而情绪指数没跟上，这个「平静」就是泡沫包裹的紧张；反过来，储备若开始净流出，才算真有人用脚投票。"
+      "headline": "81K附近打哈欠，情绪和链上都在装死",
+      "body": "恐惧贪婪51，从上周约48爬到这里——不是反弹，是在原地踱步；资金费率+0.92σ，多头小幅倾斜但没到尖叫，交易所净流量归零，链上连个意见都不肯表态。我读到的是一个「谁也不想先动」的僵局：情绪不冷不热，筹码没有明显进出，市场在81K附近挂着，像一句没说完的话。我在盯情绪能否从这个灰色地带脱轨——如果资金费率继续往上走同时净流出突然放量，或者恐惧贪婪快速滑回极恐区，那才是值得重新评估结构的信号；现在它什么都不是，这本身就是信息。"
     },
     "voice_status": "ok",
     "near_miss": "a_quiet",
-    "generated_at": "2026-10-28T10:00:28Z"
+    "generated_at": "2026-10-28T12:00:33Z"
   }
 }
