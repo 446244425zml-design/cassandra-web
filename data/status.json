@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-28T00:00:27Z",
+  "generated_at": "2026-10-28T02:00:40Z",
   "netflow_gate": {
     "mode": "event_driven",
     "waits_for_baseline": false
@@ -257,40 +257,6 @@
     ]
   },
   "runs": [
-    {
-      "ts": "2026-10-20T14:00:01Z",
-      "run_id": "20261020T1400Z-btc",
-      "result": "NoSignal",
-      "reason": "no_trigger",
-      "detail": "fired_signals=[] below require_n_signals",
-      "net_flow_btc": 0.00446172,
-      "coverage": 1.0,
-      "baseline_mean": 95.89860644316667,
-      "observation": {
-        "a": {
-          "fired": false,
-          "fired_signals": [],
-          "direction_bias": null,
-          "funding_zscore": 0.1352,
-          "fng_value": 55,
-          "fng_classification": "Greed",
-          "taker_buy_dominance": false,
-          "taker_sell_dominance": false
-        },
-        "b": {
-          "extreme": false,
-          "direction": "unclear",
-          "unclear_reason": "net_flow_not_extreme",
-          "net_flow_btc": 0.0,
-          "net_flow_pct_reserves": 0.0,
-          "total_reserves_btc": 807285.51,
-          "extreme_basis": null,
-          "coverage": 1.0,
-          "single_tx_dominated": false
-        },
-        "near_miss": "a_quiet"
-      }
-    },
     {
       "ts": "2026-10-20T16:00:02Z",
       "run_id": "20261020T1600Z-btc",
@@ -3340,6 +3306,43 @@
         },
         "near_miss": "a_quiet"
       }
+    },
+    {
+      "ts": "2026-10-28T02:00:01Z",
+      "run_id": "20261028T0200Z-btc",
+      "result": "FIRED",
+      "reason": null,
+      "detail": null,
+      "net_flow_btc": 8.157e-05,
+      "coverage": 1.0,
+      "baseline_mean": -6.290098945,
+      "observation": {
+        "a": {
+          "fired": true,
+          "fired_signals": [
+            "taker_sell_dominance"
+          ],
+          "direction_bias": "bearish_crowd",
+          "funding_zscore": 0.3379,
+          "fng_value": 51,
+          "fng_classification": "Neutral",
+          "taker_buy_dominance": false,
+          "taker_sell_dominance": true
+        },
+        "b": {
+          "extreme": false,
+          "direction": "unclear",
+          "unclear_reason": "net_flow_not_extreme",
+          "net_flow_btc": 0.0,
+          "net_flow_pct_reserves": 0.0,
+          "total_reserves_btc": 815623.89,
+          "extreme_basis": null,
+          "coverage": 1.0,
+          "single_tx_dominated": false
+        },
+        "near_miss": "a_lit_b_quiet"
+      },
+      "signal_id": "CAS-20261028-btc"
     }
   ],
   "signals": [],
@@ -3417,7 +3420,8 @@
     "CAS-20261023-btc",
     "CAS-20261024-btc",
     "CAS-20261025-btc",
-    "CAS-20261026-btc"
+    "CAS-20261026-btc",
+    "CAS-20261028-btc"
   ],
   "pending_alerts": [
     "ALERT-20260720-btc",
@@ -3431,13 +3435,13 @@
   "ledger": [],
   "alert_ledger": [],
   "reserves": {
-    "generated_at": "2026-10-28T00:00:27Z",
+    "generated_at": "2026-10-28T02:00:40Z",
     "total_btc": 804359.88,
     "wallet_count": 24,
     "refreshed_count": 24,
     "exchange_count": 4,
-    "btc_price": 80909.78,
-    "total_usd": 65080581305.0,
+    "btc_price": 80950.58,
+    "total_usd": 65113399188.0,
     "per_exchange": [
       {
         "exchange": "Binance",
@@ -3689,11 +3693,11 @@
   },
   "daily": {
     "take": {
-      "headline": "81K附近，情绪既不尖叫也不打鼾，市场在发呆",
-      "body": "恐惧贪婪51，从48爬回来了一点点，但这种移动幅度基本等于没动——人群既没有在逃命，也没有在狂欢，就是集体放空。资金费率+0.40σ，多头还在付钱，但付得不算肉痛，没到让人担心的位置。储备净流量挂零，链上没有明显的进出动作，交易所的BTC总量就摆在那里，谁也没急着动手。我现在盯的是：这种「发呆」会不会被一个外部事件打破——如果恐惧贪婪突然重回极端区（不管哪个方向），或者储备净流量开始出现方向性位移，那才是值得重新读盘的信号；在那之前，这只是一张白纸。"
+      "headline": "人群已在尖叫，链上还在打哈欠",
+      "body": "恐惧贪婪指数51，Neutral，最近几天几乎纹丝不动——这不是「平静」，这是两股力量互相卡死的僵局。资金费率+0.34σ，盘面却是卖盘主导，多头在付钱却没能推着价格走，这个组合我不喜欢。人群情绪这几天已三次触及极端偏空区，但交易所储备净流量0.0，链上没有任何确认动作——大钱还没表态，群众先慌了。我在盯储备净流量方向：一旦出现明显流出，「人群哭、聪明钱动」的经典剧情才算开场；如果情绪就这么慢慢退潮、链上依然沉默，那这次偏空极端只是一场没人收尸的假摔。"
     },
     "voice_status": "ok",
-    "near_miss": "a_quiet",
-    "generated_at": "2026-10-28T00:00:27Z"
+    "near_miss": "a_lit_b_quiet",
+    "generated_at": "2026-10-28T02:00:40Z"
   }
 }
