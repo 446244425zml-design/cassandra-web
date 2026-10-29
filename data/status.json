@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-29T06:00:24Z",
+  "generated_at": "2026-10-29T08:00:37Z",
   "netflow_gate": {
     "mode": "event_driven",
     "waits_for_baseline": false
@@ -257,40 +257,6 @@
     ]
   },
   "runs": [
-    {
-      "ts": "2026-10-21T20:00:02Z",
-      "run_id": "20261021T2000Z-btc",
-      "result": "NoSignal",
-      "reason": "no_trigger",
-      "detail": "fired_signals=[] below require_n_signals",
-      "net_flow_btc": 0.00461404,
-      "coverage": 1.0,
-      "baseline_mean": 95.898681818,
-      "observation": {
-        "a": {
-          "fired": false,
-          "fired_signals": [],
-          "direction_bias": null,
-          "funding_zscore": -0.726,
-          "fng_value": 63,
-          "fng_classification": "Greed",
-          "taker_buy_dominance": false,
-          "taker_sell_dominance": false
-        },
-        "b": {
-          "extreme": false,
-          "direction": "unclear",
-          "unclear_reason": "net_flow_not_extreme",
-          "net_flow_btc": 0.0,
-          "net_flow_pct_reserves": 0.0,
-          "total_reserves_btc": 807285.51,
-          "extreme_basis": null,
-          "coverage": 1.0,
-          "single_tx_dominated": false
-        },
-        "near_miss": "a_quiet"
-      }
-    },
     {
       "ts": "2026-10-21T22:00:01Z",
       "run_id": "20261021T2200Z-btc",
@@ -3340,6 +3306,43 @@
         },
         "near_miss": "a_quiet"
       }
+    },
+    {
+      "ts": "2026-10-29T08:00:01Z",
+      "run_id": "20261029T0800Z-btc",
+      "result": "FIRED",
+      "reason": null,
+      "detail": null,
+      "net_flow_btc": -25.43268391,
+      "coverage": 1.0,
+      "baseline_mean": -6.178482629333334,
+      "observation": {
+        "a": {
+          "fired": true,
+          "fired_signals": [
+            "taker_sell_dominance"
+          ],
+          "direction_bias": "bearish_crowd",
+          "funding_zscore": 0.3326,
+          "fng_value": 51,
+          "fng_classification": "Neutral",
+          "taker_buy_dominance": false,
+          "taker_sell_dominance": true
+        },
+        "b": {
+          "extreme": false,
+          "direction": "unclear",
+          "unclear_reason": "net_flow_not_extreme",
+          "net_flow_btc": -25.43,
+          "net_flow_pct_reserves": 3.2e-05,
+          "total_reserves_btc": 802960.15,
+          "extreme_basis": null,
+          "coverage": 1.0,
+          "single_tx_dominated": true
+        },
+        "near_miss": "a_lit_b_quiet"
+      },
+      "signal_id": "CAS-20261029-btc"
     }
   ],
   "signals": [],
@@ -3418,7 +3421,8 @@
     "CAS-20261024-btc",
     "CAS-20261025-btc",
     "CAS-20261026-btc",
-    "CAS-20261028-btc"
+    "CAS-20261028-btc",
+    "CAS-20261029-btc"
   ],
   "pending_alerts": [
     "ALERT-20260720-btc",
@@ -3432,37 +3436,37 @@
   "ledger": [],
   "alert_ledger": [],
   "reserves": {
-    "generated_at": "2026-10-29T06:00:24Z",
-    "total_btc": 800101.74,
+    "generated_at": "2026-10-29T08:00:37Z",
+    "total_btc": 791596.47,
     "wallet_count": 24,
     "refreshed_count": 24,
     "exchange_count": 4,
-    "btc_price": 80234.13,
-    "total_usd": 64195467150.0,
+    "btc_price": 79861.9,
+    "total_usd": 63218398178.0,
     "per_exchange": [
       {
         "exchange": "Binance",
         "count": 2,
-        "btc": 429320.7273,
-        "pct": 53.7
+        "btc": 420815.4564,
+        "pct": 53.2
       },
       {
         "exchange": "Bitfinex",
         "count": 2,
         "btc": 157830.0309,
-        "pct": 19.7
+        "pct": 19.9
       },
       {
         "exchange": "Robinhood",
         "count": 1,
         "btc": 140849.9856,
-        "pct": 17.6
+        "pct": 17.8
       },
       {
         "exchange": "OKX",
         "count": 19,
         "btc": 72100.9978,
-        "pct": 9.0
+        "pct": 9.1
       }
     ],
     "wallets": [
@@ -3480,7 +3484,7 @@
         "address": "3M219KR5vEneNb47ewrPfWyb5jQ2DjxRP6",
         "address_short": "3M219KR5…xRP6",
         "label_type": "cold",
-        "balance_btc": 180723.1344,
+        "balance_btc": 172217.8634,
         "refreshed": true,
         "explorer_url": "https://blockstream.info/address/3M219KR5vEneNb47ewrPfWyb5jQ2DjxRP6"
       },
@@ -3684,17 +3688,17 @@
       }
     ],
     "coverage": 100.0,
-    "net_flow_btc": 0.0,
+    "net_flow_btc": -25.43,
     "window_hours": 48,
     "address_book_version": "2026-06-17"
   },
   "daily": {
     "take": {
-      "headline": "51分的脸，-0.32σ的胃，市场在打假哈欠",
-      "body": "恐惧贪婪指数钉在51，趋势基本没动——这不是平静，这是「懒得表态」。资金费率跑到-0.32σ，轻微偏空但没到尖叫，说明空头在场却没押重注。链上储备净流量是0，811527枚BTC按兵不动，大户既没进场也没出逃，整盘就是一锅温吞水。我在盯的是：情绪最近曾两次触及极端，如果恐惧贪婪指数开始脱离这个死区、或者储备净流量出现方向性变化，这锅水才算真的要开——否则我不信任何「即将突破」的叙事。"
+      "headline": "人群已在尖叫，链上还在打哈欠",
+      "body": "恐惧贪婪指数在51贴着中性线一动不动，但人群情绪读数已连续触及极端偏空区域——嘴上说「中性」，身体却在恐慌，这个裂缝值得盯着。资金费率+0.33σ，轻微偏多，配合卖盘主导的taker结构，说明有人在被动挨打、也有人在顶着压力硬撑多头，双方都没认输。储备净流出-25.43 BTC，总量802960.15 BTC，链上还没出现大规模出逃的确认信号，但这并不等于「安全」，只是说明主力还没亮牌。我在盯的是：储备净流量是否开始加速流出、以及情绪读数能否在现价附近收敛回来——如果链上开始配合人群恐慌同步放量，那这个「近触发」的状态就不只是噪音了。"
     },
     "voice_status": "ok",
-    "near_miss": "a_quiet",
-    "generated_at": "2026-10-29T06:00:24Z"
+    "near_miss": "a_lit_b_quiet",
+    "generated_at": "2026-10-29T08:00:37Z"
   }
 }
