@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-29T16:00:27Z",
+  "generated_at": "2026-10-29T18:00:26Z",
   "netflow_gate": {
     "mode": "event_driven",
     "waits_for_baseline": false
@@ -257,40 +257,6 @@
     ]
   },
   "runs": [
-    {
-      "ts": "2026-10-22T06:00:01Z",
-      "run_id": "20261022T0600Z-btc",
-      "result": "NoSignal",
-      "reason": "no_trigger",
-      "detail": "fired_signals=[] below require_n_signals",
-      "net_flow_btc": 0.00447301,
-      "coverage": 1.0,
-      "baseline_mean": 95.898681818,
-      "observation": {
-        "a": {
-          "fired": false,
-          "fired_signals": [],
-          "direction_bias": null,
-          "funding_zscore": -1.3237,
-          "fng_value": 68,
-          "fng_classification": "Greed",
-          "taker_buy_dominance": false,
-          "taker_sell_dominance": false
-        },
-        "b": {
-          "extreme": false,
-          "direction": "unclear",
-          "unclear_reason": "net_flow_not_extreme",
-          "net_flow_btc": 0.0,
-          "net_flow_pct_reserves": 0.0,
-          "total_reserves_btc": 807189.29,
-          "extreme_basis": null,
-          "coverage": 1.0,
-          "single_tx_dominated": true
-        },
-        "near_miss": "a_quiet"
-      }
-    },
     {
       "ts": "2026-10-22T08:00:01Z",
       "run_id": "20261022T0800Z-btc",
@@ -3346,6 +3312,40 @@
         },
         "near_miss": "a_quiet"
       }
+    },
+    {
+      "ts": "2026-10-29T18:00:01Z",
+      "run_id": "20261029T1800Z-btc",
+      "result": "NoSignal",
+      "reason": "no_trigger",
+      "detail": "fired_signals=[] below require_n_signals",
+      "net_flow_btc": -25.43268931,
+      "coverage": 1.0,
+      "baseline_mean": -6.490745648333333,
+      "observation": {
+        "a": {
+          "fired": false,
+          "fired_signals": [],
+          "direction_bias": null,
+          "funding_zscore": 1.538,
+          "fng_value": 51,
+          "fng_classification": "Neutral",
+          "taker_buy_dominance": false,
+          "taker_sell_dominance": false
+        },
+        "b": {
+          "extreme": false,
+          "direction": "unclear",
+          "unclear_reason": "net_flow_not_extreme",
+          "net_flow_btc": -25.43,
+          "net_flow_pct_reserves": 3.2e-05,
+          "total_reserves_btc": 803076.04,
+          "extreme_basis": null,
+          "coverage": 1.0,
+          "single_tx_dominated": true
+        },
+        "near_miss": "a_quiet"
+      }
     }
   ],
   "signals": [],
@@ -3439,13 +3439,13 @@
   "ledger": [],
   "alert_ledger": [],
   "reserves": {
-    "generated_at": "2026-10-29T16:00:27Z",
-    "total_btc": 791596.47,
+    "generated_at": "2026-10-29T18:00:26Z",
+    "total_btc": 791712.36,
     "wallet_count": 24,
     "refreshed_count": 24,
     "exchange_count": 4,
-    "btc_price": 81798.0,
-    "total_usd": 64751008105.0,
+    "btc_price": 80908.0,
+    "total_usd": 64055863449.0,
     "per_exchange": [
       {
         "exchange": "Binance",
@@ -3456,7 +3456,7 @@
       {
         "exchange": "Bitfinex",
         "count": 2,
-        "btc": 157830.0309,
+        "btc": 157945.9182,
         "pct": 19.9
       },
       {
@@ -3514,7 +3514,7 @@
         "address": "3JZq4atUahhuA9rLhXLMhhTo133J9rF97j",
         "address_short": "3JZq4atU…F97j",
         "label_type": "cold",
-        "balance_btc": 27819.9476,
+        "balance_btc": 27935.8348,
         "refreshed": true,
         "explorer_url": "https://blockstream.info/address/3JZq4atUahhuA9rLhXLMhhTo133J9rF97j"
       },
@@ -3697,11 +3697,11 @@
   },
   "daily": {
     "take": {
-      "headline": "情绪挂在51，市场在装死还是真睡？",
-      "body": "恐惧贪婪指数钉在51，「基本没动」——这不是平静，这是麻木。资金费率+1.58σ还在偏多方向顶着，但taker均衡，多头在付钱却没人跟着冲，这个组合读起来像一场没人信的表态。链上储备净流出-25.43 BTC，量级很小，交易所既没有被大规模提走，也没有被砸入，机构按住不动。我在盯的是资金费率能不能回落到中性——如果多头继续付钱而价格在现价附近横着，最后是多头先撑不住；如果储备净流出突然放量，那这个「装死」才算有了真实动作。"
+      "headline": "情绪冻在51，资金费率却在轻声尖叫",
+      "body": "恐惧贪婪指数钉在51，基本没动——人群既不恐慌也不亢奋，表面上一片「岁月静好」。但资金费率已经爬到+1.54σ，多头仍在为持仓付溢价，这和情绪中性的读数对不上，说明有人在平静的水面下悄悄加码。交易所储备近期净流出25.43枚，存量压在803076枚附近，链上没有出现明显的抛压信号，但覆盖度只有1.0，缓冲极薄。我在盯的是：如果资金费率持续高位而价格在现价附近横盘消化，多头的持仓成本会逐渐侵蚀耐心；一旦情绪开始向恐惧偏移，或净流入转正，我会重新评估这份「平静」是否只是风暴前的沉默。"
     },
     "voice_status": "ok",
     "near_miss": "a_quiet",
-    "generated_at": "2026-10-29T16:00:27Z"
+    "generated_at": "2026-10-29T18:00:26Z"
   }
 }
