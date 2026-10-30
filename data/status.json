@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-30T14:00:26Z",
+  "generated_at": "2026-10-30T16:00:28Z",
   "netflow_gate": {
     "mode": "event_driven",
     "waits_for_baseline": false
@@ -257,40 +257,6 @@
     ]
   },
   "runs": [
-    {
-      "ts": "2026-10-23T04:00:01Z",
-      "run_id": "20261023T0400Z-btc",
-      "result": "NoSignal",
-      "reason": "no_trigger",
-      "detail": "fired_signals=[] below require_n_signals",
-      "net_flow_btc": -24.0858008,
-      "coverage": 1.0,
-      "baseline_mean": 95.497321253,
-      "observation": {
-        "a": {
-          "fired": false,
-          "fired_signals": [],
-          "direction_bias": null,
-          "funding_zscore": 1.1993,
-          "fng_value": 50,
-          "fng_classification": "Neutral",
-          "taker_buy_dominance": false,
-          "taker_sell_dominance": false
-        },
-        "b": {
-          "extreme": false,
-          "direction": "unclear",
-          "unclear_reason": "net_flow_not_extreme",
-          "net_flow_btc": -24.09,
-          "net_flow_pct_reserves": 3e-05,
-          "total_reserves_btc": 807612.19,
-          "extreme_basis": null,
-          "coverage": 1.0,
-          "single_tx_dominated": false
-        },
-        "near_miss": "a_quiet"
-      }
-    },
     {
       "ts": "2026-10-23T06:00:00Z",
       "run_id": "20261023T0600Z-btc",
@@ -3346,6 +3312,40 @@
         },
         "near_miss": "a_quiet"
       }
+    },
+    {
+      "ts": "2026-10-30T16:00:01Z",
+      "run_id": "20261030T1600Z-btc",
+      "result": "NoSignal",
+      "reason": "no_trigger",
+      "detail": "fired_signals=[] below require_n_signals",
+      "net_flow_btc": -25.43266634,
+      "coverage": 1.0,
+      "baseline_mean": -6.914623975833334,
+      "observation": {
+        "a": {
+          "fired": false,
+          "fired_signals": [],
+          "direction_bias": null,
+          "funding_zscore": 1.5556,
+          "fng_value": 30,
+          "fng_classification": "Fear",
+          "taker_buy_dominance": false,
+          "taker_sell_dominance": false
+        },
+        "b": {
+          "extreme": false,
+          "direction": "unclear",
+          "unclear_reason": "net_flow_not_extreme",
+          "net_flow_btc": -25.43,
+          "net_flow_pct_reserves": 3.2e-05,
+          "total_reserves_btc": 805091.81,
+          "extreme_basis": null,
+          "coverage": 1.0,
+          "single_tx_dominated": true
+        },
+        "near_miss": "a_quiet"
+      }
     }
   ],
   "signals": [],
@@ -3439,13 +3439,13 @@
   "ledger": [],
   "alert_ledger": [],
   "reserves": {
-    "generated_at": "2026-10-30T14:00:26Z",
-    "total_btc": 793594.63,
+    "generated_at": "2026-10-30T16:00:28Z",
+    "total_btc": 793695.17,
     "wallet_count": 24,
     "refreshed_count": 24,
     "exchange_count": 4,
-    "btc_price": 77163.79,
-    "total_usd": 61236769153.0,
+    "btc_price": 77602.0,
+    "total_usd": 61592332683.0,
     "per_exchange": [
       {
         "exchange": "Binance",
@@ -3456,7 +3456,7 @@
       {
         "exchange": "Bitfinex",
         "count": 2,
-        "btc": 158058.1874,
+        "btc": 158158.7316,
         "pct": 19.9
       },
       {
@@ -3514,7 +3514,7 @@
         "address": "3JZq4atUahhuA9rLhXLMhhTo133J9rF97j",
         "address_short": "3JZq4atU…F97j",
         "label_type": "cold",
-        "balance_btc": 28048.1041,
+        "balance_btc": 28148.6482,
         "refreshed": true,
         "explorer_url": "https://blockstream.info/address/3JZq4atUahhuA9rLhXLMhhTo133J9rF97j"
       },
@@ -3697,11 +3697,11 @@
   },
   "daily": {
     "take": {
-      "headline": "情绪在滑落，链上却没人跑路",
-      "body": "恐惧贪婪指数从51跌到30，恐惧在加深，但交易所储备净流出仅25枚出头，链上没有明显的「快跑」动作——情绪在尖叫，筹码却按住不动。资金费率+1.56σ，多头溢价还挂在那里，和恐惧的读数对不上，这个裂缝让我不安。我现在盯的是：储备净流量会不会从小渗漏变成放血，以及资金费率σ会不会被恐惧情绪压回中性——如果两者同向恶化，我对「市场只是在喘气」的判断就要重写。非投资建议。"
+      "headline": "情绪在尖叫恐惧，但链上还没人真的跑路",
+      "body": "恐惧贪婪指数从51跌到30，「恐惧」二字已经压舱，但交易所储备净流出仅25.43枚，总量稳在80万枚以上——人群嘴上怕，脚没动。资金费率还挂在+1.56σ，多头仓位没有被清洗的迹象，这个组合让我不舒服：情绪在崩但结构还撑着，两边都没说清楚谁赢。我现在盯的是储备流量会不会突然加速流出，或者资金费率开始向零回落——任何一个先动，才是真正的方向信号；在那之前，这不是「底部」，也不是「崩盘」，只是一个让两边都难受的拉锯。"
     },
     "voice_status": "ok",
     "near_miss": "a_quiet",
-    "generated_at": "2026-10-30T14:00:26Z"
+    "generated_at": "2026-10-30T16:00:28Z"
   }
 }
