@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-29T22:00:27Z",
+  "generated_at": "2026-10-30T00:00:27Z",
   "netflow_gate": {
     "mode": "event_driven",
     "waits_for_baseline": false
@@ -257,40 +257,6 @@
     ]
   },
   "runs": [
-    {
-      "ts": "2026-10-22T12:00:01Z",
-      "run_id": "20261022T1200Z-btc",
-      "result": "NoSignal",
-      "reason": "no_trigger",
-      "detail": "fired_signals=[] below require_n_signals",
-      "net_flow_btc": -24.08568876,
-      "coverage": 1.0,
-      "baseline_mean": 95.497321253,
-      "observation": {
-        "a": {
-          "fired": false,
-          "fired_signals": [],
-          "direction_bias": null,
-          "funding_zscore": -1.7503,
-          "fng_value": 68,
-          "fng_classification": "Greed",
-          "taker_buy_dominance": false,
-          "taker_sell_dominance": false
-        },
-        "b": {
-          "extreme": false,
-          "direction": "unclear",
-          "unclear_reason": "net_flow_not_extreme",
-          "net_flow_btc": -24.09,
-          "net_flow_pct_reserves": 3e-05,
-          "total_reserves_btc": 807129.29,
-          "extreme_basis": null,
-          "coverage": 1.0,
-          "single_tx_dominated": false
-        },
-        "near_miss": "a_quiet"
-      }
-    },
     {
       "ts": "2026-10-22T14:00:01Z",
       "run_id": "20261022T1400Z-btc",
@@ -3346,6 +3312,40 @@
         },
         "near_miss": "a_quiet"
       }
+    },
+    {
+      "ts": "2026-10-30T00:00:01Z",
+      "run_id": "20261030T0000Z-btc",
+      "result": "NoSignal",
+      "reason": "no_trigger",
+      "detail": "fired_signals=[] below require_n_signals",
+      "net_flow_btc": -25.43267931,
+      "coverage": 1.0,
+      "baseline_mean": -6.490745648333333,
+      "observation": {
+        "a": {
+          "fired": false,
+          "fired_signals": [],
+          "direction_bias": null,
+          "funding_zscore": -0.1325,
+          "fng_value": 30,
+          "fng_classification": "Fear",
+          "taker_buy_dominance": false,
+          "taker_sell_dominance": false
+        },
+        "b": {
+          "extreme": false,
+          "direction": "unclear",
+          "unclear_reason": "net_flow_not_extreme",
+          "net_flow_btc": -25.43,
+          "net_flow_pct_reserves": 3.2e-05,
+          "total_reserves_btc": 804844.04,
+          "extreme_basis": null,
+          "coverage": 1.0,
+          "single_tx_dominated": true
+        },
+        "near_miss": "a_quiet"
+      }
     }
   ],
   "signals": [],
@@ -3439,19 +3439,19 @@
   "ledger": [],
   "alert_ledger": [],
   "reserves": {
-    "generated_at": "2026-10-29T22:00:27Z",
-    "total_btc": 791712.36,
+    "generated_at": "2026-10-30T00:00:27Z",
+    "total_btc": 793480.36,
     "wallet_count": 24,
     "refreshed_count": 24,
     "exchange_count": 4,
-    "btc_price": 78991.28,
-    "total_usd": 62538372539.0,
+    "btc_price": 77960.52,
+    "total_usd": 61860141309.0,
     "per_exchange": [
       {
         "exchange": "Binance",
         "count": 2,
-        "btc": 420815.4564,
-        "pct": 53.2
+        "btc": 422583.4564,
+        "pct": 53.3
       },
       {
         "exchange": "Bitfinex",
@@ -3487,7 +3487,7 @@
         "address": "3M219KR5vEneNb47ewrPfWyb5jQ2DjxRP6",
         "address_short": "3M219KR5…xRP6",
         "label_type": "cold",
-        "balance_btc": 172217.8634,
+        "balance_btc": 173985.8634,
         "refreshed": true,
         "explorer_url": "https://blockstream.info/address/3M219KR5vEneNb47ewrPfWyb5jQ2DjxRP6"
       },
@@ -3697,11 +3697,11 @@
   },
   "daily": {
     "take": {
-      "headline": "78991 趴在原地，情绪也在打哈欠",
-      "body": "恐惧贪婪指数 51，标着「中性」，最近基本没动——这不是稳，这是麻木。资金费率 -0.74σ，偏向负值，说明短线有人在轻仓做空或对冲，并没有多头踩油门的迹象。交易所储备净流出 -25.43 BTC，量级极小，链上既没人在拼命撤币，也没人在抢着充值备战，就是按住不动。我在盯的是：情绪如果继续在 51 附近腐烂而资金费率继续压着负值，这个「平静」随时可以变成「没人接盘的平静」——如果储备出现明显加速流入或流出，那才是我会重新评估方向的时候。"
+      "headline": "情绪跌到30，但链上还没人真的逃跑",
+      "body": "恐惧贪婪从51一路滑到30，情绪在加深腐烂——但交易所储备净流出25枚BTC，存量仍压在80万枚出头，人群嘴上喊怕，手上没动。资金费率在-0.13σ，轻微偏空但没到尖叫，做空拥挤度不极端，这不是恐慌踩踏，更像慢火炖着的煎熬。我现在盯的是：储备净流量会不会从涓涓细流变成放血，以及情绪会不会在「恐惧」里继续发酵到极端读数——如果两个信号同时出现，我会重新评估这股「表面平静」的成色。"
     },
     "voice_status": "ok",
     "near_miss": "a_quiet",
-    "generated_at": "2026-10-29T22:00:27Z"
+    "generated_at": "2026-10-30T00:00:27Z"
   }
 }
