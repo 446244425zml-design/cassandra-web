@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-31T22:00:26Z",
+  "generated_at": "2026-11-01T00:00:24Z",
   "netflow_gate": {
     "mode": "event_driven",
     "waits_for_baseline": false
@@ -257,40 +257,6 @@
     ]
   },
   "runs": [
-    {
-      "ts": "2026-10-24T12:00:01Z",
-      "run_id": "20261024T1200Z-btc",
-      "result": "NoSignal",
-      "reason": "no_trigger",
-      "detail": "fired_signals=[] below require_n_signals",
-      "net_flow_btc": -24.0858008,
-      "coverage": 1.0,
-      "baseline_mean": 28.02545976133333,
-      "observation": {
-        "a": {
-          "fired": false,
-          "fired_signals": [],
-          "direction_bias": null,
-          "funding_zscore": 0.033,
-          "fng_value": 51,
-          "fng_classification": "Neutral",
-          "taker_buy_dominance": false,
-          "taker_sell_dominance": false
-        },
-        "b": {
-          "extreme": false,
-          "direction": "unclear",
-          "unclear_reason": "net_flow_not_extreme",
-          "net_flow_btc": -24.09,
-          "net_flow_pct_reserves": 3e-05,
-          "total_reserves_btc": 807954.1,
-          "extreme_basis": null,
-          "coverage": 1.0,
-          "single_tx_dominated": false
-        },
-        "near_miss": "a_quiet"
-      }
-    },
     {
       "ts": "2026-10-24T14:00:01Z",
       "run_id": "20261024T1400Z-btc",
@@ -3343,6 +3309,40 @@
         },
         "near_miss": "a_quiet"
       }
+    },
+    {
+      "ts": "2026-11-01T00:00:01Z",
+      "run_id": "20261101T0000Z-btc",
+      "result": "NoSignal",
+      "reason": "no_trigger",
+      "detail": "fired_signals=[] below require_n_signals",
+      "net_flow_btc": 9.811e-05,
+      "coverage": 1.0,
+      "baseline_mean": -7.338502339666666,
+      "observation": {
+        "a": {
+          "fired": false,
+          "fired_signals": [],
+          "direction_bias": null,
+          "funding_zscore": 1.4549,
+          "fng_value": 34,
+          "fng_classification": "Fear",
+          "taker_buy_dominance": false,
+          "taker_sell_dominance": false
+        },
+        "b": {
+          "extreme": false,
+          "direction": "unclear",
+          "unclear_reason": "net_flow_not_extreme",
+          "net_flow_btc": 0.0,
+          "net_flow_pct_reserves": 0.0,
+          "total_reserves_btc": 806404.09,
+          "extreme_basis": null,
+          "coverage": 1.0,
+          "single_tx_dominated": true
+        },
+        "near_miss": "a_quiet"
+      }
     }
   ],
   "signals": [],
@@ -3437,13 +3437,13 @@
   "ledger": [],
   "alert_ledger": [],
   "reserves": {
-    "generated_at": "2026-10-31T22:00:26Z",
-    "total_btc": 794777.77,
+    "generated_at": "2026-11-01T00:00:24Z",
+    "total_btc": 794878.45,
     "wallet_count": 24,
     "refreshed_count": 24,
     "exchange_count": 4,
-    "btc_price": 77690.9,
-    "total_usd": 61747000136.0,
+    "btc_price": 77572.67,
+    "total_usd": 61660843946.0,
     "per_exchange": [
       {
         "exchange": "Binance",
@@ -3454,7 +3454,7 @@
       {
         "exchange": "Bitfinex",
         "count": 2,
-        "btc": 159241.3288,
+        "btc": 159342.0135,
         "pct": 20.0
       },
       {
@@ -3512,7 +3512,7 @@
         "address": "3JZq4atUahhuA9rLhXLMhhTo133J9rF97j",
         "address_short": "3JZq4atU…F97j",
         "label_type": "cold",
-        "balance_btc": 29231.2454,
+        "balance_btc": 29331.9302,
         "refreshed": true,
         "explorer_url": "https://blockstream.info/address/3JZq4atUahhuA9rLhXLMhhTo133J9rF97j"
       },
@@ -3695,11 +3695,11 @@
   },
   "daily": {
     "take": {
-      "headline": "恐惧凝固，链上无人动弹，市场在装死",
-      "body": "恐惧贪婪指数压在30，连续几天纹丝不动——这不是「恐慌性踩踏」，而是一种麻木的僵持，人群既没崩溃也没抄底，就这么耗着。资金费率偏高到+1.45σ，这个数字和「均衡」的Taker放在一起有点矛盾：多头还在付费维持仓位，但市场没给他们任何回报，这种消耗能持续多久我不知道。交易所储备净流量归零，806303枚BTC按住不动，没有明显的提币或入金信号，链上比情绪更沉默。我在盯的是：资金费率能否在情绪没有改善的情况下自己先泄掉——如果费率回落而价格企稳，那或许是人群在悄悄认输；如果恐惧指数继续卡在这里而储备开始流出，我会重新评估这个「装死」是否在变成真死。"
+      "headline": "情绪在爬坡，但链上一动未动——这叫回暖还是麻木？",
+      "body": "恐惧贪婪指数从30爬到34，Fear区间里的「回暖」——说好听是情绪修复，说难听是从恐慌变成将信将疑。资金费率+1.45σ，多头溢价已经在说一些人开始押注反弹，但taker方向均衡，没人真的在追。最值得玩味的是储备净流量0.0，806404枚BTC纹丝不动，人群既没跑路也没抄底，整体就是一个「我先看看」的姿态。如果接下来情绪继续回升但储备还是不动，我会开始怀疑这波回暖只是情绪的自我安慰；反之，若储备开始出现净流出，那才是真正有人用脚投票的信号。"
     },
     "voice_status": "ok",
     "near_miss": "a_quiet",
-    "generated_at": "2026-10-31T22:00:26Z"
+    "generated_at": "2026-11-01T00:00:24Z"
   }
 }
