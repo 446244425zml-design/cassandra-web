@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-02T14:00:36Z",
+  "generated_at": "2026-11-02T16:00:35Z",
   "netflow_gate": {
     "mode": "event_driven",
     "waits_for_baseline": false
@@ -257,40 +257,6 @@
     ]
   },
   "runs": [
-    {
-      "ts": "2026-10-26T04:00:01Z",
-      "run_id": "20261026T0400Z-btc",
-      "result": "NoSignal",
-      "reason": "no_trigger",
-      "detail": "fired_signals=[] below require_n_signals",
-      "net_flow_btc": -24.08583379,
-      "coverage": 1.0,
-      "baseline_mean": -6.111899851666667,
-      "observation": {
-        "a": {
-          "fired": false,
-          "fired_signals": [],
-          "direction_bias": null,
-          "funding_zscore": 0.3436,
-          "fng_value": 50,
-          "fng_classification": "Neutral",
-          "taker_buy_dominance": false,
-          "taker_sell_dominance": false
-        },
-        "b": {
-          "extreme": false,
-          "direction": "unclear",
-          "unclear_reason": "net_flow_not_extreme",
-          "net_flow_btc": -24.09,
-          "net_flow_pct_reserves": 3e-05,
-          "total_reserves_btc": 807954.1,
-          "extreme_basis": null,
-          "coverage": 1.0,
-          "single_tx_dominated": false
-        },
-        "near_miss": "a_quiet"
-      }
-    },
     {
       "ts": "2026-10-26T06:00:01Z",
       "run_id": "20261026T0600Z-btc",
@@ -3383,6 +3349,47 @@
         "pct_reserves": 0.004229,
         "basis": "absolute"
       }
+    },
+    {
+      "ts": "2026-11-02T16:00:01Z",
+      "run_id": "20261102T1600Z-btc",
+      "result": "NoSignal",
+      "reason": "no_trigger",
+      "detail": "fired_signals=[] below require_n_signals",
+      "net_flow_btc": -3322.79395116,
+      "coverage": 1.0,
+      "baseline_mean": 13.102732661666666,
+      "observation": {
+        "a": {
+          "fired": false,
+          "fired_signals": [],
+          "direction_bias": null,
+          "funding_zscore": 1.1136,
+          "fng_value": 37,
+          "fng_classification": "Fear",
+          "taker_buy_dominance": false,
+          "taker_sell_dominance": false
+        },
+        "b": {
+          "extreme": true,
+          "direction": "outflow",
+          "unclear_reason": null,
+          "net_flow_btc": -3322.79,
+          "net_flow_pct_reserves": 0.004229,
+          "total_reserves_btc": 785806.44,
+          "extreme_basis": "absolute",
+          "coverage": 1.0,
+          "single_tx_dominated": true
+        },
+        "near_miss": "a_quiet"
+      },
+      "alert_id": "ALERT-20261102-btc",
+      "alert": {
+        "direction": "outflow",
+        "net_flow_btc": -3322.79,
+        "pct_reserves": 0.004229,
+        "basis": "absolute"
+      }
     }
   ],
   "signals": [],
@@ -3479,13 +3486,13 @@
   "ledger": [],
   "alert_ledger": [],
   "reserves": {
-    "generated_at": "2026-11-02T14:00:36Z",
+    "generated_at": "2026-11-02T16:00:35Z",
     "total_btc": 774220.58,
     "wallet_count": 24,
     "refreshed_count": 24,
     "exchange_count": 4,
-    "btc_price": 77920.29,
-    "total_usd": 60327492342.0,
+    "btc_price": 77490.0,
+    "total_usd": 59994352957.0,
     "per_exchange": [
       {
         "exchange": "Binance",
@@ -3496,7 +3503,7 @@
       {
         "exchange": "Bitfinex",
         "count": 2,
-        "btc": 159555.0331,
+        "btc": 159555.033,
         "pct": 20.6
       },
       {
@@ -3523,6 +3530,15 @@
         "explorer_url": "https://blockstream.info/address/34xp4vRoCGJym3xR7yCVPFHoCNxv4Twseo"
       },
       {
+        "exchange": "Bitfinex",
+        "address": "bc1qgdjqv0av3q56jvd82tkdjpy7gdp9ut8tlqmgrpmv24sq90ecnvqqjwvw97",
+        "address_short": "bc1qgdjq…vw97",
+        "label_type": "cold",
+        "balance_btc": 157010.0833,
+        "refreshed": true,
+        "explorer_url": "https://blockstream.info/address/bc1qgdjqv0av3q56jvd82tkdjpy7gdp9ut8tlqmgrpmv24sq90ecnvqqjwvw97"
+      },
+      {
         "exchange": "Binance",
         "address": "3M219KR5vEneNb47ewrPfWyb5jQ2DjxRP6",
         "address_short": "3M219KR5…xRP6",
@@ -3539,24 +3555,6 @@
         "balance_btc": 140849.9856,
         "refreshed": true,
         "explorer_url": "https://blockstream.info/address/bc1ql49ydapnjafl5t2cp9zqpjwe6pdgmxy98859v2"
-      },
-      {
-        "exchange": "Bitfinex",
-        "address": "bc1qgdjqv0av3q56jvd82tkdjpy7gdp9ut8tlqmgrpmv24sq90ecnvqqjwvw97",
-        "address_short": "bc1qgdjq…vw97",
-        "label_type": "cold",
-        "balance_btc": 130010.0833,
-        "refreshed": true,
-        "explorer_url": "https://blockstream.info/address/bc1qgdjqv0av3q56jvd82tkdjpy7gdp9ut8tlqmgrpmv24sq90ecnvqqjwvw97"
-      },
-      {
-        "exchange": "Bitfinex",
-        "address": "3JZq4atUahhuA9rLhXLMhhTo133J9rF97j",
-        "address_short": "3JZq4atU…F97j",
-        "label_type": "cold",
-        "balance_btc": 29544.9498,
-        "refreshed": true,
-        "explorer_url": "https://blockstream.info/address/3JZq4atUahhuA9rLhXLMhhTo133J9rF97j"
       },
       {
         "exchange": "OKX",
@@ -3703,6 +3701,15 @@
         "explorer_url": "https://blockstream.info/address/1M6E6vPaYsuCb34mDNS2aepu2aJyL6xBG4"
       },
       {
+        "exchange": "Bitfinex",
+        "address": "3JZq4atUahhuA9rLhXLMhhTo133J9rF97j",
+        "address_short": "3JZq4atU…F97j",
+        "label_type": "cold",
+        "balance_btc": 2544.9497,
+        "refreshed": true,
+        "explorer_url": "https://blockstream.info/address/3JZq4atUahhuA9rLhXLMhhTo133J9rF97j"
+      },
+      {
         "exchange": "OKX",
         "address": "13rCGm4Z3PDeYwo5a7GTT4jFYnRFBZbKr1",
         "address_short": "13rCGm4Z…bKr1",
@@ -3736,9 +3743,12 @@
     "address_book_version": "2026-06-17"
   },
   "daily": {
-    "take": null,
-    "voice_status": "voice_failed",
+    "take": {
+      "headline": "恐惧坐在那儿没动，链上也懒得逃",
+      "body": "恐惧贪婪指数 37，这几天从 34 爬到 37，基本原地踏步——情绪既没崩溃到极端抛售，也没有任何回暖的意思，就这么耷拉着。资金费率 +1.11σ，偏多但不算亢奋，多头没走，只是不敢加仓。交易所储备净流出 3322 BTC，方向是离场，但这个量放在 78 万 BTC 的总储备面前，覆盖度才 1.0，说不上是什么坚定的共识动作。我在盯的是：情绪如果继续在这个区间「发霉」而链上流出提速，那值得重新评估筹码分布；反过来，如果资金费率悄悄回落到中性而价格撑住，多头的底气才算真的没散。非投资建议。"
+    },
+    "voice_status": "ok",
     "near_miss": "a_quiet",
-    "generated_at": "2026-11-02T14:00:36Z"
+    "generated_at": "2026-11-02T16:00:35Z"
   }
 }
