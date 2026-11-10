@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-10T20:00:41Z",
+  "generated_at": "2026-11-10T22:00:54Z",
   "netflow_gate": {
     "mode": "event_driven",
     "waits_for_baseline": false
@@ -257,47 +257,6 @@
     ]
   },
   "runs": [
-    {
-      "ts": "2026-11-03T00:00:02Z",
-      "run_id": "20261103T0000Z-btc",
-      "result": "NoSignal",
-      "reason": "no_trigger",
-      "detail": "fired_signals=[] below require_n_signals",
-      "net_flow_btc": -7941.53295116,
-      "coverage": 1.0,
-      "baseline_mean": -119.256150358,
-      "observation": {
-        "a": {
-          "fired": false,
-          "fired_signals": [],
-          "direction_bias": null,
-          "funding_zscore": 1.3102,
-          "fng_value": 26,
-          "fng_classification": "Fear",
-          "taker_buy_dominance": false,
-          "taker_sell_dominance": false
-        },
-        "b": {
-          "extreme": true,
-          "direction": "outflow",
-          "unclear_reason": null,
-          "net_flow_btc": -7941.53,
-          "net_flow_pct_reserves": 0.010177,
-          "total_reserves_btc": 780303.29,
-          "extreme_basis": "both",
-          "coverage": 1.0,
-          "single_tx_dominated": false
-        },
-        "near_miss": "a_quiet"
-      },
-      "alert_id": "ALERT-20261103-btc",
-      "alert": {
-        "direction": "outflow",
-        "net_flow_btc": -7941.53,
-        "pct_reserves": 0.010177,
-        "basis": "absolute"
-      }
-    },
     {
       "ts": "2026-11-03T02:00:01Z",
       "run_id": "20261103T0200Z-btc",
@@ -3917,6 +3876,47 @@
         "pct_reserves": 0.009322,
         "basis": "absolute"
       }
+    },
+    {
+      "ts": "2026-11-10T22:00:04Z",
+      "run_id": "20261110T2200Z-btc",
+      "result": "NoSignal",
+      "reason": "no_trigger",
+      "detail": "fired_signals=[] below require_n_signals",
+      "net_flow_btc": 7329.56108633,
+      "coverage": 1.0,
+      "baseline_mean": 991.4080787736666,
+      "observation": {
+        "a": {
+          "fired": false,
+          "fired_signals": [],
+          "direction_bias": null,
+          "funding_zscore": 0.1972,
+          "fng_value": 32,
+          "fng_classification": "Fear",
+          "taker_buy_dominance": false,
+          "taker_sell_dominance": false
+        },
+        "b": {
+          "extreme": true,
+          "direction": "inflow",
+          "unclear_reason": null,
+          "net_flow_btc": 7329.56,
+          "net_flow_pct_reserves": 0.009322,
+          "total_reserves_btc": 786292.62,
+          "extreme_basis": "both",
+          "coverage": 1.0,
+          "single_tx_dominated": false
+        },
+        "near_miss": "a_quiet"
+      },
+      "alert_id": "ALERT-20261110-btc",
+      "alert": {
+        "direction": "inflow",
+        "net_flow_btc": 7329.56,
+        "pct_reserves": 0.009322,
+        "basis": "absolute"
+      }
     }
   ],
   "signals": [],
@@ -4022,13 +4022,13 @@
   "ledger": [],
   "alert_ledger": [],
   "reserves": {
-    "generated_at": "2026-11-10T20:00:41Z",
+    "generated_at": "2026-11-10T22:00:54Z",
     "total_btc": 774724.25,
     "wallet_count": 24,
     "refreshed_count": 24,
     "exchange_count": 4,
-    "btc_price": 73456.0,
-    "total_usd": 56908144207.0,
+    "btc_price": 73887.83,
+    "total_usd": 57242693378.0,
     "per_exchange": [
       {
         "exchange": "Binance",
@@ -4280,11 +4280,11 @@
   },
   "daily": {
     "take": {
-      "headline": "恐惧在原地踏步，链上却悄悄往里塞",
-      "body": "恐惧贪婪指数 32，最近从 29 爬到 32，基本没动——这不是恢复，是麻木。资金费率 +0.10σ，离「尖叫」远得很，多空都没什么底气，现价附近就是一潭死水。真正让我皱眉的是储备净流量：7329 BTC 净流入交易所，覆盖度 1.0，有人在往台面上摆筹码，不管是要卖还是要备战，这个动作不该被忽视。如果流入持续扩大而情绪继续横盘，我会把它读成「安静地分发」；反过来，若流入骤停甚至翻负，我才会重新考虑这股压力是否在消化。"
+      "headline": "恐惧冻结在32，链上却悄悄搬进7329枚",
+      "body": "恐惧贪婪指数钉在32没动，情绪像一块老冰——冷，但没在融。资金费率+0.20σ，多头还在付钱，但幅度算不上「在尖叫」，更像是按住不动地等。让我警觉的是储备净流入7329.56 BTC：情绪平静的时候币往交易所走，这两件事放在一起不太协调，值得盯着净流量是否在加速。如果恐惧继续冻结而链上流入持续放大，我会重新考虑这种「表面平静」背后到底是谁在搬货。"
     },
     "voice_status": "ok",
     "near_miss": "a_quiet",
-    "generated_at": "2026-11-10T20:00:41Z"
+    "generated_at": "2026-11-10T22:00:54Z"
   }
 }
