@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-11T10:00:33Z",
+  "generated_at": "2026-11-11T12:00:36Z",
   "netflow_gate": {
     "mode": "event_driven",
     "waits_for_baseline": false
@@ -257,47 +257,6 @@
     ]
   },
   "runs": [
-    {
-      "ts": "2026-11-03T14:00:01Z",
-      "run_id": "20261103T1400Z-btc",
-      "result": "NoSignal",
-      "reason": "no_trigger",
-      "detail": "fired_signals=[] below require_n_signals",
-      "net_flow_btc": -7839.33294343,
-      "coverage": 1.0,
-      "baseline_mean": -119.256150358,
-      "observation": {
-        "a": {
-          "fired": false,
-          "fired_signals": [],
-          "direction_bias": null,
-          "funding_zscore": 1.2547,
-          "fng_value": 26,
-          "fng_classification": "Fear",
-          "taker_buy_dominance": false,
-          "taker_sell_dominance": false
-        },
-        "b": {
-          "extreme": true,
-          "direction": "outflow",
-          "unclear_reason": null,
-          "net_flow_btc": -7839.33,
-          "net_flow_pct_reserves": 0.010221,
-          "total_reserves_btc": 766997.57,
-          "extreme_basis": "both",
-          "coverage": 1.0,
-          "single_tx_dominated": false
-        },
-        "near_miss": "a_quiet"
-      },
-      "alert_id": "ALERT-20261103-btc",
-      "alert": {
-        "direction": "outflow",
-        "net_flow_btc": -7839.33,
-        "pct_reserves": 0.010221,
-        "basis": "absolute"
-      }
-    },
     {
       "ts": "2026-11-03T16:00:02Z",
       "run_id": "20261103T1600Z-btc",
@@ -3917,6 +3876,47 @@
         "pct_reserves": 0.021484,
         "basis": "both"
       }
+    },
+    {
+      "ts": "2026-11-11T12:00:01Z",
+      "run_id": "20261111T1200Z-btc",
+      "result": "NoSignal",
+      "reason": "no_trigger",
+      "detail": "fired_signals=[] below require_n_signals",
+      "net_flow_btc": 17102.6780556,
+      "coverage": 1.0,
+      "baseline_mean": 991.4080787736666,
+      "observation": {
+        "a": {
+          "fired": false,
+          "fired_signals": [],
+          "direction_bias": null,
+          "funding_zscore": -0.1174,
+          "fng_value": 29,
+          "fng_classification": "Fear",
+          "taker_buy_dominance": false,
+          "taker_sell_dominance": false
+        },
+        "b": {
+          "extreme": true,
+          "direction": "inflow",
+          "unclear_reason": null,
+          "net_flow_btc": 17102.68,
+          "net_flow_pct_reserves": 0.021484,
+          "total_reserves_btc": 796082.12,
+          "extreme_basis": "both",
+          "coverage": 1.0,
+          "single_tx_dominated": false
+        },
+        "near_miss": "a_quiet"
+      },
+      "alert_id": "ALERT-20261111-btc",
+      "alert": {
+        "direction": "inflow",
+        "net_flow_btc": 17102.68,
+        "pct_reserves": 0.021484,
+        "basis": "both"
+      }
     }
   ],
   "signals": [],
@@ -4023,13 +4023,13 @@
   "ledger": [],
   "alert_ledger": [],
   "reserves": {
-    "generated_at": "2026-11-11T10:00:33Z",
+    "generated_at": "2026-11-11T12:00:36Z",
     "total_btc": 784497.36,
     "wallet_count": 24,
     "refreshed_count": 24,
     "exchange_count": 4,
-    "btc_price": 73800.0,
-    "total_usd": 57895905385.0,
+    "btc_price": 74009.3,
+    "total_usd": 58060100684.0,
     "per_exchange": [
       {
         "exchange": "Binance",
@@ -4281,11 +4281,11 @@
   },
   "daily": {
     "take": {
-      "headline": "恐惧挂在脸上，链上却没人动腿",
-      "body": "恐惧贪婪指数29，在「恐惧」区间里几乎一动不动，情绪既没崩塌也没回暖，像一个攥着把手不敢松的人。资金费率-0.00σ，多空势力在现价附近僵着，没有一方愿意先开枪——这种「均衡」在我看来比单边更难读。真正让我警觉的是储备净流入超过17000 BTC，币在往交易所搬，但市场情绪没有跟着炸，这两件事还没对齐，我不知道谁在说谎。如果净流入持续放大而价格还能扛住，我会重新评估这波「恐惧」的含金量；如果情绪继续在29附近钉死而筹码还在流入，那这份平静可能只是还没找到出口。"
+      "headline": "恐惧挂在脸上，链上却在往交易所搬货",
+      "body": "恐惧贪婪指数29，在「恐惧」区里纹丝不动，但它没有在加深——情绪像一潭死水，而不是瀑布。真正让我皱眉的是链上：过去这段时间净流入交易所17102枚BTC，储备覆盖度1.0，这不是「持仓不动」的读数，这是有人在往出口走。资金费率-0.12σ，轻微偏空但离不了边，空头也没真的起劲。我在盯的是：这批流入交易所的筹码最终是砸盘还是止步——如果链上流入继续放大而情绪还趴着不动，我会认真对待下行压力；如果流入收窄、情绪开始往40以上爬，现在的「平静恐惧」就是个假象修复。此刻没有明显倾向，我不猜方向，只是不喜欢「嘴上不慌、脚上在跑」这个组合。"
     },
     "voice_status": "ok",
     "near_miss": "a_quiet",
-    "generated_at": "2026-11-11T10:00:33Z"
+    "generated_at": "2026-11-11T12:00:36Z"
   }
 }
