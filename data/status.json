@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-11T22:00:30Z",
+  "generated_at": "2026-11-12T00:00:31Z",
   "netflow_gate": {
     "mode": "event_driven",
     "waits_for_baseline": false
@@ -257,47 +257,6 @@
     ]
   },
   "runs": [
-    {
-      "ts": "2026-11-04T02:00:01Z",
-      "run_id": "20261104T0200Z-btc",
-      "result": "NoSignal",
-      "reason": "no_trigger",
-      "detail": "fired_signals=[] below require_n_signals",
-      "net_flow_btc": 5028.40808301,
-      "coverage": 1.0,
-      "baseline_mean": -118.686430696,
-      "observation": {
-        "a": {
-          "fired": false,
-          "fired_signals": [],
-          "direction_bias": null,
-          "funding_zscore": 1.2133,
-          "fng_value": 34,
-          "fng_classification": "Fear",
-          "taker_buy_dominance": false,
-          "taker_sell_dominance": false
-        },
-        "b": {
-          "extreme": true,
-          "direction": "inflow",
-          "unclear_reason": null,
-          "net_flow_btc": 5028.41,
-          "net_flow_pct_reserves": 0.006434,
-          "total_reserves_btc": 781513.61,
-          "extreme_basis": "absolute",
-          "coverage": 1.0,
-          "single_tx_dominated": true
-        },
-        "near_miss": "a_quiet"
-      },
-      "alert_id": "ALERT-20261104-btc",
-      "alert": {
-        "direction": "inflow",
-        "net_flow_btc": 5028.41,
-        "pct_reserves": 0.006434,
-        "basis": "absolute"
-      }
-    },
     {
       "ts": "2026-11-04T04:00:00Z",
       "run_id": "20261104T0400Z-btc",
@@ -3938,6 +3897,47 @@
         "pct_reserves": 0.024872,
         "basis": "both"
       }
+    },
+    {
+      "ts": "2026-11-12T00:00:01Z",
+      "run_id": "20261112T0000Z-btc",
+      "result": "NoSignal",
+      "reason": "no_trigger",
+      "detail": "fired_signals=[] below require_n_signals",
+      "net_flow_btc": 19935.1210556,
+      "coverage": 1.0,
+      "baseline_mean": 1323.7653017698333,
+      "observation": {
+        "a": {
+          "fired": false,
+          "fired_signals": [],
+          "direction_bias": null,
+          "funding_zscore": -0.9504,
+          "fng_value": 28,
+          "fng_classification": "Fear",
+          "taker_buy_dominance": false,
+          "taker_sell_dominance": false
+        },
+        "b": {
+          "extreme": true,
+          "direction": "inflow",
+          "unclear_reason": null,
+          "net_flow_btc": 19935.12,
+          "net_flow_pct_reserves": 0.024872,
+          "total_reserves_btc": 801495.85,
+          "extreme_basis": "both",
+          "coverage": 1.0,
+          "single_tx_dominated": false
+        },
+        "near_miss": "a_quiet"
+      },
+      "alert_id": "ALERT-20261112-btc",
+      "alert": {
+        "direction": "inflow",
+        "net_flow_btc": 19935.12,
+        "pct_reserves": 0.024872,
+        "basis": "both"
+      }
     }
   ],
   "signals": [],
@@ -4039,18 +4039,19 @@
     "ALERT-20261108-btc",
     "ALERT-20261109-btc",
     "ALERT-20261110-btc",
-    "ALERT-20261111-btc"
+    "ALERT-20261111-btc",
+    "ALERT-20261112-btc"
   ],
   "ledger": [],
   "alert_ledger": [],
   "reserves": {
-    "generated_at": "2026-11-11T22:00:30Z",
+    "generated_at": "2026-11-12T00:00:31Z",
     "total_btc": 789911.09,
     "wallet_count": 24,
     "refreshed_count": 24,
     "exchange_count": 4,
-    "btc_price": 74390.0,
-    "total_usd": 58761485832.0,
+    "btc_price": 74053.29,
+    "total_usd": 58495514870.0,
     "per_exchange": [
       {
         "exchange": "Binance",
@@ -4302,11 +4303,11 @@
   },
   "daily": {
     "take": {
-      "headline": "恐慌凝固，链上却在悄悄接盘",
-      "body": "恐惧贪婪指数钉在29，基本没动——情绪不是在退烧，是在结冰，冻成一块懒得波动的石头。但资金费率已压到-1.15σ，空头在为「大家都怕」这件事支付溢价，这种定价通常不是健康的。更扎眼的是：交易所储备净流入近两万枚BTC，有人在把筹码推进场内，方向尚不明朗，但量不小。我在盯的是：情绪若继续冻住而链上流入持续放大，这个组合会变得难以解读；反过来，若资金费率开始回归均值而恐慌没有跟着退，那才是我会重新审视当前读数的时刻。非投资建议。"
+      "headline": "恐慌挂在脸上，链上却在悄悄往交易所搬货",
+      "body": "恐惧贪婪指数28，在「恐惧」区间基本没动——不是那种恐慌到极点的读数，更像是低烧不退的钝痛。但我更在意的是储备净流量：这几天近两万枚BTC净流入交易所，链上行为和情绪指数说的不是同一个故事。资金费率压到-0.95σ，空头在付钱维持方向，但Taker端依然均衡，这告诉我市场还没有形成共识性的方向押注，只是在互相试探。我在盯的是：净流入能否持续放大，以及情绪是否会从「低烧」滑向真正的极端——那时候市场才会给出更清晰的下一步线索；如果流量骤然逆转、资金费率回归均值，我会重新审视当前的读法。【非投资建议】"
     },
     "voice_status": "ok",
     "near_miss": "a_quiet",
-    "generated_at": "2026-11-11T22:00:30Z"
+    "generated_at": "2026-11-12T00:00:31Z"
   }
 }
