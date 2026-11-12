@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-12T16:00:39Z",
+  "generated_at": "2026-11-12T18:00:33Z",
   "netflow_gate": {
     "mode": "event_driven",
     "waits_for_baseline": false
@@ -257,47 +257,6 @@
     ]
   },
   "runs": [
-    {
-      "ts": "2026-11-04T20:00:02Z",
-      "run_id": "20261104T2000Z-btc",
-      "result": "NoSignal",
-      "reason": "no_trigger",
-      "detail": "fired_signals=[] below require_n_signals",
-      "net_flow_btc": 5028.40808965,
-      "coverage": 1.0,
-      "baseline_mean": -34.793411216,
-      "observation": {
-        "a": {
-          "fired": false,
-          "fired_signals": [],
-          "direction_bias": null,
-          "funding_zscore": 0.0519,
-          "fng_value": 34,
-          "fng_classification": "Fear",
-          "taker_buy_dominance": false,
-          "taker_sell_dominance": false
-        },
-        "b": {
-          "extreme": true,
-          "direction": "inflow",
-          "unclear_reason": null,
-          "net_flow_btc": 5028.41,
-          "net_flow_pct_reserves": 0.006432,
-          "total_reserves_btc": 781761.8,
-          "extreme_basis": "absolute",
-          "coverage": 1.0,
-          "single_tx_dominated": false
-        },
-        "near_miss": "a_quiet"
-      },
-      "alert_id": "ALERT-20261104-btc",
-      "alert": {
-        "direction": "inflow",
-        "net_flow_btc": 5028.41,
-        "pct_reserves": 0.006432,
-        "basis": "absolute"
-      }
-    },
     {
       "ts": "2026-11-04T22:00:02Z",
       "run_id": "20261104T2200Z-btc",
@@ -3938,6 +3897,47 @@
         "pct_reserves": 0.021881,
         "basis": "both"
       }
+    },
+    {
+      "ts": "2026-11-12T18:00:01Z",
+      "run_id": "20261112T1800Z-btc",
+      "result": "NoSignal",
+      "reason": "no_trigger",
+      "detail": "fired_signals=[] below require_n_signals",
+      "net_flow_btc": 17572.9130556,
+      "coverage": 1.0,
+      "baseline_mean": 1616.7523914326666,
+      "observation": {
+        "a": {
+          "fired": false,
+          "fired_signals": [],
+          "direction_bias": null,
+          "funding_zscore": 0.9615,
+          "fng_value": 28,
+          "fng_classification": "Fear",
+          "taker_buy_dominance": false,
+          "taker_sell_dominance": false
+        },
+        "b": {
+          "extreme": true,
+          "direction": "inflow",
+          "unclear_reason": null,
+          "net_flow_btc": 17572.91,
+          "net_flow_pct_reserves": 0.021881,
+          "total_reserves_btc": 803104.98,
+          "extreme_basis": "both",
+          "coverage": 1.0,
+          "single_tx_dominated": false
+        },
+        "near_miss": "a_quiet"
+      },
+      "alert_id": "ALERT-20261112-btc",
+      "alert": {
+        "direction": "inflow",
+        "net_flow_btc": 17572.91,
+        "pct_reserves": 0.021881,
+        "basis": "both"
+      }
     }
   ],
   "signals": [],
@@ -4045,13 +4045,13 @@
   "ledger": [],
   "alert_ledger": [],
   "reserves": {
-    "generated_at": "2026-11-12T16:00:39Z",
+    "generated_at": "2026-11-12T18:00:33Z",
     "total_btc": 791115.89,
     "wallet_count": 24,
     "refreshed_count": 24,
     "exchange_count": 4,
-    "btc_price": 71664.03,
-    "total_usd": 56694553103.0,
+    "btc_price": 71919.64,
+    "total_usd": 56896770236.0,
     "per_exchange": [
       {
         "exchange": "Binance",
@@ -4303,11 +4303,11 @@
   },
   "daily": {
     "take": {
-      "headline": "情绪冻在恐惧，但链上没有逃跑，只是在等。",
-      "body": "恐惧贪婪指数28，趋势基本没动——人群既没崩，也没反弹，像一块被按住的弹簧，方向还没选。资金费率+0.66σ，轻微偏多但远未到尖叫区间，说明衍生品市场也在打哈欠，没人敢押注方向。真正让我皱眉的是储备净流入17572枚BTC：不是小数，意味着有人在把币往交易所搬，但恐惧指数却纹丝不动——要么是在做对冲，要么搬进来的人还没决定卖。我盯的是这笔流入接下来会不会兑现成抛压；如果储备继续堆积而情绪开始松动，那这份「平静」就值得重新定价。非投资建议。"
+      "headline": "恐惧冻在原地，链上资金却悄悄涌进来",
+      "body": "恐惧贪婪指数挂在28，基本没动，人群情绪像一潭死水——既没崩溃到极端恐慌，也没任何回暖迹象。但链上读数说了另一件事：储备净流入17572枚BTC，覆盖度1.0，资金正在安静地往交易所搬，这不是「持币不动」的姿态。资金费率+0.96σ，多头还在付费，情绪面和链上面在互相矛盾——我不知道谁会先认输。我在盯的是：净流量方向会不会持续，以及恐惧指数会不会在这个位置开始松动；如果两个都没动，这个「平静」可能只是下一次波动的序章。"
     },
     "voice_status": "ok",
     "near_miss": "a_quiet",
-    "generated_at": "2026-11-12T16:00:39Z"
+    "generated_at": "2026-11-12T18:00:33Z"
   }
 }
