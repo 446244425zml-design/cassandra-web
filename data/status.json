@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-14T18:00:38Z",
+  "generated_at": "2026-11-14T20:00:35Z",
   "netflow_gate": {
     "mode": "event_driven",
     "waits_for_baseline": false
@@ -257,47 +257,6 @@
     ]
   },
   "runs": [
-    {
-      "ts": "2026-11-06T22:00:02Z",
-      "run_id": "20261106T2200Z-btc",
-      "result": "NoSignal",
-      "reason": "no_trigger",
-      "detail": "fired_signals=[] below require_n_signals",
-      "net_flow_btc": 13850.58362369,
-      "coverage": 1.0,
-      "baseline_mean": 448.07857510366665,
-      "observation": {
-        "a": {
-          "fired": false,
-          "fired_signals": [],
-          "direction_bias": null,
-          "funding_zscore": 1.0911,
-          "fng_value": 28,
-          "fng_classification": "Fear",
-          "taker_buy_dominance": false,
-          "taker_sell_dominance": false
-        },
-        "b": {
-          "extreme": true,
-          "direction": "inflow",
-          "unclear_reason": null,
-          "net_flow_btc": 13850.58,
-          "net_flow_pct_reserves": 0.017423,
-          "total_reserves_btc": 794941.84,
-          "extreme_basis": "both",
-          "coverage": 1.0,
-          "single_tx_dominated": false
-        },
-        "near_miss": "a_quiet"
-      },
-      "alert_id": "ALERT-20261106-btc",
-      "alert": {
-        "direction": "inflow",
-        "net_flow_btc": 13850.58,
-        "pct_reserves": 0.017423,
-        "basis": "both"
-      }
-    },
     {
       "ts": "2026-11-07T00:00:01Z",
       "run_id": "20261107T0000Z-btc",
@@ -3860,6 +3819,43 @@
         "near_miss": "both_lit"
       },
       "signal_id": "CAS-20261114-btc"
+    },
+    {
+      "ts": "2026-11-14T20:00:01Z",
+      "run_id": "20261114T2000Z-btc",
+      "result": "FIRED",
+      "reason": null,
+      "detail": null,
+      "net_flow_btc": 4346.31393558,
+      "coverage": 1.0,
+      "baseline_mean": 1834.2442779335,
+      "observation": {
+        "a": {
+          "fired": true,
+          "fired_signals": [
+            "fng_extreme_fear"
+          ],
+          "direction_bias": "bearish_crowd",
+          "funding_zscore": -1.0108,
+          "fng_value": 13,
+          "fng_classification": "Extreme Fear",
+          "taker_buy_dominance": false,
+          "taker_sell_dominance": false
+        },
+        "b": {
+          "extreme": true,
+          "direction": "inflow",
+          "unclear_reason": null,
+          "net_flow_btc": 4346.31,
+          "net_flow_pct_reserves": 0.005393,
+          "total_reserves_btc": 805903.75,
+          "extreme_basis": "absolute",
+          "coverage": 1.0,
+          "single_tx_dominated": false
+        },
+        "near_miss": "both_lit"
+      },
+      "signal_id": "CAS-20261114-btc"
     }
   ],
   "signals": [],
@@ -3969,13 +3965,13 @@
   "ledger": [],
   "alert_ledger": [],
   "reserves": {
-    "generated_at": "2026-11-14T18:00:38Z",
+    "generated_at": "2026-11-14T20:00:35Z",
     "total_btc": 793457.74,
     "wallet_count": 24,
     "refreshed_count": 24,
     "exchange_count": 4,
-    "btc_price": 65914.78,
-    "total_usd": 52300592580.0,
+    "btc_price": 65751.46,
+    "total_usd": 52171005061.0,
     "per_exchange": [
       {
         "exchange": "Binance",
@@ -4227,11 +4223,11 @@
   },
   "daily": {
     "take": {
-      "headline": "恐慌指数13，链上4346枚BTC涌入，情绪与筹码同时在尖叫",
-      "body": "恐惧贪婪指数从20跌到13，人群已经在「极度恐慌」区间里越陷越深，这不是杂音，是有人在系统性踩踏的读数。同时交易所储备净流入4346枚BTC，链上动作和情绪罕见地站在同一边——这种「共鸣」有时是底部信号，有时只是加速下跌的前奏，我没办法替你分辨哪个。资金费率报-1.03σ，空头在付钱，但主动买卖盘显示均衡，说明砸盘方是仓位挤压而非主动做空，这个细节值得记住。我在盯的是：净流入能否在接下来几天转向流出——如果筹码开始撤离交易所，这波恐慌才有资格被称为「洗盘」；如果继续堆积，65914附近的现价只是一个中转站，不是终点。"
+      "headline": "恐惧指数跌到13，链上却在悄悄搬货",
+      "body": "恐惧贪婪指数从20滑到13，人群已在「极度恐慌」区尖叫，资金费率报-1.01σ，空头在付钱维持仓位——这是情绪的底色。但链上储备净流入4346枚BTC，现价附近有人在接，这不是随手点错的数字。我的判断：人群情绪和链上行为在同一时间发生背离，这个组合值得认真对待，但「值得注意」不等于「一定反转」，历史上这类信号也会在更深的恐慌里继续失效。我在盯的是：净流入是否持续，还是单日脉冲；如果接下来几天储备继续净流入而价格继续阴跌，那链上的「搬货」才算有说服力——否则这只是一次恐慌性挪仓。"
     },
     "voice_status": "ok",
     "near_miss": "both_lit",
-    "generated_at": "2026-11-14T18:00:38Z"
+    "generated_at": "2026-11-14T20:00:35Z"
   }
 }
