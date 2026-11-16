@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-16T14:00:44Z",
+  "generated_at": "2026-11-16T16:00:38Z",
   "netflow_gate": {
     "mode": "event_driven",
     "waits_for_baseline": false
@@ -257,47 +257,6 @@
     ]
   },
   "runs": [
-    {
-      "ts": "2026-11-08T20:07:52Z",
-      "run_id": "20261108T2007Z-btc",
-      "result": "NoSignal",
-      "reason": "no_trigger",
-      "detail": "fired_signals=[] below require_n_signals",
-      "net_flow_btc": 3135.98662369,
-      "coverage": 1.0,
-      "baseline_mean": 731.1880780346667,
-      "observation": {
-        "a": {
-          "fired": false,
-          "fired_signals": [],
-          "direction_bias": null,
-          "funding_zscore": null,
-          "fng_value": null,
-          "fng_classification": null,
-          "taker_buy_dominance": null,
-          "taker_sell_dominance": null
-        },
-        "b": {
-          "extreme": true,
-          "direction": "inflow",
-          "unclear_reason": null,
-          "net_flow_btc": 3135.99,
-          "net_flow_pct_reserves": 0.003939,
-          "total_reserves_btc": 796237.24,
-          "extreme_basis": "absolute",
-          "coverage": 1.0,
-          "single_tx_dominated": false
-        },
-        "near_miss": "a_quiet"
-      },
-      "alert_id": "ALERT-20261108-btc",
-      "alert": {
-        "direction": "inflow",
-        "net_flow_btc": 3135.99,
-        "pct_reserves": 0.003939,
-        "basis": "absolute"
-      }
-    },
     {
       "ts": "2026-11-08T22:00:12Z",
       "run_id": "20261108T2200Z-btc",
@@ -3793,6 +3752,43 @@
         "near_miss": "a_lit_b_quiet"
       },
       "signal_id": "CAS-20261116-btc"
+    },
+    {
+      "ts": "2026-11-16T16:00:01Z",
+      "run_id": "20261116T1600Z-btc",
+      "result": "FIRED",
+      "reason": null,
+      "detail": null,
+      "net_flow_btc": 2.842e-05,
+      "coverage": 1.0,
+      "baseline_mean": 1906.3273206674999,
+      "observation": {
+        "a": {
+          "fired": true,
+          "fired_signals": [
+            "fng_extreme_fear"
+          ],
+          "direction_bias": "bearish_crowd",
+          "funding_zscore": -0.1672,
+          "fng_value": 10,
+          "fng_classification": "Extreme Fear",
+          "taker_buy_dominance": false,
+          "taker_sell_dominance": false
+        },
+        "b": {
+          "extreme": false,
+          "direction": "unclear",
+          "unclear_reason": "net_flow_not_extreme",
+          "net_flow_btc": 0.0,
+          "net_flow_pct_reserves": 0.0,
+          "total_reserves_btc": 784809.64,
+          "extreme_basis": null,
+          "coverage": 1.0,
+          "single_tx_dominated": false
+        },
+        "near_miss": "a_lit_b_quiet"
+      },
+      "signal_id": "CAS-20261116-btc"
     }
   ],
   "signals": [],
@@ -3905,13 +3901,13 @@
   "ledger": [],
   "alert_ledger": [],
   "reserves": {
-    "generated_at": "2026-11-16T14:00:44Z",
+    "generated_at": "2026-11-16T16:00:38Z",
     "total_btc": 772288.82,
     "wallet_count": 24,
     "refreshed_count": 24,
     "exchange_count": 4,
-    "btc_price": 64180.27,
-    "total_usd": 49565704740.0,
+    "btc_price": 64433.21,
+    "total_usd": 49761047473.0,
     "per_exchange": [
       {
         "exchange": "Binance",
@@ -4163,11 +4159,11 @@
   },
   "daily": {
     "take": {
-      "headline": "恐慌冻在 10，链上一动不动，谁在等谁先眨眼",
-      "body": "恐惧贪婪指数钉在 10，连续读数基本没动——不是在「探底」，是在「发呆」。资金费率 -1.31σ，空头已经在付溢价，但这种程度的偏斜可以维持比大多数人预期更久的时间。真正让我皱眉的是储备净流量 0.0、储备总量 784809.64 BTC 纹丝未动——人群已经极端恐慌，但链上没有任何「有人在接」的迹象，这两者的背离是我今天最在盯的裂缝。什么会让我改变看法？储备出现明显净流出（币从交易所撤走），或者资金费率开始向均值回归——那才叫「有人在用真金白银表态」，现在只是集体屏息。"
+      "headline": "恐慌钉死10，链上一动未动，谁在撑着？",
+      "body": "恐惧贪婪指数挂在10，「极度恐慌」的读数最近纹丝不动，不是在退潮，是在凝固——这种情绪的僵硬本身就值得警惕。资金费率-0.17σ，偏空但还没到尖叫的程度，taker双边均衡，说明空头并没有在加仓追杀，市场更像是被吓趴在地、不敢动弹。链上储备净流量挂零，784809枚BTC纹丝未动，人群嘴上极度恐慌，但筹码没有大规模涌向交易所，这个裂缝让我保持一点怀疑。我在盯的是：储备净流量是否开始转正加速——一旦链上确认跟上情绪，那这个「恐慌凝固」的状态才算真正坐实；如果流量继续归零而情绪松动，我会重新评估这个极端读数的含金量。"
     },
     "voice_status": "ok",
     "near_miss": "a_lit_b_quiet",
-    "generated_at": "2026-11-16T14:00:44Z"
+    "generated_at": "2026-11-16T16:00:38Z"
   }
 }
