@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-16T04:00:35Z",
+  "generated_at": "2026-11-16T06:00:34Z",
   "netflow_gate": {
     "mode": "event_driven",
     "waits_for_baseline": false
@@ -257,47 +257,6 @@
     ]
   },
   "runs": [
-    {
-      "ts": "2026-11-08T02:00:01Z",
-      "run_id": "20261108T0200Z-btc",
-      "result": "NoSignal",
-      "reason": "no_trigger",
-      "detail": "fired_signals=[] below require_n_signals",
-      "net_flow_btc": 13850.58362369,
-      "coverage": 1.0,
-      "baseline_mean": 678.9216349024999,
-      "observation": {
-        "a": {
-          "fired": false,
-          "fired_signals": [],
-          "direction_bias": null,
-          "funding_zscore": 0.0258,
-          "fng_value": 28,
-          "fng_classification": "Fear",
-          "taker_buy_dominance": false,
-          "taker_sell_dominance": false
-        },
-        "b": {
-          "extreme": true,
-          "direction": "inflow",
-          "unclear_reason": null,
-          "net_flow_btc": 13850.58,
-          "net_flow_pct_reserves": 0.017426,
-          "total_reserves_btc": 794810.84,
-          "extreme_basis": "both",
-          "coverage": 1.0,
-          "single_tx_dominated": false
-        },
-        "near_miss": "a_quiet"
-      },
-      "alert_id": "ALERT-20261108-btc",
-      "alert": {
-        "direction": "inflow",
-        "net_flow_btc": 13850.58,
-        "pct_reserves": 0.017426,
-        "basis": "both"
-      }
-    },
     {
       "ts": "2026-11-08T04:00:02Z",
       "run_id": "20261108T0400Z-btc",
@@ -3811,6 +3770,44 @@
         "near_miss": "a_lit_b_quiet"
       },
       "signal_id": "CAS-20261116-btc"
+    },
+    {
+      "ts": "2026-11-16T06:00:01Z",
+      "run_id": "20261116T0600Z-btc",
+      "result": "FIRED",
+      "reason": null,
+      "detail": null,
+      "net_flow_btc": 4.48e-05,
+      "coverage": 1.0,
+      "baseline_mean": 1906.3273206674999,
+      "observation": {
+        "a": {
+          "fired": true,
+          "fired_signals": [
+            "funding_extreme",
+            "fng_extreme_fear"
+          ],
+          "direction_bias": "bearish_crowd",
+          "funding_zscore": -2.8126,
+          "fng_value": 10,
+          "fng_classification": "Extreme Fear",
+          "taker_buy_dominance": false,
+          "taker_sell_dominance": false
+        },
+        "b": {
+          "extreme": false,
+          "direction": "unclear",
+          "unclear_reason": "net_flow_not_extreme",
+          "net_flow_btc": 0.0,
+          "net_flow_pct_reserves": 0.0,
+          "total_reserves_btc": 784809.64,
+          "extreme_basis": null,
+          "coverage": 1.0,
+          "single_tx_dominated": true
+        },
+        "near_miss": "a_lit_b_quiet"
+      },
+      "signal_id": "CAS-20261116-btc"
     }
   ],
   "signals": [],
@@ -3923,13 +3920,13 @@
   "ledger": [],
   "alert_ledger": [],
   "reserves": {
-    "generated_at": "2026-11-16T04:00:35Z",
+    "generated_at": "2026-11-16T06:00:34Z",
     "total_btc": 772288.82,
     "wallet_count": 24,
     "refreshed_count": 24,
     "exchange_count": 4,
-    "btc_price": 65112.01,
-    "total_usd": 50285277121.0,
+    "btc_price": 64435.54,
+    "total_usd": 49762846905.0,
     "per_exchange": [
       {
         "exchange": "Binance",
@@ -4175,17 +4172,17 @@
       }
     ],
     "coverage": 100.0,
-    "net_flow_btc": -28.98,
+    "net_flow_btc": 0.0,
     "window_hours": 48,
     "address_book_version": "2026-06-17"
   },
   "daily": {
     "take": {
-      "headline": "恐慌钉死在10，链上还没喊疼",
-      "body": "恐惧贪婪指数在10附近一动不动，人群的情绪已经冻住了——但这种「冻住」本身就值得警惕，因为它既可能是底部麻木，也可能是还没跌够。资金费率报-2.76σ，空头在付出真金白银维持仓位，这是结构上的尖叫；但交易所储备净流出仅-28.98 BTC，链上并没有配合给出明确的「出逃」或「接盘」信号，状态依然是「人群极端、链上沉默」。我盯的是：储备净流量方向会不会在最近转为大幅流入或流出——那才是链上给出答案的时刻；如果资金费率继续深陷负值而现价在65112附近横盘不破，我会重新评估这个空头拥挤是否正在走向强制平仓的反方向。"
+      "headline": "恐慌钉死在10，链上却一动不动——谁在撒谎？",
+      "body": "恐惧贪婪指数10，极端恐惧，而且最近这个读数纹丝不动，人群的情绪像被人按在地板上摩擦。资金费率-2.81σ，空头已经在付保险费，但taker方向均衡——说明这不是一场有信念的砸盘，更像是集体缩在角落瑟瑟发抖。偏偏链上储备净流量0.0，没有大规模提币迹象，「恐慌」和「逃跑」之间还差一个行动。我在盯的是：储备净流量一旦开始明显流出，或者情绪读数在现价附近开始松动，那才叫确认；如果两者继续背离，这场恐慌就还是一出没有结局的独角戏。"
     },
     "voice_status": "ok",
     "near_miss": "a_lit_b_quiet",
-    "generated_at": "2026-11-16T04:00:35Z"
+    "generated_at": "2026-11-16T06:00:34Z"
   }
 }
