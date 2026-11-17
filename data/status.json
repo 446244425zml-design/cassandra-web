@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-17T20:00:33Z",
+  "generated_at": "2026-11-17T22:00:35Z",
   "netflow_gate": {
     "mode": "event_driven",
     "waits_for_baseline": false
@@ -257,47 +257,6 @@
     ]
   },
   "runs": [
-    {
-      "ts": "2026-11-10T04:00:00Z",
-      "run_id": "20261110T0400Z-btc",
-      "result": "NoSignal",
-      "reason": "no_trigger",
-      "detail": "fired_signals=[] below require_n_signals",
-      "net_flow_btc": 6179.18608633,
-      "coverage": 1.0,
-      "baseline_mean": 869.143521932,
-      "observation": {
-        "a": {
-          "fired": false,
-          "fired_signals": [],
-          "direction_bias": null,
-          "funding_zscore": 1.0127,
-          "fng_value": 32,
-          "fng_classification": "Fear",
-          "taker_buy_dominance": false,
-          "taker_sell_dominance": false
-        },
-        "b": {
-          "extreme": true,
-          "direction": "inflow",
-          "unclear_reason": null,
-          "net_flow_btc": 6179.19,
-          "net_flow_pct_reserves": 0.007711,
-          "total_reserves_btc": 801356.42,
-          "extreme_basis": "absolute",
-          "coverage": 1.0,
-          "single_tx_dominated": false
-        },
-        "near_miss": "a_quiet"
-      },
-      "alert_id": "ALERT-20261110-btc",
-      "alert": {
-        "direction": "inflow",
-        "net_flow_btc": 6179.19,
-        "pct_reserves": 0.007711,
-        "basis": "absolute"
-      }
-    },
     {
       "ts": "2026-11-10T06:00:01Z",
       "run_id": "20261110T0600Z-btc",
@@ -3739,6 +3698,43 @@
         "near_miss": "both_lit"
       },
       "signal_id": "CAS-20261117-btc"
+    },
+    {
+      "ts": "2026-11-17T22:00:01Z",
+      "run_id": "20261117T2200Z-btc",
+      "result": "FIRED",
+      "reason": null,
+      "detail": null,
+      "net_flow_btc": 5411.52703934,
+      "coverage": 1.0,
+      "baseline_mean": 1950.4665686606666,
+      "observation": {
+        "a": {
+          "fired": true,
+          "fired_signals": [
+            "fng_extreme_fear"
+          ],
+          "direction_bias": "bearish_crowd",
+          "funding_zscore": -0.9347,
+          "fng_value": 12,
+          "fng_classification": "Extreme Fear",
+          "taker_buy_dominance": false,
+          "taker_sell_dominance": false
+        },
+        "b": {
+          "extreme": true,
+          "direction": "inflow",
+          "unclear_reason": null,
+          "net_flow_btc": 5411.53,
+          "net_flow_pct_reserves": 0.006848,
+          "total_reserves_btc": 790276.71,
+          "extreme_basis": "absolute",
+          "coverage": 1.0,
+          "single_tx_dominated": false
+        },
+        "near_miss": "both_lit"
+      },
+      "signal_id": "CAS-20261117-btc"
     }
   ],
   "signals": [],
@@ -3852,13 +3848,13 @@
   "ledger": [],
   "alert_ledger": [],
   "reserves": {
-    "generated_at": "2026-11-17T20:00:33Z",
+    "generated_at": "2026-11-17T22:00:35Z",
     "total_btc": 777700.34,
     "wallet_count": 24,
     "refreshed_count": 24,
     "exchange_count": 4,
-    "btc_price": 63755.79,
-    "total_usd": 49582899763.0,
+    "btc_price": 64344.66,
+    "total_usd": 50040864165.0,
     "per_exchange": [
       {
         "exchange": "Binance",
@@ -4110,11 +4106,11 @@
   },
   "daily": {
     "take": {
-      "headline": "极恐冻结，链上却在悄悄搬砖",
-      "body": "恐惧贪婪指数钉在12，这几天基本没挪窝——人群不是在恐惧，是在「麻木式恐惧」，情绪连反弹的力气都没有。资金费率报-1.17σ，空头溢价明显，但现货买盘还在主导，这个组合读起来有点分裂：衍生品在做空，有人却在现货接货。让我警惕的是链上储备净流入5411枚BTC，交易所库存在增加，这不是「囤币」的姿势，更像是「准备卖」或者「准备用」——人群极端且链上同时异动，官方标注的是信号区，我不会替它翻译成机会，但我会盯着净流量方向是否反转：若后续净流出转正且情绪还在地板，那才是我会重新评估立场的时刻。"
+      "headline": "恐惧钉死12，链上却有人在悄悄搬货",
+      "body": "恐惧贪婪指数连续在12附近一动不动，人群的情绪不是在崩，是在「麻木」——这比崩更难读。资金费率-0.93σ，空头溢价已经不算轻，但也还没到历史级别的尖叫区间。真正让我皱眉的是：链上储备净流入5411枚BTC，交易所库存在增加，这和「极端恐慌时没人动」的剧本不符——有人在往交易所搬，是减仓准备，还是准备接盘，我现在给不出答案。我盯的是：如果净流量反转转出、且资金费率开始收敛回0，那这个「麻木恐慌」的故事才值得重新讲；否则，恐慌指数钉在地板、链上还在往交易所送货，这组合我不会急着翻盘。【非投资建议】"
     },
     "voice_status": "ok",
     "near_miss": "both_lit",
-    "generated_at": "2026-11-17T20:00:33Z"
+    "generated_at": "2026-11-17T22:00:35Z"
   }
 }
