@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-16T22:00:36Z",
+  "generated_at": "2026-11-17T00:00:33Z",
   "netflow_gate": {
     "mode": "event_driven",
     "waits_for_baseline": false
@@ -257,47 +257,6 @@
     ]
   },
   "runs": [
-    {
-      "ts": "2026-11-09T06:00:01Z",
-      "run_id": "20261109T0600Z-btc",
-      "result": "NoSignal",
-      "reason": "no_trigger",
-      "detail": "fired_signals=[] below require_n_signals",
-      "net_flow_btc": 3161.47208087,
-      "coverage": 1.0,
-      "baseline_mean": 783.4545211305,
-      "observation": {
-        "a": {
-          "fired": false,
-          "fired_signals": [],
-          "direction_bias": null,
-          "funding_zscore": 1.0645,
-          "fng_value": 29,
-          "fng_classification": "Fear",
-          "taker_buy_dominance": false,
-          "taker_sell_dominance": false
-        },
-        "b": {
-          "extreme": true,
-          "direction": "inflow",
-          "unclear_reason": null,
-          "net_flow_btc": 3161.47,
-          "net_flow_pct_reserves": 0.00397,
-          "total_reserves_btc": 796289.47,
-          "extreme_basis": "absolute",
-          "coverage": 1.0,
-          "single_tx_dominated": false
-        },
-        "near_miss": "a_quiet"
-      },
-      "alert_id": "ALERT-20261109-btc",
-      "alert": {
-        "direction": "inflow",
-        "net_flow_btc": 3161.47,
-        "pct_reserves": 0.00397,
-        "basis": "absolute"
-      }
-    },
     {
       "ts": "2026-11-09T08:00:01Z",
       "run_id": "20261109T0800Z-btc",
@@ -3778,6 +3737,44 @@
         "near_miss": "both_lit"
       },
       "signal_id": "CAS-20261116-btc"
+    },
+    {
+      "ts": "2026-11-17T00:00:01Z",
+      "run_id": "20261117T0000Z-btc",
+      "result": "FIRED",
+      "reason": null,
+      "detail": null,
+      "net_flow_btc": 1611.36603388,
+      "coverage": 1.0,
+      "baseline_mean": 1906.3273206674999,
+      "observation": {
+        "a": {
+          "fired": true,
+          "fired_signals": [
+            "funding_extreme",
+            "fng_extreme_fear"
+          ],
+          "direction_bias": "bearish_crowd",
+          "funding_zscore": -2.26,
+          "fng_value": 12,
+          "fng_classification": "Extreme Fear",
+          "taker_buy_dominance": false,
+          "taker_sell_dominance": false
+        },
+        "b": {
+          "extreme": true,
+          "direction": "inflow",
+          "unclear_reason": null,
+          "net_flow_btc": 1611.37,
+          "net_flow_pct_reserves": 0.002049,
+          "total_reserves_btc": 786421.01,
+          "extreme_basis": "absolute",
+          "coverage": 1.0,
+          "single_tx_dominated": false
+        },
+        "near_miss": "both_lit"
+      },
+      "signal_id": "CAS-20261117-btc"
     }
   ],
   "signals": [],
@@ -3863,7 +3860,8 @@
     "CAS-20261113-btc",
     "CAS-20261114-btc",
     "CAS-20261115-btc",
-    "CAS-20261116-btc"
+    "CAS-20261116-btc",
+    "CAS-20261117-btc"
   ],
   "pending_alerts": [
     "ALERT-20260720-btc",
@@ -3890,13 +3888,13 @@
   "ledger": [],
   "alert_ledger": [],
   "reserves": {
-    "generated_at": "2026-11-16T22:00:36Z",
+    "generated_at": "2026-11-17T00:00:33Z",
     "total_btc": 773900.18,
     "wallet_count": 24,
     "refreshed_count": 24,
     "exchange_count": 4,
-    "btc_price": 65316.79,
-    "total_usd": 50548675680.0,
+    "btc_price": 64884.96,
+    "total_usd": 50214482365.0,
     "per_exchange": [
       {
         "exchange": "Binance",
@@ -4148,11 +4146,11 @@
   },
   "daily": {
     "take": {
-      "headline": "恐惧冻结在极值，链上资金却悄悄流入",
-      "body": "恐惧贪婪指数钉在10，基本没动——不是在退潮，是在发呆，人群的恐慌已经进入麻木模式。资金费率-0.82σ，卖盘主导，期货端还在往空头倾斜，短线情绪没有任何解冻迹象。但链上数据给了一个刺眼的异号：储备净流入1611枚BTC，这和极端恐慌的叙事方向相反——有人在悄悄往交易所搬货，也有人可能在接。我现在盯的是净流量方向会不会持续，以及资金费率σ能不能收窄回中性区——如果情绪继续冻住但链上流量转为净流出，我会认真重新评估当前读数的含义；如果两者继续同向恶化，这个「信号区」就只是噪音。"
+      "headline": "极恐冻结，链上却悄悄塞进来1600枚",
+      "body": "恐惧贪婪指数12，在「极恐」区域按住不动，情绪没有解冻的迹象；资金费率-2.26σ，空头已经把杠杆堆得很难看。但交易所储备净流入1611枚BTC，这不是散户出逃的姿态——有人在往场内搬货，或者有人在平仓离场，两种解释截然相反，我现在无法分辨。我盯的是：净流入是否持续加速，还是单日脉冲就熄火；如果恐惧读数继续趴在这里而链上流入反转为流出，那这波「极恐」就只是情绪噪音；反过来，若流入量继续放大，我会重新评估这个恐慌是否已经在悄悄换手。非投资建议。"
     },
     "voice_status": "ok",
     "near_miss": "both_lit",
-    "generated_at": "2026-11-16T22:00:36Z"
+    "generated_at": "2026-11-17T00:00:33Z"
   }
 }
