@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-18T22:00:37Z",
+  "generated_at": "2026-11-19T00:00:35Z",
   "netflow_gate": {
     "mode": "event_driven",
     "waits_for_baseline": false
@@ -257,47 +257,6 @@
     ]
   },
   "runs": [
-    {
-      "ts": "2026-11-11T04:00:01Z",
-      "run_id": "20261111T0400Z-btc",
-      "result": "NoSignal",
-      "reason": "no_trigger",
-      "detail": "fired_signals=[] below require_n_signals",
-      "net_flow_btc": 17102.67809173,
-      "coverage": 1.0,
-      "baseline_mean": 991.4080787736666,
-      "observation": {
-        "a": {
-          "fired": false,
-          "fired_signals": [],
-          "direction_bias": null,
-          "funding_zscore": 0.9855,
-          "fng_value": 29,
-          "fng_classification": "Fear",
-          "taker_buy_dominance": false,
-          "taker_sell_dominance": false
-        },
-        "b": {
-          "extreme": true,
-          "direction": "inflow",
-          "unclear_reason": null,
-          "net_flow_btc": 17102.68,
-          "net_flow_pct_reserves": 0.021484,
-          "total_reserves_btc": 796065.73,
-          "extreme_basis": "both",
-          "coverage": 1.0,
-          "single_tx_dominated": true
-        },
-        "near_miss": "a_quiet"
-      },
-      "alert_id": "ALERT-20261111-btc",
-      "alert": {
-        "direction": "inflow",
-        "net_flow_btc": 17102.68,
-        "pct_reserves": 0.021484,
-        "basis": "both"
-      }
-    },
     {
       "ts": "2026-11-11T06:00:01Z",
       "run_id": "20261111T0600Z-btc",
@@ -3691,6 +3650,43 @@
         "near_miss": "both_lit"
       },
       "signal_id": "CAS-20261118-btc"
+    },
+    {
+      "ts": "2026-11-19T00:00:00Z",
+      "run_id": "20261119T0000Z-btc",
+      "result": "FIRED",
+      "reason": null,
+      "detail": null,
+      "net_flow_btc": 7103.32403388,
+      "coverage": 1.0,
+      "baseline_mean": 2128.859933927167,
+      "observation": {
+        "a": {
+          "fired": true,
+          "fired_signals": [
+            "fng_extreme_fear"
+          ],
+          "direction_bias": "bearish_crowd",
+          "funding_zscore": 0.8567,
+          "fng_value": 10,
+          "fng_classification": "Extreme Fear",
+          "taker_buy_dominance": false,
+          "taker_sell_dominance": false
+        },
+        "b": {
+          "extreme": true,
+          "direction": "inflow",
+          "unclear_reason": null,
+          "net_flow_btc": 7103.32,
+          "net_flow_pct_reserves": 0.008951,
+          "total_reserves_btc": 793579.87,
+          "extreme_basis": "both",
+          "coverage": 1.0,
+          "single_tx_dominated": false
+        },
+        "near_miss": "both_lit"
+      },
+      "signal_id": "CAS-20261119-btc"
     }
   ],
   "signals": [],
@@ -3778,7 +3774,8 @@
     "CAS-20261115-btc",
     "CAS-20261116-btc",
     "CAS-20261117-btc",
-    "CAS-20261118-btc"
+    "CAS-20261118-btc",
+    "CAS-20261119-btc"
   ],
   "pending_alerts": [
     "ALERT-20260720-btc",
@@ -3805,13 +3802,13 @@
   "ledger": [],
   "alert_ledger": [],
   "reserves": {
-    "generated_at": "2026-11-18T22:00:37Z",
+    "generated_at": "2026-11-19T00:00:35Z",
     "total_btc": 781003.51,
     "wallet_count": 24,
     "refreshed_count": 24,
     "exchange_count": 4,
-    "btc_price": 62355.59,
-    "total_usd": 48699934421.0,
+    "btc_price": 63062.01,
+    "total_usd": 49251650917.0,
     "per_exchange": [
       {
         "exchange": "Binance",
@@ -4063,11 +4060,11 @@
   },
   "daily": {
     "take": {
-      "headline": "极度恐慌冻住，链上却有人悄悄搬货",
-      "body": "恐惧贪婪指数11，「极度恐慌」，而且这几天基本没动——情绪不是在退潮，是在凝固。奇怪的地方在于：资金费率报+1.03σ，多头持仓成本并不便宜，人群嘴上恐慌、手上却没完全出清，这个裂缝值得警惕。更值得盯的是储备净流入7103枚BTC——有人在往交易所搬货，动机未明，但链上异动叠着情绪极端，这不是随便翻篇的噪音。什么会让我改变判断？净流入骤然逆转、资金费率回归中性，或者恐惧指数在现价附近开始回升——任何一个单独出现我都不信，三个同向才算信号。"
+      "headline": "极恐冻结，链上却在悄悄搬砖",
+      "body": "恐惧贪婪指数10，极恐区间里一动不动，人群的恐慌情绪已经麻木到连波动都懒得给了。但链上不配合这份「死寂」——储备净流入7103枚BTC，交易所正在接货，这不是沉默，这是搬运。资金费率+0.86σ还飘在正值，说明有人在这片哀鸿遍野里还没清掉多单，这个错位值得盯着。如果净流入继续放量而情绪依然冻结，我会重新评估这是「砸盘前的集结」还是「底部前的最后一次恐慌性交割」——但现在，我还不知道。"
     },
     "voice_status": "ok",
     "near_miss": "both_lit",
-    "generated_at": "2026-11-18T22:00:37Z"
+    "generated_at": "2026-11-19T00:00:35Z"
   }
 }
