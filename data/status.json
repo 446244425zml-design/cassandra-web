@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-21T14:07:17Z",
+  "generated_at": "2026-11-21T16:04:19Z",
   "netflow_gate": {
     "mode": "event_driven",
     "waits_for_baseline": false
@@ -257,47 +257,6 @@
     ]
   },
   "runs": [
-    {
-      "ts": "2026-11-12T04:00:01Z",
-      "run_id": "20261112T0400Z-btc",
-      "result": "NoSignal",
-      "reason": "no_trigger",
-      "detail": "fired_signals=[] below require_n_signals",
-      "net_flow_btc": 19935.1210556,
-      "coverage": 1.0,
-      "baseline_mean": 1323.7653017698333,
-      "observation": {
-        "a": {
-          "fired": false,
-          "fired_signals": [],
-          "direction_bias": null,
-          "funding_zscore": 0.3404,
-          "fng_value": 28,
-          "fng_classification": "Fear",
-          "taker_buy_dominance": false,
-          "taker_sell_dominance": false
-        },
-        "b": {
-          "extreme": true,
-          "direction": "inflow",
-          "unclear_reason": null,
-          "net_flow_btc": 19935.12,
-          "net_flow_pct_reserves": 0.024869,
-          "total_reserves_btc": 801606.86,
-          "extreme_basis": "both",
-          "coverage": 1.0,
-          "single_tx_dominated": false
-        },
-        "near_miss": "a_quiet"
-      },
-      "alert_id": "ALERT-20261112-btc",
-      "alert": {
-        "direction": "inflow",
-        "net_flow_btc": 19935.12,
-        "pct_reserves": 0.024869,
-        "basis": "both"
-      }
-    },
     {
       "ts": "2026-11-12T06:00:01Z",
       "run_id": "20261112T0600Z-btc",
@@ -3661,6 +3620,49 @@
         "pct_reserves": 0.018047,
         "basis": "both"
       }
+    },
+    {
+      "ts": "2026-11-21T16:00:00Z",
+      "run_id": "20261121T1600Z-btc",
+      "result": "NoSignal",
+      "reason": "price_or_atr_unavailable",
+      "detail": "composer needs last price + ATR for level math",
+      "net_flow_btc": 13564.81260548,
+      "coverage": 1.0,
+      "baseline_mean": 2390.9787847234998,
+      "observation": {
+        "a": {
+          "fired": true,
+          "fired_signals": [
+            "fng_extreme_fear"
+          ],
+          "direction_bias": "bearish_crowd",
+          "funding_zscore": null,
+          "fng_value": 12,
+          "fng_classification": "Extreme Fear",
+          "taker_buy_dominance": null,
+          "taker_sell_dominance": null
+        },
+        "b": {
+          "extreme": true,
+          "direction": "inflow",
+          "unclear_reason": null,
+          "net_flow_btc": 13564.81,
+          "net_flow_pct_reserves": 0.017036,
+          "total_reserves_btc": 796262.82,
+          "extreme_basis": "both",
+          "coverage": 1.0,
+          "single_tx_dominated": true
+        },
+        "near_miss": "both_lit"
+      },
+      "alert_id": "ALERT-20261121-btc",
+      "alert": {
+        "direction": "inflow",
+        "net_flow_btc": 13564.81,
+        "pct_reserves": 0.017036,
+        "basis": "both"
+      }
     }
   ],
   "signals": [],
@@ -3778,8 +3780,8 @@
   "ledger": [],
   "alert_ledger": [],
   "reserves": {
-    "generated_at": "2026-11-21T14:07:17Z",
-    "total_btc": 796558.65,
+    "generated_at": "2026-11-21T16:04:19Z",
+    "total_btc": 783766.45,
     "wallet_count": 24,
     "refreshed_count": 24,
     "exchange_count": 4,
@@ -3789,26 +3791,26 @@
       {
         "exchange": "Binance",
         "count": 2,
-        "btc": 423722.0504,
-        "pct": 53.2
+        "btc": 410820.7114,
+        "pct": 52.4
       },
       {
         "exchange": "Bitfinex",
         "count": 2,
-        "btc": 159885.6173,
-        "pct": 20.1
+        "btc": 159994.7564,
+        "pct": 20.4
       },
       {
         "exchange": "Robinhood",
         "count": 1,
         "btc": 140849.9856,
-        "pct": 17.7
+        "pct": 18.0
       },
       {
         "exchange": "OKX",
         "count": 19,
         "btc": 72100.9979,
-        "pct": 9.1
+        "pct": 9.2
       }
     ],
     "wallets": [
@@ -3826,7 +3828,7 @@
         "address": "3M219KR5vEneNb47ewrPfWyb5jQ2DjxRP6",
         "address_short": "3M219KR5…xRP6",
         "label_type": "cold",
-        "balance_btc": 175124.4574,
+        "balance_btc": 162223.1184,
         "refreshed": true,
         "explorer_url": "https://blockstream.info/address/3M219KR5vEneNb47ewrPfWyb5jQ2DjxRP6"
       },
@@ -3997,7 +3999,7 @@
         "address": "3JZq4atUahhuA9rLhXLMhhTo133J9rF97j",
         "address_short": "3JZq4atU…F97j",
         "label_type": "cold",
-        "balance_btc": 2875.5339,
+        "balance_btc": 2984.6731,
         "refreshed": true,
         "explorer_url": "https://blockstream.info/address/3JZq4atUahhuA9rLhXLMhhTo133J9rF97j"
       },
@@ -4030,7 +4032,7 @@
       }
     ],
     "coverage": 100.0,
-    "net_flow_btc": 14601.03,
+    "net_flow_btc": 13564.81,
     "window_hours": 48,
     "address_book_version": "2026-06-17"
   },
@@ -4038,6 +4040,6 @@
     "take": null,
     "voice_status": "voice_failed",
     "near_miss": "both_lit",
-    "generated_at": "2026-11-21T14:07:17Z"
+    "generated_at": "2026-11-21T16:04:19Z"
   }
 }
