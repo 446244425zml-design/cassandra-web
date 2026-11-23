@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-23T12:00:39Z",
+  "generated_at": "2026-11-23T14:00:39Z",
   "netflow_gate": {
     "mode": "event_driven",
     "waits_for_baseline": false
@@ -257,43 +257,6 @@
     ]
   },
   "runs": [
-    {
-      "ts": "2026-11-13T00:00:04Z",
-      "run_id": "20261113T0000Z-btc",
-      "result": "FIRED",
-      "reason": null,
-      "detail": null,
-      "net_flow_btc": 18497.9820556,
-      "coverage": 1.0,
-      "baseline_mean": 1616.7523914326666,
-      "observation": {
-        "a": {
-          "fired": true,
-          "fired_signals": [
-            "fng_extreme_fear"
-          ],
-          "direction_bias": "bearish_crowd",
-          "funding_zscore": 0.9566,
-          "fng_value": 20,
-          "fng_classification": "Extreme Fear",
-          "taker_buy_dominance": false,
-          "taker_sell_dominance": false
-        },
-        "b": {
-          "extreme": true,
-          "direction": "inflow",
-          "unclear_reason": null,
-          "net_flow_btc": 18497.98,
-          "net_flow_pct_reserves": 0.02297,
-          "total_reserves_btc": 805322.33,
-          "extreme_basis": "both",
-          "coverage": 1.0,
-          "single_tx_dominated": false
-        },
-        "near_miss": "both_lit"
-      },
-      "signal_id": "CAS-20261113-btc"
-    },
     {
       "ts": "2026-11-13T02:00:01Z",
       "run_id": "20261113T0200Z-btc",
@@ -3657,6 +3620,43 @@
         "near_miss": "both_lit"
       },
       "signal_id": "CAS-20261123-btc"
+    },
+    {
+      "ts": "2026-11-23T14:00:01Z",
+      "run_id": "20261123T1400Z-btc",
+      "result": "FIRED",
+      "reason": null,
+      "detail": null,
+      "net_flow_btc": 6333.75302842,
+      "coverage": 1.0,
+      "baseline_mean": 2722.8851589625,
+      "observation": {
+        "a": {
+          "fired": true,
+          "fired_signals": [
+            "fng_extreme_fear"
+          ],
+          "direction_bias": "bearish_crowd",
+          "funding_zscore": 0.2143,
+          "fng_value": 11,
+          "fng_classification": "Extreme Fear",
+          "taker_buy_dominance": false,
+          "taker_sell_dominance": false
+        },
+        "b": {
+          "extreme": true,
+          "direction": "inflow",
+          "unclear_reason": null,
+          "net_flow_btc": 6333.75,
+          "net_flow_pct_reserves": 0.008037,
+          "total_reserves_btc": 788050.93,
+          "extreme_basis": "both",
+          "coverage": 1.0,
+          "single_tx_dominated": false
+        },
+        "near_miss": "both_lit"
+      },
+      "signal_id": "CAS-20261123-btc"
     }
   ],
   "signals": [],
@@ -3777,13 +3777,13 @@
   "ledger": [],
   "alert_ledger": [],
   "reserves": {
-    "generated_at": "2026-11-23T12:00:39Z",
+    "generated_at": "2026-11-23T14:00:39Z",
     "total_btc": 776487.53,
     "wallet_count": 24,
     "refreshed_count": 24,
     "exchange_count": 4,
-    "btc_price": 61441.93,
-    "total_usd": 47708892674.0,
+    "btc_price": 63846.29,
+    "total_usd": 49575848240.0,
     "per_exchange": [
       {
         "exchange": "Binance",
@@ -4035,11 +4035,11 @@
   },
   "daily": {
     "take": {
-      "headline": "恐慌钉死在11，链上却悄悄搬了6333枚进来",
-      "body": "恐惧贪婪指数从12跌到11，基本没动——人群的情绪不是在好转，是在结冰，麻木比崩溃更难读。资金费率-0.87σ，空头在付钱维持仓位，但taker端均衡，说明砸盘的手已经松了一半，空头在「扛着」而不是在「追着打」。真正让我皱眉的是链上：6333枚BTC净流入交易所储备，覆盖度1.0——这笔量不小，可以是恐慌出逃的人在备货卖出，也可以是某个大户在等流动性入场，两种解读完全相反，我现在没法拍板。如果接下来几天净流入继续扩大同时现价在61000附近继续承压，我倾向相信是抛压；反之若价格扛住而净流量转负，那这波「极端恐慌」可能是陷阱，不是信号。"
+      "headline": "恐慌冻结在11，链上却悄悄搬走六千枚",
+      "body": "恐惧贪婪指数钉在11，从昨天到今天基本没动——不是情绪在退潮，是情绪在结冰。与此同时，交易所储备净流出6333枚BTC，链上和人群的方向出现了裂缝：人群在尖叫，但有人在悄悄把筹码挪走。资金费率仅+0.21σ，合约端没有跟着恐慌崩塌，这组合让我无法简单读成「纯粹的砸盘」。我在盯的是：净流出能否持续放大——如果接下来几天储备继续外流而情绪依然冻结，这个裂缝就值得认真对待；反之若链上转为净流入，当前的「信号区」就只是噪音。"
     },
     "voice_status": "ok",
     "near_miss": "both_lit",
-    "generated_at": "2026-11-23T12:00:39Z"
+    "generated_at": "2026-11-23T14:00:39Z"
   }
 }
